@@ -561,6 +561,28 @@ This is a description of what happened, not a prediction of what happens next �
 alongside the Drift Classification above, since a capped-but-genuine beat can still
 belong in the "Confirmation" drift class even if T+0 magnitude was underwhelming.
 
+### Tiered fallback (added 2026-08-22, UNVALIDATED)
+
+**Problem this solves:** the formula above only computes when the options-implied move
+is [Sourced] — per §1's own confidence flag, that's frequently [Unavailable] (small-caps,
+foreign ADRs, thin-options names), which are exactly the names where a magnitude read is
+most needed since they get the least analyst/media scrutiny to catch a mispriced
+reaction. Rather than silently skipping the metric on those names, fall through a
+tiered set of comparison points, in this order:
+
+| Tier | Comparison point | Requires |
+|---|---|---|
+| **Tier 1 [Sourced, options-implied]** | actual T+0 % move − options-implied % move | Options-implied move is [Sourced] per §1 |
+| **Tier 2 [Sourced, historical-SUE]** | actual T+0 % move − this ticker's own average historical % move per unit of earnings surprise, drawn from its prior entries in `outcome-log.md` | ≥3 prior logged prints for this specific ticker |
+| **Tier 3 [Sourced, peer-group]** | actual T+0 % move − peer-group average reaction to similarly-sized surprises this same earnings season | ≥5 peer data points with comparable surprise magnitude |
+| **[Unavailable — insufficient data, no magnitude gauge computed]** | — | None of the above thresholds met |
+
+Always report which tier produced the number — never present a Tier 2 or Tier 3 read
+with the same confidence as a Tier 1 [Sourced, options-implied] one, same tiering
+discipline as the Same-Day Primary-Source Check section above. This is what lets the
+Magnitude Surprise metric stay usable on exactly the thin-coverage names where it
+matters most, instead of going silent whenever options data is missing.
+
 ---
 
 ## Attribution Gate Extension (does this move actually belong to the print? — added
