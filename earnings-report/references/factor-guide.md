@@ -472,25 +472,146 @@ NTES's T+0 miss was driven by a one-time equity-investment loss with core games 
 revenue growth 4.5:1, a structural concern — tentatively **Continuation-of-damage**.
 FUTU's clean broad-based beat — tentatively **Confirmation**.
 
-**Step 3 — Technical-divergence and RSI-extremity modifiers (confidence only, never
-direction):**
-- If T+0 MACD histogram or RSI trend **disagrees** with the Step 2 drift label (e.g. a
-  clean beat with a bearish MACD histogram, as seen in BJ's 2026-08-21 print: +5.61%
-  T+0 with MACD histogram -0.42), flag **lower confidence** on the Confirmation label —
-  do not flip the label itself.
-- If T+0 RSI is extreme (>70 overbought or <30 oversold — e.g. FUTU at 72.65 after its
-  T+0 pop), flag **elevated pullback/bounce risk** as a separate tag alongside the drift
-  label. This dampens expected *magnitude*, never direction — never merge it into the
-  drift label itself (echoes the standing "don't collapse into a single verdict" rule
-  above).
+**Step 3 — Confirmation Gate (technical-divergence and RSI-extremity modifiers;
+confidence only, never direction):**
+
+Report an explicit three-state **Confirmation Gate** alongside the drift label — this
+directly answers "does the chart agree with the story, and is now a moment where a
+reasonable process would wait for more evidence":
+
+| Gate state | Condition | What it means |
+|---|---|---|
+| **Confirmed** | T+0 MACD/RSI trend agrees with the Step 2 drift label | Technicals and fundamentals point the same direction — the read has two independent supports, not one |
+| **Awaiting confirmation** | T+0 MACD histogram or RSI trend **disagrees** with the Step 2 drift label (e.g. BJ's 2026-08-21 print: clean beat, +5.61% T+0, but MACD histogram -0.42) | The fundamental story is intact but momentum hasn't caught up to it yet — this is a pattern where, historically, waiting for the next 1-2 sessions' technical confirmation (or a specific one, once logged) reduces the odds of buying into a stall. Report this as what the pattern shows, not as instruction. |
+| **Contradicted** | Technicals actively point the opposite direction from the fundamental read with no plausible reconciling explanation | Treat as a flag to re-examine the fundamental read itself before trusting either signal |
+
+If T+0 RSI is extreme (>70 overbought or <30 oversold — e.g. FUTU at 72.65 after its
+T+0 pop), flag **elevated pullback/bounce risk** as a separate tag alongside the gate
+state. This dampens expected *magnitude*, never direction — never merge it into the
+drift label or gate state itself (echoes the standing "don't collapse into a single
+verdict" rule above).
 
 **Required output format when this section is used:**
 
-| Drift class | Confidence | Technical modifier |
-|---|---|---|
-| Confirmation / Repair / Continuation-of-damage / [Unavailable] | [Sourced/Unavailable basis] | [divergence flag / RSI-extreme flag / none] |
+| Drift class | Confirmation Gate | Confidence | Technical modifier |
+|---|---|---|---|
+| Confirmation / Repair / Continuation-of-damage / [Unavailable] | Confirmed / Awaiting confirmation / Contradicted | [Sourced/Unavailable basis] | [RSI-extreme flag / none] |
 
 Always prefixed with **[Unvalidated — n<10 cases]** until logged evidence says
 otherwise. Log every drift classification and its actual T+2/T+5 outcome to
 `outcome-log.md`'s drift columns (see that file) — this is the only way this section
 graduates from hypothesis to evidence-backed.
+
+---
+
+## Same-Day Primary-Source Check (T+0 speed — added 2026-08-22, UNVALIDATED)
+
+**Purpose:** the one-time-vs-structural distinction (§3) is usually knowable *the day of
+the print*, not the day after. NTES's one-time equity-investment loss and BABA's
+capex-vs-cloud-revenue ratio were both disclosed in the earnings release/8-K itself —
+the lag in this project's earlier analysis was in when *analyst commentary* about it got
+written, not in when the underlying fact became public. A process waiting for secondary
+analyst write-ups to appear is a day slower than it needs to be.
+
+**Rule:** immediately after a print, before relying on any secondary commentary, search
+for the company's own press release / 8-K / investor-relations filing directly (not news
+aggregator summaries) and check it against the §3 checklist (one-time items, margin
+trend, segment concentration) yourself. Tag this read **[Primary-source, same-day]**.
+
+**Confidence tiering (do not treat these as equivalent):**
+- **[Primary-source, same-day]** — read directly from the company's own release, same
+  day as the print. Real, but preliminary — a company's own framing of a one-time item
+  can itself be optimistic; this tier is a faster first read, not a final one.
+- **[Analyst-confirmed, T+1+]** — corroborated by independent analyst commentary or
+  follow-up reporting. Higher confidence, but arrives later.
+
+Report both tiers when available, and explicitly note when only the same-day tier
+exists yet — never present a same-day primary-source read with the same confidence as
+an analyst-confirmed one. This tiering, not blind speed, is what lets the framework
+catch a same-day mispriced reaction (a "genuine miss" sell-off that's actually a
+one-time item, or a "clean beat" pop that's actually structural) without overclaiming
+certainty it doesn't have yet.
+
+---
+
+## Magnitude Surprise (why a "clean beat" sometimes barely moves — added 2026-08-22)
+
+**Purpose:** the Conditional Reaction Matrix predicts *direction and quality*; it never
+explained cases like BEKE's 2026-08-21 print — a genuinely high-quality beat (margin
+expansion, EPS +30.1%) that still only rallied +4.47%, well under what a clean beat of
+that quality might suggest. This metric names that gap explicitly instead of leaving it
+unexplained.
+
+**Formula:** `Magnitude Surprise = actual T+0 % move − options-implied % move` (only
+computable when the options-implied move is [Sourced], per §1).
+
+**Reading:**
+- **Large positive gap** (actual move well exceeds what was priced in) — the market was
+  caught off guard by the strength; e.g. FUTU's +9.68% (T+1, retroactive dataset)
+  against a 5.4% implied threshold.
+- **Near-zero or negative gap on an objectively strong print** (BEKE-type case) — print
+  quality alone didn't explain the muted reaction. Check for a capping factor before
+  concluding the market "under-reacted" for no reason: revenue *decline* optics even
+  amid margin expansion, a sector/ADR-specific discount (e.g. China-ADR risk premium),
+  broader market or sector caution on the print day, or the setup (§1) already having
+  priced in most of the good news pre-print. Report which of these applies, don't just
+  flag the gap and stop.
+
+This is a description of what happened, not a prediction of what happens next — read it
+alongside the Drift Classification above, since a capped-but-genuine beat can still
+belong in the "Confirmation" drift class even if T+0 magnitude was underwhelming.
+
+---
+
+## Attribution Gate Extension (does this move actually belong to the print? — added
+2026-08-22)
+
+**Purpose:** generalizes the WALD 2026-08-21 lesson (a stock moved during earnings
+season on a date the screen assumed was its report date, but no report was found) into
+a standing rule, since earnings-season price action is not always earnings-*caused*
+price action — thin liquidity, sector-wide moves, activist filings, and unrelated
+corporate news (delayed filings, strategic reviews, leadership changes) all cluster
+around the same calendar window and get misread as print reactions if not checked.
+
+**Before attributing any move to an earnings print, confirm:**
+1. A press release / 8-K for that specific date actually exists (don't assume the
+   calendar date the screen pulled is correct — verify it same-day).
+2. No concurrent non-earnings catalyst is more plausibly responsible (trading halts,
+   activist stakes, M&A rumors, leadership departures, sector-wide macro moves on the
+   same day, delisting/compliance news).
+3. Volume is consistent with a real, informationally-driven move (thin volume + no
+   confirmed press release, as with WALD's 635K, is a strong signal the move isn't
+   print-driven at all).
+
+If any of these fail, **do not run print-quality (§3) or drift-classification (above)
+analysis on the move** — report what evidence *does* exist (e.g. "delayed earnings
+release, strategic review announced") and stop there, same treatment WALD received.
+
+---
+
+## Swing-Timing Overlay (tradeswing perspective — added 2026-08-22, UNVALIDATED)
+
+**Purpose:** every section above answers "is the business doing well" and "will the
+reaction persist" from an investor's multi-quarter perspective. A swing trader asks a
+narrower question: given the current setup, what would define a legible entry trigger,
+invalidation point, target zone, and expected hold-duration for *this* move — not
+whether the company is a good long-term holding. This section describes that pattern; it
+is not a recommendation to enter, and clearing it does not mean a name is a buy — it's
+what a trader would be watching for, framed as a data pattern, same restriction as the
+rest of this framework.
+
+**Required output format when swing-timeframe framing is requested:**
+
+| Field | What it describes |
+|---|---|
+| **Entry trigger (pattern)** | The technical/fundamental condition that would upgrade the Confirmation Gate from "Awaiting confirmation" to "Confirmed" (e.g. MACD histogram crossing positive, price reclaiming a specific prior resistance level) — not "buy now," but "this is the condition the setup is waiting on" |
+| **Invalidation level** | The price/technical level at which the drift-classification read (Confirmation / Repair / Continuation-of-damage) would be considered wrong — typically a recent swing low/high or a MACD/RSI reversal back through the level that triggered the current read |
+| **Target zone (pattern)** | Where the move would plausibly stall based on the stock's own §6 historical post-earnings range, prior resistance/support, or the magnitude the options-implied move suggested was "priced for" |
+| **Expected hold-duration** | Read off the drift-classification horizon itself — Confirmation/Continuation-of-damage patterns typically play out over the T+1..T+5 window this framework already tracks; Repair patterns may take longer as one-time noise gets fully priced out |
+| **Overbought/oversold caveat** | Explicit RSI-extreme flag (§ Drift Classification Step 3) — an extreme reading doesn't invalidate the setup, but changes how aggressively a trader would expect to chase the current price vs. wait for a pullback into the setup |
+
+**What NOT to do:** never phrase any field above as an instruction ("buy at X," "sell at
+Y") — describe the pattern a swing trader would be watching, and let the reader decide
+whether the setup (as described) is worth their own entry. This section is explicitly
+**[Unvalidated — n<10 cases]** on the same basis as the Drift Classification section
+above, since it's built on the same 6-case dataset.
