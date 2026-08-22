@@ -108,6 +108,37 @@ existing volume/[Sourced]/[Unavailable] gate rather than adding new machinery, a
 requires a separate confidence/technical-modifier tag (MACD divergence, RSI-extreme) that
 never overrides the drift label's direction.
 
+## 2026-08-22 additions — Confirmation Gate, Same-Day Check, Magnitude Surprise, Attribution Gate, Swing-Timing Overlay
+
+Five more layers were added to `factor-guide.md`, all still **[Unvalidated — n<10
+cases]** pending real T+2/T+5 outcome data from `outcome-log.md`:
+
+1. **Confirmation Gate** (replaces the old binary divergence flag inside Drift
+   Classification) — three states: Confirmed / Awaiting confirmation / Contradicted,
+   describing whether T+0 technicals (MACD/RSI) agree with the fundamental drift read.
+2. **Same-Day Primary-Source Check** — read the company's own press release/8-K same-day
+   for one-time-item and margin signals, tagged **[Primary-source, same-day]**, distinct
+   in confidence from **[Analyst-confirmed, T+1+]** commentary that arrives later.
+3. **Magnitude Surprise** — `actual T+0 % move − options-implied % move`, explains cases
+   where a genuinely high-quality print produces a smaller-than-expected reaction (name
+   the capping factor: revenue-decline optics, ADR/sector discount, pre-priced setup,
+   etc.), rather than leaving the gap unexplained. Extended 2026-08-22 with a **3-tier
+   fallback** (options-implied → the ticker's own historical-SUE reaction average →
+   peer-group average) for when options data is [Unavailable] — exactly the thin-coverage
+   names where this signal matters most.
+4. **Attribution Gate Extension** — before running any print-quality/drift analysis on a
+   move, confirm a press release actually exists for that date and rule out a
+   more-plausible non-earnings catalyst (delayed filing, activist stake, sector-wide
+   move, thin-liquidity noise). Generalizes a real screening error caught on WALD
+   (2026-08-21), where a Stage A-assumed report date had no confirmed print.
+5. **Swing-Timing Overlay** — a pattern-description output (Entry trigger / Invalidation
+   level / Target zone / Expected hold-duration / Overbought-oversold caveat) for
+   swing-timeframe framing specifically, never an instruction to buy/sell — same
+   restriction as the rest of this framework.
+
+Full specs for all five live in `references/factor-guide.md`; this section is a pointer,
+not a substitute for reading it before using any of them.
+
 **Terminology note:** the eligibility gate (§0) still uses a binary "SCREENED OUT" —
 that step is about whether a name has enough real data to analyze at all, and stays
 binary. Everything that survives §0 gets scored/ranked, not binary-flagged — no name
