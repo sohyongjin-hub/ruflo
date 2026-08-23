@@ -6,9 +6,9 @@ down to which tickers are worth a full /earnings-report deep dive.
 Screen upcoming earnings for $ARGUMENTS (a date, date range, or an explicit ticker
 list — if no argument is given, use today through the next 7 calendar days).
 
-This is Stage A of the two-stage workflow described in CLAUDE.md. Goal: cut a large
-earnings calendar down to a short list worth the full six-step deep dive, without
-running that full deep dive on every name.
+This is Stage A of the two-stage workflow described in earnings-report/CLAUDE.md. Goal:
+cut a large earnings calendar down to a short list worth the full six-step deep dive,
+without running that full deep dive on every name.
 
 Steps:
 
@@ -25,9 +25,9 @@ Steps:
    conflict — verify" for any ticker where sources disagree or none can be found — don't
    silently pick one.
 
-2. **Apply the eligibility gate** (§0 in references/factor-guide.md) to every ticker on
-   the list. Drop any that fail it. Report dropped names as a single line each:
-   "SCREENED OUT: <ticker> — <reason>". Do not spend further effort on them.
+2. **Apply the eligibility gate** (§0 in earnings-report/references/factor-guide.md) to
+   every ticker on the list. Drop any that fail it. Report dropped names as a single
+   line each: "SCREENED OUT: <ticker> — <reason>". Do not spend further effort on them.
 
 3. **Lightweight triage on the survivors** — for each remaining ticker, pull just enough
    to grade:
@@ -39,11 +39,12 @@ Steps:
    searches per ticker, not a full six-step workup.
 
 4. **Score the survivors** using the Pre-print Conviction Score rubric in
-   factor-guide.md (4 dimensions, 0-2 each, 8 total: setup skew strength, valuation
-   cushion clarity, data reliability, history/momentum support). This triage pass uses
-   lighter-weight inputs than Stage B, so scores here are a first estimate — note where
-   a dimension couldn't be fully checked at this depth (e.g. data reliability may need
-   Stage B's fuller source cross-check to confirm).
+   earnings-report/references/factor-guide.md (4 dimensions, 0-2 each, 8 total: setup
+   skew strength, valuation cushion clarity, data reliability, history/momentum
+   support). This triage pass uses lighter-weight inputs than Stage B, so scores here
+   are a first estimate — note where a dimension couldn't be fully checked at this
+   depth (e.g. data reliability may need Stage B's fuller source cross-check to
+   confirm).
 
 5. **Output a ranked table**, columns: Rank | Ticker | Report date | Score (X/8) |
    Setup | Valuation | Data | History | Notes — sorted by total score descending, with
@@ -65,7 +66,7 @@ be rewarded, with corroborating data," not "will go up." No ticker that clears �
 **Note:** this ranking is for cheap triage across many names only — it stays a score,
 never a directional prediction. The full deep dive (`/earnings-report`) does NOT output
 a score or a single lean; it outputs a Conditional Reaction Matrix instead (see
-factor-guide.md), because an 11-case historical review found setup alone cannot predict
-outcome sign, only its magnitude conditional on print quality. Don't let this triage
-score's apparent precision be mistaken for that — it ranks setups, it doesn't forecast
-reactions.
+earnings-report/references/factor-guide.md), because an 11-case historical review found
+setup alone cannot predict outcome sign, only its magnitude conditional on print
+quality. Don't let this triage score's apparent precision be mistaken for that — it
+ranks setups, it doesn't forecast reactions.
