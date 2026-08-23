@@ -342,6 +342,104 @@ headline number alone never tells you which.
 
 ---
 
+## §7 — Business Character Assessment (post-print, qualitative — added 2026-08-23)
+
+**Source:** adapted from "The Moat Ledger" (a swing-trader-focused qualitative-analysis
+reference), which itself draws on Morningstar's Economic Moat methodology, Porter's Five
+Forces, and standard capital-allocation/management-quality analysis. Full attribution at
+the end of this section.
+
+**Purpose:** §0-§6 answer "is the business doing well right now and is that priced in."
+This section answers a different question: **is this specific price move — and this
+print's reaction — one you can trust with real size, or is it riding something that
+could reverse for reasons the numbers alone won't show you.** A chart can't distinguish
+"temporary panic in a durable business" from "the beginning of the end." This section is
+how you tell those apart.
+
+**When to run this:** after a print, when deciding whether to size up beyond a starter
+position, hold through a post-print gap, or add to a name you haven't researched
+before — not required for every Stage B run, but required before trusting any of this
+section's four lenses' output with real position size. Re-run before adding size again
+later, not just once — a moat erodes, management changes, industries flip; treat this as
+a live read, never a permanent label carried forward untouched from the first pass.
+
+**The four lenses — each requires named evidence, not a vibe:**
+
+### Moat
+The structural reason competitors *can't* copy what's working, even when they can see
+the profits and want in. Five recognized families (Morningstar's framework): intangible
+assets (brand, patents, licenses), switching costs, network effects, cost advantage,
+efficient scale.
+- **Signals of a real moat:** pricing power holding through inflation; gross margins
+  stable or rising for years; market share sticky even when rivals cut price.
+- **False moat:** a "loved brand" with commodity margins; growth that only exists
+  because of discounting or ad spend; an advantage that's really just a temporary tech
+  lead.
+- **Test:** would competitors copy this easily if they tried? If yes — no real moat.
+
+### Competitive advantage
+If the moat is the structural wall, this is *today's read on how high that wall actually
+is* versus the field right now — more tactical and time-bound than a moat; it can erode
+over quarters, not just decades. Cost position, differentiation, execution edge.
+- **Read it in the numbers:** gross/operating margin vs. direct peers; market share
+  trend over 4-8 quarters; R&D/capex productivity (dollars in vs. share gained).
+- **Where it misleads:** a current edge (e.g. a hot product cycle) can look identical to
+  a moat on a 2-quarter chart. Ask: would this survive a strong new competitor entering
+  next year?
+
+### Management
+Capital allocation, incentive alignment, and candor — not charisma. A great business run
+by undisciplined capital allocators is a worse investment than a good business run well.
+- **Good tells:** specific, numbers-based answers on earnings calls; buybacks paused
+  when the stock is expensive; insiders buying with their own money after a selloff.
+- **Red flags:** constant non-GAAP adjustments that flatter results; serial
+  value-destroying acquisitions; executive pay detached from performance; heavy insider
+  selling into strength; buybacks at highs funded by new debt right before a guide-down.
+- **Source:** last two earnings calls (tone on misses, specificity, any shift in
+  guidance language — read two years of transcripts, not one), and Form 4 insider
+  transaction filings (SEC EDGAR, publicly searchable per ticker).
+
+### Industry position
+Even a great company sinks in a structurally bad industry, and a mediocre one can look
+brilliant riding a sector tailwind — which then gets mistaken for company-specific
+skill. Porter's Five Forces: supplier power, buyer power, threat of new entrants, threat
+of substitutes, rivalry intensity.
+- **Key questions:** where is the industry in its cycle (early growth / consolidating /
+  mature / structural decline)? Who holds pricing power — the company, its suppliers, or
+  its customers? How high are entry barriers? What's the substitute risk?
+- **Test:** compare the stock's move to its sector ETF over the same window. Flat
+  margins while the whole sector re-rates together means you're mostly holding sector
+  beta, not a company-specific edge — that changes how the stock would react to
+  sector-wide bad news, regardless of its own execution.
+
+**Confidence discipline (same pattern as the rest of this guide):** report each lens as
+one of **Strong / Moderate / Weak / Unconfirmed** with the specific evidence behind it —
+never a bare label. "Unconfirmed" means the evidence wasn't found or checked this pass,
+not "assume neutral."
+
+**How this modifies the swing-timeframe read** (ties directly into the Confirmation Gate
+and Swing-Timing Overlay sections above — this is a modifier on those, not a replacement
+for either):
+
+| Combination | Swing-timing implication |
+|---|---|
+| Strong moat + a genuinely bad print/week | Often a **buyable dip pattern**, not a reason to exit — the structural wall around the profits didn't disappear because of one bad quarter |
+| Weak/no moat + a strong print/pop | **Trade the move, don't marry it** — take profits into strength; nothing structural is anchoring the price, so it can give it back just as fast |
+| Improving industry position (consolidation, new regulatory barriers) | A genuine multi-month tailwind — can justify a longer hold and larger size than a pure technical setup alone would |
+| Management red flag surfacing mid-position (insider-selling clusters, evasive earnings-call answers, a surprise dilutive raise) | Tighten the stop or trim — even if the chart still looks clean, this is the one lens that can override a clean technical setup fastest |
+
+**Common trap to avoid:** running this once and treating it as permanent. Re-check
+before every meaningful size-up, not just on the first pass — this section decays faster
+than §0-§6's more mechanical checks.
+
+**Suitable starting sources:** Morningstar's Economic Moat methodology; Michael Porter's
+"Competitive Strategy" (Five Forces); the company's own 10-K "Competition" and "Risk
+Factors" sections plus earnings-call transcripts; SEC EDGAR Form 4 filings for insider
+transactions; Warren Buffett's Berkshire Hathaway shareholder letters for a
+plain-language treatment of moats and capital allocation.
+
+---
+
 ## Using this guide
 
 No single factor above should carry a verdict alone. The value of the full screen is in

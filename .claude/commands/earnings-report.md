@@ -61,6 +61,16 @@ where the relevant data supports it:
   the **Swing-Timing Overlay** (Entry trigger / Invalidation level / Target zone /
   Expected hold-duration / Overbought-oversold caveat) per that section of
   earnings-report/references/factor-guide.md.
+- **When the user asks about sizing up, holding through weakness, or researching a name
+  for the first time** (not for a routine/quick post-print check), also run the
+  **Business Character Assessment** (§7 of earnings-report/references/factor-guide.md):
+  rate Moat / Competitive Advantage / Management / Industry Position each as
+  Strong / Moderate / Weak / Unconfirmed with the specific evidence behind it, then
+  apply §7's swing-timing modifier table (e.g. strong moat + bad print = often a
+  buyable-dip pattern; weak moat + strong print = trade the move, don't marry it) on top
+  of whatever the Confirmation Gate / Drift Classification / Swing-Timing Overlay
+  already concluded. Re-run §7 before any future size-up on the same name rather than
+  reusing a stale read — it decays faster than the mechanical §0-§6 checks.
 
 Do not give a buy/sell/hold recommendation. If the ticker hasn't reported earnings yet,
 run steps 0, 1, 2, 5, and 6 only (pre-print screen) and note that 3-4 will apply

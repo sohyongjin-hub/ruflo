@@ -139,6 +139,38 @@ cases]** pending real T+2/T+5 outcome data from `outcome-log.md`:
 Full specs for all five live in `references/factor-guide.md`; this section is a pointer,
 not a substitute for reading it before using any of them.
 
+## 2026-08-23 addition — §7 Business Character Assessment (Moat / Competitive Advantage / Management / Industry Position)
+
+Adapted from an external reference ("The Moat Ledger" — Morningstar Economic Moat
+methodology + Porter's Five Forces + capital-allocation/management-quality analysis).
+Answers a different question than §0-§6: not "is the business doing well and is that
+priced in," but **"is this specific price move one you can trust with real size."**
+
+Rates four lenses as Strong / Moderate / Weak / Unconfirmed, each requiring named
+evidence:
+1. **Moat** — the structural reason competitors can't copy what's working (five
+   families: intangible assets, switching costs, network effects, cost advantage,
+   efficient scale). Test: would a competitor copy this easily if they tried?
+2. **Competitive advantage** — today's read on how high that wall is *right now*,
+   more time-bound than a moat (cost position, differentiation, execution edge).
+3. **Management** — capital allocation, incentive alignment, candor (not charisma).
+   Sourced from the last two earnings calls plus SEC EDGAR Form 4 insider filings.
+4. **Industry position** — how much of the story is company-specific vs. sector tide
+   (Porter's Five Forces). Test: compare the stock's move to its sector ETF.
+
+Includes a **swing-timing modifier table** on top of the existing Confirmation
+Gate/Drift Classification/Swing-Timing Overlay layers — e.g. a strong moat plus a
+genuinely bad print is often a buyable-dip pattern, while a weak-moat pop is a
+trade-the-move-don't-marry-it setup, and a management red flag surfacing mid-position
+should tighten a stop even on an otherwise clean chart. Full spec (including the
+per-lens good-signal/false-signal tables and starting sources) in §7 of
+`references/factor-guide.md`.
+
+**When to run it:** per the `/earnings-report` command spec, only when the user is
+asking about sizing up, holding through weakness, or researching a name for the first
+time — not on every routine post-print check. **Decays faster than §0-§6** — re-run
+before any future size-up rather than reusing a stale read.
+
 **Terminology note:** the eligibility gate (§0) still uses a binary "SCREENED OUT" —
 that step is about whether a name has enough real data to analyze at all, and stays
 binary. Everything that survives §0 gets scored/ranked, not binary-flagged — no name
