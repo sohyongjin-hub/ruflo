@@ -438,6 +438,94 @@ Factors" sections plus earnings-call transcripts; SEC EDGAR Form 4 filings for i
 transactions; Warren Buffett's Berkshire Hathaway shareholder letters for a
 plain-language treatment of moats and capital allocation.
 
+### Multi-Quarter Fundamental Trend Check (added 2026-08-23 — feeds §8's stock-quality axis)
+
+§3 (Guidance Quality) grades a single print. This check looks at the **last 4-8 reported
+quarters together** — the trend matters more than any one quarter, and §7's qualitative
+lenses should be checked *against* this trend, not asserted independently of it.
+
+- **Quantitative:** revenue growth, gross/operating margin, and EPS trend across the
+  trailing 4-8 quarters. Is the trajectory improving, stable, or deteriorating? Is the
+  current quarter continuing that trend or breaking it (and if breaking it, is that a
+  one-off per §3's one-time-vs-recurring check, or a real inflection)?
+- **Qualitative cross-check:** a claimed moat (§7) should show up as stable-or-expanding
+  margins over this same multi-quarter window, not just a good story this quarter — if
+  §7 says "strong moat" but margins have been compressing for 4+ straight quarters,
+  that's a contradiction to flag explicitly, not smooth over.
+- **Output — a single flag, with the evidence named:**
+  - **Green** — trend improving or stable across most of the window, current print
+    continues it, §7's qualitative read is consistent with the numbers.
+  - **Yellow** — mixed signal: trend stable but current print breaks it (needs
+    watching), or §7's qualitative read and the numeric trend partially disagree.
+  - **Red** — trend deteriorating across multiple quarters, or the current print
+    confirms a multi-quarter breakdown, or §7's qualitative read directly contradicts
+    the numbers (e.g. a "strong moat" claim against 4+ quarters of margin compression).
+
+This flag is the gate for §8 below — trade-quality (technicals/timing) is only worth
+evaluating once this flag clears at least Yellow. A Red flag means the entry-timing
+question is moot: there's no fundamental case to time an entry into yet.
+
+---
+
+## §8 — Stock Quality × Trade Quality Matrix (added 2026-08-23)
+
+Answers a question this framework has always answered in two separate, unconnected
+places: **is this a good stock, a good trade, both, or neither.** §7 plus the
+Multi-Quarter Fundamental Trend Check above answer "is this a good *stock*" (durable,
+independent of today's price). The Confirmation Gate, Drift Classification,
+Swing-Timing Overlay, and technicals (§ Drift Classification) answer "is *now* a good
+*trade*." This section combines them into one explicit 2×2 read — never collapse the
+two axes into a single score, they answer different questions and can disagree.
+
+|  | **Good trade** (favorable entry timing) | **Bad trade** (unfavorable timing) |
+|---|---|---|
+| **Good stock** (Green/Yellow fundamental-trend flag, §7 lenses mostly Strong/Moderate) | Strongest case — durable business, good entry point | Wait, don't chase — fundamentally sound, but the setup is complacent/overbought right now (§7's own timing table already covers this combination) |
+| **Bad stock** (Red fundamental-trend flag, or §7 lenses mostly Weak) | Speculative trade only — technically set up, but not a name to hold past the trade; treat the invalidation level as tight, not generous | Avoid entirely — nothing supports either the stock or the timing |
+
+**Required sequencing:** always resolve the stock-quality axis (§7 + Multi-Quarter
+Fundamental Trend Check) *before* spending effort on the trade-quality axis. A Red
+fundamental flag means don't bother running Drift Classification/Swing-Timing Overlay
+for a long-term-hold framing — at most, note it as a "speculative trade only" case per
+the bottom row and stop there. This mirrors the user's own stated priority: fundamentals
+first, technicals only matter once fundamentals are green-lit.
+
+**Output format:**
+
+| Stock quality | Trade quality | Quadrant | Evidence (one line per axis) |
+|---|---|---|---|
+| Green/Yellow/Red | Good/Bad/Not evaluated | [quadrant name] | [§7 + trend evidence] / [Confirmation Gate + Drift Class evidence, or "not evaluated — stock quality gate didn't clear"] |
+
+## §9 — 5W1H Post-Print Retrospective (added 2026-08-23)
+
+Run once T+1 (and ideally again at T+5) outcome data is known for a name already
+deep-dived pre-print. The goal is a **specific, traceable correction**, not just a
+logged outcome — this is a different exercise from `outcome-log.md`'s raw
+predicted-vs-actual tracking, and gets logged separately to
+`references/retrospective-log.md`.
+
+Six required questions, answered in order:
+1. **Who** — which pre-print read was actually right: the setup read (§1/§2), the
+   print-quality read (§3), or neither?
+2. **What** — what specifically differed between the predicted Conditional Reaction
+   Matrix row and the actual outcome? Name the exact discrepancy, not a vague "it was
+   different."
+3. **When** — did the reaction happen at T+0 as expected, or did it take until T+2/T+5
+   to unfold (or fail to unfold) as the Drift Classification predicted?
+4. **Where** — which specific factor-guide.md section produced the miss, if any — so
+   the correction is traceable to a section, not a vague "the model was wrong."
+5. **Why** — root cause: a data problem (bad or missing source), a genuine model gap (no
+   existing section covers this pattern), or a truly unpredictable event (macro shock,
+   company-specific news unrelated to the print)?
+6. **How** — the proposed model change. Every retrospective must end in either a
+   concrete, specific diff proposal to `factor-guide.md` (spelled out enough to
+   implement even if not yet applied) or an explicit "no change warranted, evidence too
+   thin" — never left open-ended without a conclusion.
+
+**Discipline:** a single miss is not evidence of a systemic gap — most 5W1H entries
+should conclude "no change warranted" unless the same specific failure mode recurs
+across multiple tickers/prints. Don't edit the guide on n=1 evidence; do log every
+retrospective so patterns become visible once enough accumulate.
+
 ---
 
 ## Using this guide

@@ -71,6 +71,22 @@ where the relevant data supports it:
   of whatever the Confirmation Gate / Drift Classification / Swing-Timing Overlay
   already concluded. Re-run §7 before any future size-up on the same name rather than
   reusing a stale read — it decays faster than the mechanical §0-§6 checks.
+- **When the user asks "is this a good stock, a good trade, or neither"** (or similar
+  framing), run the **Multi-Quarter Fundamental Trend Check** (trailing 4-8 quarters of
+  revenue/margin/EPS trend, cross-checked against §7) first, then the **§8 Stock
+  Quality × Trade Quality Matrix**. Always resolve the stock-quality axis before
+  spending effort on the trade-quality axis — a Red fundamental flag means stop at
+  "speculative trade only, don't hold" rather than running the full technicals stack.
+- **Once T+1 (and again at T+5) outcome data is known** for a name already deep-dived
+  pre-print, run the **§9 5W1H Post-Print Retrospective** and append the entry to
+  earnings-report/references/retrospective-log.md — six required questions (Who/What/
+  When/Where/Why/How), always ending in either a concrete diff proposal to
+  factor-guide.md or an explicit "no change warranted."
+
+**Batch/multi-ticker output:** when running across multiple tickers in one request
+(not a single-ticker ask), group the output **by earnings date**, not by Stage A tier —
+tier stays visible as a per-ticker attribute inside each date group, not the primary
+sort key. This matches how the user actually tracks a reporting week.
 
 Do not give a buy/sell/hold recommendation. If the ticker hasn't reported earnings yet,
 run steps 0, 1, 2, 5, and 6 only (pre-print screen) and note that 3-4 will apply

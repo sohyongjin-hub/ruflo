@@ -171,6 +171,39 @@ asking about sizing up, holding through weakness, or researching a name for the 
 time — not on every routine post-print check. **Decays faster than §0-§6** — re-run
 before any future size-up rather than reusing a stale read.
 
+## 2026-08-23 addition — §8 Stock Quality × Trade Quality Matrix, §9 5W1H Retrospective, pilot routine
+
+Three more additions, built around one recurring question the user asks: **is this a
+good stock, a good trade, both, or neither.**
+
+1. **Multi-Quarter Fundamental Trend Check** (new subsection under §7) — trailing 4-8
+   quarters of revenue/margin/EPS trend, cross-checked against §7's qualitative lenses
+   (a claimed moat should show up as stable/expanding margins over that window, not
+   just be asserted this quarter). Outputs a single Green/Yellow/Red flag.
+2. **§8 Stock Quality × Trade Quality Matrix** — a 2×2 combining that flag (+ §7) as the
+   stock-quality axis against the existing Confirmation Gate/Drift Classification/
+   Swing-Timing Overlay/technicals as the trade-quality axis. **Required sequencing:**
+   stock-quality is always resolved first — a Red fundamental flag means stop at
+   "speculative trade only," don't spend effort on entry-timing analysis for a
+   long-term-hold framing.
+3. **§9 5W1H Post-Print Retrospective** — Who/What/When/Where/Why/How, run at T+1 and
+   T+5 once outcome data is known, always ending in a concrete diff proposal to
+   `factor-guide.md` or an explicit "no change warranted, evidence too thin." Logged to
+   the new `references/retrospective-log.md` (separate from `outcome-log.md`, which
+   stays raw predicted-vs-actual data only). **Discipline:** don't edit the guide on a
+   single miss — most retrospectives should conclude no change is warranted unless the
+   same failure mode recurs across multiple tickers.
+
+**Pilot routine** (`RemoteTrigger`, cron `0 22 * * 1-5`, weekdays 3pm Phoenix): tracks
+the 18 names from the 2026-08-24 to 2026-08-28 scan through their [T-2, T+5 business
+day] windows, per `references/watch-window.md`. Runs the checks above automatically and
+commits updates to the repo. **Known constraint:** cloud routines can't reach the local
+TradingView Desktop connection, so this routine's technicals come from WebSearch-sourced
+data, not a live chart pull — live TradingView access is interactive-session-only.
+**Pilot ends 2026-09-03** — the routine must be **manually disabled** after that date
+(standard cron can't cleanly bound a range crossing the Aug/Sep month boundary in one
+expression, so it does not self-terminate).
+
 **Terminology note:** the eligibility gate (§0) still uses a binary "SCREENED OUT" —
 that step is about whether a name has enough real data to analyze at all, and stays
 binary. Everything that survives §0 gets scored/ranked, not binary-flagged — no name
