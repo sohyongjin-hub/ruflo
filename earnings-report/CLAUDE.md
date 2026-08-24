@@ -206,6 +206,15 @@ data, not a live chart pull — live TradingView access is interactive-session-o
 (standard cron can't cleanly bound a range crossing the Aug/Sep month boundary in one
 expression, so it does not self-terminate).
 
+**PUSH GOTCHA for scheduled firings — read before committing:** cloud routine runs check
+the repo out at a **detached HEAD**, and the local `master` ref in that checkout can be
+stale (the 2026-08-24 run found it 1 commit behind `origin/master`). A plain
+`git push -u origin master` therefore pushes the *stale local ref*, not the commit just
+made, and fails with a confusing `non-fast-forward` / "branch tip is behind its remote
+counterpart" error that looks like an auth or sync problem but is neither. Use
+**`git push origin HEAD:master`** instead. Verify first with
+`git merge-base --is-ancestor origin/master HEAD` — never resolve this with a force push.
+
 **RESOLVED 2026-08-24 (second firing):** the push blocker below is fixed. The
 2026-08-24 scheduled firing authenticated and pushed to `origin/master` successfully —
 `git push` no longer returns the 403. Scheduled firings now persist their own work; the
