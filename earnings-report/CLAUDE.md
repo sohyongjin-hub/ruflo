@@ -194,7 +194,9 @@ good stock, a good trade, both, or neither.**
    single miss — most retrospectives should conclude no change is warranted unless the
    same failure mode recurs across multiple tickers.
 
-**Pilot routine** (`RemoteTrigger`, cron `0 22 * * 1-5`, weekdays 3pm Phoenix): tracks
+**Pilot routine** — `trig_017ntWk4CYhKuCCZkcWgY72P`
+(https://claude.ai/code/routines/trig_017ntWk4CYhKuCCZkcWgY72P), `RemoteTrigger`, cron
+`0 22 * * 1-5`, weekdays 3pm Phoenix: tracks
 the 18 names from the 2026-08-24 to 2026-08-28 scan through their [T-2, T+5 business
 day] windows, per `references/watch-window.md`. Runs the checks above automatically and
 commits updates to the repo. **Known constraint:** cloud routines can't reach the local

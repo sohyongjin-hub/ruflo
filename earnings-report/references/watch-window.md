@@ -41,5 +41,5 @@ see `earnings-report/CLAUDE.md`'s §8/§9 pointer section for the full explanati
 | S | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
 
 **Pilot end:** 2026-09-03. After that date, disable `RemoteTrigger` routine
-`trig_<pilot-id>` (recorded in `earnings-report/CLAUDE.md` once created) — do not rely
-on the cron to stop itself.
+`trig_017ntWk4CYhKuCCZkcWgY72P` (https://claude.ai/code/routines/trig_017ntWk4CYhKuCCZkcWgY72P)
+— do not rely on the cron to stop itself.
