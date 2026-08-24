@@ -206,7 +206,13 @@ data, not a live chart pull — live TradingView access is interactive-session-o
 (standard cron can't cleanly bound a range crossing the Aug/Sep month boundary in one
 expression, so it does not self-terminate).
 
-**KNOWN ISSUE — blocks every future firing until fixed:** the routine's first firing
+**RESOLVED 2026-08-24 (second firing):** the push blocker below is fixed. The
+2026-08-24 scheduled firing authenticated and pushed to `origin/master` successfully —
+`git push` no longer returns the 403. Scheduled firings now persist their own work; the
+manual interactive-session recovery step described below is no longer needed. The
+original issue is kept for context:
+
+**~~KNOWN ISSUE~~ (resolved, see above) — blocked every firing until fixed:** the routine's first firing
 (2026-08-24, manually triggered for verification) ran its research correctly but
 **could not push its commit** — `git push` failed with a 403: "Claude doesn't have
 GitHub access to sohyongjin-hub/ruflo for your organization." This is a different auth

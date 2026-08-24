@@ -47,6 +47,24 @@ WDAY, HQY, BURL, and GAP were originally scanned with the wrong report date (8/2
 2026-08-27 (BBW/DG/BBAR/PD/ULTA/WDAY/HQY/BURL/GAP/IREN/RBRK/S), not spread across
 8/25-8/27 as originally scanned.
 
+**AMC-reporter timing constraint (found by the pilot's 2026-08-24 run):** TUYA's §8 gate
+was **deliberately not run** on its report date. TUYA releases Q2 2026 **after** the U.S.
+market close on 2026-08-24 (call 8:30 PM ET); the routine fired at ~2:45 PM ET, so no
+press release existed yet. Per the Attribution Gate Extension in `factor-guide.md`
+("confirm a press release for that specific date actually exists" before running any
+print-quality analysis), the gate was deferred rather than run against stale pre-print
+data. TUYA's `§8 gate` cell is left at exactly `No` so the next firing re-picks it up —
+it is still in-window through 2026-08-31.
+
+This is a **routine-design gap, not a one-off**: the rule "today is on or after the
+report date → the ticker has now reported" holds for before-market-open reporters
+(PDD/XPEV on 2026-08-24) but is false for after-market-close reporters on their report
+date itself. The cron (`0 22 * * 1-5` = 6:00 PM ET) lands after the 4 PM close but can
+still precede a late AMC release. Every §8 gate run must therefore verify the press
+release exists before grading, and treat "report date, no release yet" as *defer to
+tomorrow*, never as a skip or a Red. Of the remaining tracked names, this affects any
+AMC reporter in the 2026-08-26 and 2026-08-27 cohorts.
+
 **Pilot end:** 2026-09-03. After that date, disable `RemoteTrigger` routine
 `trig_017ntWk4CYhKuCCZkcWgY72P` (https://claude.ai/code/routines/trig_017ntWk4CYhKuCCZkcWgY72P)
 — do not rely on the cron to stop itself.
