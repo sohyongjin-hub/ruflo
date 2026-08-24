@@ -1,8 +1,9 @@
 # Watch Window — 2026-08-24 to 2026-08-28 Batch Pilot
 
-Tracks the 18 names from the 2026-08-24 to 2026-08-28 full-market scan (14 Tier 1 +
-4 flagged Tier 3 complacent cases) through their pre-print check window and 5-business-
-day post-print retrospective window. Read by the scheduled pilot routine
+Tracks the **30 names** (14 Tier 1 + 4 flagged Tier 3 complacent cases + 16 Tier 2,
+added 2026-08-24 on user request) from the 2026-08-24 to 2026-08-28 full-market scan
+through their pre-print check window and 5-business-day post-print retrospective
+window. Read by the scheduled pilot routine
 (`RemoteTrigger` cron `0 22 * * 1-5`) each weekday to determine which tickers are
 in-window that day. Pilot ends 2026-09-03 (5 business days after the last reporter,
 IREN/RBRK/S on 2026-08-27) — the routine is manually disabled after that date rather
@@ -39,6 +40,32 @@ see `earnings-report/CLAUDE.md`'s §8/§9 pointer section for the full explanati
 | IREN | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
 | RBRK | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
 | S | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| XYF | 2026-08-24 | 2026-08-20 .. 2026-08-31 | No | No | No | No | No |
+| BBY | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
+| BZUN | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
+| CM | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
+| HRL | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
+| LOT | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
+| RY | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
+| TD | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
+| ADSK | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
+| ESTC | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
+| NVDA | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
+| DY | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
+| JKS | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
+| DCI | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
+| MRVL | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| DLTR | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+
+**Tier 2 expansion (2026-08-24, user-requested):** added the remaining 16 Tier 1+2
+names not in the original 18-ticker pilot scope. **Important caveat:** BBY, BZUN, CM,
+HRL, LOT, RY, TD, ADSK, and ESTC were all originally scanned as Tuesday 2026-08-25
+reporters — the *exact same batch* where 9 of 12 checked names turned out to have the
+wrong date (see below). These 9 were never individually re-verified the way the
+original 18 were, so their dates are marked **[UNVERIFIED]** and must be confirmed via
+the Attribution Gate / a fresh date check before their §8 gate runs, not assumed
+correct. XYF (8/24), NVDA/DY/JKS/DCI (8/26), and MRVL/DLTR (8/27) came from days that
+tested clean or were independently confirmed already, so no flag on those.
 
 **Date correction (found by the pilot's 2026-08-24 run):** BBW, DG, BBAR, PD, ULTA,
 WDAY, HQY, BURL, and GAP were originally scanned with the wrong report date (8/25 or
