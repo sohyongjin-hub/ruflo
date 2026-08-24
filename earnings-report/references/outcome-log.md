@@ -84,3 +84,24 @@ after 2026-08-24 (T+2 for the 8/21 batch) and 2026-08-27+ (T+5 for the 8/20 batc
 is excluded from any drift-model conclusions per the Step 1 volume/data gate; if the
 user later confirms WALD did report earnings on a different date, re-run Stage B
 properly against the correct date before drawing any drift conclusions from this name.
+
+---
+
+## 2026-08-24 batch — §8 Stock Quality × Trade Quality Matrix (pilot watch-window run)
+
+First real use of §8/the Multi-Quarter Fundamental Trend Check, from the 2026-08-24 to
+2026-08-28 scan batch. Per §8's required sequencing, both names below flagged Red on
+the fundamental-trend axis, so the trade-quality axis (technicals) was **not**
+evaluated — stopping at "speculative trade only" is the correct behavior per spec, not
+a shortcut.
+
+| Ticker | Multi-Quarter Trend | Fundamental flag | Evidence | §8 quadrant | Trade-quality axis |
+|---|---|---|---|---|---|
+| PDD | Revenue growth decelerating across 6+ quarters (Q4'24 +24% → Q1'25 +10% → Q2'25 +7% → Q3'25 +9% → Q4'25 +12% → Q1'26 +11% → Q2'26 +8%); Q2 2026 revenue (RMB112.4B) **missed** the RMB115.4B estimate; net income beat a lowered estimate but was still **down 12% YoY**, consistent with margin compression flagged separately by analysts pre-print | **Red** | Multi-quarter deceleration + a revenue miss + declining net income together, not a single-quarter blip | Bad stock / not evaluated | Not evaluated — stop per §8 sequencing |
+| XPEV | 2025 showed real improvement (gross margin 15.6%→21.3% Q1→Q4, first-ever quarterly profit in Q4 2025), but **the trend inflected in 2026**: Q1 2026 guidance already signaled a sharp slowdown (deliveries guide -down, revenue guide -16% to -23%), and Q2 2026 actuals confirmed it — revenue (RMB19.74B) missed the $20.57B estimate, net loss **widened** to RMB1.34B (vs. RMB0.48B a year earlier), adjusted EPS missed badly (-$1.29 vs. -$0.29 est.), stock fell to near its 52-week low on the print | **Red** | A genuine trend break (improving → deteriorating), not a continuation of prior weakness — worth flagging as a different failure mode than PDD's for the eventual §9 retrospective | Bad stock / not evaluated | Not evaluated — stop per §8 sequencing |
+
+**Process note:** these two entries were originally produced by the pilot
+`RemoteTrigger` routine's first scheduled/manual firing (2026-08-24), but that run's
+commit was lost when its `git push` failed (GitHub App not authorized for this repo —
+see `earnings-report/CLAUDE.md`). Reproduced here with fresh research in an interactive
+session that has working push access, once the authorization is fixed.

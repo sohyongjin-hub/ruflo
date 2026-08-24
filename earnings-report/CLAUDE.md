@@ -206,6 +206,22 @@ data, not a live chart pull — live TradingView access is interactive-session-o
 (standard cron can't cleanly bound a range crossing the Aug/Sep month boundary in one
 expression, so it does not self-terminate).
 
+**KNOWN ISSUE — blocks every future firing until fixed:** the routine's first firing
+(2026-08-24, manually triggered for verification) ran its research correctly but
+**could not push its commit** — `git push` failed with a 403: "Claude doesn't have
+GitHub access to sohyongjin-hub/ruflo for your organization." This is a different auth
+path than the interactive session's local git push (which works via Windows Git
+Credential Manager) — cloud `RemoteTrigger` runs push via a separate Claude GitHub App
+integration that isn't yet authorized for this repo. **Fix:** install/authorize the
+Claude GitHub App at https://github.com/apps/claude/installations/select_target, or
+reconnect via claude.ai Settings → Connectors
+(https://claude.ai/customize/connectors?auth_start=github&auth_start_force=1). Until
+this is done, every scheduled firing will do real research but silently fail to persist
+it — the 2026-08-24 firing's findings (PDD/XPEV both Red-flagged on the new §8 gate,
+plus a 9-ticker report-date correction) were manually reproduced and committed from an
+interactive session as a one-off recovery; that recovery step won't happen
+automatically for future firings.
+
 **Terminology note:** the eligibility gate (§0) still uses a binary "SCREENED OUT" —
 that step is about whether a name has enough real data to analyze at all, and stays
 binary. Everything that survives §0 gets scored/ranked, not binary-flagged — no name

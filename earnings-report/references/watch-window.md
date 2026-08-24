@@ -21,24 +21,31 @@ see `earnings-report/CLAUDE.md`'s §8/§9 pointer section for the full explanati
 
 | Ticker | Report date | Window (T-2 .. T+5) | Pre-print re-check | §8 gate | 5W1H (T+1) | 5W1H (T+5) | Window closed? |
 |---|---|---|---|---|---|---|---|
-| PDD | 2026-08-24 | 2026-08-20 .. 2026-08-31 | No | No | No | No | No |
-| XPEV | 2026-08-24 | 2026-08-20 .. 2026-08-31 | No | No | No | No | No |
+| PDD | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | No | No | No |
+| XPEV | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | No | No | No |
 | TUYA | 2026-08-24 | 2026-08-20 .. 2026-08-31 | No | No | No | No | No |
-| BBW | 2026-08-25 | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| DG | 2026-08-25 | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| BBAR | 2026-08-25 | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| PD | 2026-08-25 | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| ULTA | 2026-08-25 | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| WDAY | 2026-08-25 | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| HQY | 2026-08-25 | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| BURL | 2026-08-25 | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| GAP | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
-| PLAB | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
-| ANF | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
-| SJM | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
+| BBW | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| DG | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| BBAR | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| PD | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| ULTA | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| WDAY | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| HQY | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| BURL | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| GAP | 2026-08-27 (corrected 2026-08-24 — was 2026-08-26) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| PLAB | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
+| ANF | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
+| SJM | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
 | IREN | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
 | RBRK | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
 | S | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+
+**Date correction (found by the pilot's 2026-08-24 run):** BBW, DG, BBAR, PD, ULTA,
+WDAY, HQY, BURL, and GAP were originally scanned with the wrong report date (8/25 or
+8/26). Each is actually confirmed via its own IR page/press release to report
+**2026-08-27** — corrected above. This means 12 of 18 tracked names now report on
+2026-08-27 (BBW/DG/BBAR/PD/ULTA/WDAY/HQY/BURL/GAP/IREN/RBRK/S), not spread across
+8/25-8/27 as originally scanned.
 
 **Pilot end:** 2026-09-03. After that date, disable `RemoteTrigger` routine
 `trig_017ntWk4CYhKuCCZkcWgY72P` (https://claude.ai/code/routines/trig_017ntWk4CYhKuCCZkcWgY72P)
