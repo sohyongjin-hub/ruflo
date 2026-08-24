@@ -85,6 +85,30 @@ is excluded from any drift-model conclusions per the Step 1 volume/data gate; if
 user later confirms WALD did report earnings on a different date, re-run Stage B
 properly against the correct date before drawing any drift conclusions from this name.
 
+**T+2 update for the 2026-08-20 batch (due 2026-08-24; attempted 2026-08-24):**
+
+| Ticker | Reference (8/20 print-date) close | Actual T+2 close (8/24) | Actual T+2 % move | Drift class predicted | Drift class hit? |
+|---|---|---|---|---|---|
+| NTES | [Unavailable — could not confirm] | [Unavailable — could not confirm] | [Unavailable — could not confirm] | Repair | Unavailable — not attempted |
+| BABA | [Unavailable — could not confirm] | [Unavailable — could not confirm] | [Unavailable — could not confirm] | Continuation-of-damage | Unavailable — not attempted |
+| FUTU | [Unavailable — could not confirm] | [Unavailable — could not confirm] | [Unavailable — could not confirm] | Confirmation | Unavailable — not attempted |
+| RERE | [Unavailable — could not confirm] | [Unavailable — could not confirm] | [Unavailable — could not confirm] | Continuation-of-damage (tentative) | Unavailable — not attempted |
+
+**Why unavailable:** an extensive WebSearch cross-check (20+ queries spanning both dates
+and multiple source combinations — stockanalysis.com, macrotrends.net, Yahoo Finance,
+marketwatch-style sources) could not produce a reliable end-of-day closing print for any
+of the 4 tickers on either 2026-08-20 or 2026-08-24. Results repeatedly conflated
+intraday/pre-market/"at time of publication" quotes with actual closes, and in BABA's
+case produced two directly contradictory numbers for the same date (one search returned
+$130.57, up; another returned $116.72, down, for what was represented as the same 8/21
+close) — a flat contradiction, not rounding noise, so no number surfaced for these
+tickers should be trusted even provisionally. Per the logging rule (never guess or
+fabricate a price when sources disagree or can't be confirmed), every cell above is
+marked unavailable rather than filled with the closest-looking figure. Retry via a live
+data terminal/brokerage feed or a direct read of a historical-price table (e.g.
+stockanalysis.com's `/history` pages) rather than WebSearch synthesis, which is not
+producing trustworthy exact closing prints for these specific dates right now.
+
 ---
 
 ## 2026-08-24 batch — §8 Stock Quality × Trade Quality Matrix (pilot watch-window run)
