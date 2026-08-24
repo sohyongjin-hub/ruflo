@@ -79,10 +79,10 @@ boundary — see `earnings-report/CLAUDE.md`'s pointer section for the full expl
 | TD | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
 | ADSK | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
 | ESTC | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| NVDA | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Not yet captured (5.27% per original scan) | None yet | No | No |
-| DY | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Not yet captured | None yet | No | No |
-| JKS | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Not yet captured | None yet | No | No |
-| DCI | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Not yet captured | None yet | No | No |
+| NVDA | 2026-08-26 | 2026-08-24 .. 2026-09-02 | **5.27%** [Sourced, options-implied — captured 2026-08-24, confirmed via original scan + cross-checked ~5.3% via WebSearch] | None yet | No | No |
+| DY | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — no reliable options-implied move found via WebSearch as of 2026-08-24; Tier 2/3 fallback also unavailable, no prior DY prints logged in outcome-log.md — retry closer to report date] | None yet | No | No |
+| JKS | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — WebSearch surfaced only a 14.48% figure at 24 DTE (~Sept 17 expiry), which doesn't isolate the Aug 26 earnings move; discarded as unreliable. Tier 2/3 fallback also unavailable — retry closer to report date] | None yet | No | No |
+| DCI | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — WebSearch surfaced only a stale "5.31% average move" figure dated 2026-06-01, not the current pre-earnings implied move; discarded as unreliable. Tier 2/3 fallback also unavailable — retry closer to report date] | None yet | No | No |
 | MRVL | 2026-08-27 | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
 | DLTR | 2026-08-27 | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
 
@@ -133,6 +133,16 @@ sequencing. Full write-up in `outcome-log.md`.
 material change" vs. the original scan. JKS's live price data was noisy across sources
 this pass — worth a manual spot-check before its 2026-08-26 print if sized
 meaningfully.
+
+**2026-08-24 third firing:** TUYA re-checked (Attribution Gate) — still no press release as
+of this firing (call scheduled 8:30 PM ET, checked ~7:33 PM ET); §8 gate left at "No",
+deferred again to a later firing, per the standing AMC-reporter rule above. Monitor-Only
+Track baseline captured for NVDA (5.27%, [Sourced]); attempted for DY/JKS/DCI but no
+reliable earnings-specific options-implied figure was found via WebSearch for any of the
+three (JKS's only hit was a non-earnings-aligned 24-DTE figure, DCI's only hit was a stale
+June average) — left [Unavailable] with a note to retry nearer each ticker's 2026-08-26
+report date. All other rows were either outside their window (not yet open) or already
+up to date for today; no other columns changed.
 
 **Pilot end:** 2026-09-03. After that date, disable `RemoteTrigger` routine
 `trig_01SAdNQQrkWcUvqr9ff4Wfc6` (https://claude.ai/code/routines/trig_01SAdNQQrkWcUvqr9ff4Wfc6)
