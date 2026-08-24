@@ -528,6 +528,55 @@ retrospective so patterns become visible once enough accumulate.
 
 ---
 
+## Tier 2 Monitor-and-Escalate Protocol (added 2026-08-24)
+
+**Purpose:** running the full §7/§8/§9 deep dive on every scored name is expensive, and
+Stage A's own scoring already says Tier 2 names are less-corroborated setups than
+Tier 1. But dropping Tier 2 coverage entirely is also wrong — a Tier 2 name can still
+produce a genuinely unpredictable post-print reaction (miscalculated consensus, a
+same-day insider-driven move, a surprise unrelated to the print at all). This section
+is the middle path: **cheap daily monitoring, with an explicit trigger for when a Tier
+2 name earns the full deep dive.**
+
+**Scope:** applies to Tier 2 names only. Tier 1 and any name specifically flagged
+during Stage A (e.g. a complacent "priced for perfection" setup worth extra scrutiny
+regardless of raw score) go straight to the full deep-dive track — this protocol does
+not downgrade those.
+
+**Step 1 — Baseline (once, before or at report date):** capture the name's
+options-implied move if [Sourced] per §1. This is the reference point the daily check
+compares against. If [Unavailable], use the Magnitude Surprise section's **tiered
+fallback** (historical-SUE average, or peer-group average) as the baseline instead of
+skipping the check — a monitor with no baseline at all can't detect anything.
+
+**Step 2 — Daily check, report date through T+5 business days (every day in that
+window, not just T+0):** compute the cumulative % move from the print-date close.
+Compare against the baseline:
+- **Escalate to the full deep-dive track** if either holds:
+  - `|actual cumulative move| ≳ 1.5-2x |baseline move|` (roughly — this is a
+    trigger-for-attention threshold, not a precise cutoff; use judgment on borderline
+    cases and note why), in either direction, OR
+  - the move's **direction contradicts** what the §1 setup read would suggest (e.g. a
+    cleanly skeptical setup that should have room to rally on a beat instead sells off
+    hard, or vice versa).
+- **Otherwise:** log the day's move (in `outcome-log.md`'s existing T+1/T+2/T+5
+  columns) and stop — no further research effort spent that day.
+
+**Step 3 — On escalation:** log the specific trigger (which day, what threshold or
+direction mismatch fired) in `outcome-log.md`, then run the full §7/§8/§9 treatment on
+that name for its remaining window, exactly as if it had been Tier 1 from the start.
+**Once escalated, a name stays on the full-dive track for the rest of its window** —
+don't demote it back to monitor-only mid-window even if the next day looks calmer.
+
+**What this protocol is not:** it does not lower the bar for what counts as
+noteworthy — a routine ±3-5% earnings-day move that roughly matches what was implied
+is exactly what monitoring is *supposed* to filter out without escalating. The trigger
+exists for the cases that genuinely don't fit the pre-print picture, which is where
+insider-driven, miscalculated-consensus, or otherwise unpredictable reactions would
+actually show up.
+
+---
+
 ## Using this guide
 
 No single factor above should carry a verdict alone. The value of the full screen is in

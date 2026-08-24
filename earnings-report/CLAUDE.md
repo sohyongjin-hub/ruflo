@@ -194,10 +194,10 @@ good stock, a good trade, both, or neither.**
    single miss — most retrospectives should conclude no change is warranted unless the
    same failure mode recurs across multiple tickers.
 
-**Pilot routine** — `trig_017ntWk4CYhKuCCZkcWgY72P`
-(https://claude.ai/code/routines/trig_017ntWk4CYhKuCCZkcWgY72P), `RemoteTrigger`, cron
+**Pilot routine** — `trig_01SAdNQQrkWcUvqr9ff4Wfc6`
+(https://claude.ai/code/routines/trig_01SAdNQQrkWcUvqr9ff4Wfc6), `RemoteTrigger`, cron
 `0 22 * * 1-5`, weekdays 3pm Phoenix: tracks
-the 18 names from the 2026-08-24 to 2026-08-28 scan through their [T-2, T+5 business
+the 30 names from the 2026-08-24 to 2026-08-28 scan through their [T-2, T+5 business
 day] windows, per `references/watch-window.md`. Runs the checks above automatically and
 commits updates to the repo. **Known constraint:** cloud routines can't reach the local
 TradingView Desktop connection, so this routine's technicals come from WebSearch-sourced
@@ -205,6 +205,30 @@ data, not a live chart pull — live TradingView access is interactive-session-o
 **Pilot ends 2026-09-03** — the routine must be **manually disabled** after that date
 (standard cron can't cleanly bound a range crossing the Aug/Sep month boundary in one
 expression, so it does not self-terminate).
+
+**NOTE — routine ID changed 2026-08-24:** the original routine (`trig_017ntWk4CYhKuCCZkcWgY72P`)
+was accidentally deleted by the user and recreated under the ID above with identical
+configuration. If any earlier note in this file or `watch-window.md` still references
+the old ID, treat the ID above as current.
+
+## 2026-08-24 addition — Tier 2 Monitor-and-Escalate Protocol (two-track pilot)
+
+Per user request, full §7/§8/§9 deep dives are now scoped to **18 names only** (14
+Tier 1 + the 4 flagged Tier 3 complacent cases) — the **Full Deep-Dive Track**. The
+other 16 Tier 2 names moved to a **Monitor-Only Track**: a cheap daily price-check
+(report date through T+5 business days) against an options-implied-move baseline (or
+the Magnitude Surprise tiered fallback when unavailable), which only escalates a name
+into the full treatment if the reaction moves sharply against what was expected —
+roughly 1.5-2x the baseline move, or a direction that contradicts the §1 setup read.
+Once escalated, a name stays on the full-dive track for its remaining window; a
+routine ±3-5% move roughly matching what was implied is exactly the noise this
+protocol is meant to filter out without spending research on it. Rationale: unexpected
+reactions (miscalculated consensus, insider-driven moves, surprises unrelated to the
+print) can still happen in Tier 2 names even though their setup wasn't as
+well-corroborated pre-print — this is the resource-conscious middle path between
+running the full pipeline on all 30 and dropping Tier 2 coverage entirely. Full spec:
+"Tier 2 Monitor-and-Escalate Protocol" in `factor-guide.md`; the two-track structure
+lives in `watch-window.md`.
 
 **PUSH GOTCHA for scheduled firings — read before committing:** cloud routine runs check
 the repo out at a **detached HEAD**, and the local `master` ref in that checkout can be
