@@ -40,20 +40,20 @@ see `earnings-report/CLAUDE.md`'s §8/§9 pointer section for the full explanati
 | IREN | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
 | RBRK | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
 | S | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| XYF | 2026-08-24 | 2026-08-20 .. 2026-08-31 | No | No | No | No | No |
-| BBY | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| BZUN | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| CM | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| HRL | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| LOT | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| RY | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| TD | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| ADSK | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| ESTC | 2026-08-25 [UNVERIFIED] | 2026-08-21 .. 2026-09-01 | No | No | No | No | No |
-| NVDA | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
-| DY | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
-| JKS | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
-| DCI | 2026-08-26 | 2026-08-24 .. 2026-09-02 | No | No | No | No | No |
+| XYF | 2026-08-24 | 2026-08-20 .. 2026-08-31 | No | **Yes — Red** | No | No | No |
+| BBY | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| BZUN | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| CM | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| HRL | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| LOT | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| RY | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| TD | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| ADSK | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| ESTC | 2026-08-27 (corrected 2026-08-24 — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| NVDA | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
+| DY | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
+| JKS | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
+| DCI | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
 | MRVL | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
 | DLTR | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
 
@@ -91,6 +91,37 @@ still precede a late AMC release. Every §8 gate run must therefore verify the p
 release exists before grading, and treat "report date, no release yet" as *defer to
 tomorrow*, never as a skip or a Red. Of the remaining tracked names, this affects any
 AMC reporter in the 2026-08-26 and 2026-08-27 cohorts.
+
+**Second date-correction batch (found by the pilot's 2026-08-24 second firing):** the 9
+tickers flagged [UNVERIFIED] above — BBY, BZUN, CM, HRL, LOT, RY, TD, ADSK, ESTC — were
+re-checked against each company's own IR page or press release (Attribution Gate) as
+required before touching an [UNVERIFIED] row. All 9 actually report on **2026-08-27**,
+not 2026-08-25 — corrected above. This means every one of the original 18 tracked names
+that had been scanned as reporting 8/25 or 8/26 now clusters on **2026-08-27** (BBW, DG,
+BBAR, PD, ULTA, WDAY, HQY, BURL, GAP, IREN, RBRK, S, BBY, BZUN, CM, HRL, LOT, RY, TD,
+ADSK, ESTC — 21 of 30 tracked names), confirming the original 2026-08-25 Nasdaq-calendar
+scan was systematically off by one day for essentially every name pulled from it.
+Because the corrected window (2026-08-25 .. 2026-09-03) had not yet opened as of today
+(2026-08-24), no further processing (pre-print re-check, §8 gate) ran on these 9 rows
+this firing — they'll be picked up starting 2026-08-25.
+
+**2026-08-24 second-firing results:**
+- **TUYA** — re-checked; still no press release found (call is 8:30 PM ET, firing ran
+  ~6 PM ET). `§8 gate` correctly left at `No` for a later firing to pick up.
+- **XYF** — press release confirmed (BMO, 8:30 AM ET). Multi-Quarter Fundamental Trend
+  Check flagged **Red**: revenue growth decelerated for four straight quarters (Q3'25
+  +23.9% YoY → Q2'26 -56.3% YoY), net income down 85-90% YoY in 3 of the last 4 quarters,
+  rising delinquencies, no forward guidance given, and all four §7 lenses (Moat/
+  Competitive advantage/Management/Industry position) read Weak. Per the required
+  sequencing, §8 stopped at **speculative trade only / avoid** without running
+  technicals. Full write-up logged to `outcome-log.md`.
+- **NVDA / DY / JKS / DCI** — pre-print re-check (T-2 ahead of their 2026-08-26 report):
+  all four came back **no material change** vs. the original scan. NVDA remains well off
+  its 52-week high with a favorable PEG; DY and DCI show ordinary in-window analyst/board
+  news, no thesis-moving catalyst; JKS's one substantive item (US tariffs on Chinese
+  solar/polysilicon imports) predates this window and was presumably already reflected
+  in the original scan. JKS's live price data was noisy across sources this pass — worth
+  a manual spot-check before the print if this name is sized meaningfully.
 
 **Pilot end:** 2026-09-03. After that date, disable `RemoteTrigger` routine
 `trig_017ntWk4CYhKuCCZkcWgY72P` (https://claude.ai/code/routines/trig_017ntWk4CYhKuCCZkcWgY72P)

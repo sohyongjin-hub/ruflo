@@ -122,3 +122,54 @@ resolve rather than being guessed from trailing data.
 commit was lost when its `git push` failed (GitHub App not authorized for this repo —
 see `earnings-report/CLAUDE.md`). Reproduced here with fresh research in an interactive
 session that has working push access, once the authorization is fixed.
+
+## 2026-08-24 second firing — XYF §8 gate run; TUYA re-checked, still deferred
+
+**TUYA:** re-checked at this firing (~6 PM ET). No press release found yet (call is
+8:30 PM ET) — `§8 gate` correctly stays deferred at `No` for a later firing to pick up.
+No new baseline data collected this pass; see the TUYA entry above for the pre-print
+baseline.
+
+**XYF — Multi-Quarter Fundamental Trend Check + §8 Matrix**
+
+Press release confirmed (BMO, 8:30 AM ET, 2026-08-24) — Attribution Gate cleared.
+
+| Quarter | Revenue (YoY) | Revenue (QoQ) | Net income (YoY) | Notes |
+|---|---|---|---|---|
+| FY2024 | RMB5.87B | — | RMB1,539.9M | — |
+| FY2025 | RMB7.64B (+30.1%) | — | RMB1,464.6M (-4.8%) | operating margin 31.9%→21.3% |
+| Q3 2025 | +23.9% | -13.7% | +12.1% (RMB421.2M) | still growing |
+| Q4 2025 | -14.1% | -25.1% | -85.2% (RMB57.2M) | 31-60dpd 1.17%→2.90%; 91-180dpd 2.48%→6.31% |
+| Q1 2026 | -39.3% | -19.9% | RMB37.9M | margin compression, bearish earnings quality (SimplyWall St) |
+| Q2 2026 | **-56.3%** (RMB993.6M) | up sequentially vs. Q1 | RMB47M (seq. up, but EPS RMB1.26 vs RMB12.6 YoY, ~-90%) | loan facilitation fees -78.2% YoY; **no forward guidance given** |
+
+Confidence tag: **[Sourced]** for FY-level operating margin and Q2'26 EPS-vs-prior-year;
+**[Unavailable]** for a clean quarterly margin/EPS series across all 8 trailing quarters
+(macrotrends.net / stockanalysis.com unreachable this pass) — trend synthesis leans on
+the revenue/net-income cadence plus the cited margin/delinquency data points rather than
+a complete 8-quarter table.
+
+Revenue growth decelerated for four consecutive quarters, flipping from +23.9% YoY
+(Q3'25) to -56.3% YoY (Q2'26) — an accelerating breakdown, not a one-off. Net income fell
+85-90% YoY in three of the last four quarters. Delinquencies rose in parallel (91-180dpd
+up ~2.5x YoY as of Q4'25). Management gave no forward guidance this quarter, citing
+"limited visibility" and a "difficult and uncertain" fintech listing environment.
+
+§7 lens cross-check: **Moat — Weak** (commoditized Chinese online consumer-lending
+model, no switching costs/network effects/pricing power). **Competitive advantage —
+Weak** (revenue collapse + delinquency spike indicate weakening, not resilience).
+**Management — Weak/Unconfirmed** (conservative underwriting is defensible, but
+withholding all guidance is a caution signal; insider Form-4 activity not checked —
+[Unconfirmed]). **Industry position — Weak** (China online consumer-finance/fintech
+lending remains in a multi-year regulatory-tightening/contraction phase, no sector
+tailwind offset found). All four lenses read Weak, consistent with the numeric trend.
+
+| Ticker | Multi-Quarter Trend | Fundamental flag | §8 quadrant | Trade-quality axis |
+|---|---|---|---|---|
+| XYF | Revenue growth decelerating 4 straight quarters into a -56.3% YoY Q2'26 print, net income down 85-90% YoY in 3 of last 4 quarters, rising delinquencies, no forward guidance, all four §7 lenses Weak | **Red** | Speculative trade only / avoid | Not evaluated — stop per §8 sequencing |
+
+**Read:** XYF is not a fundamentals-thesis hold right now. Any post-print interest
+should be framed strictly as a short-horizon speculative trade with a tight
+invalidation, never a size-up or hold-through-weakness position. No Drift
+Classification, Confirmation Gate, or Swing-Timing Overlay run — those require at least
+a Yellow gate.
