@@ -58,9 +58,30 @@ entries begin with the next `/earnings-report` run after 2026-08-20.
 
 | Date | Ticker | Setup | PEG/guide | Actual print quality | Actual T+1 | Drift class predicted | Actual T+2 | Actual T+5 | Drift class hit? |
 |---|---|---|---|---|---|---|---|---|---|
-| 2026-08-21 | BJ | Tier 2 (5/8) | Not scored | Clean beat, raised FY guide | +5.61% | Confirmation (lower confidence — bearish MACD divergence, -0.42) | Not yet known | Not yet known | Pending |
-| 2026-08-21 | BEKE | Tier 2 (5/8) | Not scored | High-quality beat, margin expansion, revenue declined 5.7% on mix | +4.47% | Confirmation | Not yet known | Not yet known | Pending |
+| 2026-08-21 | BJ | Tier 2 (5/8) | Not scored | Clean beat, raised FY guide | +5.61% | Confirmation (lower confidence — bearish MACD divergence, -0.42) | [Unavailable — could not confirm] | Not yet known | Pending — T+2 unavailable, reassess at T+5 (due 2026-08-28) |
+| 2026-08-21 | BEKE | Tier 2 (5/8) | Not scored | High-quality beat, margin expansion, revenue declined 5.7% on mix | +4.47% | Confirmation | [Unavailable — could not confirm] | Not yet known | Pending — T+2 unavailable, reassess at T+5 (due 2026-08-28) |
 | 2026-08-21 | WALD | Tier 2 (4/8) | Not scored | **No confirmed earnings print found for this date** — likely date-assumption error in Stage A screen (see factor-guide.md Drift Classification, Step 1) | -3.70% | Unavailable — drift classification not attempted (thin volume 635K, no options data, no confirmed print) | N/A | N/A | N/A — screen error, not a model failure |
+
+**T+2 update for the 2026-08-21 batch (due 2026-08-25; attempted 2026-08-25):** WebSearch
+(15+ queries spanning stockanalysis.com, macrotrends.net, Yahoo Finance, CNBC, Benzinga,
+and general market-recap coverage) could not produce a reliable confirmed closing price
+for BJ or BEKE on either 2026-08-24 or 2026-08-25. Results repeatedly returned
+premarket/intraday/"trading at" quotes instead of confirmed end-of-day closes, and in
+some cases directly conflicting numbers for the same window (BEKE surfaced as both
+~$15.84 and in the high-$17/low-$18 range; BJ surfaced as $93.39 premarket on 8/21,
+~$94.72 and ~$99.71 at ambiguous/unconfirmed timestamps) — none independently
+cross-checked as an actual closing print, so per the logging rule both **Actual T+2**
+cells above are marked unavailable rather than guessed. One data point did cross-check
+cleanly: BEKE's 8/21 close of $17.75 vs. an 8/20 previous close of $16.99 is a +4.47%
+move — which exactly matches the figure already logged above as "Actual T+1." That
+raises the possibility the existing T+1 cells for BJ/BEKE are actually the *same-day*
+(T+0) earnings-reaction move rather than a full trading day later — the identical
+mislabeling already caught and corrected for the 2026-08-20 batch below. Flagging this
+for review, not correcting it here — out of scope for this firing, which is limited to
+the currently-due T+2 cells; if confirmed on a later pass, the T+1/T+2/T+5 offsets for
+this batch may need relabeling together. Retry via a live data terminal/brokerage feed
+or a direct historical-price table read rather than WebSearch synthesis, same conclusion
+already reached for the 2026-08-20 batch's T+2 attempt below.
 
 **T+1 update for the 2026-08-20 batch** (reported 2026-08-20; today is 2026-08-21, i.e.
 only 1 trading day elapsed — corrected from an earlier mislabeling as "T+2." Drift class
