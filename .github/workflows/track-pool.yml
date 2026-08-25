@@ -1,0 +1,28 @@
+name: Daily Pool Tracker (post-close)
+
+on:
+  schedule:
+    # 21:30 UTC = 4:30pm EST (winter). Drifts to 5:30pm ET during EDT (summer).
+    # Standard cron can't auto-adjust for DST; update to "30 20 * * 1-5" for EDT months.
+    - cron: '30 21 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Track pool prices
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_SCREENER_POOL_DATA_SOURCE_ID: ${{ secrets.NOTION_SCREENER_POOL_DATA_SOURCE_ID }}
+          NOTION_DAILY_TRACKING_DATA_SOURCE_ID: ${{ secrets.NOTION_DAILY_TRACKING_DATA_SOURCE_ID }}
+        run: node stock-screener/scripts/track-pool.js

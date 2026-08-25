@@ -90,7 +90,7 @@ async function stage1(config) {
     options: { lang: 'en' },
     markets: ['america'],
     symbols: { query: { types: [] }, tickers: [] },
-    columns: ['name', 'close', 'change', 'market_cap_basic', 'volume'],
+    columns: ['name', 'description', 'close', 'change', 'market_cap_basic', 'volume'],
     sort: { sortBy: 'change', sortOrder: 'desc' },
     range: [0, 200],
   };
@@ -105,10 +105,11 @@ async function stage1(config) {
     totalCount: data.totalCount,
     rows: data.data.map((r) => ({
       ticker: r.d[0],
-      close: r.d[1],
-      changePct: r.d[2],
-      marketCap: r.d[3],
-      volume: r.d[4],
+      companyName: r.d[1],
+      close: r.d[2],
+      changePct: r.d[3],
+      marketCap: r.d[4],
+      volume: r.d[5],
     })),
   };
 }
@@ -251,6 +252,7 @@ async function writeNotionRows(passed, dateStr) {
           parent: { type: 'data_source_id', data_source_id: dataSourceId },
           properties: {
             Ticker: { title: [{ text: { content: p.ticker } }] },
+            'Company Name': { rich_text: [{ text: { content: p.companyName || 'Unknown' } }] },
             'Date Caught': { date: { start: dateStr } },
             Status: { select: { name: 'New' } },
             'Filters Passed': { rich_text: [{ text: { content: filtersPassed } }] },
@@ -269,16 +271,16 @@ async function writeNotionRows(passed, dateStr) {
 
 function appendPoolLog(dateStr, passed, skipped, configSource, notionResult) {
   const header = `\n## ${dateStr} batch\n\n`;
-  const cols = '| Ticker | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |\n|---|---|---|---|---|---|\n';
+  const cols = '| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |\n|---|---|---|---|---|---|---|\n';
   const rows = passed.map((p) => {
     const fund = `change +${p.changePct.toFixed(1)}%, mktcap ~$${(p.marketCap / 1e9).toFixed(2)}B, close $${p.close.toFixed(2)}, vol ${(p.volume / 1e6).toFixed(2)}M`;
     const tech = `${p.hugging ? 'hugging 8EMA' : `${p.dips} recovered-dips (within range)`}, above ${p.smaUsed}SMA ($${p.smaVal.toFixed(2)})`;
-    return `| ${p.ticker} | $${p.close.toFixed(2)} | ${fund} | ${tech} | ${configSource} | OK |`;
+    return `| ${p.ticker} | ${p.companyName || 'Unknown'} | $${p.close.toFixed(2)} | ${fund} | ${tech} | ${configSource} | OK |`;
   }).join('\n');
   const note = passed.length === 0
     ? `\n\n**0 tickers caught this run.** ${skipped.length} Stage-1 survivors processed, none cleared Stage 2.`
     : `\n\n${passed.length} tickers caught. ${skipped.length} Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: ${notionResult.ok} ok, ${notionResult.failed} failed, ${notionResult.skippedDupes || 0} already logged today (skipped as duplicates).`;
-  const block = header + cols + (rows || '| — | — | — | — | — | — |') + note + '\n';
+  const block = header + cols + (rows || '| — | — | — | — | — | — | — |') + note + '\n';
 
   let content = fs.readFileSync(POOL_LOG_PATH, 'utf8');
   const marker = '## Run log';
@@ -329,7 +331,7 @@ async function main() {
     appendPoolLog(dateStr, s2.passed, s2.skipped, configSource, notionResult);
 
     const topLine = s2.passed.length > 0
-      ? s2.passed.slice(0, 5).map((p) => p.ticker).join(', ')
+      ? s2.passed.slice(0, 5).map((p) => `${p.ticker} (${p.companyName || 'Unknown'})`).join(', ')
       : 'none';
     const msg = s2.passed.length > 0
       ? `📈 Stock screen ${dateStr}: ${s2.passed.length} caught (top: ${topLine}). Stage 1 total: ${s1.totalCount}.`
