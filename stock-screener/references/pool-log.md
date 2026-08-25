@@ -24,6 +24,34 @@ never hand-edit this file to reflect a status change made in Notion.
 
 | Ticker | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
 |---|---|---|---|---|---|
+| ABCL | $12.38 | change +16.7%, mktcap ~$4.01B, close $12.38, vol 5.86M | 4 recovered-dips (within range), above 200SMA ($4.83) | notion-live | OK |
+| KURA | $13.61 | change +9.8%, mktcap ~$1.21B, close $13.61, vol 3.06M | 3 recovered-dips (within range), above 200SMA ($9.71) | notion-live | OK |
+| IMMX | $14.66 | change +7.7%, mktcap ~$1.05B, close $14.66, vol 1.52M | 3 recovered-dips (within range), above 200SMA ($8.09) | notion-live | OK |
+| REPL | $15.57 | change +5.8%, mktcap ~$1.47B, close $15.57, vol 1.34M | 4 recovered-dips (within range), above 200SMA ($8.32) | notion-live | OK |
+| HUT | $83.78 | change +5.3%, mktcap ~$10.33B, close $83.78, vol 1.60M | hugging 8EMA, above 200SMA ($73.42) | notion-live | OK |
+| AXTI | $68.64 | change +5.0%, mktcap ~$4.50B, close $68.64, vol 3.61M | 3 recovered-dips (within range), above 200SMA ($52.62) | notion-live | OK |
+| NVTS | $12.82 | change +4.9%, mktcap ~$3.35B, close $12.82, vol 8.20M | hugging 8EMA, above 200SMA ($12.78) | notion-live | OK |
+| AMD | $478.04 | change +4.7%, mktcap ~$780.38B, close $478.04, vol 10.61M | hugging 8EMA, above 200SMA ($332.00) | notion-live | OK |
+| FCEL | $19.59 | change +4.5%, mktcap ~$1.57B, close $19.59, vol 2.63M | hugging 8EMA, above 200SMA ($13.05) | notion-live | OK |
+| SMTC | $126.28 | change +4.4%, mktcap ~$11.76B, close $126.28, vol 2.56M | hugging 8EMA, above 200SMA ($104.74) | notion-live | OK |
+| DELL | $451.29 | change +4.2%, mktcap ~$292.56B, close $451.29, vol 2.05M | hugging 8EMA, above 200SMA ($239.96) | notion-live | OK |
+| LITE | $861.44 | change +3.8%, mktcap ~$77.27B, close $861.44, vol 1.71M | hugging 8EMA, above 200SMA ($658.97) | notion-live | OK |
+| BRUN | $18.66 | change +3.6%, mktcap ~$1.48B, close $18.66, vol 0.70M | 4 recovered-dips (within range), above 200SMA ($17.61) | notion-live | OK |
+| EGO | $47.94 | change +3.4%, mktcap ~$12.53B, close $47.94, vol 1.09M | 4 recovered-dips (within range), above 200SMA ($35.30) | notion-live | OK |
+| MP | $59.35 | change +3.4%, mktcap ~$10.57B, close $59.35, vol 2.55M | 3 recovered-dips (within range), above 200SMA ($57.76) | notion-live | OK |
+| MRVI | $8.71 | change +3.3%, mktcap ~$2.26B, close $8.71, vol 2.22M | 4 recovered-dips (within range), above 200SMA ($4.32) | notion-live | OK |
+| BHPLF | $48.26 | change +3.3%, mktcap ~$245.33B, close $48.26, vol 1.25M | 4 recovered-dips (within range), above 200SMA ($36.96) | notion-live | OK |
+| NOK | $10.29 | change +3.3%, mktcap ~$55.85B, close $10.29, vol 23.06M | hugging 8EMA, above 200SMA ($9.48) | notion-live | OK |
+| HPE | $54.08 | change +3.1%, mktcap ~$71.61B, close $54.08, vol 3.33M | hugging 8EMA, above 200SMA ($32.06) | notion-live | OK |
+| SE | $119.17 | change +3.0%, mktcap ~$70.85B, close $119.17, vol 0.91M | hugging 8EMA, above 200SMA ($107.03) | notion-live | OK |
+
+20 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 18 ok, 0 failed, 2 already logged today (skipped as duplicates).
+
+
+## 2026-08-25 batch
+
+| Ticker | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|
 | ALVO | $5.25 | change +18.5%, mktcap ~$2.05B, close $5.25, vol 3.18M | 4 recovered-dips (within range), above 200SMA ($4.16) | notion-live | OK |
 | FIVE | $262.72 | change +5.0%, mktcap ~$14.53B, close $262.72, vol 2.04M | 4 recovered-dips (within range), above 200SMA ($204.46) | notion-live | OK |
 | KURA | $12.40 | change +4.3%, mktcap ~$1.10B, close $12.40, vol 2.70M | 3 recovered-dips (within range), above 200SMA ($9.71) | notion-live | OK |
