@@ -45,7 +45,7 @@ boundary — see `earnings-report/CLAUDE.md`'s pointer section for the full expl
 |---|---|---|---|---|---|---|---|---|---|
 | PDD | ~$129B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | **Yes** | No | N/A (§8 stopped at Red, no technicals run) | No |
 | XPEV | ~$11B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | **Yes** | No | N/A (§8 stopped at Red, no technicals run) | No |
-| TUYA | ~$1.5B (Small) | 2026-08-24 (after close) | 2026-08-20 .. 2026-08-31 | No | **Yes — Yellow** | No | No | **Awaiting confirmation** (as of 2026-08-25 — MACD negative, price below 50-/200-day MAs; daily re-check active) | No |
+| TUYA | ~$1.5B (Small) | 2026-08-24 (after close) | 2026-08-20 .. 2026-08-31 | No | **Yes — Yellow** | No | No | **Awaiting confirmation** (re-checked 2026-08-25 EOD — price ~$1.76 close, down from ~$1.84 intraday earlier same day, still below both 50-day (~$2.42) and 200-day (~$2.36) MAs; MACD still negative (~-0.02 to -0.05), no crossover; RSI ~25-36, oversold-to-weak, unchanged range; daily re-check active) | No |
 | BBW | ~$0.45B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
 | DG | ~$27B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
 | BBAR | ~$3.9B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
@@ -168,6 +168,20 @@ report date. All other rows were either outside their window (not yet open) or a
 up to date for today; no other columns changed.
 
 **2026-08-25 firing:** PDD, XPEV, and XYF (escalated) all hit T+1 (5W1H) today — full write-ups in `retrospective-log.md`; net finding across the three: a clean hit (XPEV — continued weakness on fresh analyst downgrades), a magnitude miss (PDD — Red flag right on direction of deterioration, but the market's actual reaction was a muted round-trip, not sustained punishment), and a directional miss (XYF — popped ~2% on the print despite being the most severely Red-flagged of the three, likely on a QoQ net-income inflection + maintained dividend the flag doesn't currently weigh). None individually warrants a factor-guide.md change per the n=1 discipline — logged as a pattern to watch. TUYA's Q2 2026 release confirmed and graded: Multi-Quarter Fundamental Trend Check came back **Yellow** (revenue re-accelerated 8.3%→16.0% YoY, but gross margin erosion continued/worsened and the AI-applications segment decelerated sharply even as management leans on it rhetorically) — cleared the §8 gate to run technicals: Confirmation Gate **Awaiting confirmation** (price below both 50- and 200-day MAs, MACD negative, but RSI oversold and the print itself was mildly constructive), tentative Drift Classification **Repair (unconfirmed)**. Full write-up in `outcome-log.md`. 12 pre-print re-checks completed (all names reporting 2026-08-27) — 11 of 12 came back "no material change"; **RBRK** (one of the four flagged Tier 3 complacent names) is worth a flag: it's continued grinding to fresh all-time highs (~$100-106) on a cluster of bullish sell-side PT hikes (Oppenheimer/Cantor to $120, Goldman to $106) clustered Aug 19-21, which if anything makes its "priced for perfection" setup tighter than when originally flagged — not treated as disqualifying, just noted for the eventual print read. BBAR's price data was unusually inconsistent across sources this pass (likely ADR vs. local Buenos Aires listing conflation) — flagged for a manual quote check before its print, not treated as a material change. 11 Monitor-track baselines captured/attempted: BBY (±8.32%), HRL (~5.59%), RY (±2.12%), ADSK (±8.9%), MRVL (±12.4%), and DLTR (±13.2%) all [Sourced]; CM, TD, BZUN, LOT, and ESTC remain [Unavailable] after a real search attempt; DY/JKS/DCI retried at T-1 and still came back [Unavailable] (each specific rejected-figure reason re-verified, not just re-stated).
+
+**2026-08-25 second firing (scheduled cron, 22:00 UTC):** everything else due today (pre-print
+re-checks, §8 gates, T+1 retrospectives) had already been completed at an earlier
+same-day manual firing (~14:04 UTC) — see the note above. This firing's only substantive
+action was the new Confirmation Gate Daily Re-Check (added between the two firings) for
+TUYA, still **Awaiting confirmation** with fresh end-of-day technicals (see the table
+row above) — no resolution yet. No Monitor-Only Track tickers have reached their report
+date yet (earliest is 2026-08-26), so Step 2b's daily price-check does not apply to any
+of them today. Also ran a first Upside Watch (§1/§2 skeptical+cheap) screen across all
+30 still-pre-print names, since the prior firing's digest entry predated the Upside
+Watch requirement being added to the daily-digest spec — see `daily-digest.md` for the
+full breakdown; candidates worth carrying forward: BBW, PLAB, ANF, ADSK, HRL, DCI, ULTA
+(clear skeptical+cheap reads), plus JKS (cheap but earnings-quality caveat). HQY, BURL,
+RBRK, S, CM, RY, TD, and MRVL corroborated as complacent/expensive (not candidates).
 
 **Pilot end:** 2026-09-03. After that date, disable `RemoteTrigger` routine
 `trig_01SAdNQQrkWcUvqr9ff4Wfc6` (https://claude.ai/code/routines/trig_01SAdNQQrkWcUvqr9ff4Wfc6)

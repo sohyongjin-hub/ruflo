@@ -122,3 +122,58 @@ baseline retried at T-1 (report 2026-08-26), still [Unavailable], each specific
 rejected-figure reason re-verified rather than re-guessed. PLAB, ANF, SJM — already
 pre-print-rechecked, not yet at their 2026-08-26 report date, no action due today. NVDA
 — already has a baseline, no daily move yet (reports 2026-08-26).
+
+---
+
+## Daily Digest — 2026-08-25 (second firing, scheduled cron 22:00 UTC)
+
+**Tickers touched today:** 1 with a substantive change (TUYA); 30 pre-print names
+screened for the first Upside Watch pass. Everything else due today (pre-print
+re-checks, §8 gates, T+1 retrospectives) was already completed at the earlier same-day
+firing above — no duplicate work.
+
+### TUYA (Track: Full Deep-Dive)
+- **What changed:** Confirmation Gate Daily Re-Check run (new process, first use)
+  with fresh end-of-day technicals — price closed ~$1.76, down from the ~$1.84 read
+  captured intraday earlier today. Still below both the 50-day (~$2.42) and 200-day
+  (~$2.36) moving averages, MACD still negative with no crossover, RSI still in the
+  ~25-36 oversold-to-weak range.
+- **Why (rubric/source):** Confirmation Gate Daily Re-Check (factor-guide.md, added
+  2026-08-25) — cheap technicals-only WebSearch check for any name sitting at
+  "Awaiting confirmation."
+- **Swing outlook:** Confirmation Gate stays **Awaiting confirmation** — unresolved.
+  No crossover or MA reclaim yet; re-checked again tomorrow per the standing rule.
+
+**No change today (checked, nothing material):** PDD, XPEV — Red-flagged, no
+technicals tracked, nothing due until T+5. BBW, DG, BBAR, PD, ULTA, WDAY, HQY, BURL,
+GAP, IREN, RBRK, S, PLAB, ANF, SJM — already pre-print-rechecked at the earlier firing,
+not at report date yet. All 15 remaining Monitor-Only Track names (BBY, BZUN, CM, HRL,
+LOT, RY, TD, ADSK, ESTC, NVDA, DY, JKS, DCI, MRVL, DLTR) — none have reached their
+report date yet (earliest 2026-08-26), so the Tier 2 daily price-check does not apply
+to any of them today; baselines already captured/attempted at the earlier firing stand
+as-is.
+
+**Upside watch (pre-print, unchanged):** first full pass run today across all 30
+still-pre-print names (the earlier 2026-08-25 firing's digest entry predated this
+section being added to the spec). Per-ticker detail and data-quality caveats logged in
+`watch-window.md`'s second-firing note; summary:
+
+- **Skeptical + cheap (candidates):** **BBW** (~49% off 52-wk high, P/E ~9x), **PLAB**
+  (deep pullback, P/E ~12x vs. peer median ~56x, EV/EBITDA ~4.9x), **ANF** (~18% off
+  high, P/E below its own 5-yr median), **ADSK** (~38% off high, multiple compressed
+  ~70% below its 7-yr average), **HRL** (~18% off high, forward P/E reasonable vs. its
+  historical premium), **DCI** (~22% off high, P/E mid-range for its own history),
+  **ULTA** (~25% off high, compressed multiple — though 80% Buy/Strong Buy consensus is
+  a mild complacency counter-signal worth watching), **JKS** (~51% off high, very cheap
+  on P/S — but negative/volatile earnings make the valuation read lower-confidence than
+  the others).
+- **Mixed/unclear (not yet confirmed candidates, data gaps rather than a clean "no"):**
+  DG, GAP, BZUN, LOT, SJM, WDAY, BBY, ESTC, DLTR, DY, NVDA, IREN — either conflicting
+  price/valuation data or a genuinely mixed read; see `watch-window.md` note for the
+  specific gap on each.
+- **Confirmed complacent/expensive (not candidates):** **HQY, BURL, RBRK, S** — the
+  four flagged Tier 3 "priced for perfection" names, corroborated again today (near
+  highs, rich multiples, already-bullish analyst consensus). **CM, RY, TD** — Canadian
+  Big-Five bank rally, all near 52-wk highs with analyst targets being raised into the
+  print. **MRVL** — off its exact high but valuation stretched (~79x TTM P/E) and
+  sentiment already euphoric.
