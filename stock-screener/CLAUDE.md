@@ -159,6 +159,13 @@ confirmed by smoke test) get through. This is why the architecture is split:
    UTC winter / 20:45 UTC summer). This one genuinely needs an LLM session (WebSearch +
    reasoning/synthesis, not just an API call), which GitHub Actions can't provide — this
    is the one piece of the whole project that actually fits the cloud-routine model.
+4. **`notify-tracking.js`** (consolidated Telegram push for steps 2+3) — **GitHub
+   Actions**, `.github/workflows/notify-tracking.yml`, weekdays 5:00pm ET (22:00 UTC
+   winter / 21:00 UTC summer). Exists because `api.telegram.org` is one of the domains
+   confirmed blocked in the cloud sandbox — the reason-finder (step 3) cannot send its
+   own Telegram push, so this reads back today's Daily Tracking rows (both the quant
+   data from step 2 and the reasons from step 3) and sends one combined summary, timed
+   to run after both upstream steps have had time to finish.
 
 **None of these auto-adjust for DST** — cron is UTC-fixed. Each drifts by 1 hour during
 EDT (roughly March-November) until manually updated; the exact adjusted cron for each is

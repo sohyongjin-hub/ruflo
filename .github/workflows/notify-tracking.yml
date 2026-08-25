@@ -1,0 +1,31 @@
+name: Daily Tracking Notification
+
+on:
+  schedule:
+    # 22:00 UTC = 5:00pm EST (winter). Drifts to 6:00pm ET during EDT (summer).
+    # Fires after both track-pool.js (4:30pm ET) and the cloud Reason-Finder
+    # routine (4:45pm ET) have had time to finish. Standard cron can't
+    # auto-adjust for DST; update to "0 21 * * 1-5" for EDT months.
+    - cron: '0 22 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Send tracking notification
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DAILY_TRACKING_DATA_SOURCE_ID: ${{ secrets.NOTION_DAILY_TRACKING_DATA_SOURCE_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node stock-screener/scripts/notify-tracking.js
