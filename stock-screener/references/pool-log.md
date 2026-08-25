@@ -73,3 +73,65 @@ in `earnings-report/references/outcome-log.md`:*
 |---|---|---|---|---|---|
 | ... | ... | ... | ... | ... | ... |
 ```
+
+## 2026-08-25 batch — FAILED (infrastructure, no screen ran)
+
+**Stage 1 and Stage 2 never ran.** This cloud scheduled-routine environment's network
+egress policy blocks all three required public hosts outright (confirmed via the agent
+proxy's `/__agentproxy/status` endpoint and via `WebFetch`, both returning policy denials,
+not transient errors — no retry attempted per the proxy README's guidance not to retry or
+route around a 403/407 policy denial):
+- `scanner.tradingview.com` (Stage 1 fundamental scan) — `EGRESS_BLOCKED`
+- `query1.finance.yahoo.com` (Stage 2 technical calc) — `EGRESS_BLOCKED`
+- `api.telegram.org` (alert push) — `EGRESS_BLOCKED`
+- `api.notion.com` direct REST calls were also `EGRESS_BLOCKED`, but the connected Notion
+  MCP tools worked fine as a substitute (config read succeeded, confirmed live v1-default
+  values below) — no equivalent MCP/connector exists for TradingView, Yahoo Finance, or
+  Telegram in this environment, so those three have no working path here today.
+
+**Config read (via Notion MCP, succeeded):** change floor 3%, market cap floor $1B, price
+floor $1, volume floor 500K, EMA length 8, SMA length 200 (100 fallback), recovered-dip
+range 2-4, timeframes daily/weekly/monthly — all v1 defaults, matching CLAUDE.md.
+
+No Notion Screener Pool rows were written (nothing cleared either stage because neither
+stage could execute — this is not a legitimate zero-catch day). No Telegram push could be
+sent through the API for the same reason; the user was alerted directly through the
+session's own notification channel instead, per the dead-man's-switch principle.
+
+**Action needed:** this is an environment/network-policy problem, not a code or
+credentials problem — the CLAUDE.md "verified live" data-source check evidently ran in a
+session with a more permissive egress policy than this scheduled routine's cloud
+environment. Fixing it requires either allow-listing these three hosts for the routine's
+environment, or provisioning MCP connectors for TradingView/Yahoo Finance/Telegram
+equivalent to the existing Notion one.
+
+## 2026-08-25 batch (re-run) — FAILED (infrastructure, same egress block persists)
+
+**Second attempt today, ~9 hours after the first FAILED run above; explicit credentials
+were supplied inline in this run's prompt (in place of the gitignored `.env`) on the
+theory that the first failure might have been a missing-credentials problem. It was not.**
+Re-verified via direct `curl` against all four hosts before touching any pipeline logic —
+every one still returns a proxy-level `403` (`CONNECT tunnel failed`), the same
+organization-egress-policy denial as before, not a credentials or code error:
+- `scanner.tradingview.com` (Stage 1) — `EGRESS_BLOCKED` (403)
+- `query1.finance.yahoo.com` (Stage 2) — `EGRESS_BLOCKED` (403)
+- `api.telegram.org` (alert push) — `EGRESS_BLOCKED` (403)
+- `api.notion.com` direct REST — `EGRESS_BLOCKED` (403), same as before
+
+Per the agent proxy's own README, a 403 from the proxy is an organization policy denial
+that must be reported, not retried or routed around — so neither stage was attempted with
+the supplied credentials, since there is no working path to either data source.
+
+**Notion MCP connector confirmed working again** (unlike the direct REST route): fetched
+workspace identity, and read the live Screener Config via `notion-query-data-sources` —
+all 10 values still match v1 defaults (change floor 3%, market cap floor $1B, price floor
+$1, volume floor 500K, EMA length 8, SMA length 200/fallback 100, recovered-dip range
+2-4, timeframes daily/weekly/monthly). No Notion Screener Pool rows were written — nothing
+cleared either stage because neither stage could execute. No Telegram push could be sent
+through the API for the same reason; the user was alerted directly through the session's
+own notification channel instead, per the dead-man's-switch principle.
+
+**Status: unresolved, same root cause as the first 2026-08-25 run.** This is now two
+consecutive failures on the same day from the same three hosts — the environment's egress
+allow-list still needs to be widened (or equivalent MCP connectors provisioned) before this
+routine can run unattended.
