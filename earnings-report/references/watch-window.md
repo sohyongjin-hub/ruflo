@@ -25,6 +25,11 @@ boundary — see `earnings-report/CLAUDE.md`'s pointer section for the full expl
 
 **Columns:**
 - **Ticker / Report date**
+- **Market cap (band)** — captured 2026-08-24 via WebSearch, cross-checked across 2+
+  sources; band per the "Market Cap & Volatility Calibration" section of
+  `factor-guide.md` (Mega >$200B / Large $10B-$200B / Mid $2B-$10B / Small
+  $300M-$2B / Micro <$300M). A one-time snapshot, not live-updating — re-check before
+  relying on it for a trade made much later.
 - **Window** — [T-2 business days, T+5 business days] around the report date
 - **Pre-print re-check done?** — light §1/§2 re-check during T-2/T-1
 - **§8 gate run?** — multi-quarter fundamental Green/Yellow/Red flag, run once after
@@ -32,33 +37,40 @@ boundary — see `earnings-report/CLAUDE.md`'s pointer section for the full expl
 - **5W1H retrospective (§9) done?** — run at T+1 and again at T+5
 - **Window closed?** — Yes once T+5 has passed; routine skips closed tickers
 
-| Ticker | Report date | Window (T-2 .. T+5) | Pre-print re-check | §8 gate | 5W1H (T+1) | 5W1H (T+5) | Window closed? |
-|---|---|---|---|---|---|---|---|
-| PDD | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | No | No | No |
-| XPEV | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | No | No | No |
-| TUYA | 2026-08-24 (after close) | 2026-08-20 .. 2026-08-31 | No | No (deferred — no release yet as of 2nd firing) | No | No | No |
-| BBW | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| DG | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| BBAR | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| PD | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| ULTA | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| WDAY | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| HQY | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| BURL | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| GAP | 2026-08-27 (corrected — was 2026-08-26) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| PLAB | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
-| ANF | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
-| SJM | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
-| IREN | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| RBRK | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| S | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| Ticker | Market cap (band) | Report date | Window (T-2 .. T+5) | Pre-print re-check | §8 gate | 5W1H (T+1) | 5W1H (T+5) | Window closed? |
+|---|---|---|---|---|---|---|---|---|
+| PDD | ~$129B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | No | No | No |
+| XPEV | ~$11B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | No | No | No |
+| TUYA | ~$1.5B (Small) | 2026-08-24 (after close) | 2026-08-20 .. 2026-08-31 | No | No (deferred — no release yet as of 2nd firing) | No | No | No |
+| BBW | ~$0.45B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| DG | ~$27B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| BBAR | ~$3.9B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| PD | ~$0.9B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| ULTA | ~$22.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| WDAY | ~$50.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| HQY | ~$8.8B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| BURL | ~$22B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| GAP | ~$7.7B (Mid) | 2026-08-27 (corrected — was 2026-08-26) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| PLAB | ~$2.0B (Mid/Small border) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
+| ANF | ~$4.8B (Mid) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
+| SJM | ~$13B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
+| IREN | ~$15B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| RBRK | ~$14.9B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| S | ~$7B (Mid) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+
+**Reading the calibration:** the 4 flagged Tier 3 complacent cases span a wide range
+(HQY $8.8B Mid, BURL $22B Large, RBRK $14.9B Large, S $7B Mid) — market cap size alone
+doesn't correlate with the "priced for perfection" risk flag, so don't assume larger
+caps in this batch are automatically safer reads. BBW and PD sit near the Small/Micro
+boundary — expect materially higher baseline volatility on their prints than the
+Large-cap names in this same track.
 
 ---
 
 ## Monitor-Only Track (16 names)
 
 **Columns:**
-- **Ticker / Report date**
+- **Ticker / Market cap (band) / Report date**
 - **Window** — [T-2 business days, T+5 business days]
 - **Baseline (options-implied move)** — captured once, before/at report date; feeds
   the escalation comparison
@@ -67,24 +79,31 @@ boundary — see `earnings-report/CLAUDE.md`'s pointer section for the full expl
   escalated and moves to full §7/§8/§9 treatment for its remaining window
 - **Window closed?**
 
-| Ticker | Report date | Window (T-2 .. T+5) | Baseline (implied move) | Daily moves logged | Escalated? | Window closed? |
-|---|---|---|---|---|---|---|
-| XYF | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A | N/A | **Yes — already completed full §8 (Red) under pre-split process, 2026-08-24; not re-run** | No |
-| BBY | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| BZUN | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| CM | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| HRL | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| LOT | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| RY | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| TD | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| ADSK | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| ESTC | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| NVDA | 2026-08-26 | 2026-08-24 .. 2026-09-02 | **5.27%** [Sourced, options-implied — captured 2026-08-24, confirmed via original scan + cross-checked ~5.3% via WebSearch] | None yet | No | No |
-| DY | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — no reliable options-implied move found via WebSearch as of 2026-08-24; Tier 2/3 fallback also unavailable, no prior DY prints logged in outcome-log.md — retry closer to report date] | None yet | No | No |
-| JKS | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — WebSearch surfaced only a 14.48% figure at 24 DTE (~Sept 17 expiry), which doesn't isolate the Aug 26 earnings move; discarded as unreliable. Tier 2/3 fallback also unavailable — retry closer to report date] | None yet | No | No |
-| DCI | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — WebSearch surfaced only a stale "5.31% average move" figure dated 2026-06-01, not the current pre-earnings implied move; discarded as unreliable. Tier 2/3 fallback also unavailable — retry closer to report date] | None yet | No | No |
-| MRVL | 2026-08-27 | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| DLTR | 2026-08-27 | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| Ticker | Market cap (band) | Report date | Window (T-2 .. T+5) | Baseline (implied move) | Daily moves logged | Escalated? | Window closed? |
+|---|---|---|---|---|---|---|---|
+| XYF | ~$0.2B (Micro) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A | N/A | **Yes — already completed full §8 (Red) under pre-split process, 2026-08-24; not re-run** | No |
+| BBY | ~$18.1B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| BZUN | ~$0.17B (Micro) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| CM | ~$108B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| HRL | ~$13.1B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| LOT | ~$0.7B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| RY | ~$293B (Mega) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| TD | ~$195B (Large, near Mega boundary) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| ADSK | ~$53B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| ESTC | ~$7.3B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| NVDA | ~$5.05T (Mega — by far the largest name tracked) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | **5.27%** [Sourced, options-implied — captured 2026-08-24, confirmed via original scan + cross-checked ~5.3% via WebSearch] | None yet | No | No |
+| DY | ~$12B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — no reliable options-implied move found via WebSearch as of 2026-08-24; Tier 2/3 fallback also unavailable, no prior DY prints logged in outcome-log.md — retry closer to report date] | None yet | No | No |
+| JKS | ~$0.85B (Small) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — WebSearch surfaced only a 14.48% figure at 24 DTE (~Sept 17 expiry), which doesn't isolate the Aug 26 earnings move; discarded as unreliable. Tier 2/3 fallback also unavailable — retry closer to report date] | None yet | No | No |
+| DCI | ~$10.6B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — WebSearch surfaced only a stale "5.31% average move" figure dated 2026-06-01, not the current pre-earnings implied move; discarded as unreliable. Tier 2/3 fallback also unavailable — retry closer to report date] | None yet | No | No |
+| MRVL | ~$208B (Mega) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| DLTR | ~$24.7B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+
+**Escalation-threshold implication:** per the Market Cap & Volatility Calibration
+section, this track spans Micro (XYF, BZUN) all the way to Mega (RY, NVDA, MRVL) —
+apply the escalation multiplier at the **tighter end (~1.5x)** for RY/TD/ADSK/CM/BBY/
+HRL/DY/DCI/DLTR/NVDA/MRVL, and the **looser end (~2x+)** for XYF/BZUN/LOT/JKS, since a
+routine large swing is normal for the latter group and would otherwise trigger false
+escalations.
 
 **Note on the pre-split period:** XYF, NVDA, DY, JKS, and DCI each got processing done
 before this track split existed (XYF got a full §8 run; NVDA/DY/JKS/DCI got a pre-print
