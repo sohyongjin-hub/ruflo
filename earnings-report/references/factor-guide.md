@@ -36,6 +36,47 @@ covered name.
 
 ---
 
+## Market Cap & Volatility Calibration (added 2026-08-24)
+
+**Purpose:** a 15% post-earnings move means something completely different for a $500M
+micro-cap than for a $500B mega-cap. Every "sharp move," "notable reaction," or
+escalation threshold used elsewhere in this guide should be read through this
+calibration, not treated as one flat number regardless of size.
+
+**Bands** (approximate, not hard cutoffs — judge near the boundaries case by case):
+
+| Band | Market cap | Typical baseline earnings-day volatility |
+|---|---|---|
+| Mega | >$200B | Often single-digit %, sometimes low-single-digit — heavy analyst coverage and index/passive-flow ownership dampen surprise |
+| Large | $10B-$200B | Mid-single to low-double-digit % is common on a real surprise |
+| Mid | $2B-$10B | High-single to +20% moves are unremarkable on a real surprise |
+| Small | $300M-$2B | 20%+ moves are common even on routine prints — thinner float, less coverage smoothing |
+| Micro | Under $300M (down to the §0 floor) | 30%+ moves are not unusual; a single large holder's order can move the stock independent of the print |
+
+**Why this happens:** smaller caps have thinner float, less analyst coverage (so less
+consensus-smoothing of expectations pre-print), lower liquidity (bigger price impact
+per dollar traded), and a higher share of retail/momentum-driven ownership — all of
+which structurally raise baseline volatility independent of print quality. This isn't
+a flaw to correct for, it's a real characteristic to calibrate against.
+
+**How this wires into the rest of the guide:**
+- **Options-implied move (§1)** already prices in a lot of this — a name's own implied
+  move is inherently size-calibrated. This section matters most exactly where implied
+  move is [Unavailable], which is disproportionately common for Small/Micro names —
+  the same names where a flat, size-blind threshold would misfire most.
+- **Magnitude Surprise's tiered fallback** (historical-SUE, peer-group) should prefer
+  a peer-group comparison drawn from the **same market-cap band**, not the sector at
+  large — comparing a Small-cap's reaction to Mega-cap peers in the same sector will
+  systematically understate what's "normal" for the smaller name.
+- **Tier 2 Monitor-and-Escalate Protocol's escalation trigger** (`~1.5-2x baseline
+  move`) should be read at the **tighter end (closer to 1.5x)** for Mega/Large names,
+  where coverage and liquidity make a large deviation more informative, and the
+  **looser end (closer to 2x, or higher) for Small/Micro names**, where routine
+  volatility can otherwise trigger false escalations and burn the resource savings the
+  protocol exists to create.
+
+---
+
 ## §1 — Expectations & Positioning (what's already priced in)
 
 ### YTD / pre-earnings run-up %
@@ -215,14 +256,40 @@ good — it tells you the price at which "good" already stops being enough.
 
 ## §3 — Guidance Quality (post-print)
 
-### Beat size vs. guide-raise size
-- **Compare against:** the ratio between the two, and how that ratio compares to the
-  company's own past quarters' ratios.
-- **Reading:** A large current-quarter beat paired with only a token forward raise
-  signals management itself doesn't see the beat as fully repeatable — the market
-  listens to what guidance implies about *durability* more than the size of the number
-  just reported. A raise that keeps pace with (or exceeds) the beat size is a stronger,
-  higher-quality signal.
+### Guidance revision (added 2026-08-24 — usually the bigger driver than the quarter itself)
+The stock is pricing in the future, not the past — a beat with cut/reiterated guidance
+routinely reacts worse than a miss with raised guidance. Grade this *before* the beat/
+miss headline, not as an afterthought to it.
+
+- **Compare against:** what the Street actually modeled for forward guidance (not the
+  prior guide the company itself gave — the market's *expectation* is the real
+  baseline), sourced from consensus estimates/analyst previews going into the print.
+- **Classify the revision:** **Raised** / **Cut** / **Reiterated**, each read relative
+  to what the Street modeled:
+  - Raised *above* Street's modeled raise = genuine positive surprise.
+  - Raised, but *less* than the Street already expected = a headline "raise" that
+    still reads as a disappointment — don't grade the direction alone, grade it
+    against the bar.
+  - Reiterated when the Street modeled a raise = effectively a cut in relative terms,
+    even though the absolute numbers didn't move.
+  - Cut = read alongside §3's one-time-vs-recurring check below: a cut driven by a
+    one-time/transitory item reads differently than a cut signaling structural
+    deceleration.
+- **Full-year guidance changes carry more weight than next-quarter-only changes.** A
+  raised full-year outlook is read as management's considered view across multiple
+  future quarters; a raised next-quarter-only figure is more easily walked back and
+  carries less durability signal. When a company changes one but not the other (e.g.
+  raises next-quarter but holds full-year flat, or vice versa), that divergence is
+  itself informative — flag it explicitly rather than only reporting whichever number
+  is easier to find.
+- **Beat size vs. guide-raise size** (prior version of this factor, now a sub-check):
+  compare the ratio between the current-quarter beat and the forward raise, against the
+  company's own past-quarters' ratios. A large beat paired with only a token forward
+  raise signals management itself doesn't see the beat as fully repeatable. A raise
+  that keeps pace with (or exceeds) the beat size is the stronger, higher-quality
+  signal — but always read this sub-check through the full-year-vs-next-quarter lens
+  above first, since a "token raise" that's actually a full-year raise carries more
+  weight than a larger next-quarter-only bump.
 
 ### One-time vs. recurring items
 - **Compare against:** strip these out and recompute a "clean" beat/miss for comparison.
@@ -553,9 +620,13 @@ skipping the check — a monitor with no baseline at all can't detect anything.
 window, not just T+0):** compute the cumulative % move from the print-date close.
 Compare against the baseline:
 - **Escalate to the full deep-dive track** if either holds:
-  - `|actual cumulative move| ≳ 1.5-2x |baseline move|` (roughly — this is a
-    trigger-for-attention threshold, not a precise cutoff; use judgment on borderline
-    cases and note why), in either direction, OR
+  - `|actual cumulative move| ≳ N x |baseline move|`, where **N is calibrated by
+    market-cap band** per the "Market Cap & Volatility Calibration" section — use the
+    tighter end (~1.5x) for Mega/Large caps and the looser end (~2x or higher) for
+    Small/Micro caps, since routine volatility for smaller names would otherwise
+    trigger false escalations and defeat the point of monitoring cheaply. This is a
+    trigger-for-attention threshold, not a precise cutoff — use judgment on borderline
+    cases and note why, in either direction. OR
   - the move's **direction contradicts** what the §1 setup read would suggest (e.g. a
     cleanly skeptical setup that should have room to rally on a beat instead sells off
     hard, or vice versa).

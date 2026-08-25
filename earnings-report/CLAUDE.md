@@ -230,6 +230,25 @@ running the full pipeline on all 30 and dropping Tier 2 coverage entirely. Full 
 "Tier 2 Monitor-and-Escalate Protocol" in `factor-guide.md`; the two-track structure
 lives in `watch-window.md`.
 
+## 2026-08-24 addition — Guidance Revision (§3) and Market Cap & Volatility Calibration
+
+Two more additions, per user request:
+
+1. **Guidance Revision** (extends §3's old "beat size vs. guide-raise size" check):
+   classifies the print's forward guidance as Raised/Cut/Reiterated **relative to what
+   the Street modeled**, not just the company's own prior guide. Full-year guidance
+   changes are weighted more heavily than next-quarter-only changes — a raised
+   next-quarter figure with a flat full-year outlook is a materially weaker signal than
+   the reverse. This is usually the bigger driver of the reaction than the quarter's
+   headline number itself, since price reflects the future, not the past.
+2. **Market Cap & Volatility Calibration** (new section, right after §0): a 5-band
+   market-cap table (Mega/Large/Mid/Small/Micro) with typical baseline earnings-day
+   volatility per band, used to calibrate every "sharp move" or escalation threshold
+   elsewhere in the guide rather than applying one flat number regardless of size.
+   Directly wired into the Tier 2 Monitor-and-Escalate Protocol's escalation
+   multiplier (tighter ~1.5x for Mega/Large, looser ~2x+ for Small/Micro) and into
+   Magnitude Surprise's tiered fallback (prefer same-market-cap-band peer comparisons).
+
 **PUSH GOTCHA for scheduled firings — read before committing:** cloud routine runs check
 the repo out at a **detached HEAD**, and the local `master` ref in that checkout can be
 stale (the 2026-08-24 run found it 1 commit behind `origin/master`). A plain
