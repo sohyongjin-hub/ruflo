@@ -336,6 +336,19 @@ should never have to guess which.
 
 Full digest format spec and running log: `references/daily-digest.md`.
 
+## 2026-08-25 addition — Confirmation Gate Daily Re-Check
+
+Per user question ("when will the Confirmation Gate resolve?"), a real gap was found:
+a name at "Awaiting confirmation" previously only got re-checked at its fixed T+1/T+5
+retrospective checkpoints, meaning it could sit stale for days with nobody notified
+when it actually flipped. Fixed: any Full Deep-Dive Track name at "Awaiting
+confirmation" now gets a **cheap, technicals-only daily re-check** (MACD, price vs.
+50-/200-day MAs) every subsequent weekday until it resolves to Confirmed/Contradicted
+(logged with the specific trigger) or T+5 arrives still unresolved (logged as its own
+finding in the §9 retrospective, not silently dropped). Tracked via a new
+"Confirmation Gate (post-print)" column in `watch-window.md`. Full spec: "Confirmation
+Gate Daily Re-Check" in `factor-guide.md`.
+
 ## Trading account context
 [Optional — fill in if you want Claude Code to track your actual positions/watchlist
 across sessions, e.g. current holdings, cost basis, risk tolerance, position sizing

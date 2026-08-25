@@ -35,28 +35,32 @@ boundary — see `earnings-report/CLAUDE.md`'s pointer section for the full expl
 - **§8 gate run?** — multi-quarter fundamental Green/Yellow/Red flag, run once after
   the print (not daily)
 - **5W1H retrospective (§9) done?** — run at T+1 and again at T+5
+- **Confirmation Gate (post-print)** — None (pre-print) / Awaiting confirmation /
+  Confirmed / Contradicted. For any name at "Awaiting confirmation," re-checked daily
+  per the "Confirmation Gate Daily Re-Check" section of `factor-guide.md` until it
+  resolves or T+5 arrives — not a one-time snapshot.
 - **Window closed?** — Yes once T+5 has passed; routine skips closed tickers
 
-| Ticker | Market cap (band) | Report date | Window (T-2 .. T+5) | Pre-print re-check | §8 gate | 5W1H (T+1) | 5W1H (T+5) | Window closed? |
-|---|---|---|---|---|---|---|---|---|
-| PDD | ~$129B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | **Yes** | No | No |
-| XPEV | ~$11B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | **Yes** | No | No |
-| TUYA | ~$1.5B (Small) | 2026-08-24 (after close) | 2026-08-20 .. 2026-08-31 | No | **Yes — Yellow** | No | No | No |
-| BBW | ~$0.45B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| DG | ~$27B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| BBAR | ~$3.9B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| PD | ~$0.9B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| ULTA | ~$22.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| WDAY | ~$50.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| HQY | ~$8.8B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| BURL | ~$22B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| GAP | ~$7.7B (Mid) | 2026-08-27 (corrected — was 2026-08-26) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| PLAB | ~$2.0B (Mid/Small border) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
-| ANF | ~$4.8B (Mid) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
-| SJM | ~$13B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
-| IREN | ~$15B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| RBRK | ~$14.9B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
-| S | ~$7B (Mid) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| Ticker | Market cap (band) | Report date | Window (T-2 .. T+5) | Pre-print re-check | §8 gate | 5W1H (T+1) | 5W1H (T+5) | Confirmation Gate | Window closed? |
+|---|---|---|---|---|---|---|---|---|---|
+| PDD | ~$129B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | **Yes** | No | N/A (§8 stopped at Red, no technicals run) | No |
+| XPEV | ~$11B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | **Yes** | No | N/A (§8 stopped at Red, no technicals run) | No |
+| TUYA | ~$1.5B (Small) | 2026-08-24 (after close) | 2026-08-20 .. 2026-08-31 | No | **Yes — Yellow** | No | No | **Awaiting confirmation** (as of 2026-08-25 — MACD negative, price below 50-/200-day MAs; daily re-check active) | No |
+| BBW | ~$0.45B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| DG | ~$27B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| BBAR | ~$3.9B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| PD | ~$0.9B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| ULTA | ~$22.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| WDAY | ~$50.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| HQY | ~$8.8B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| BURL | ~$22B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| GAP | ~$7.7B (Mid) | 2026-08-27 (corrected — was 2026-08-26) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| PLAB | ~$2.0B (Mid/Small border) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | None (pre-print) | No |
+| ANF | ~$4.8B (Mid) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | None (pre-print) | No |
+| SJM | ~$13B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | None (pre-print) | No |
+| IREN | ~$15B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| RBRK | ~$14.9B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
+| S | ~$7B (Mid) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | None (pre-print) | No |
 
 **Reading the calibration:** the 4 flagged Tier 3 complacent cases span a wide range
 (HQY $8.8B Mid, BURL $22B Large, RBRK $14.9B Large, S $7B Mid) — market cap size alone

@@ -808,6 +808,30 @@ otherwise. Log every drift classification and its actual T+2/T+5 outcome to
 `outcome-log.md`'s drift columns (see that file) — this is the only way this section
 graduates from hypothesis to evidence-backed.
 
+### Confirmation Gate Daily Re-Check (added 2026-08-25)
+
+**Problem this solves:** the Confirmation Gate has no fixed timeline — it resolves
+whenever the actual technicals shift, which could be the next day or could take a
+week. Without an active re-check, a name sitting at **Awaiting confirmation** is just a
+stale snapshot from whichever day it was first read, and nobody gets told when it
+actually flips.
+
+**Rule:** for any Full Deep-Dive Track name whose Confirmation Gate reads **Awaiting
+confirmation**, re-check it **every subsequent weekday** (cheap, technicals-only —
+MACD, price vs. 50-/200-day moving averages via WebSearch; no need to re-run the full
+fundamentals) until one of:
+- **It resolves** to Confirmed or Contradicted — log the resolution date and the
+  specific technical change that triggered it (e.g. "MACD crossed positive 2026-08-27")
+  to `outcome-log.md`, and stop the daily re-check for that name.
+- **T+5 arrives and it's still unresolved** — this is itself a finding, not a
+  non-event: log "unresolved by T+5" explicitly in that name's §9 5W1H retrospective
+  (an unresolved gate through the full swing window is informative about how long this
+  kind of ambiguous setup can persist).
+
+**Tracking:** `watch-window.md`'s Full Deep-Dive Track carries a **Confirmation Gate
+(post-print)** column — None (pre-print) / Awaiting confirmation / Confirmed /
+Contradicted — updated on each re-check, not just the initial §8 gate run.
+
 ---
 
 ## Same-Day Primary-Source Check (T+0 speed — added 2026-08-22, UNVALIDATED)
