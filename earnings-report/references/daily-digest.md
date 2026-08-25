@@ -26,6 +26,15 @@ section for the full rules):**
 
 **No change today:** [tickers checked but nothing material — one line each, or
 "none checked today" if nothing was in-window]
+
+**Upside watch (pre-print, unchanged):** every still-pre-print name whose original
+§1/§2 setup was skeptical (off highs) + cheap/reasonable valuation — i.e. still
+carries a "real rally room on a clean beat" case per its Conditional Reaction Matrix
+— gets listed here even when nothing changed today. Required every day any pre-print
+name exists in either track; never omit this section just because nothing moved. This
+exists specifically so a quiet day doesn't read as "nothing interesting" when a live
+bullish setup is simply still waiting on its print — a compressed "no material change"
+note alone is not sufficient for these names.
 ```
 
 ---

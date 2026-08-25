@@ -314,6 +314,17 @@ change" note) — the digest should account for everything touched that day, not
 the eventful cases, so the user can distinguish "nothing happened" from "wasn't
 checked."
 
+**2026-08-25 correction — Upside Watch section required every day:** the digest as
+originally specified only reports *changes*, which silently drops any name whose
+bullish pre-print case (skeptical setup + cheap/reasonable valuation, per its §1/§2
+read and Conditional Reaction Matrix) is simply unchanged that day — a quiet day for a
+good setup reads as "nothing interesting" when the setup itself is still fully live.
+Every digest must therefore include an **"Upside watch (pre-print, unchanged)"**
+section listing every still-pre-print name that carries this setup, regardless of
+whether anything changed today — this is a standing requirement, not conditional on a
+change happening. Full spec and the section's exact wording:
+`references/daily-digest.md`.
+
 **Push notification content:** condensed to the 3-5 most decision-relevant bullets
 (escalations, §8 gate results, drift-classification changes) — not a full copy of the
 digest file, which stays the detailed version for anyone who wants to read further.
