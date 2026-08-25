@@ -286,6 +286,45 @@ binary. Everything that survives §0 gets scored/ranked, not binary-flagged — 
 that clears the eligibility gate should be labeled "eliminated" solely for scoring low;
 a low score is a low-conviction result, not a screen-out.
 
+## 2026-08-24 addition — Daily Digest (routine notifications)
+
+Per user request: every weekday firing of the pilot routine now ends with a **daily
+digest** — a structured summary of what changed that day, why, and what it means for a
+swing-trading entry decision — both logged to `references/daily-digest.md` and pushed
+as a mobile notification (`PushNotification`), so the user stays current without
+having to read raw log files.
+
+**Required format per ticker touched that day:**
+- **What changed** — the specific event from today's run (a §8 gate result, a
+  pre-print re-check finding, a Monitor-Only daily move, an escalation, a 5W1H
+  retrospective conclusion, an AMC-reporter deferral, etc.) — state the fact, not just
+  "processed."
+- **Why (rubric/source)** — which `factor-guide.md` section produced this (§1/§2/§3/
+  §7/§8/§9/the Tier 2 protocol), with the one-line evidence behind it — never a bare
+  conclusion with no traceable reason.
+- **Swing outlook** — what this means for entry timing specifically: the current
+  Confirmation Gate state (Confirmed/Awaiting confirmation/Contradicted), the Drift
+  Classification (Confirmation/Repair/Continuation-of-damage) if applicable, or "still
+  pre-print, no outlook yet" if the name hasn't reported. Never a buy/sell/hold
+  instruction — a pattern description of what's changed about the setup, same
+  restriction as the rest of this framework.
+
+Tickers checked but with nothing material to report are still named (a one-line "no
+change" note) — the digest should account for everything touched that day, not just
+the eventful cases, so the user can distinguish "nothing happened" from "wasn't
+checked."
+
+**Push notification content:** condensed to the 3-5 most decision-relevant bullets
+(escalations, §8 gate results, drift-classification changes) — not a full copy of the
+digest file, which stays the detailed version for anyone who wants to read further.
+
+**If nothing was in-window on a given day:** still send a brief notification saying so
+explicitly (e.g. "No tracked tickers were in-window today") rather than going silent —
+silence is ambiguous between "nothing happened" and "the routine failed," and the user
+should never have to guess which.
+
+Full digest format spec and running log: `references/daily-digest.md`.
+
 ## Trading account context
 [Optional — fill in if you want Claude Code to track your actual positions/watchlist
 across sessions, e.g. current holdings, cost basis, risk tolerance, position sizing
