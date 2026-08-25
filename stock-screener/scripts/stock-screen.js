@@ -294,6 +294,26 @@ function appendPoolLog(dateStr, passed, skipped, configSource, notionResult) {
   fs.writeFileSync(POOL_LOG_PATH, content, 'utf8');
 }
 
+function buildScreenMessage(dateStr, s1, s2) {
+  const header = `📈 Stock Screen — ${dateStr}\n${s2.passed.length} caught (out of ${s1.totalCount} that passed the broad market filter)\n`;
+  if (s2.passed.length === 0) {
+    return `📊 Stock Screen — ${dateStr}\n0 caught today (${s1.totalCount} passed the broad market filter, none passed the technical check). This is a confirmed clean run, not a failure.`;
+  }
+  const list = s2.passed
+    .map((p, i) => `${i + 1}. ${p.ticker} — ${p.companyName || 'Unknown'}`)
+    .join('\n');
+  const full = header + '\n' + list;
+  // Telegram's hard cap is 4096 chars; truncate gracefully rather than let the send fail.
+  if (full.length <= 4000) return full;
+  const maxLines = s2.passed.findIndex((_, i) => (header + '\n' + s2.passed.slice(0, i + 1).map((p, j) => `${j + 1}. ${p.ticker} — ${p.companyName || 'Unknown'}`).join('\n')).length > 3900);
+  const cutAt = maxLines === -1 ? s2.passed.length : maxLines;
+  const truncatedList = s2.passed
+    .slice(0, cutAt)
+    .map((p, i) => `${i + 1}. ${p.ticker} — ${p.companyName || 'Unknown'}`)
+    .join('\n');
+  return `${header}\n${truncatedList}\n...and ${s2.passed.length - cutAt} more (see Notion for the full list).`;
+}
+
 async function sendTelegram(text) {
   const token = need('TELEGRAM_BOT_TOKEN');
   const chatId = need('TELEGRAM_CHAT_ID');
@@ -330,12 +350,7 @@ async function main() {
 
     appendPoolLog(dateStr, s2.passed, s2.skipped, configSource, notionResult);
 
-    const topLine = s2.passed.length > 0
-      ? s2.passed.slice(0, 5).map((p) => `${p.ticker} (${p.companyName || 'Unknown'})`).join(', ')
-      : 'none';
-    const msg = s2.passed.length > 0
-      ? `📈 Stock screen ${dateStr}: ${s2.passed.length} caught (top: ${topLine}). Stage 1 total: ${s1.totalCount}.`
-      : `📊 Stock screen ${dateStr}: 0 caught today. Stage 1 total: ${s1.totalCount}, none cleared Stage 2. This is a confirmed clean run, not a failure.`;
+    const msg = buildScreenMessage(dateStr, s1, s2);
     await sendTelegram(msg);
     console.log('Done.');
   } catch (err) {
