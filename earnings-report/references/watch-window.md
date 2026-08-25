@@ -39,24 +39,24 @@ boundary — see `earnings-report/CLAUDE.md`'s pointer section for the full expl
 
 | Ticker | Market cap (band) | Report date | Window (T-2 .. T+5) | Pre-print re-check | §8 gate | 5W1H (T+1) | 5W1H (T+5) | Window closed? |
 |---|---|---|---|---|---|---|---|---|
-| PDD | ~$129B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | No | No | No |
-| XPEV | ~$11B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | No | No | No |
-| TUYA | ~$1.5B (Small) | 2026-08-24 (after close) | 2026-08-20 .. 2026-08-31 | No | No (deferred — no release yet as of 2nd firing) | No | No | No |
-| BBW | ~$0.45B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| DG | ~$27B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| BBAR | ~$3.9B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| PD | ~$0.9B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| ULTA | ~$22.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| WDAY | ~$50.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| HQY | ~$8.8B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| BURL | ~$22B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| GAP | ~$7.7B (Mid) | 2026-08-27 (corrected — was 2026-08-26) | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| PDD | ~$129B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | **Yes** | No | No |
+| XPEV | ~$11B (Large) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A (reported today) | **Yes — Red** | **Yes** | No | No |
+| TUYA | ~$1.5B (Small) | 2026-08-24 (after close) | 2026-08-20 .. 2026-08-31 | No | **Yes — Yellow** | No | No | No |
+| BBW | ~$0.45B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| DG | ~$27B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| BBAR | ~$3.9B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| PD | ~$0.9B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| ULTA | ~$22.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| WDAY | ~$50.5B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| HQY | ~$8.8B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| BURL | ~$22B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| GAP | ~$7.7B (Mid) | 2026-08-27 (corrected — was 2026-08-26) | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
 | PLAB | ~$2.0B (Mid/Small border) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
 | ANF | ~$4.8B (Mid) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
 | SJM | ~$13B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | Yes | No | No | No | No |
-| IREN | ~$15B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| RBRK | ~$14.9B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
-| S | ~$7B (Mid) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | No | No | No | No | No |
+| IREN | ~$15B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| RBRK | ~$14.9B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
+| S | ~$7B (Mid) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **Yes** | No | No | No | No |
 
 **Reading the calibration:** the 4 flagged Tier 3 complacent cases span a wide range
 (HQY $8.8B Mid, BURL $22B Large, RBRK $14.9B Large, S $7B Mid) — market cap size alone
@@ -81,22 +81,22 @@ Large-cap names in this same track.
 
 | Ticker | Market cap (band) | Report date | Window (T-2 .. T+5) | Baseline (implied move) | Daily moves logged | Escalated? | Window closed? |
 |---|---|---|---|---|---|---|---|
-| XYF | ~$0.2B (Micro) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A | N/A | **Yes — already completed full §8 (Red) under pre-split process, 2026-08-24; not re-run** | No |
-| BBY | ~$18.1B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| BZUN | ~$0.17B (Micro) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| CM | ~$108B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| HRL | ~$13.1B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| LOT | ~$0.7B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| RY | ~$293B (Mega) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| TD | ~$195B (Large, near Mega boundary) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| ADSK | ~$53B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| ESTC | ~$7.3B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| XYF | ~$0.2B (Micro) | 2026-08-24 | 2026-08-20 .. 2026-08-31 | N/A | N/A | **Yes — already completed full §8 (Red) under pre-split process, 2026-08-24; T+1 5W1H retrospective also run 2026-08-25, see retrospective-log.md (note: Monitor-track table has no 5W1H tracking columns — logged as a note here since this row stays on the full-dive track for its remaining window per protocol)** | No |
+| BBY | ~$18.1B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **±8.32%** [Sourced, options-implied — TipRanks, captured 2026-08-25] | None yet | No | No |
+| BZUN | ~$0.17B (Micro) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | [Unavailable — no reliable earnings-specific options-implied move found (thin micro-cap ADR); a stale March 2025 TipRanks figure and "earnings-date-announcement reaction" figures (a different, unrelated metric) were both discarded. No usable historical fallback — retry nearer report date] | None yet | No | No |
+| CM | ~$108B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | [Unavailable — no earnings-specific options-implied move found for this ADR via WebSearch as of 2026-08-25 (source pages proxy-blocked, only snippets available); no historical fallback found — retry nearer report date] | None yet | No | No |
+| HRL | ~$13.1B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **~5.59%** [Sourced, options-implied — Barchart via secondary citation, captured 2026-08-25; vs. stated 4.73% avg Day-0 move] | None yet | No | No |
+| LOT | ~$0.7B (Small) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | [Unavailable — a "+/-7.47%" figure found was a generic trading-range/ATR stat, not an earnings straddle, discarded; historical-fallback figures found were actually earnings-date-announcement reactions, not post-earnings moves, discarded for the same reason as BZUN — retry nearer report date] | None yet | No | No |
+| RY | ~$293B (Mega) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **±2.12%** [Sourced, options-implied — TipRanks, captured 2026-08-25] | None yet | No | No |
+| TD | ~$195B (Large, near Mega boundary) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | [Unavailable — no earnings-specific options-implied move found for this ADR via WebSearch as of 2026-08-25 (source pages proxy-blocked, only snippets available); no historical fallback found — retry nearer report date] | None yet | No | No |
+| ADSK | ~$53B (Large) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | **±8.9%** [Sourced, options-implied — Yahoo Finance/Zacks (85% of ATM straddle), captured 2026-08-25; vs. ±4.3% avg over last 16 reports] | None yet | No | No |
+| ESTC | ~$7.3B (Mid) | 2026-08-27 (corrected — was 2026-08-25) | 2026-08-25 .. 2026-09-03 | [Unavailable — multiple TheFly/TipRanks implied-move figures found (10.0-15.3%) but none could be reliably dated to the 2026-08-27 print (one traced figure dated to June 2020, a templated headline reused every quarter); one candidate figure also turned out to be an unrelated margin stat, not a move stat. No reliable historical fallback either — retry nearer report date] | None yet | No | No |
 | NVDA | ~$5.05T (Mega — by far the largest name tracked) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | **5.27%** [Sourced, options-implied — captured 2026-08-24, confirmed via original scan + cross-checked ~5.3% via WebSearch] | None yet | No | No |
-| DY | ~$12B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — no reliable options-implied move found via WebSearch as of 2026-08-24; Tier 2/3 fallback also unavailable, no prior DY prints logged in outcome-log.md — retry closer to report date] | None yet | No | No |
-| JKS | ~$0.85B (Small) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — WebSearch surfaced only a 14.48% figure at 24 DTE (~Sept 17 expiry), which doesn't isolate the Aug 26 earnings move; discarded as unreliable. Tier 2/3 fallback also unavailable — retry closer to report date] | None yet | No | No |
-| DCI | ~$10.6B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — WebSearch surfaced only a stale "5.31% average move" figure dated 2026-06-01, not the current pre-earnings implied move; discarded as unreliable. Tier 2/3 fallback also unavailable — retry closer to report date] | None yet | No | No |
-| MRVL | ~$208B (Mega) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
-| DLTR | ~$24.7B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | Not yet captured | None yet | No | No |
+| DY | ~$12B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — retried 2026-08-25 (T-1), still no reliable options-implied move found via WebSearch; only a generic single-contract high-IV mention and a 30-day-style IV figure surfaced, both non-earnings-specific, discarded. Tier 2/3 fallback also unavailable, no prior DY prints logged in outcome-log.md] | None yet | No | No |
+| JKS | ~$0.85B (Small) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — retried 2026-08-25 (T-1), still no fresh earnings-aligned figure; the previously-discarded 14.48%-at-24-DTE figure remains the closest match and is still unusable (wrong expiry). Tier 2/3 fallback also unavailable — a single prior-quarter reaction (-3.67%) isn't a reliable average] | None yet | No | No |
+| DCI | ~$10.6B (Large) | 2026-08-26 | 2026-08-24 .. 2026-09-02 | [Unavailable — retried 2026-08-25 (T-1), same stale "5.31% average move" figure (dated 2026-06-01) re-surfaced and was discarded again; no newer options-implied or historical figure found despite multiple targeted searches] | None yet | No | No |
+| MRVL | ~$208B (Mega) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **±12.4%** [Sourced, options-implied — GuruFocus + TipRanks, two independent sources converge, captured 2026-08-25; ref. price ~$251] | None yet | No | No |
+| DLTR | ~$24.7B (Large) | 2026-08-27 | 2026-08-25 .. 2026-09-03 | **±13.2%** [Sourced, options-implied — Schaeffer's Investment Research, captured 2026-08-25 (dated 2026-08-24); vs. 8.9% avg reaction over last 8 quarters] | None yet | No | No |
 
 **Escalation-threshold implication:** per the Market Cap & Volatility Calibration
 section, this track spans Micro (XYF, BZUN) all the way to Mega (RY, NVDA, MRVL) —
@@ -162,6 +162,8 @@ three (JKS's only hit was a non-earnings-aligned 24-DTE figure, DCI's only hit w
 June average) — left [Unavailable] with a note to retry nearer each ticker's 2026-08-26
 report date. All other rows were either outside their window (not yet open) or already
 up to date for today; no other columns changed.
+
+**2026-08-25 firing:** PDD, XPEV, and XYF (escalated) all hit T+1 (5W1H) today — full write-ups in `retrospective-log.md`; net finding across the three: a clean hit (XPEV — continued weakness on fresh analyst downgrades), a magnitude miss (PDD — Red flag right on direction of deterioration, but the market's actual reaction was a muted round-trip, not sustained punishment), and a directional miss (XYF — popped ~2% on the print despite being the most severely Red-flagged of the three, likely on a QoQ net-income inflection + maintained dividend the flag doesn't currently weigh). None individually warrants a factor-guide.md change per the n=1 discipline — logged as a pattern to watch. TUYA's Q2 2026 release confirmed and graded: Multi-Quarter Fundamental Trend Check came back **Yellow** (revenue re-accelerated 8.3%→16.0% YoY, but gross margin erosion continued/worsened and the AI-applications segment decelerated sharply even as management leans on it rhetorically) — cleared the §8 gate to run technicals: Confirmation Gate **Awaiting confirmation** (price below both 50- and 200-day MAs, MACD negative, but RSI oversold and the print itself was mildly constructive), tentative Drift Classification **Repair (unconfirmed)**. Full write-up in `outcome-log.md`. 12 pre-print re-checks completed (all names reporting 2026-08-27) — 11 of 12 came back "no material change"; **RBRK** (one of the four flagged Tier 3 complacent names) is worth a flag: it's continued grinding to fresh all-time highs (~$100-106) on a cluster of bullish sell-side PT hikes (Oppenheimer/Cantor to $120, Goldman to $106) clustered Aug 19-21, which if anything makes its "priced for perfection" setup tighter than when originally flagged — not treated as disqualifying, just noted for the eventual print read. BBAR's price data was unusually inconsistent across sources this pass (likely ADR vs. local Buenos Aires listing conflation) — flagged for a manual quote check before its print, not treated as a material change. 11 Monitor-track baselines captured/attempted: BBY (±8.32%), HRL (~5.59%), RY (±2.12%), ADSK (±8.9%), MRVL (±12.4%), and DLTR (±13.2%) all [Sourced]; CM, TD, BZUN, LOT, and ESTC remain [Unavailable] after a real search attempt; DY/JKS/DCI retried at T-1 and still came back [Unavailable] (each specific rejected-figure reason re-verified, not just re-stated).
 
 **Pilot end:** 2026-09-03. After that date, disable `RemoteTrigger` routine
 `trig_01SAdNQQrkWcUvqr9ff4Wfc6` (https://claude.ai/code/routines/trig_01SAdNQQrkWcUvqr9ff4Wfc6)

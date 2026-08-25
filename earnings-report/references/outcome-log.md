@@ -197,3 +197,62 @@ should be framed strictly as a short-horizon speculative trade with a tight
 invalidation, never a size-up or hold-through-weakness position. No Drift
 Classification, Confirmation Gate, or Swing-Timing Overlay run — those require at least
 a Yellow gate.
+
+---
+
+## 2026-08-25 firing — PDD/XPEV/XYF T+0/T+1 price action; TUYA §8 gate run
+
+**Data-quality note:** WebFetch to primary quote sources (Yahoo Finance, CNBC,
+stockanalysis.com) was proxy-blocked this pass; all figures below are WebSearch-snippet
+sourced, cross-checked across 2+ independent snippets where possible. Conflicting
+figures are marked [Unreliable] rather than resolved by guessing.
+
+| Ticker | Pre-print close (8/21) | T+0 (8/24) actual reaction | T+1 (8/25) actual reaction | Notes |
+|---|---|---|---|---|
+| PDD | $88.38 | **~-1.5%** (close $87.07) — initial +3-5% premarket pop on an adj.-EPS beat fully reversed intraday on the revenue miss/margin pressure | [Unreliable — one snippet shows $88.58 with a "$89.52 previous close" that doesn't reconcile with the corroborated $87.07 T+0 close; directionally suggests a round-trip back near/above the pre-print level, not deepening weakness, but not independently confirmed] | Red flag (deterioration direction) was right; reaction magnitude was muted, not the sustained punishment a Red flag implies — see retrospective-log.md |
+| XPEV | $12.19 | **-7.6% to -8.5%** to ~$11.15-11.40, near 52-wk low — revenue miss, GAAP net loss nearly tripled YoY, soft Q3 guidance | **Continued weakness — invezz.com (2026-08-25): "sinks 10%," China Renaissance downgrade Hold from Buy, PT cut $40.50→$11.30; Citi/BofA also cut targets** | Clean hit — Red flag, direction, and magnitude all confirmed; see retrospective-log.md |
+| XYF | ~$5.39 | **+2.0% to +2.4%** to ~$5.50-5.52 — driven by QoQ net-income improvement (RMB47M vs RMB37.9M Q1) + maintained $0.28/ADS semiannual dividend, despite -56.3% YoY revenue and no guidance | [Low confidence, single source — $5.07, suggesting most/all of the T+0 pop reversed by T+1, converging late toward the Red flag's implied direction; not independently cross-verified] | Directional miss at T+0 (popped despite being the most severely Red-flagged of the three) — see retrospective-log.md for the proposed model-gap note (QoQ inflection / capital-return signal not currently weighed by the Red-flag logic) |
+
+**Cross-ticker read:** all three were Red-flagged the same day via the same section
+(Multi-Quarter Fundamental Trend Check) and produced three different outcomes — a clean
+hit (XPEV), a magnitude miss (PDD), and a directional miss (XYF). Per the framework's
+own discipline, no single one of these justifies a factor-guide.md edit; the spread
+itself is logged as a pattern to watch for recurrence across future Red-flagged prints.
+
+### TUYA — §8 gate run (Attribution Gate cleared, 2026-08-25)
+
+Q2 2026 release confirmed via PR Newswire + SEC 6-K, published 2026-08-24 after close;
+call held 8:30 PM ET 2026-08-24, transcript available. Attribution Gate clears.
+
+| Metric | Q1'26 (baseline) | Q2'26 (new) | Read |
+|---|---|---|---|
+| Revenue growth (YoY) | +8.3% (decelerating from +21.1% Q1'25) | **+16.0%** | Breaks the deceleration trend — positive |
+| Gross margin (YoY chg) | 46.9% (-1.6pt) | 46.3% (**-2.1pt**) | Erosion continues and worsens — negative, structural (semiconductor cost pressure cited) |
+| Net margin (YoY) | 22.9% (+8.1pt YoY) | 20.0% (+4.3pt YoY, but down sequentially from 22.9%) | Still improving YoY, pace decelerating |
+| PaaS segment growth | +9.8% | +16.9% | Accelerating — positive |
+| Smart home/robot hardware | -6.9% | +23.2% | Sharp reversal to growth |
+| AI applications | +16.9% | **+3.9%** | Sharp deceleration — in tension with management's AI-first strategic narrative (new "Cobuilder" tool) |
+
+Balance sheet: ~$976.1M cash vs. ~$1.5B market cap — fortress-like cushion. Revenue
+$92.9M (+16.0% YoY, +14.8% QoQ). No explicit numeric forward guidance issued (company
+does not appear to issue formal guidance).
+
+**Multi-Quarter Fundamental Trend Check flag: YELLOW.** Revenue re-acceleration and a
+still-improving (if decelerating) net margin trend, against continued/worsening gross
+margin erosion and a sharp deceleration in the one segment (AI applications) management
+is publicly building its strategy around — mixed enough to avoid Red, not clean enough
+for Green.
+
+Technicals (§8 gate cleared to run since Yellow, not Red): RSI ~25-36 (oversold-to-weak,
+source range), MACD negative (-0.05 to -0.017, no confirmed turn), price below both the
+50-day (~$2.42) and 200-day (~$2.36) moving averages — an established downtrend
+structure. Stock price ~$1.81 (8/21) → ~$1.84 (8/25), a modest ~+1.7% drift, not a
+sharp pop.
+
+| Ticker | Multi-Quarter Trend | Fundamental flag | §8 quadrant | Confirmation Gate | Drift Classification |
+|---|---|---|---|---|---|
+| TUYA | Revenue re-accelerated 8.3%→16.0% YoY and net margin still improving YoY, but gross margin erosion continued/worsened (-1.6pt→-2.1pt) and AI-applications growth decelerated sharply (+16.9%→+3.9%) against a heavy AI-first narrative | **Yellow** | Not cleanly either quadrant — mixed stock quality, trade timing unresolved | **Awaiting confirmation** (fundamentals mildly constructive, technicals still bearish — price below both MAs, MACD negative) | **Repair (unconfirmed)** [Unvalidated — n<10 cases] — broad-based genuine improvement argues against Continuation-of-damage, but reaction size was small and technical backdrop hasn't turned; re-check in 3-5 sessions |
+
+**Read:** TUYA is a "wait for confirmation" case, not a clean buy or avoid signal — the
+fundamental print was good enough to clear the Red-flag bar but not clean enough, and
+paired with a still-bearish chart, to act on with size yet.
