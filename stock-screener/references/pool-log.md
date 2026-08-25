@@ -82,3 +82,34 @@ session with a more permissive egress policy than this scheduled routine's cloud
 environment. Fixing it requires either allow-listing these three hosts for the routine's
 environment, or provisioning MCP connectors for TradingView/Yahoo Finance/Telegram
 equivalent to the existing Notion one.
+
+## 2026-08-25 batch (re-run) — FAILED (infrastructure, same egress block persists)
+
+**Second attempt today, ~9 hours after the first FAILED run above; explicit credentials
+were supplied inline in this run's prompt (in place of the gitignored `.env`) on the
+theory that the first failure might have been a missing-credentials problem. It was not.**
+Re-verified via direct `curl` against all four hosts before touching any pipeline logic —
+every one still returns a proxy-level `403` (`CONNECT tunnel failed`), the same
+organization-egress-policy denial as before, not a credentials or code error:
+- `scanner.tradingview.com` (Stage 1) — `EGRESS_BLOCKED` (403)
+- `query1.finance.yahoo.com` (Stage 2) — `EGRESS_BLOCKED` (403)
+- `api.telegram.org` (alert push) — `EGRESS_BLOCKED` (403)
+- `api.notion.com` direct REST — `EGRESS_BLOCKED` (403), same as before
+
+Per the agent proxy's own README, a 403 from the proxy is an organization policy denial
+that must be reported, not retried or routed around — so neither stage was attempted with
+the supplied credentials, since there is no working path to either data source.
+
+**Notion MCP connector confirmed working again** (unlike the direct REST route): fetched
+workspace identity, and read the live Screener Config via `notion-query-data-sources` —
+all 10 values still match v1 defaults (change floor 3%, market cap floor $1B, price floor
+$1, volume floor 500K, EMA length 8, SMA length 200/fallback 100, recovered-dip range
+2-4, timeframes daily/weekly/monthly). No Notion Screener Pool rows were written — nothing
+cleared either stage because neither stage could execute. No Telegram push could be sent
+through the API for the same reason; the user was alerted directly through the session's
+own notification channel instead, per the dead-man's-switch principle.
+
+**Status: unresolved, same root cause as the first 2026-08-25 run.** This is now two
+consecutive failures on the same day from the same three hosts — the environment's egress
+allow-list still needs to be widened (or equivalent MCP connectors provisioned) before this
+routine can run unattended.
