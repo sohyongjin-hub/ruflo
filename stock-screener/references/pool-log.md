@@ -20,6 +20,28 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-08-25 batch
+
+| Ticker | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|
+| ALVO | $5.25 | change +18.5%, mktcap ~$2.05B, close $5.25, vol 3.18M | 4 recovered-dips (within range), above 200SMA ($4.16) | notion-live | OK |
+| FIVE | $262.72 | change +5.0%, mktcap ~$14.53B, close $262.72, vol 2.04M | 4 recovered-dips (within range), above 200SMA ($203.96) | notion-live | OK |
+| KURA | $12.40 | change +4.3%, mktcap ~$1.10B, close $12.40, vol 2.70M | 3 recovered-dips (within range), above 200SMA ($9.69) | notion-live | OK |
+| KSS | $18.30 | change +4.0%, mktcap ~$2.08B, close $18.30, vol 4.60M | hugging 8EMA, above 200SMA ($17.21) | notion-live | OK |
+| OR | $37.49 | change +3.9%, mktcap ~$6.99B, close $37.49, vol 2.63M | 4 recovered-dips (within range), above 200SMA ($36.57) | notion-live | OK |
+| GO | $12.04 | change +3.8%, mktcap ~$1.19B, close $12.04, vol 2.21M | 4 recovered-dips (within range), above 200SMA ($9.23) | notion-live | OK |
+| BHC | $6.68 | change +3.7%, mktcap ~$2.50B, close $6.68, vol 2.71M | hugging 8EMA, above 200SMA ($5.86) | notion-live | OK |
+| GDDY | $100.52 | change +3.6%, mktcap ~$12.73B, close $100.52, vol 1.32M | 4 recovered-dips (within range), above 200SMA ($97.60) | notion-live | OK |
+| MGTX | $14.83 | change +3.4%, mktcap ~$1.42B, close $14.83, vol 0.82M | 4 recovered-dips (within range), above 200SMA ($9.46) | notion-live | OK |
+| BHPLF | $48.26 | change +3.3%, mktcap ~$245.33B, close $48.26, vol 1.25M | 4 recovered-dips (within range), above 200SMA ($36.96) | notion-live | OK |
+| ACHC | $28.72 | change +3.2%, mktcap ~$2.67B, close $28.72, vol 1.44M | hugging 8EMA, above 200SMA ($22.46) | notion-live | OK |
+| VRSN | $290.79 | change +3.2%, mktcap ~$26.26B, close $290.79, vol 0.64M | 4 recovered-dips (within range), above 200SMA ($259.75) | notion-live | OK |
+| CROX | $125.84 | change +3.1%, mktcap ~$6.03B, close $125.84, vol 1.06M | hugging 8EMA, above 200SMA ($101.35) | notion-live | OK |
+| SRRK | $58.20 | change +3.0%, mktcap ~$7.09B, close $58.20, vol 1.22M | 2 recovered-dips (within range), above 200SMA ($46.55) | notion-live | OK |
+
+14 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 14 ok, 0 failed.
+
+
 ## 2026-08-24 batch (pipeline integration test — not a scheduled run)
 
 First end-to-end dry run, confirming the full pipeline (scanner API → Yahoo Finance

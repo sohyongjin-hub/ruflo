@@ -1,0 +1,42 @@
+name: Daily Stock Screener
+
+on:
+  schedule:
+    # 16:00 UTC = 11am EST (winter). Drifts to 10am ET during EDT (summer, ~Mar-Nov).
+    # Standard cron can't auto-adjust for DST; update to "0 15 * * 1-5" for EDT months.
+    - cron: '0 16 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run stock screener
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_SCREENER_POOL_DATA_SOURCE_ID: ${{ secrets.NOTION_SCREENER_POOL_DATA_SOURCE_ID }}
+          NOTION_SCREENER_CONFIG_DATA_SOURCE_ID: ${{ secrets.NOTION_SCREENER_CONFIG_DATA_SOURCE_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node stock-screener/scripts/stock-screen.js
+
+      - name: Commit and push pool-log.md
+        run: |
+          git config user.name "stock-screener-bot"
+          git config user.email "actions@github.com"
+          git add stock-screener/references/pool-log.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "stock-screener: auto-log $(date -u +%Y-%m-%d) run"
+            git push origin HEAD:master
+          fi
