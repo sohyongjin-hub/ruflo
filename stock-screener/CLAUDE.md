@@ -183,6 +183,30 @@ multiple independent automated writers (this project's own GitHub Actions jobs, 
 `origin/master` moving between your last fetch and your push is routine, not an error.
 Merge, don't force-push.
 
+## Interactive /screen bot (on-demand, user-initiated)
+Separate from the four scheduled jobs above — this is the two-way path. A Cloudflare
+Worker (`stock-screener-bot`, source in `stock-screener/telegram-bot/worker.js`, deployed
+directly via the Cloudflare API since the Cloudflare MCP tools in this environment are
+read-only for Workers) is registered as the Telegram bot's webhook. Conversation state
+per chat lives in a Cloudflare KV namespace (`stock-screener-bot-state`,
+`0079a6984ac84bc093cbb2beea0749da`), since Workers are stateless per-request.
+
+**Flow:** user sends `/screen` → bot asks for a ticker → user types it → bot runs the
+same Stage 1 (fundamental) + Stage 2 (technical) logic as the scheduled screener, ported
+into the Worker, and replies with a full pass/fail breakdown per individual check
+(not just overall pass/fail) → if both stages passed, asks "Add to the Screener Pool?
+yes/no" → on yes, writes to Notion with the same same-day dedup guard as the scheduled
+screener. Verified end-to-end 2026-08-25 (simulated the full flow via direct webhook
+POSTs, confirmed dedup correctly blocked a duplicate write for a ticker already caught
+that day via the scheduled screen).
+
+Webhook is protected by a shared secret (`WEBHOOK_SECRET`, checked against Telegram's
+`X-Telegram-Bot-Api-Secret-Token` header) so only real Telegram traffic is accepted.
+
+This coexists with the scheduled jobs with no conflict — same bot token, Telegram routes
+incoming messages to the webhook regardless of what else sends outgoing pushes to the
+same chat.
+
 ## Trading account context
 [Optional — fill in if you want Claude Code to track actual positions/watchlist across
 sessions. Leave blank if you'd rather keep this stateless.]
