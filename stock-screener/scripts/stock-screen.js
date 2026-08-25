@@ -193,11 +193,48 @@ async function stage2(stage1Rows, config) {
   return { passed, skipped };
 }
 
+async function fetchAlreadyCaughtToday(dateStr) {
+  const token = need('NOTION_TOKEN');
+  const dataSourceId = need('NOTION_SCREENER_POOL_DATA_SOURCE_ID');
+  const already = new Set();
+  try {
+    const res = await fetch(`https://api.notion.com/v1/data_sources/${dataSourceId}/query`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Notion-Version': '2025-09-03',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        filter: { property: 'Date Caught', date: { equals: dateStr } },
+        page_size: 100,
+      }),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    for (const row of data.results) {
+      const t = row.properties?.Ticker?.title?.[0]?.plain_text;
+      if (t) already.add(t);
+    }
+  } catch (err) {
+    // Fail open (write anyway) rather than fail closed (silently skip everything) —
+    // a dedup check that can't run shouldn't block the whole day's screen.
+    console.error('Dedup check failed, proceeding without it:', err.message);
+  }
+  return already;
+}
+
 async function writeNotionRows(passed, dateStr) {
   const token = need('NOTION_TOKEN');
   const dataSourceId = need('NOTION_SCREENER_POOL_DATA_SOURCE_ID');
-  let ok = 0, failed = 0;
+  const alreadyCaught = await fetchAlreadyCaughtToday(dateStr);
+  let ok = 0, failed = 0, skippedDupes = 0;
   for (const p of passed) {
+    if (alreadyCaught.has(p.ticker)) {
+      skippedDupes++;
+      console.log(`Skipping ${p.ticker} — already has a row for ${dateStr}`);
+      continue;
+    }
     const filtersPassed =
       `Fundamental: change +${p.changePct.toFixed(1)}%, mktcap ~$${(p.marketCap / 1e9).toFixed(2)}B, ` +
       `close $${p.close.toFixed(2)}, vol ${(p.volume / 1e6).toFixed(2)}M. ` +
@@ -227,7 +264,7 @@ async function writeNotionRows(passed, dateStr) {
       console.error(`Notion write failed for ${p.ticker}:`, err.message);
     }
   }
-  return { ok, failed };
+  return { ok, failed, skippedDupes };
 }
 
 function appendPoolLog(dateStr, passed, skipped, configSource, notionResult) {
@@ -240,7 +277,7 @@ function appendPoolLog(dateStr, passed, skipped, configSource, notionResult) {
   }).join('\n');
   const note = passed.length === 0
     ? `\n\n**0 tickers caught this run.** ${skipped.length} Stage-1 survivors processed, none cleared Stage 2.`
-    : `\n\n${passed.length} tickers caught. ${skipped.length} Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: ${notionResult.ok} ok, ${notionResult.failed} failed.`;
+    : `\n\n${passed.length} tickers caught. ${skipped.length} Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: ${notionResult.ok} ok, ${notionResult.failed} failed, ${notionResult.skippedDupes || 0} already logged today (skipped as duplicates).`;
   const block = header + cols + (rows || '| — | — | — | — | — | — |') + note + '\n';
 
   let content = fs.readFileSync(POOL_LOG_PATH, 'utf8');
