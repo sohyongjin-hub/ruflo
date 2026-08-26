@@ -20,6 +20,27 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-08-26 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| BHVN | Biohaven Ltd. | $16.34 | change +13.6%, mktcap ~$2.47B, close $16.34, vol 6.01M | 4 recovered-dips (within range), above 200SMA ($11.45) | notion-live | OK |
+| ZYME | Zymeworks Inc. | $29.36 | change +6.9%, mktcap ~$2.10B, close $29.36, vol 0.74M | 3 recovered-dips (within range), above 200SMA ($24.62) | notion-live | OK |
+| PBF | PBF Energy Inc. | $70.82 | change +6.5%, mktcap ~$8.39B, close $70.82, vol 0.85M | hugging 8EMA, above 200SMA ($43.07) | notion-live | OK |
+| TTMI | TTM Technologies, Inc. | $119.51 | change +6.4%, mktcap ~$12.59B, close $119.51, vol 2.01M | hugging 8EMA, above 200SMA ($118.32) | notion-live | OK |
+| KMI | Kinder Morgan, Inc. | $32.24 | change +4.2%, mktcap ~$71.80B, close $32.24, vol 5.73M | hugging 8EMA, above 200SMA ($30.91) | notion-live | OK |
+| BTSG | BrightSpring Health Services, Inc. | $59.63 | change +4.2%, mktcap ~$11.80B, close $59.63, vol 0.76M | hugging 8EMA, above 200SMA ($49.16) | notion-live | OK |
+| SRRK | Scholar Rock Holding Corporation | $60.53 | change +3.9%, mktcap ~$7.37B, close $60.53, vol 1.09M | 2 recovered-dips (within range), above 200SMA ($46.86) | notion-live | OK |
+| VSXY | Victorias Secret & Co. | $90.66 | change +3.8%, mktcap ~$7.21B, close $90.66, vol 0.57M | 3 recovered-dips (within range), above 200SMA ($61.21) | notion-live | OK |
+| CVE | Cenovus Energy Inc | $31.90 | change +3.7%, mktcap ~$58.83B, close $31.90, vol 2.82M | hugging 8EMA, above 200SMA ($24.10) | notion-live | OK |
+| OKE | ONEOK, Inc. | $94.85 | change +3.4%, mktcap ~$59.79B, close $94.85, vol 1.28M | hugging 8EMA, above 200SMA ($84.00) | notion-live | OK |
+| PAA | Plains All American Pipeline, L.P. | $25.55 | change +3.4%, mktcap ~$18.02B, close $25.55, vol 1.23M | 3 recovered-dips (within range), above 200SMA ($21.07) | notion-live | OK |
+| PGEN | Precigen, Inc. | $7.52 | change +3.3%, mktcap ~$2.69B, close $7.52, vol 3.54M | 4 recovered-dips (within range), above 200SMA ($4.55) | notion-live | OK |
+| PAGP | Plains GP Holdings, L.P. | $28.00 | change +3.1%, mktcap ~$5.54B, close $28.00, vol 0.63M | 3 recovered-dips (within range), above 200SMA ($22.66) | notion-live | OK |
+
+13 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 13 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-08-25 batch
 
 | Ticker | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
