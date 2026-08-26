@@ -277,3 +277,257 @@ sharp pop.
 **Read:** TUYA is a "wait for confirmation" case, not a clean buy or avoid signal — the
 fundamental print was good enough to clear the Red-flag bar but not clean enough, and
 paired with a still-bearish chart, to act on with size yet.
+
+---
+
+## 2026-08-26 firing — TUYA Confirmation Gate re-check; PLAB/ANF/SJM §8 gate run; NVDA/DY/JKS/DCI Monitor-track daily check
+
+### TUYA — Confirmation Gate Daily Re-Check (still unresolved)
+
+Re-checked technicals-only (MACD, price vs. 50-/200-day MA, RSI) via WebSearch:
+
+| Metric | 2026-08-25 EOD | 2026-08-26 | Changed? |
+|---|---|---|---|
+| Price | ~$1.76 close | ~$1.79-1.80 (prev close $1.80, +0.28%) | Modest bounce, no directional break |
+| MACD | Negative, ~-0.02 to -0.05 | Negative, -0.051 / -0.0165 (two sources), no crossover | No change |
+| 50-day MA (~$2.42) | Below | Below (~26% below) | No change — not reclaimed |
+| 200-day MA (~$2.36) | Below | Below (~24% below) | No change — not reclaimed |
+| RSI | ~25-36 | ~36.1, neutral-weak | No change |
+
+No qualifying resolution trigger fired (no MACD crossover, no MA reclaim, no RSI-extreme
+reversal). One source's composite technical rating reads "Strong Sell" (6 sell vs. 1 buy
+signal) — consistent-to-slightly-more-bearish, but not a discrete, nameable event.
+**Confirmation Gate stays "Awaiting confirmation."** Daily re-check continues tomorrow
+per the standing rule.
+
+### PLAB (Photronics) — §8 gate run (Attribution Gate cleared same-day, 2026-08-26)
+
+Press release (GlobeNewswire) + Form 8-K confirmed same-day, before-market-open, 8:30am
+ET call. Attribution Gate clears cleanly.
+
+| Quarter | Revenue | Rev YoY | Gross margin | Op margin | Non-GAAP EPS |
+|---|---|---|---|---|---|
+| Q4 FY25 | $216.0M | -3% | 35.0% | 24.0% | $0.60 |
+| Q1 FY26 | $225.1M | +6% | 35.0% | 24.4% | $0.61 |
+| Q2 FY26 | $209.9M | ~flat | 31.3% | 20.1% | $0.42 (missed guided $0.49-0.55 low end) |
+| **Q3 FY26 (today)** | **$216.0M** | **+2.7%** | **33.2%** | **21.1%** | **$0.50 non-GAAP** ($0.49 GAAP) |
+
+Beat vs. consensus: revenue $216.0M vs. $208.7-208.8M; EPS $0.50 vs. $0.4033 (~24-25%
+beat) — but EPS was still down YoY vs. Q3 FY25's $0.51. Q4 FY26 guide range **widened**
+(rev $207-227M, op margin 19-24% — low end below today's actual 21.1%), explicitly
+attributed to "increased uncertainty." FY26 capex guide cut $330M→$255-305M ("vendor
+delivery timing," not demand, per company). Segment: IC revenue $154.7M +5% YoY, record
+high-end-node mix (44%, 28/22/14nm); FPD revenue $61.4M -2% YoY but near all-time highs
+on OLED/G8.6 AMOLED demand.
+
+**Critical context:** Q2 FY26 (reported 2026-05-28) was a severe miss (EPS $0.42 vs.
+guided $0.49-0.55, IC revenue -11% sequentially) that erased $1.1B of market cap in a
+single day (-36%) and triggered an active securities class-action lawsuit (class period
+Dec 10, 2025-May 27, 2026; lead-plaintiff deadline Sept 4, 2026) alleging management
+misled investors specifically about high-end IC photomask demand/outlook — **the exact
+segment today's "record" 44% mix claim is built on.**
+
+**Multi-Quarter Fundamental Trend Check flag: YELLOW, leaning toward the Red boundary.**
+Choppy (not monotonic) revenue/margin/EPS trend; today's beat is against a bar reset low
+after the Q2 crash and EPS is still down YoY; guide widened rather than tightened; the
+"record high-end IC" narrative driving the beat is the subject of active fraud
+litigation — a direct qualitative-vs-numeric tension, not a clean confirmation.
+
+**T+0 technicals:** opened +27.1% (~$29.32→$37.26) immediately on the release, faded to
+a settled **~+4-5%** within ~20 minutes — a largely-reversed spike smaller than what a
+25% EPS beat would typically produce, itself informative (market not treating this as an
+unambiguous strong quarter). MACD/RSI/MA: **[Unreliable/Unavailable]** — WebSearch
+results were internally inconsistent and cross-contaminated with unrelated tickers: no
+trustworthy T+0 reading could be sourced (a known cloud-routine limitation — no
+TradingView access).
+
+**Confirmation Gate: [Unavailable — technicals not reliably sourced].** Cannot resolve
+to Confirmed/Awaiting confirmation/Contradicted without a trustworthy T+0 MACD/RSI/MA
+reading; retry at T+1.
+
+**Tentative Drift Classification:** does not cleanly fit any of the three labels —
+closest to a low-confidence, qualified "Confirmation" (sequential IC recovery is real
+operating performance, not a one-time item), undercut by the still-negative YoY EPS
+comp, widened guide, and the active litigation on the exact claim driving the "record"
+framing. **[Unvalidated — n<10 cases]**, flagged as lower-confidence than a typical
+Yellow case given the technicals data gap.
+
+| Ticker | Multi-Quarter Trend | Fundamental flag | §8 quadrant | Confirmation Gate | Drift Classification |
+|---|---|---|---|---|---|
+| PLAB | Choppy trend, still-negative YoY EPS on today's beat, guide widened not tightened, active securities-fraud suit on the exact "record high-end IC" claim driving the print | **Yellow (near Red boundary)** | Not fully evaluated — technicals unreliable; provisionally "wait, don't chase / re-check" | [Unavailable — technicals not reliably sourced] | Weak/low-confidence lean toward "Confirmation," not cleanly gated |
+
+### ANF (Abercrombie & Fitch) — §8 gate run (2026-08-26)
+
+Press release (GlobeNewswire) confirmed same-day, before-market-open (~7:30am ET). High
+first-minute volume (643K shares) confirms a real, informationally-driven move.
+Attribution Gate clears.
+
+| Quarter | Revenue | Rev YoY | Op margin (GAAP) |
+|---|---|---|---|
+| Q2 FY25 | $1.2B | +7% | — |
+| Q3 FY25 | $1.3B | +7% | — |
+| Q4 FY25 | $1.67B | +5% | 14.1% (vs. 16.2% PY — compression) |
+| Q1 FY26 | $1.114B | +2% (sharp deceleration) | 8.0% (vs. 9.3% PY — compression) |
+| **Q2 FY26 (today)** | **$1.27B** | **+5%** (15th straight growth qtr) | **19.9% headline** |
+
+Revenue reaccelerated broadly: Abercrombie brand +8%, APAC +19%, Americas +5%, EMEA +2%.
+**Critical caveat:** the 19.9% headline op margin includes a ~790bps benefit from a
+~$100M pre-tax IEEPA tariff refund booked as a reduction of cost of sales (one-time).
+Ex-refund: ~12.0% underlying op margin — **still below** last year's 13.9% adjusted
+margin, meaning the two-quarter compression trend does **not** actually break this
+quarter on an underlying basis; the headline number masks it. Adjusted EPS $2.32→$2.42
+(+4% YoY, real but modest) vs. reported EPS $2.91→$4.17 (headline +43%, inflated by the
+tariff refund, a ~24% beat vs. $1.95 consensus on the adjusted basis). FY26 guide raised
+(sales growth to ~5%, op margin to 14.5-15%, EPS to $13.10-13.60 vs. prior $10.20-11.00)
+but ~$120M of cumulative FY26 tariff refunds is embedded in that guide (220bps of the
+margin-guide upgrade attributed directly to it per RTTNews) — the raise is real but
+partly one-time-inflated, not a pure structural re-rate.
+
+**Multi-Quarter Fundamental Trend Check flag: YELLOW.** Genuine, broad-based revenue
+reacceleration against a margin/EPS trend whose apparent "break" is substantially a
+one-time item — underlying margin still trails last year.
+
+**T+0 technicals:** move accelerated through the day, roughly **+30% to +42%** by the
+afternoon session (best estimate, exact close [Unavailable] — no single authoritative
+closing print found, but the trajectory across independent sources converges toward the
+high end). Unusually large for ANF's Mid-cap band (~$4.8-4.89B) — the guide's own
+calibration treats up to +20% as unremarkable for Mid-caps; this is 1.5-2x+ beyond that,
+explained by the unusually large EPS-beat magnitude and a guide reset that materially
+repriced FY26 EPS estimates, not by any non-earnings catalyst. MACD/RSI: only a
+pre-print baseline found (MACD -1.090 Sell, RSI ~35-41); **no T+0 reading sourced**.
+
+**Confirmation Gate: [Unavailable — no T+0 MACD/RSI sourced].** Directionally
+consistent with a technically strong reaction (price now far above both 50-/200-day
+MAs) but not a substitute for a sourced gate read; retry at T+1.
+
+**Tentative Drift Classification: Repair (leaning)** — the T+0 magnitude is
+substantially driven by a large one-time item (tariff refund ≈ 42% of headline EPS,
+~220bps of the guide raise) layered on genuine-but-modest underlying improvement (adj.
+EPS +4% YoY, margin still below last year ex-refund) — closer to "beat driven
+substantially by one-time items, core business intact" than a clean broad-based
+Confirmation. **[Unvalidated — n<10 cases]**.
+
+| Ticker | Multi-Quarter Trend | Fundamental flag | §8 quadrant | Confirmation Gate | Drift Classification |
+|---|---|---|---|---|---|
+| ANF | Broad-based revenue reacceleration (+2%→+5%) but underlying ex-refund op margin (~12.0%) still trails last year's 13.9% — the "break" in the margin-compression trend is substantially a one-time tariff refund | **Yellow** | Not fully evaluated — Confirmation Gate unresolved; T+0 move (+30-42%) unusually large for its cap band | [Unavailable — no T+0 technicals sourced] | Repair (leaning), unconfirmed |
+
+### SJM (J.M. Smucker) — §8 gate run (2026-08-26)
+
+Press release (PR Newswire) confirmed same-day, before-market-open (7:00am ET). No
+concurrent non-earnings catalyst found. Attribution Gate clears.
+
+| Quarter | Net sales YoY (reported) | Adj. EPS | Adj. EPS YoY |
+|---|---|---|---|
+| Q1 FY26 | -1% | $1.90 | -22% |
+| Q2 FY26 | +3% | $2.10 | -24% |
+| Q3 FY26 | +7% | $2.38 | -9% (beat $2.27 est.) |
+| Q4 FY26 | +6% | $2.77 | +20% |
+| **Q1 FY27 (today)** | **+5%** | **$3.24** | **+71%** vs. $2.22 consensus (beat by $1.02) |
+
+Revenue $2.22B; adjusted gross margin 42.8% (+~760bps YoY); adjusted operating income
++46% to $540.7M. **Caveat:** ~$115M gross tariff-refund benefit = $0.84/share of the
+$3.24 adjusted EPS — ex-tariff EPS ≈ $2.40, still a genuine ~8% beat vs. $2.22
+consensus, so the beat is real but roughly a quarter of the headline number is one-time.
+Full-year guide implies only ~38.75% gross margin (well below Q1's 42.8%) — Q1's margin
+print is not the run-rate. Segment: Coffee strong (+13% revenue, segment profit +124%
+on pricing pass-through); Sweet Baked Snacks weak (-7% revenue, -13% profit). Guidance
+raised: EPS $9.75-10.25→$10.50-11.00 (Street-beating), but full-year revenue guide still
+implies a **decline** (-1% to -2%) despite Q1's +5% growth — company attributes this to
+planned coffee-cost pricing pass-through later in the year, not demand deceleration, but
+still a real tension against the "everything accelerating" read.
+
+**Multi-Quarter Fundamental Trend Check flag: YELLOW, leaning Green.** Revenue trend
+accelerated from -1% to a sustained +3-7% and held +5% this quarter; EPS trend inflected
+from consecutive declines to a large beat; margins expanded meaningfully; guide raised —
+but ~26% of the EPS beat and part of the full-year raise are one-time tariff items, the
+full-year sales guide still implies a decline, and Sweet Baked Snacks continues to
+deteriorate.
+
+**T+0 technicals:** +4.3-5% to $130.81, a **new 52-week high** (stock now +35.4% YTD).
+By implication of the new high, price is above both 50-/200-day MAs. RSI/MACD:
+[Unreliable] — conflicting/stale figures across sources (one dated a full month before
+today's print). Given the fresh 52-week high after a 35% YTD run, an elevated
+(possibly-overbought) RSI is plausible but not confirmed to a specific value — flagged
+as a soft elevated pullback/bounce risk without asserting a number.
+
+**Confirmation Gate: Confirmed** (basis: [Sourced] price-trend evidence — new 52-week
+high, clean directional agreement between the beat/raise and price action — not based
+on the [Unreliable] RSI/MACD numbers specifically).
+
+**Tentative Drift Classification: Confirmation**, with a one-time-item caveat — maps to
+"broad-based, margin-accretive beat with guide keeping pace," but the ~26% one-time-item
+share of the beat and the still-declining full-year sales guide keep this from being a
+pristine case; worth re-checking once the market fully digests the one-time-item share
+rather than assuming pure extension. **[Unvalidated — n<10 cases]**.
+
+| Ticker | Multi-Quarter Trend | Fundamental flag | §8 quadrant | Confirmation Gate | Drift Classification |
+|---|---|---|---|---|---|
+| SJM | Revenue trend inflected from -1% to a sustained +3-7% (held +5% today); EPS inflected from declines to a +71% headline beat (~+8% ex-tariff); margins expanded — but ~26% of the beat is a one-time tariff refund and FY guide still implies a sales decline | **Yellow (leaning Green)** | Good stock (with caveat) / Good trade — strongest quadrant, with the "good stock" side resting partly on a one-time item | **Confirmed** | Confirmation (one-time-item caveat), unconfirmed |
+
+**Cross-ticker read (PLAB/ANF/SJM, same-day):** all three cleared the §8 gate at
+Yellow, none Red or Green — a useful data point on how common a clean Green read
+actually is versus a mixed one, worth tracking as this dataset grows. All three also
+carry a meaningful one-time-item component in their headline beat (PLAB: bounce off a
+self-inflicted crash quarter; ANF: ~42% of headline EPS from a tariff refund; SJM: ~26%
+of the beat from a tariff refund) — not itself a pattern conclusion (n=3 same-day
+cluster, possibly a tariff-refund-timing coincidence across unrelated names this
+particular week), but worth watching whether other names report similar one-time tariff
+items this same reporting season.
+
+### NVDA — Monitor-track daily check, T+0 (2026-08-26, AMC print)
+
+Reported after close 2026-08-26 (Q2 FY2027). 8-K/press release confirmed — Attribution
+Gate clears. Clean beat-and-raise: revenue $96.2B (+106% YoY) vs. ~$92.2-92.4B
+consensus; Data Center $89.0B (+117% YoY); adj. EPS $2.22 vs. ~$2.08 consensus; Q3
+FY2027 guide $108B ±2% vs. ~$104.2B consensus (raised ~$3.8-4B above Street). One soft
+spot: guidance assumes **zero** data-center compute revenue from China. ~$26B returned
+via buybacks/dividends in the quarter.
+
+**Actual reaction:** best-supported estimate **~-1.3% to -3% after-hours** (multiple
+sources converge; one outlier +5% figure discounted as likely stale/cross-quarter
+contamination). This continues NVDA's established pattern of the last 4-5 quarters
+(beat-and-raise, sell the news anyway on an already-priced-for-perfection setup) — not
+a surprise given the project's own background notes on this name.
+
+**Tier 2 protocol application:** baseline ±5.27% [Sourced] × 1.5 (Mega-cap tighter
+multiplier) ≈ 7.9% escalation threshold. Actual move (~1.3-3%) is well under both the
+raw baseline and the escalation threshold. Direction (modest sell-the-news dip on a
+beat-and-raise) matches the setup read, not a contradiction. **No escalation** — stays
+Monitor-Only.
+
+**Magnitude Surprise:** actual move meaningfully smaller than the ±5.27% implied, and a
+negative-direction give-back despite a strong headline beat — capping factor named: the
+explicit zero-China-data-center-revenue guidance assumption, not print quality.
+
+### DY, JKS, DCI — Monitor-track daily check, T+0 (2026-08-26)
+
+All three reported today; baselines were [Unavailable] for all three going in (see
+2026-08-25 entries). Magnitude Surprise Tiered fallback attempted for each — none
+reached the ≥3-prior-print (Tier 2) or ≥5-peer-point (Tier 3) threshold, so all three
+stay formally **[Unavailable — insufficient data, no magnitude gauge computed]**;
+informal peer/historical context is reported below but not presented at scored
+confidence, per the tiering discipline.
+
+| Ticker | Reported | T+0 move | Vs. consensus | Informal peer/historical context | Escalate? |
+|---|---|---|---|---|---|
+| DY | [Sourced] premarket, 8-K + press release confirmed | **-12.9%** | EPS/rev beat, but Q3 guide ($4.33-4.79, mid $4.56) below Street ($4.79); FY27 guide roughly in line, not a real raise | MasTec -18.5% (guidance-driven), Quanta Services -3.6% (priced-for-perfection digest) — 2 points, short of Tier 3 threshold | **Yes — escalated** (see below) |
+| JKS | [Sourced] premarket, 6-K confirmed | **~-11.8%** ($15.50→$13.67) | Wider-than-expected net loss, sector oversupply/pricing pressure continues; inventory turnover improved (145→125 days), net debt rose | One prior JKS print (-3.7%, insufficient for Tier 2); no usable peer figures found | No |
+| DCI | [Sourced] 6am ET, 8-K confirmed | **+2.31%** to $95.41 | Clean beat (adj. EPS $1.15 vs $1.13; rev $1.059B vs $1.04B, first-ever $1B+ quarter); Facet Filtration acquisition closed | Emerson Electric +2.6% (beat-and-raise), IDEX ~flat (beat) — 2-3 partial points, short of Tier 3 threshold | No |
+
+**DY escalation:** -12.9% sits at/past the upper edge of the Large-cap band's typical
+"mid-single to low-double-digit%" range (Market Cap Calibration), with no [Sourced]
+baseline to compute a formal multiple. This is a judgment call, not a hard-threshold
+trigger — flagged because the move is driven by a genuine forward-guidance miss (Q3
+guide below Street despite a Q2 beat), which is exactly the kind of "genuinely doesn't
+fit the pre-print picture" case the protocol is designed to catch, not routine
+earnings-day noise. **Escalated to the full deep-dive track effective 2026-08-26** —
+full §7/§8/§9 Multi-Quarter Fundamental Trend Check to be run at the next firing (not
+enough trailing-quarter data was gathered this pass to complete it same-day); DY stays
+on the full-dive track for the remainder of its window per protocol regardless of
+subsequent calmer days.
+
+**JKS and DCI:** both moves are within routine volatility for their respective
+market-cap bands (JKS well under the Small-cap "20%+ routine" range; DCI far below the
+Large-cap typical range) and direction matches each name's own print quality (miss→down,
+beat→up) — no contradiction. **No escalation for either** — logged and monitoring
+continues.

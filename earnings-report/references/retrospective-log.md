@@ -86,6 +86,53 @@ net loss nearly tripled YoY, weak Q3 guidance).
   miss vs. mixed print" distinction flagged in PDD's entry above as a pattern to watch,
   not yet to codify.
 
+## TUYA — 2026-08-26 (T+1 retrospective, catch-up — nominal T+1 was 2026-08-25)
+
+**Context:** TUYA reported Q2 2026 after close 2026-08-24 (AMC reporter). Per the
+standing AMC-reporter rule, the Attribution Gate deferred any analysis until the release
+existed — the §8 gate (Multi-Quarter Fundamental Trend Check: **Yellow**) only cleared
+2026-08-25, the same calendar day as T+1. No separate pre-print Conditional Reaction
+Matrix exists for TUYA specifically: the deferral collapsed pre-print positioning and
+post-print gate analysis into one same-day pass, so there is no standalone directional
+prediction to test T+1 against beyond the same-day gate's own read (Yellow fundamentals,
+Confirmation Gate "Awaiting confirmation" — mildly constructive story, still-bearish
+chart). This retrospective is a catch-up: it should have run 2026-08-25 but was missed
+that day (the §8 gate write-up consumed the firing's TUYA-specific effort with nothing
+left to chain into a same-day 5W1H); caught up here on 2026-08-26 instead.
+
+- **Who** — Not cleanly testable in the usual sense (no separate pre-print prediction
+  exists for this name). The closest analog is the same-day §8 gate's own read
+  ("Awaiting confirmation" — fundamentals mildly constructive, chart still bearish),
+  which is what's being checked against actual T+1 price action below.
+- **What** — T+1 (2026-08-25) close ~$1.76, down from an intraday ~$1.84 the same day
+  and from the ~$1.81 pre-print reference — a mild net drift lower (~-2.8% vs. the
+  pre-print reference), not a decisive move in either direction. Consistent with, not
+  contradicting, the "Awaiting confirmation" read: no sharp reaction either confirming
+  the mildly-constructive fundamental story or contradicting it outright.
+- **When** — No sharp T+0/T+1 reaction and no gate resolution by end of T+1 — the "wait
+  for confirmation" framing from the same-day write-up held through the entire T+1
+  session; the gate remains unresolved as of today's (2026-08-26) re-check too (see
+  outcome-log.md).
+- **Where** — No specific factor-guide.md section produced a miss here, since no advance
+  directional prediction existed to grade against.
+- **Why** — Process limitation, not a model gap: the AMC-reporter deferral rule (applied
+  correctly, per the standing rule) means TUYA never got a standalone pre-print
+  Conditional Reaction Matrix distinct from its pre-print fundamental baseline table —
+  by the time the release existed, the framework moved straight to a same-day post-print
+  gate + technicals pass, leaving no separate "prediction" checkpoint before T+1 to test.
+  Separately, this specific T+1 retrospective was itself late by one day (should have run
+  2026-08-25) — a routine-execution gap, not a data or model problem.
+- **How** — **No change warranted** to the prediction machinery — nothing was predicted
+  wrong, since nothing was formally predicted pre-print for this AMC-deferred name (n=1
+  case, and the underlying pattern — AMC reporters skip a standalone pre-print matrix
+  when the deferral pushes analysis to same-day — is a structural feature of the
+  deferral rule working as designed, not yet evidence of a gap worth a factor-guide.md
+  edit). Logged as a watch item: if a future AMC-reporter name also ends up with no
+  testable pre-print prediction *and* this recurs as a source of missed/late T+1
+  retrospectives (as happened here), that combination would be worth a specific
+  factor-guide.md note reminding the routine to schedule the AMC-deferred name's T+1
+  check independently of whether its §8 gate cleared same-day or not.
+
 ## XYF — 2026-08-25 (T+1 retrospective)
 
 **Context:** XYF reported 2026-08-24 (BMO), full §8 run pre-split — the most severely

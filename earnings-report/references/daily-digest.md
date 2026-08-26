@@ -177,3 +177,116 @@ section being added to the spec). Per-ticker detail and data-quality caveats log
   Big-Five bank rally, all near 52-wk highs with analyst targets being raised into the
   print. **MRVL** — off its exact high but valuation stretched (~79x TTM P/E) and
   sentiment already euphoric.
+
+---
+
+## Daily Digest — 2026-08-26
+
+**Tickers touched today:** 8 with substantive changes (PLAB, ANF, SJM, TUYA, NVDA, DY,
+JKS, DCI). No tickers' windows closed today.
+
+### PLAB (Track: Full Deep-Dive)
+- **What changed:** Reported today (BMO). Attribution Gate cleared same-day. Multi-Quarter
+  Fundamental Trend Check came back **Yellow, leaning toward the Red boundary** —
+  revenue up +2.7% and EPS beat ($0.50 vs. $0.4033 cons.), but EPS still down YoY, Q4
+  guide range widened rather than tightened, and the "record high-end IC demand" claim
+  driving the beat is the exact subject of an active securities-fraud lawsuit stemming
+  from Q2's 36% one-day crash.
+- **Why (rubric/source):** §7 Multi-Quarter Fundamental Trend Check + §8 gate — the
+  qualitative-vs-numeric contradiction (a "record" claim under active fraud litigation)
+  is exactly the kind of tension the rubric requires flagging rather than smoothing over.
+- **Swing outlook:** Confirmation Gate **[Unavailable]** — T+0 technicals came back
+  unreliable/cross-contaminated via WebSearch; settled T+0 move was only ~+4-5% after a
+  fully-reversed intraday +27% spike, itself a signal the market isn't treating this as
+  an unambiguous strong quarter. Retry technicals at T+1.
+
+### ANF (Track: Full Deep-Dive)
+- **What changed:** Reported today (BMO). Multi-Quarter Fundamental Trend Check came
+  back **Yellow** — genuine broad-based revenue reacceleration (+2%→+5% YoY, every
+  region positive) but the apparent break in the 2-quarter margin-compression trend is
+  substantially a ~$100M one-time IEEPA tariff refund (~790bps of the 19.9% headline op
+  margin); ex-refund margin (~12.0%) still trails last year's 13.9%.
+- **Why (rubric/source):** §7 Multi-Quarter Fundamental Trend Check — Same-Day
+  Primary-Source Check identified and quantified the one-time item directly from the
+  company's own release language.
+- **Swing outlook:** Confirmation Gate **[Unavailable]** — no T+0 MACD/RSI sourced, only
+  a pre-print baseline. T+0 move (~+30-42%) is unusually large even for a Mid-cap band
+  (guide's own calibration treats up to +20% as unremarkable) — flagged explicitly, not
+  smoothed over. Tentative Drift Classification: **Repair (leaning)**, unconfirmed.
+
+### SJM (Track: Full Deep-Dive)
+- **What changed:** Reported today (BMO). Multi-Quarter Fundamental Trend Check came
+  back **Yellow, leaning Green** — revenue trend inflected from -1% to a sustained
+  +3-7%, EPS inflected from consecutive declines to a large beat, margins expanded — but
+  ~26% of the EPS beat is a one-time tariff refund and the full-year guide still implies
+  a sales *decline* despite this quarter's growth.
+- **Why (rubric/source):** §7 Multi-Quarter Fundamental Trend Check + Same-Day
+  Primary-Source Check (quantified the tariff-refund share of the beat).
+- **Swing outlook:** Confirmation Gate **Confirmed** — new 52-week high, +4.3-5% on
+  clean directional agreement between the beat/raise and price action (exact RSI/MACD
+  unreliable but not the basis for this call). Tentative Drift Classification:
+  **Confirmation** (one-time-item caveat), unconfirmed. Best-positioned of today's three
+  reporters, but not a pristine case.
+
+### TUYA (Track: Full Deep-Dive)
+- **What changed:** Confirmation Gate Daily Re-Check ran again — technicals essentially
+  unchanged from yesterday (no MACD crossover, price still ~24-26% below both 50-/200-day
+  MAs, RSI unchanged ~36). Separately, TUYA's **T+1 5W1H retrospective ran today as a
+  catch-up** — it was nominally due 2026-08-25 but got missed that day because the §8
+  gate itself only cleared same-day, leaving nothing to chain a same-day retrospective
+  into. No factor-guide.md change proposed (n=1, process note only).
+- **Why (rubric/source):** Confirmation Gate Daily Re-Check + §9 5W1H Retrospective.
+- **Swing outlook:** Confirmation Gate stays **Awaiting confirmation** — unresolved for
+  a third consecutive day. Re-checked again tomorrow.
+
+### NVDA (Track: Monitor-Only)
+- **What changed:** Reported today (AMC). Clean beat-and-raise (revenue $96.2B +106%
+  YoY vs. ~$92.3B cons.; Q3 guide $108B vs. ~$104.2B cons., raised well above Street) —
+  but guidance assumes **zero** China data-center revenue, capping the reaction. Actual
+  move ~-1.3% to -3% after-hours, well under the 5.27% baseline and the Mega-band ~7.9%
+  escalation trigger.
+- **Why (rubric/source):** Tier 2 Monitor-and-Escalate Protocol, Step 2 (daily check) +
+  Market Cap & Volatility Calibration (Mega-band 1.5x multiplier).
+- **Swing outlook:** Not escalated — this is the "beat-and-raise, sell-the-news-anyway"
+  pattern this project has already flagged as NVDA's established behavior over the last
+  4-5 quarters, not a surprise. Stays Monitor-Only.
+
+### DY (Track: Monitor-Only → escalating to Full Deep-Dive)
+- **What changed:** Reported today (BMO). Q2 beat (EPS $5.29 vs. $4.68-4.72 cons.) but
+  Q3 guide midpoint ($4.56) came in below the $4.79 Street estimate; FY27 guide raise was
+  roughly in line with consensus, not a real beat. Stock fell **-12.9%** — no [Sourced]
+  baseline existed to compute a formal escalation multiple, but the move sits at/past the
+  upper edge of the Large-cap band's typical range on a genuine forward-guidance miss.
+- **Why (rubric/source):** Tier 2 Monitor-and-Escalate Protocol — escalation judgment
+  call per Market Cap & Volatility Calibration, since this is exactly the "genuinely
+  doesn't fit the pre-print picture" case the protocol exists to catch.
+- **Swing outlook:** **Escalated** effective today — moves to the full §7/§8/§9
+  treatment for the rest of its window; the Multi-Quarter Fundamental Trend Check itself
+  will run at the next firing (not completed same-day). No outlook yet pending that gate.
+
+### JKS, DCI (Track: Monitor-Only)
+- **What changed:** Both reported today (BMO). JKS: wider-than-expected net loss on
+  continued solar-sector oversupply, stock -11.8% — well within the Small-cap band's
+  routine-volatility range, no escalation. DCI: clean beat (first-ever $1B+ quarter),
+  stock +2.31% — textbook routine move for a Large-cap beat, no escalation.
+  Magnitude Surprise tiered fallback attempted for both (and DY) but none reached the
+  Tier 2/3 data thresholds — all three logged as [Unavailable — insufficient data].
+- **Why (rubric/source):** Tier 2 Monitor-and-Escalate Protocol, Step 2 + Magnitude
+  Surprise Tiered Fallback (attempted, insufficient data on all three).
+- **Swing outlook:** Neither escalated — both stay Monitor-Only, daily moves logged.
+
+**No change today (checked, nothing material):** PDD, XPEV — Red-flagged, nothing due
+until T+5. XYF — escalated, nothing due until T+5. BBW, DG, BBAR, PD, ULTA, WDAY, HQY,
+BURL, GAP, IREN, RBRK, S — already pre-print-rechecked, report 2026-08-27 (T-1 today),
+nothing else due. BBY, BZUN, CM, HRL, LOT, RY, TD, ADSK, ESTC, MRVL, DLTR — none have
+reached their 2026-08-27 report date yet, so the Tier 2 daily price-check doesn't apply
+to any of them today.
+
+**Upside watch (pre-print, unchanged):** carried forward from the 2026-08-25 full
+screen, with today's reporters (PLAB, ANF, DCI, JKS) removed since they're no longer
+pre-print — no re-screen was run on the remaining names today. Still-live skeptical +
+cheap candidates: **BBW** (~49% off 52-wk high, P/E ~9x), **ADSK** (~38% off high,
+multiple compressed ~70% below its 7-yr average), **HRL** (~18% off high, forward P/E
+reasonable vs. its historical premium), **ULTA** (~25% off high, compressed multiple —
+though 80% Buy/Strong Buy consensus remains a mild complacency counter-signal). All four
+still pre-print (report 2026-08-27), no change to their setup today.
