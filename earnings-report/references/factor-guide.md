@@ -595,6 +595,57 @@ retrospective so patterns become visible once enough accumulate.
 
 ---
 
+## §11 — Ticker Lifecycle Synthesis & Pattern Promotion (added 2026-08-25)
+
+**Purpose:** §9 logs candidate patterns per-print but explicitly refuses to act on
+n=1 evidence — correctly. But without a mechanism that actually tracks recurrence
+*across* tickers, those candidate patterns just accumulate as isolated notes and
+nothing ever graduates from hypothesis to actual model improvement. This section is
+that mechanism — it's what turns "we noticed something twice" into "the guide changed
+and now applies to every future name."
+
+**When to run:** once a tracked ticker's window fully closes (`Window closed?` = Yes
+in `watch-window.md` — meaning its T+5 5W1H retrospective is done).
+
+**Step 1 — Ticker Lifecycle Summary:** consolidate everything logged for that ticker
+across `outcome-log.md`, `retrospective-log.md`, and its `watch-window.md` row into
+one narrative: Tier score + original setup read → §8 gate result → full Confirmation
+Gate journey (initial state + every daily re-check) → Drift Classification vs. actual
+T+1/T+2/T+5 outcome → both 5W1H retrospective conclusions. Append as a new entry to
+`references/lessons-learned.md`.
+
+**Step 2 — Extract the candidate pattern(s):** pull the specific hypothesis from the
+"Where/Why/How" of that ticker's 5W1H entries (e.g. "Red flag + mixed print → muted
+reaction"). Check it against `lessons-learned.md`'s **Pattern Ledger** — if this
+ticker's outcome matches an existing candidate pattern, add it as a supporting (or
+contradicting) case; if it's a genuinely new hypothesis, add a new ledger row at n=1.
+
+**Step 3 — Promotion threshold:** a candidate pattern gets **promoted** — actually
+implemented as a `factor-guide.md` edit — once it has:
+- **3+ distinct tickers/prints** supporting it with no contradicting case, or
+- **2 supporting + explicit reasoning** for why the mechanism should generalize
+  beyond just those two names.
+
+A contradicting case is logged too, not discarded — if contradictions start
+outweighing support, explicitly **retire** the hypothesis (mark it "Retired —
+contradicted" in the ledger) rather than letting it linger unresolved.
+
+**Step 4 — Apply the promotion:** when a pattern crosses the threshold, implement the
+specific diff that was drafted back when the pattern was first logged (every 5W1H
+"How" answer that flags a candidate pattern must already spell out the concrete
+change, per §9's own requirement — this step is applying that pre-written proposal,
+not drafting a new one from scratch). Tag the new guide text **[Pattern-derived,
+n=X cases]** so it's distinguishable from the original hand-authored sections until it
+accumulates further evidence. Mark the ledger entry "PROMOTED — implemented [date]."
+
+**No separate step to apply this to new research:** once written into
+`factor-guide.md`, every subsequent `/earnings-report` run and every routine firing
+reads the current file automatically — a promoted pattern is live for the next stock
+researched the moment it's committed, not something that needs manually porting
+forward.
+
+---
+
 ## Tier 2 Monitor-and-Escalate Protocol (added 2026-08-24)
 
 **Purpose:** running the full §7/§8/§9 deep dive on every scored name is expensive, and

@@ -349,6 +349,23 @@ finding in the §9 retrospective, not silently dropped). Tracked via a new
 "Confirmation Gate (post-print)" column in `watch-window.md`. Full spec: "Confirmation
 Gate Daily Re-Check" in `factor-guide.md`.
 
+## 2026-08-25 addition — §11 Ticker Lifecycle Synthesis & Pattern Promotion
+
+Per user request: after a tracked ticker's full 5-business-day window closes, the
+model now produces a **consolidated lifecycle summary** (Tier score → setup read →
+§8 gate → Confirmation Gate journey → Drift Classification vs. actual outcome → both
+5W1H retrospectives, all in one narrative) and checks its flagged pattern(s) against a
+running **Pattern Ledger** in `references/lessons-learned.md`. This is the mechanism
+that closes the loop §9 deliberately left open (no n=1 edits) — once a candidate
+pattern is supported by **3+ distinct tickers** (or 2 + strong reasoning) with no
+contradicting case, it gets **promoted**: the pre-drafted diff from its original
+retrospective is actually implemented in `factor-guide.md`, tagged
+**[Pattern-derived, n=X cases]**. No separate step is needed to apply a promoted
+pattern to new research — every future run reads the current file automatically.
+Full spec: "§11 — Ticker Lifecycle Synthesis & Pattern Promotion" in
+`factor-guide.md`; the running ledger and summaries live in
+`references/lessons-learned.md`.
+
 ## Trading account context
 [Optional — fill in if you want Claude Code to track your actual positions/watchlist
 across sessions, e.g. current holdings, cost basis, risk tolerance, position sizing
