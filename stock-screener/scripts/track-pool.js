@@ -48,16 +48,20 @@ async function fetchPoolTickersInWindow(todayISO) {
   if (!res.ok) throw new Error(`Notion pool query HTTP ${res.status}`);
   const data = await res.json();
   const inWindow = [];
+  let skippedRemoved = 0;
   for (const row of data.results) {
     const ticker = row.properties?.Ticker?.title?.[0]?.plain_text;
     const catchPriceProp = row.properties?.['Catch Price']?.number;
     const dateCaught = row.properties?.['Date Caught']?.date?.start;
+    const status = row.properties?.Status?.select?.name;
     if (!ticker || !dateCaught || catchPriceProp === null || catchPriceProp === undefined) continue;
+    if (status === 'Removed') { skippedRemoved++; continue; }
     const daysSince = tradingDaysBetween(dateCaught, todayISO);
     if (daysSince >= 1 && daysSince <= 5) {
       inWindow.push({ ticker, catchPrice: catchPriceProp, dateCaught, dayNumber: daysSince });
     }
   }
+  if (skippedRemoved > 0) console.log(`Skipped ${skippedRemoved} pool ticker(s) marked Removed`);
   return inWindow;
 }
 

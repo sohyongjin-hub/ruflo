@@ -225,10 +225,41 @@ async function fetchAlreadyCaughtToday(dateStr) {
   return already;
 }
 
+async function fetchPreviouslyRemovedTickers() {
+  const token = need('NOTION_TOKEN');
+  const dataSourceId = need('NOTION_SCREENER_POOL_DATA_SOURCE_ID');
+  const removed = new Set();
+  try {
+    const res = await fetch(`https://api.notion.com/v1/data_sources/${dataSourceId}/query`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Notion-Version': '2025-09-03',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        filter: { property: 'Status', select: { equals: 'Removed' } },
+        page_size: 100,
+      }),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    for (const row of data.results) {
+      const t = row.properties?.Ticker?.title?.[0]?.plain_text;
+      if (t) removed.add(t);
+    }
+  } catch (err) {
+    // Fail open — a missed re-chase badge is a UX miss, not worth blocking the run over.
+    console.error('Previously-Removed check failed, proceeding without it:', err.message);
+  }
+  return removed;
+}
+
 async function writeNotionRows(passed, dateStr) {
   const token = need('NOTION_TOKEN');
   const dataSourceId = need('NOTION_SCREENER_POOL_DATA_SOURCE_ID');
   const alreadyCaught = await fetchAlreadyCaughtToday(dateStr);
+  const previouslyRemoved = await fetchPreviouslyRemovedTickers();
   let ok = 0, failed = 0, skippedDupes = 0;
   for (const p of passed) {
     if (alreadyCaught.has(p.ticker)) {
@@ -236,6 +267,7 @@ async function writeNotionRows(passed, dateStr) {
       console.log(`Skipping ${p.ticker} — already has a row for ${dateStr}`);
       continue;
     }
+    p.wasRemoved = previouslyRemoved.has(p.ticker);
     const filtersPassed =
       `Fundamental: change +${p.changePct.toFixed(1)}%, mktcap ~$${(p.marketCap / 1e9).toFixed(2)}B, ` +
       `close $${p.close.toFixed(2)}, vol ${(p.volume / 1e6).toFixed(2)}M. ` +
@@ -257,6 +289,7 @@ async function writeNotionRows(passed, dateStr) {
             Status: { select: { name: 'New' } },
             'Filters Passed': { rich_text: [{ text: { content: filtersPassed } }] },
             'Catch Price': { number: p.close },
+            'Previously Removed': { checkbox: p.wasRemoved },
           },
         }),
       });
@@ -299,18 +332,14 @@ function buildScreenMessage(dateStr, s1, s2) {
   if (s2.passed.length === 0) {
     return `📊 Stock Screen — ${dateStr}\n0 caught today (${s1.totalCount} passed the broad market filter, none passed the technical check). This is a confirmed clean run, not a failure.`;
   }
-  const list = s2.passed
-    .map((p, i) => `${i + 1}. ${p.ticker} — ${p.companyName || 'Unknown'}`)
-    .join('\n');
+  const lineFor = (p, i) => `${i + 1}. ${p.ticker} — ${p.companyName || 'Unknown'}${p.wasRemoved ? ' ⚠️ previously Removed — check why before re-chasing' : ''}`;
+  const list = s2.passed.map(lineFor).join('\n');
   const full = header + '\n' + list;
   // Telegram's hard cap is 4096 chars; truncate gracefully rather than let the send fail.
   if (full.length <= 4000) return full;
-  const maxLines = s2.passed.findIndex((_, i) => (header + '\n' + s2.passed.slice(0, i + 1).map((p, j) => `${j + 1}. ${p.ticker} — ${p.companyName || 'Unknown'}`).join('\n')).length > 3900);
+  const maxLines = s2.passed.findIndex((_, i) => (header + '\n' + s2.passed.slice(0, i + 1).map(lineFor).join('\n')).length > 3900);
   const cutAt = maxLines === -1 ? s2.passed.length : maxLines;
-  const truncatedList = s2.passed
-    .slice(0, cutAt)
-    .map((p, i) => `${i + 1}. ${p.ticker} — ${p.companyName || 'Unknown'}`)
-    .join('\n');
+  const truncatedList = s2.passed.slice(0, cutAt).map(lineFor).join('\n');
   return `${header}\n${truncatedList}\n...and ${s2.passed.length - cutAt} more (see Notion for the full list).`;
 }
 

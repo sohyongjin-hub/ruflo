@@ -129,13 +129,34 @@ the discrepancy should be investigated, not silently resolved in the log's favor
 
 ## Review workflow (user-facing)
 The user reviews and triages the pool in Notion, grouped by Date Caught, with a
-Status field (New / Watching / Accepted / Removed). Moving a ticker from Watching to
-Accepted when its price has moved from the original catch price (a "re-chase") requires
-filling in a short rationale field — every other status change stays one-tap/frictionless
-by design. A passive "previously Removed, back on list" badge (Notion formula/rollup)
-warns before re-chasing a name that already failed the setup once. A "last successful
-run" timestamp is shown directly on the board so stale data is visible even if a push
-notification is missed.
+Status field (New / Watching / Accepted / Removed).
+
+**Important caveat (until 2026-08-27, corrected below): Status was write-only.**
+Every write path set it to `New` on insert, but nothing ever read it back — changing it
+in Notion was pure bookkeeping with zero effect on automation. Two things now actually
+consume it:
+1. **`track-pool.js` skips any pool ticker with `Status = Removed`** when building its
+   tracking-eligible list — no more spending API calls/reason-finding on a name already
+   ruled out. Verified live: temporarily marked a real in-window ticker (SE) Removed, ran
+   the script, confirmed it logged "Skipped 1 pool ticker(s) marked Removed" and produced
+   no tracking row for it, then reverted the Status.
+2. **The "previously Removed, back on list" badge is now real**, not just documented
+   intent — a `Previously Removed` checkbox property on Screener Pool, set by both write
+   paths (`stock-screen.js` and the interactive bot's `worker.js`) by querying for any
+   prior row of that same ticker with `Status = Removed` before inserting. When true, the
+   Telegram message flags it inline (⚠️) instead of leaving it as a silent checkbox only
+   visible if you happen to open that row in Notion. Verified live the same way (marked
+   SE Removed, confirmed the query correctly found it via the exact filter the code uses,
+   reverted).
+
+Moving a ticker from Watching to Accepted when its price has moved from the original
+catch price (a "re-chase") is still meant to require filling in a short rationale field
+— every other status change stays one-tap/frictionless by design — but this part remains
+**unenforced**, same caveat as before: Notion doesn't have a built-in way to require a
+field conditionally on another field's transition without Notion's own paid automations,
+so this is currently a documented convention, not a technical guardrail. A "last
+successful run" timestamp on the board (also originally planned) is likewise still not
+built — both remain honest gaps, not silently-abandoned promises.
 
 **Explicitly out of scope for v1** (deferred, not forgotten): automated re-chase
 dedupe/lookback logic, and mandatory rationale on every status change — both were

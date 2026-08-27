@@ -247,6 +247,26 @@ async function addToPool(result, env) {
   );
   if (alreadyCaught) return { alreadyCaught: true };
 
+  // Re-chase check: has this ticker ever been marked Removed before?
+  const removedCheck = await fetch(
+    `https://api.notion.com/v1/data_sources/${env.NOTION_SCREENER_POOL_DATA_SOURCE_ID}/query`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.NOTION_TOKEN}`,
+        'Notion-Version': '2025-09-03',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        filter: { property: 'Status', select: { equals: 'Removed' } },
+        page_size: 100,
+      }),
+    }
+  ).then((r) => r.json()).catch(() => ({ results: [] }));
+  const wasRemoved = (removedCheck.results || []).some(
+    (row) => row.properties?.Ticker?.title?.[0]?.plain_text === result.ticker
+  );
+
   const { fund, tech, config } = result;
   const filtersPassed =
     `Fundamental: change +${fund.changePct.toFixed(1)}%, mktcap ~$${(fund.marketCap / 1e9).toFixed(2)}B, ` +
@@ -270,10 +290,11 @@ async function addToPool(result, env) {
         Status: { select: { name: 'New' } },
         'Filters Passed': { rich_text: [{ text: { content: filtersPassed } }] },
         'Catch Price': { number: fund.close },
+        'Previously Removed': { checkbox: wasRemoved },
       },
     }),
   });
-  return { ok: res.ok };
+  return { ok: res.ok, wasRemoved };
 }
 
 async function handleUpdate(update, env) {
@@ -325,7 +346,8 @@ async function handleUpdate(update, env) {
         if (outcome.alreadyCaught) {
           await sendTelegram(env, chatId, `${state.result.ticker} was already caught today — not added again (same-day dedup).`);
         } else if (outcome.ok) {
-          await sendTelegram(env, chatId, `✅ Added ${state.result.ticker} to the Screener Pool.`);
+          const warning = outcome.wasRemoved ? `\n⚠️ You've marked ${state.result.ticker} Removed before — check why before re-chasing.` : '';
+          await sendTelegram(env, chatId, `✅ Added ${state.result.ticker} to the Screener Pool.${warning}`);
         } else {
           await sendTelegram(env, chatId, `⚠️ Notion write failed for ${state.result.ticker}.`);
         }
