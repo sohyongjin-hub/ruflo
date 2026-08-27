@@ -80,8 +80,15 @@ fill in. Has its own same-day dedup check (query for today's already-tracked tic
 skip them), same pattern as the main screener.
 
 **2. Reason-finding — cloud `RemoteTrigger` routine "Pool Reason-Finder (post-tracking)",
-weekdays 4:45pm ET (21:45 UTC winter / 20:45 UTC summer)**, 15 minutes after the quant
-tracker to avoid reading before that day's data exists. Scans Daily Tracking for every
+weekdays 6:00pm ET (23:00 UTC winter / 22:00 UTC summer)**, a 90-minute buffer after the
+quant tracker's 4:30pm ET slot. **Moved from a 15-minute buffer (2026-08-27)** after a
+real same-day race: `track-pool.yml` (GitHub Actions) fired late, this routine ran on
+schedule and correctly found an empty Daily Tracking table (nothing to do, not a bug),
+then `track-pool.yml` finally wrote 51 rows afterward — all stuck at `Pending` until the
+next day's self-healing catch-up run. GitHub Actions cron in this repo has shown delays
+up to ~100 minutes (the same day's `stock-screen.yml` fired ~101 minutes late), so a
+15-minute buffer was never going to be reliably enough; 90 minutes is a deliberate
+margin, not a guess. Scans Daily Tracking for every
 row with `Catalyst Confidence = Pending` (this scan is also the self-healing catch-up
 mechanism — it processes every pending row regardless of age, not just today's, so a
 missed day gets picked up automatically on the next run rather than staying blank
@@ -155,17 +162,19 @@ confirmed by smoke test) get through. This is why the architecture is split:
    `.github/workflows/track-pool.yml`, weekdays 4:30pm ET (21:30 UTC winter / 20:30 UTC
    summer). Same reasoning: needs raw HTTP to Yahoo/TradingView.
 3. **"Pool Reason-Finder (post-tracking)"** (WebSearch synthesis) — **Claude Code cloud
-   `RemoteTrigger` routine**, `trig_011fTgySCCMhqQQDBRVPcCTe`, weekdays 4:45pm ET (21:45
-   UTC winter / 20:45 UTC summer). This one genuinely needs an LLM session (WebSearch +
+   `RemoteTrigger` routine**, `trig_011fTgySCCMhqQQDBRVPcCTe`, weekdays 6:00pm ET (23:00
+   UTC winter / 22:00 UTC summer). This one genuinely needs an LLM session (WebSearch +
    reasoning/synthesis, not just an API call), which GitHub Actions can't provide — this
    is the one piece of the whole project that actually fits the cloud-routine model.
+   **Widened from 4:45pm to 6:00pm ET (2026-08-27)** — see the timing-race note above.
 4. **`notify-tracking.js`** (consolidated Telegram push for steps 2+3) — **GitHub
-   Actions**, `.github/workflows/notify-tracking.yml`, weekdays 5:00pm ET (22:00 UTC
-   winter / 21:00 UTC summer). Exists because `api.telegram.org` is one of the domains
+   Actions**, `.github/workflows/notify-tracking.yml`, weekdays 6:30pm ET (23:30 UTC
+   winter / 22:30 UTC summer). Exists because `api.telegram.org` is one of the domains
    confirmed blocked in the cloud sandbox — the reason-finder (step 3) cannot send its
    own Telegram push, so this reads back today's Daily Tracking rows (both the quant
    data from step 2 and the reasons from step 3) and sends one combined summary, timed
-   to run after both upstream steps have had time to finish.
+   to run after both upstream steps have had time to finish. **Moved from 5:00pm to
+   6:30pm ET (2026-08-27)**, same reason as step 3's move.
 
 **None of these auto-adjust for DST** — cron is UTC-fixed. Each drifts by 1 hour during
 EDT (roughly March-November) until manually updated; the exact adjusted cron for each is
