@@ -531,3 +531,73 @@ market-cap bands (JKS well under the Small-cap "20%+ routine" range; DCI far bel
 Large-cap typical range) and direction matches each name's own print quality (miss→down,
 beat→up) — no contradiction. **No escalation for either** — logged and monitoring
 continues.
+
+---
+
+## 2026-08-27 batch — 12 Full Deep-Dive §8 gates, DY's first Trend Check, 9 Monitor-track reporters
+
+The single busiest day of the pilot: 21 of 30 tracked names touched. Full context and
+evidence for every line below lives in `watch-window.md`'s 2026-08-27 firing note; this
+table is the compact predicted-vs-actual record.
+
+### Full Deep-Dive Track — §8 gate results (2026-08-27 reporters)
+
+| Ticker | Trend flag | Evidence (compressed) | T+0 move | Confirmation Gate | Drift class (tentative) |
+|---|---|---|---|---|---|
+| BBW | **Red** | Revenue growth negative 5 straight quarters (+11.1%→-7.2%), EPS down YoY in 3 of 4 quarters, 2nd guidance cut this FY | ~-15.6% (premarket) to ~-28.4% (intraday, sources disagree) | N/A | N/A |
+| DG | **Green** | Revenue growth accelerating (4.2%→5.2%), EPS growth accelerating (12.4%→33.3%), margin expanding 3 straight quarters, guide raised 2 straight reports | ~+5-7% (sources range 2.5-12.4%) | Confirmed | Confirmation |
+| PD | **Red** | Revenue growth decelerating 5 straight quarters (6.4%→0.8%), NRR fell 106%→98% (net customer-base contraction) | -1.7% | N/A | N/A |
+| ULTA | **Yellow** | Margin/EPS/guidance Green-quality, but comp growth decelerating 3 straight quarters (6.7%→3.8%) | AH +2% (preliminary; vs. 7.5% implied) | Awaiting confirmation | — |
+| WDAY | **Yellow** | Margin/EPS beat streak intact, but subscription growth decelerating 2 straight quarters, backlog growth cratered 17-20%→8.0% | AH ~-7.0% | Confirmed (bearish) | Continuation-of-damage (low confidence) |
+| HQY | **Green** | Consistent 7-9% revenue growth, margin expanding, EPS beat continues the trend, no deterioration found | ~-13.6% to -14.1% | [Non-standard — Green fundamentals, guide raise too small for the bar] | Doesn't fit taxonomy — closest analog: KEYS priced-for-perfection |
+| BURL | **Yellow** | EPS beat/raise + margin expansion intact, but comp growth decelerated sharply (6%→2%) and 1st revenue miss in the streak | -6.8% | Confirmed (bearish) | Confirmation (of downside repricing) |
+| GAP | **Yellow** | Comp streak (9 quarters positive) broke to -1%; mixed by brand (Gap/Banana Republic strong, Old Navy/Athleta weak); full-year sales guide narrowed even as EPS guide raised | ~+11-12% | [Unavailable] | Confirmation-leaning [Unvalidated] |
+| IREN | **Red** | Revenue declining 3 straight quarters, adj. EBITDA declining 4 straight quarters, GAAP net loss widened to -$684M (Q4) | -6.23% (pre-print) then AH +3.21% (post-release) | N/A | N/A |
+| RBRK | **Yellow** | Beat-and-raise, ARR +33%, but 5 straight quarters of decelerating growth (51%→37.9%) + margin softening | AH -9.3% to -9.7% | Confirmed (bearish) | Confirmation (downside) |
+| S (SentinelOne) | **Yellow** | Revenue stable-to-mild-decel, margin inflection (op margin 2%→10%), but 2nd straight quarter of Street-disappointing guidance | AH -6.4% | [Unavailable]/Awaiting confirmation | Continuation-of-damage (leaning) |
+| BBAR | Not reported | Release after-close 2026-08-27, call scheduled 2026-08-28 — deferred to next firing per the standing AMC-reporter rule | — | — | — |
+
+**Notable same-day pattern:** 3 of the 4 flagged Tier 3 "priced for perfection"
+complacent names (HQY, RBRK, S) reported today and all 3 sold off (-14%, -9.5%, -6.4%
+respectively) despite decent-to-strong prints — a strong same-day corroboration of the
+KEYS pattern, though logged as observation only; §11 promotion requires full window
+closure per-ticker, not a same-day cross-ticker read.
+
+### DY (Monitor-track, escalated 2026-08-26) — first Multi-Quarter Fundamental Trend Check
+
+**Yellow** — trailing revenue/EPS/margin trend accelerating (Q4FY26 +34.4%→Q2FY27
++45.6% YoY revenue; EPS $2.03→$5.29), but the current print's forward guide missed
+(Q3 EPS guide $4.56 vs. $4.72-4.79 Street), substantially explained by ~$150M of
+wireless-program revenue deferred to FY28 (timing, not lost demand) plus margin-
+investment costs; record backlog $12.24B (+53.2% YoY). Tentative Drift Classification:
+Continuation-of-damage (leaning) — T+1 price/technicals [Unavailable]; Cantor Fitzgerald
+cut its PT to $476 (from $654) same-day, kept Overweight.
+
+### Monitor-Only Track — daily checks, 2026-08-27 reporters
+
+| Ticker | T+0 move | Baseline | Multiple | Escalate? |
+|---|---|---|---|---|
+| BBY | -4.5% to -4.9% | 8.32% | ~0.55-0.59x | No |
+| BZUN | [Unavailable — budget exhausted] | [Unavailable] | — | Not escalated (no data ≠ a trigger); retry |
+| CM | ~flat to -0.6% | [Unavailable] | — | No |
+| HRL | ~-10.2% | 5.59% | ~1.8-1.9x | **Yes — escalated** |
+| LOT | [Unavailable — conflicting quotes] | [Unavailable] | — | Undetermined; retry |
+| RY | -0.8% to -2.3% | 2.12% | ~0.4-1.1x | No |
+| TD | ~+1.5% (low confidence) | [Unavailable] | — | No |
+| ADSK | [Unavailable — reports AMC, no reaction yet] | 8.9% | — | Cannot determine; retry |
+| ESTC | [Unavailable — reports AMC, no reaction yet] | 10.7% (newly sourced) | — | Cannot determine; retry |
+| MRVL | ~-4.3% (AH) | 12.4% | ~0.35x | No |
+| DLTR | ~-3.9% | 13.2% | ~0.30x | No |
+
+**HRL escalation:** -10.2% vs. a 5.59% [Sourced] baseline is ~1.8-1.9x, past the ~8.4%
+(1.5x, Large-cap) trigger, driven by a genuine revenue miss + guide cut — the exact
+"genuinely doesn't fit the pre-print picture" case the protocol is designed to catch.
+**Escalated to the full deep-dive track effective 2026-08-27** — full §7/§8/§9 Multi-
+Quarter Fundamental Trend Check to be run at the next firing.
+
+**NVDA/JKS/DCI T+1 re-checks:** all three hit the same WebSearch-budget wall as
+BZUN/LOT/ADSK/ESTC above — NVDA's own T+1 cumulative move came back conflicting/
+unconfirmed (~+4% to +7.4%, straddling its 5.27% baseline and possibly nearing the
+7.9% trigger) and is flagged for priority re-check; JKS and DCI simply have no T+1 data
+point yet. None of these gaps changes the prior no-escalation calls — they remain
+unconfirmed at T+1 pending retry, not re-opened.

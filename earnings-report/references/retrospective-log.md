@@ -175,3 +175,122 @@ same section and produced three different outcomes — a clean hit (XPEV), a mag
 miss (PDD), and a directional miss (XYF). That spread is worth tracking, but per this
 project's own discipline, none of these three individually justifies a factor-guide.md
 edit — only a recurring pattern across future prints would.
+
+## PLAB — 2026-08-27 (T+1 retrospective)
+
+**Context:** PLAB reported 2026-08-26 (BMO). Multi-Quarter Fundamental Trend Check came
+back Yellow, leaning toward the Red boundary — EPS beat but down YoY, Q4 guide widened
+not tightened, and the "record high-end IC demand" claim driving the beat is the exact
+subject of an active securities-fraud lawsuit stemming from an earlier 36% one-day
+crash. T+0 opened +27.1% intraday, then fully reversed to settle ~+4-5%. Confirmation
+Gate was [Unavailable] both days (technicals unreliable/cross-contaminated via
+WebSearch).
+
+- **Who** — The print-quality read (§3), via the Yellow-leaning-Red trend flag's
+  implicit skepticism, was vindicated: the +27.1% pop faded to a settled ~+4-4.7% within
+  20 minutes, confirmed across four independent outlets.
+- **What** — The predicted outcome was "messy/unreliable, treat with skepticism"; the
+  actual outcome was a fast, *clean* fade — the market discounted the hyped pop back
+  toward a level roughly matching the real (non-hyped) beat magnitude within ~20
+  minutes. The discrepancy: "technicals unavailable" was read as "no signal available,"
+  when the speed/cleanliness of the reversal was itself a legible signal the Yellow-lean
+  anticipated.
+- **When** — Settled essentially at T+0 (within the first 20 minutes). T+1 data is too
+  thin/contaminated to confirm further drift with confidence, but the closest available
+  read (~$30.94) roughly matches the T+0 settled level — little net T+1 movement,
+  [Unavailable — low confidence].
+- **Where** — Two sections behaved as designed, not as a miss: the Confirmation Gate
+  correctly flagged [Unavailable] rather than fabricating a false reading on both days;
+  the Yellow/Red-boundary trend flag's skepticism was borne out by the fade. The fade
+  pattern itself is already covered by the existing Conditional Reaction Matrix's
+  "beat-with-a-catch" row — not a genuinely novel case.
+- **Why** — Primarily a data problem (WebSearch technicals genuinely unreliable for this
+  name on both T+0 and T+1). Secondarily a thin, unconfirmed model gap: no explicit
+  sub-check exists for "litigation directly indicts the specific metric cited as the
+  beat's driver" (vs. generic litigation overhang) — n=1, not yet evidenced as
+  recurring.
+- **How** — **No change warranted** — both triggered sections performed as designed.
+  Logged as a new Pattern Ledger candidate in `lessons-learned.md`: *"litigation-
+  implicated beat driver → fast intraday fade despite headline beat."* Pre-drafted diff
+  if promoted: add a sub-case to §3's guidance-quality checklist flagging when active
+  litigation directly targets the specific metric cited as driving the current beat, as
+  a discount factor distinct from generic litigation overhang. Needs 2 more supporting
+  cases (or 2 + strong reasoning) per §11's promotion threshold.
+
+## ANF — 2026-08-27 (T+1 retrospective)
+
+**Context:** ANF reported 2026-08-26 (BMO). Multi-Quarter Fundamental Trend Check came
+back Yellow — genuine broad-based revenue reacceleration (+2%→+5% YoY, every region
+positive) but the apparent margin-trend break is substantially a ~$100M one-time IEEPA
+tariff refund (~790bps of the 19.9% headline operating margin); ex-refund margin
+(~12.0%) still trails last year's 13.9%. T+0 move was an outsized +30% to +42%.
+Confirmation Gate was [Unavailable] pre-print-baseline-only. Tentative Drift
+Classification was "Repair (leaning)," unconfirmed.
+
+- **Who** — The setup/fundamental read (§1/§2, Yellow trend flag) was directionally
+  right — revenue reacceleration is genuine and broad-based, ex-refund margin still
+  trails. But the tentative print-quality lean ("Repair") was wrong: actual behavior
+  tracks **Confirmation**, not Repair.
+- **What** — §3 implies a beat driven "substantially" by a one-time item (~790bps of a
+  ~1990bps margin) should be discounted, producing a muted-to-moderate reaction. Instead
+  ANF ran +30-42% at T+0 and **held through T+1** ($147.68 close → $147.75, essentially
+  flat) — an order of magnitude beyond even the Mid-cap band's "unremarkable up to +20%"
+  calibration.
+- **When** — Held cleanly through T+1, no partial unwind. Confirmation Gate resolved
+  today to **Confirmed**: MACD +5.93 (bullish), RSI 79.06 (overbought, elevated
+  pullback-risk flag attached), price above both 50-day (~$102.01) and 200-day
+  (~$94.43) MAs.
+- **Where** — §3's "One-time vs. recurring items" and the Magnitude Surprise section:
+  both frame one-off-driven beats as expecting discounting/muted reactions, with a
+  "reset effect" named as a possible exception. Neither currently distinguishes a
+  one-time item that's a *minority* share of a genuinely broad-based reacceleration
+  story (which apparently lets the reset effect fully dominate the discount) — the
+  mirror-image gap from BEKE's 2026-08-21 muted-reaction-despite-quality-beat case.
+- **Why** — Genuine model gap, not a data problem or black-swan event. ANF started from
+  a deeply de-rated setup (P/E ~9.3, 52-wk low $65.45 vs. new high $154.58) with 15
+  consecutive quarters of growth and every region positive — the "reset effect" §3
+  already names as a possible exception appears to have fully dominated the one-time-
+  item discount here.
+- **How** — **No change to factor-guide.md yet** (n=1 for ANF; doesn't match either
+  existing Pattern Ledger candidate). Logged as a **new** candidate in
+  `lessons-learned.md`: *"Yellow/Green trend flag + one-time item as minority driver +
+  broad-based multi-region reacceleration + deeply skeptical starting valuation →
+  outsized (not muted) reaction; reset effect can fully dominate the one-time
+  discount."* Pre-drafted diff if promoted: add a sub-case to §3's one-time-vs-recurring
+  reading distinguishing this combination from the default discounting expectation.
+  Needs 2 more supporting cases (or 2 + strong reasoning).
+
+## SJM — 2026-08-27 (T+1 retrospective)
+
+**Context:** SJM reported 2026-08-26 (BMO). Multi-Quarter Fundamental Trend Check came
+back Yellow, leaning Green — revenue and EPS both inflected positively, margins
+expanded, but ~26% of the EPS beat is a one-time tariff refund and the full-year guide
+still implies a sales decline. Confirmation Gate was already "Confirmed" T+0 (new
+52-week high, +4.3-5%, clean directional agreement). Tentative Drift Classification:
+"Confirmation (one-time-item caveat)," unconfirmed.
+
+- **Who** — Both reads look correct on available evidence: the Yellow-leaning-Green
+  trend flag (with its tariff caveat) and the Confirmed gate both match what actually
+  printed and how the Street reacted.
+- **What** — No discrepancy found between the predicted "Confirmation" drift class and
+  the observed reaction. Multiple analysts raised price targets same-day despite
+  explicitly noting the tariff-refund component and the still-negative FY sales guide
+  (JPMorgan $149, RBC $150, TD Cowen $136, Stifel $132, BofA $132) — consistent with the
+  market treating this as a genuine inflection, not fully discounting the one-off.
+- **When** — Reaction occurred and held through T+0 close (new 52-wk high, +4.3-5%).
+  T+1 exact price/technicals came back [Unavailable — conflicting sources across 4
+  mutually inconsistent "today" quotes], but the circumstantial signal (the PT-hike
+  cluster above) points away from a reversal.
+- **Where** — No factor-guide.md section implicated.
+- **Why** — No model gap identified. SJM was the cleanest of the three same-day
+  reporters, exactly as the initial read anticipated; the only issue surfaced today is
+  search-data reliability for T+1 pricing specifically, not framework logic.
+- **How** — **No change warranted.** Evidence, though incomplete for exact T+1 pricing,
+  does not contradict the original classification.
+
+**Cross-ticker note (2026-08-26 batch):** PLAB, ANF, and SJM all reported the same day
+and all cleared §8 at Yellow, but produced three different T+1 stories — a clean,
+signal-bearing fade (PLAB), an outsized hold-not-fade reaction to a minority one-time
+item (ANF), and a clean, uneventful confirmation (SJM). Two new Pattern Ledger
+candidates from this batch (PLAB's litigation-implicated fade, ANF's reset-effect-
+dominates-one-time-discount) — both n=1, logged in `lessons-learned.md`, not applied.

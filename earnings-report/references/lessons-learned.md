@@ -34,8 +34,10 @@ stocks the moment it's written, not as a manual follow-up.
 |---|---|---|---|---|
 | Red §8 flag + **mixed** print (not a clean miss) → muted/ambiguous T+0 reaction, not the full "expect continued weakness" magnitude | PDD, 2026-08-25 | 1 (PDD) | 0 | Watching — needs 2 more supporting cases |
 | Red §8 flag + a positive **QoQ inflection** or **maintained/increased capital return** (dividend/buyback) embedded in an otherwise-Red picture → can still produce a positive T+0 reaction despite the Red flag | XYF, 2026-08-25 | 1 (XYF) | 0 | Watching — needs 2 more supporting cases |
+| **Litigation-implicated beat driver** — active litigation directly targets the specific metric cited as driving the current beat (not just generic litigation overhang) → fast intraday fade despite a headline beat, as the market discounts the hyped figure back toward the real (non-hyped) beat magnitude within the same session | PLAB, 2026-08-27 | 1 (PLAB) | 0 | Watching — needs 2 more supporting cases |
+| **Reset-effect dominance** — Yellow/Green fundamental trend flag + a one-time item that is a *minority* share of the beat + broad-based multi-region/segment reacceleration + a deeply skeptical starting valuation (well off highs, compressed multiple, long growth streak) → an **outsized** (not muted) T+0 reaction that holds through T+1, because the "reset effect" (§3) fully dominates the one-time-item discount rather than partially offsetting it | ANF, 2026-08-27 | 1 (ANF) | 0 | Watching — needs 2 more supporting cases |
 
-*(No patterns promoted yet — both candidates above are at n=1.)*
+*(No patterns promoted yet — all four candidates above are at n=1.)*
 
 ---
 

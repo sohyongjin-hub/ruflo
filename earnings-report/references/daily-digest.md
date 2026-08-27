@@ -290,3 +290,264 @@ multiple compressed ~70% below its 7-yr average), **HRL** (~18% off high, forwar
 reasonable vs. its historical premium), **ULTA** (~25% off high, compressed multiple —
 though 80% Buy/Strong Buy consensus remains a mild complacency counter-signal). All four
 still pre-print (report 2026-08-27), no change to their setup today.
+
+---
+
+## Daily Digest — 2026-08-27
+
+**Tickers touched today:** 22 (BBW, DG, PD, ULTA, WDAY, HQY, BURL, GAP, IREN, RBRK, S,
+DY, PLAB, ANF, SJM, TUYA, BBAR, BBY, BZUN, CM, HRL, LOT, RY, TD, ADSK, ESTC, MRVL, DLTR —
+27 actually, see full list below). The single busiest day of the pilot: 21 of the 30
+tracked names reported or were checked against a report today.
+
+### BBW (Track: Full Deep-Dive)
+- **What changed:** Reported today (BMO). §8 gate run for the first time — cleared
+  **Red**. Stock fell ~-15.6% (premarket) to ~-28.4% (intraday, sources disagree on the
+  exact settled figure).
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check — revenue growth
+  negative for 5 straight quarters (+11.1%→-7.2%), EPS down YoY in 3 of the last 4
+  quarters, and this is the **second** guidance cut this fiscal year, explicitly citing
+  continued traffic weakness and the non-repeat of a Walmart wholesale program.
+- **Swing outlook:** No Confirmation Gate/Drift Classification (§8 stopped at Red, no
+  technicals run). Removed from the Upside Watch list — the "cheap" read was real, but
+  the fundamentals backing it just broke down further.
+
+### DG (Track: Full Deep-Dive)
+- **What changed:** Reported today (BMO). §8 gate cleared **Green** — 3rd straight
+  quarter of accelerating revenue and EPS growth, margin expanding, guide raised in each
+  of the last two reports. Stock rose (sources range +2.5% to +12.4%, most converging
+  ~+5-7%).
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check — clean beat-and-raise
+  not dependent on the disclosed tariff-refund benefit.
+- **Swing outlook:** Confirmation Gate **Confirmed** — price gapped through both 50-
+  and 200-day MAs on the print, matching the Green fundamental read. Tentative Drift
+  Classification: Confirmation.
+
+### PD (Track: Full Deep-Dive)
+- **What changed:** Reported today (AMC yesterday cycle / today's release). §8 gate
+  cleared **Red** — despite an EPS/revenue beat and a full-year guide raise, revenue
+  growth has decelerated for 5 straight quarters (6.4%→0.8%) and NRR fell from 106% to
+  98%, meaning the existing customer base is now net-contracting. Stock fell -1.7%.
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check — a structural SaaS
+  red flag (net revenue retention below 100%) outweighing a modest headline beat.
+- **Swing outlook:** No Confirmation Gate/Drift Classification (Red flag, no technicals
+  run).
+
+### ULTA (Track: Full Deep-Dive)
+- **What changed:** Reported today (AMC). §8 gate cleared **Yellow** — margin/EPS/
+  guidance all Green-quality (beat both lines, full-year guide raised), but comp-sales
+  growth has decelerated for 3 straight quarters (6.7%→3.8%).
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check.
+- **Swing outlook:** Confirmation Gate **Awaiting confirmation** — only a preliminary
+  +2% AH move available so far against a 7.5% [Sourced] pre-print implied move; regular-
+  session technicals not yet formed, re-check at T+1. This print **supports** the
+  "cheap + healthy business" half of ULTA's prior Upside Watch case, but the muted
+  preliminary reaction relative to the implied move is consistent with the complacency
+  counter-signal (80% Buy/Strong Buy) already flagged as a cap on upside — inconclusive
+  until T+1.
+
+### WDAY (Track: Full Deep-Dive)
+- **What changed:** Reported today (AMC). §8 gate cleared **Yellow** — 5th straight
+  EPS beat and margin expansion, but subscription growth decelerated for 2 straight
+  quarters (15.7%→14%→13.9%) and total backlog growth cratered from ~17-20% to 8.0%
+  YoY. Stock fell ~-7.0% AH on the deceleration concern despite the beat.
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check.
+- **Swing outlook:** Confirmation Gate **Confirmed (bearish)** — the negative price
+  reaction matches the Yellow caution flag. Tentative Drift Classification:
+  Continuation-of-damage (low confidence — technicals unreliable via WebSearch).
+
+### HQY (Track: Full Deep-Dive, Tier 3 "priced for perfection")
+- **What changed:** Reported today. §8 gate cleared **Green** — consistent 7-9%
+  revenue growth, margin expanding, EPS beat continues the trend, no deterioration
+  found anywhere in the numbers. Stock still fell **~-13.6% to -14.1%**.
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check + the guidance-raise
+  read — FY27 guide was nudged up by only ~$1M at each end, far too small relative to
+  an already-rich, near-52wk-high valuation.
+- **Swing outlook:** Doesn't fit the standard Confirmation Gate taxonomy (fundamentals
+  aren't deteriorating, so it isn't Continuation-of-damage; no one-time item to unwind,
+  so it isn't Repair). Closest analog: the project's own **KEYS "priced for
+  perfection"** origin case — a genuinely clean beat still punished because the setup
+  demanded more than a token raise could deliver. **Validates**, doesn't complicate, the
+  Tier 3 complacent flag.
+
+### BURL (Track: Full Deep-Dive)
+- **What changed:** Reported today (BMO). §8 gate cleared **Yellow** — EPS beat/raise
+  and margin expansion intact (15th straight quarter of double-digit EPS growth), but
+  comp growth decelerated sharply (6%→2%) and this is the first revenue miss in the
+  streak. Stock fell -6.8% specifically on management's decision to reinvest the entire
+  $55M tariff refund into price cuts rather than retain it as margin.
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check + Same-Day Primary-
+  Source Check (quantified the tariff-refund pass-through decision directly from the
+  release).
+- **Swing outlook:** Confirmation Gate **Confirmed (bearish)** — price broke below both
+  the 50-day (~$273.56) and 200-day (~$257.36) MAs same-day. Tentative Drift
+  Classification: Confirmation (of downside repricing).
+
+### GAP (Track: Full Deep-Dive)
+- **What changed:** Reported today. §8 gate cleared **Yellow** — a 9-quarter positive
+  comp streak broke to -1%, though mixed by brand (Gap +10%, Banana Republic +3% strong;
+  Old Navy -4%, Athleta -12% weak); full-year sales guide narrowed even as EPS guide was
+  raised. Stock rose **+11-12%** on real volume (22.55M vs ~6.05M avg) — partly co-driven
+  by a bundled new Old Navy CEO announcement.
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check + Same-Day Primary-
+  Source Check (isolated the ~11.4pp one-time tariff-refund benefit to gross margin;
+  ex-refund margin was roughly flat YoY).
+- **Swing outlook:** Confirmation Gate **[Unavailable]** — same-day precise RSI/MACD
+  not confirmed independent of stale sources, though price is now above its pre-print
+  50-/200-day MAs. Tentative Drift Classification: Confirmation-leaning [Unvalidated].
+
+### IREN (Track: Full Deep-Dive)
+- **What changed:** Reported today (AMC). §8 gate cleared **Red** — revenue declining
+  3 straight quarters, adjusted EBITDA declining 4 straight quarters, GAAP net loss
+  widened to -$684M in the quarter (of which $450.4M is a non-cash impairment tied to
+  decommissioning Bitcoin-mining hardware as sites convert to AI Cloud). AI Cloud
+  revenue itself grew ~8x YoY to $128.8M with $4B contracted ARR — a real pivot in
+  progress, but trailing GAAP/adjusted profitability metrics are unambiguously
+  deteriorating across the window.
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check — the mechanical trend
+  read (Red) explicitly does not override the qualitative pivot context, per the
+  framework's discipline of naming both rather than smoothing one into the other.
+- **Swing outlook:** No Confirmation Gate/Drift Classification (Red flag, no technicals
+  run).
+
+### RBRK (Track: Full Deep-Dive, Tier 3 "priced for perfection")
+- **What changed:** Reported today (AMC). §8 gate cleared **Yellow** — 4th straight
+  EPS beat, ARR +33% YoY, beat-and-raise on every headline metric, but 5 straight
+  quarters of decelerating revenue growth (51%→48%→46%→39%→37.9%) plus slight
+  gross/FCF margin softening. Stock fell **~-9.3% to -9.7% AH** despite the beat.
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check.
+- **Swing outlook:** Confirmation Gate **Confirmed (bearish)** — matches the Yellow
+  caution flag. **Validates** the Tier 3 flag directly: the cluster of bullish PT hikes
+  (Oppenheimer/Cantor to $120, Goldman to $106) clustered Aug 19-21 had made this
+  setup tighter, not looser, and a genuinely strong print still couldn't clear the bar.
+
+### S / SentinelOne (Track: Full Deep-Dive, Tier 3 "priced for perfection")
+- **What changed:** Reported today (AMC). §8 gate cleared **Yellow** — revenue growth
+  stable-to-mildly-decelerating (23%→20-21%), a sharp margin inflection (non-GAAP op
+  margin 2%→10% YoY), EPS beat — but this is the **2nd straight quarter** of forward
+  guidance falling short of Street (Q3 and FY27 EPS guides both below consensus). Stock
+  fell ~-6.4% AH.
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check.
+- **Swing outlook:** Confirmation Gate **[Unavailable]/Awaiting confirmation** —
+  pre-print technicals were firmly bullish (fresh 52-wk high same day, RSI 60, MACD
+  positive); no post-move regular-session technicals exist yet. **Validates** the Tier 3
+  flag — a decent-to-good quarter still sold off purely on guidance falling short of an
+  elevated bar.
+
+### DY (Track: Monitor-Only → escalated 2026-08-26, first full-dive gate today)
+- **What changed:** First Multi-Quarter Fundamental Trend Check run — cleared
+  **Yellow**. Trailing revenue/EPS/margin trend has been accelerating (Q4FY26
+  +34.4%→Q2FY27 +45.6% YoY revenue), but the guide miss that triggered escalation is
+  substantially explained by ~$150M of wireless-program revenue **deferred to FY28**
+  (timing, not lost demand), plus ongoing margin-investment costs. Record backlog
+  $12.24B (+53.2% YoY).
+- **Why (rubric/source):** Multi-Quarter Fundamental Trend Check, first run since
+  escalation.
+- **Swing outlook:** Confirmation Gate **[Unavailable]** — T+1 price/technicals came
+  back conflicting across sources. Tentative Drift Classification: Continuation-of-
+  damage (leaning) — a forward/structural-timing issue, not a one-time trailing item,
+  though the "deferral not lost demand" framing leaves Repair plausible pending
+  confirmation. Cantor Fitzgerald cut its PT to $476 (from $654) same-day while keeping
+  Overweight.
+
+### PLAB, ANF, SJM (Track: Full Deep-Dive) — T+1 5W1H retrospectives
+- **What changed:** All three ran their T+1 retrospective (reported 2026-08-26).
+  **PLAB**: Confirmation Gate stayed [Unavailable] (technicals still contaminated); the
+  +27.1% intraday pop's fast, clean fade to a settled ~+4-4.7% was itself confirmed as
+  the real signal. **ANF**: Confirmation Gate resolved to **Confirmed** (MACD +5.93
+  bullish, RSI 79.06 overbought) — the outsized +30-42% T+0 pop **held through T+1**,
+  not a fade. **SJM**: stayed **Confirmed** — T+1 exact pricing was data-limited, but a
+  cluster of same-day sell-side PT hikes points away from any reversal.
+- **Why (rubric/source):** §9 5W1H Post-Print Retrospective. PLAB and ANF each produced
+  a **new** Pattern Ledger candidate (both n=1, logged in `lessons-learned.md`, not
+  applied): PLAB — "litigation-implicated beat driver → fast intraday fade"; ANF —
+  "reset effect can fully dominate a minority one-time-item discount when paired with
+  broad reacceleration + deep pre-print skepticism, producing an outsized not muted
+  reaction." SJM: no change warranted, cleanest of the three as expected.
+- **Swing outlook:** PLAB — Confirmation Gate [Unavailable], no directional read.
+  ANF — Confirmation Gate Confirmed, elevated pullback-risk flag on the overbought RSI.
+  SJM — Confirmation Gate Confirmed, holding.
+
+### TUYA (Track: Full Deep-Dive)
+- **What changed:** Confirmation Gate Daily Re-Check ran for a 3rd straight day —
+  technicals essentially unchanged (price ~$1.78, MACD still negative, RSI ~36, price
+  still below both 50-/200-day MAs).
+- **Why (rubric/source):** Confirmation Gate Daily Re-Check.
+- **Swing outlook:** Stays **Awaiting confirmation**, unresolved for a 3rd consecutive
+  check. Re-checked again next firing.
+
+### BBAR (Track: Full Deep-Dive)
+- **What changed:** Did **not** report as scheduled today — release is after U.S./
+  Buenos Aires market close today (2026-08-27), with the earnings call tomorrow
+  (2026-08-28, 11am ET). No Q2 2026 6-K found on SEC EDGAR yet as of this check.
+- **Why (rubric/source):** Attribution Gate — confirmed via BBVA Argentina's own
+  release schedule and cross-checked against SEC EDGAR (no false-positive attribution
+  to today's routine ~+1.3% price move, which is ordinary trading, not a print
+  reaction).
+- **Swing outlook:** Still pre-print. §8 gate deferred to next firing, per the standing
+  AMC-reporter rule.
+
+### HRL (Track: Monitor-Only → escalated today)
+- **What changed:** Reported today (BMO). Revenue missed ($2.96B vs $3.04B est.), FY
+  sales guide cut, volumes -7.4% despite an EPS beat. Stock fell **~-10.2%** — ~1.8-1.9x
+  its 5.59% [Sourced] baseline, past the ~8.4% (1.5x, Large-cap) escalation trigger.
+- **Why (rubric/source):** Tier 2 Monitor-and-Escalate Protocol — a genuine forward
+  guide-cut, not routine noise.
+- **Swing outlook:** **Escalated** effective today — moves to the full §7/§8/§9
+  treatment for the rest of its window; Multi-Quarter Fundamental Trend Check to run at
+  the next firing. Removed from the Upside Watch list (no longer pre-print).
+
+### BBY, CM, RY, TD, MRVL, DLTR (Track: Monitor-Only)
+- **What changed:** All six reported today with moves comfortably inside their
+  respective escalation triggers. BBY -4.5% to -4.9% (beat both lines, but margin
+  concern). CM ~flat to -0.6% (beat, offset by a capital-ratio dip + a one-off charge).
+  RY -0.8% to -2.3% (beat on both lines, still fell — a mild magnitude/direction
+  footnote, not a trigger). TD ~+1.5% (beat, positive move matches direction). MRVL
+  ~-4.3% AH (double beat, gave back gains on margin/tariff concern — consistent with
+  its prior "complacent/expensive" read). DLTR ~-3.9% (beat + raised guide, but a
+  cautious Q3 outlook weighed on shares).
+- **Why (rubric/source):** Tier 2 Monitor-and-Escalate Protocol, daily check.
+- **Swing outlook:** None escalated — all six stay Monitor-Only.
+
+### BZUN, LOT, ADSK, ESTC (Track: Monitor-Only)
+- **What changed:** BZUN and LOT both reported today, but the actual T+0 price move
+  couldn't be reliably confirmed (WebSearch budget exhausted / mutually inconsistent
+  price snapshots) — flagged for manual verification/retry, **not** escalated on
+  missing data. ADSK and ESTC both report after today's market close; their actual
+  print reaction hadn't formed as of this firing (today's intraday moves for both were
+  pre-print positioning, not the print reaction). ESTC did get a fresh 10.7% [Sourced]
+  options-implied baseline today (TheFly/TipRanks), replacing its prior [Unavailable]
+  read.
+- **Why (rubric/source):** Tier 2 Monitor-and-Escalate Protocol — data-quality gate,
+  not a real trigger.
+- **Swing outlook:** Cannot determine escalation for any of the four yet — all four
+  retried at the next firing. ADSK's beat plus its heavy pre-print rally is consistent
+  with, not yet confirming, its Upside Watch thesis (see below).
+
+### NVDA, JKS, DCI (Track: Monitor-Only)
+- **What changed:** T+1 cumulative-move re-check for all three hit the same
+  WebSearch-budget wall. NVDA's own read came back conflicting/unconfirmed (~+4% to
+  +7.4% cumulative, straddling its 5.27% baseline and possibly nearing the ~7.9%
+  trigger) — flagged for **priority** re-check. JKS and DCI simply have no T+1 data
+  point yet.
+- **Why (rubric/source):** Tier 2 Monitor-and-Escalate Protocol, continuing daily check.
+- **Swing outlook:** None of these gaps changes yesterday's no-escalation calls — they
+  remain unconfirmed at T+1 pending retry, not re-opened.
+
+**No change today (checked, nothing due):** PDD, XPEV — Red-flagged, nothing due until
+T+5 (2026-08-31). XYF — escalated, nothing due until T+5. No ticker's window closed
+today (earliest closures remain PDD/XPEV/XYF at 2026-08-31), so §11 Ticker Lifecycle
+Synthesis did not run this firing.
+
+**Upside watch (pre-print, unchanged):** every previously-listed candidate (BBW, ADSK,
+HRL, ULTA — plus PLAB/ANF/DCI/JKS removed the prior two days) has now either reported
+or entered its report cycle today. **BBW** and **HRL** are removed outright — BBW's §8
+gate came back Red (the fundamentals backing the "cheap" read broke down further) and
+HRL escalated on a guide-cut/miss, not a beat. **ULTA** and **ADSK** are pending
+confirmation, not carried forward as clean candidates, since their actual print
+reactions aren't confirmed yet (see their entries above) — they'll resolve to either a
+confirmed hit or a drop next firing. That leaves **only BBAR** as still genuinely
+pre-print across all 30 tracked names, and it was never screened against the
+skeptical+cheap criteria (its price data has repeatedly been flagged as unreliable
+across sources) — no clean candidate to list today. This section will likely go empty
+by next firing, as the last pre-print name in this batch reports.
