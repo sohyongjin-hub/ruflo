@@ -179,20 +179,6 @@ async function findReason(ticker, date) {
 }
 
 async function main() {
-  // Fail the whole run up front on missing config. Without this, a missing
-  // ANTHROPIC_API_KEY would only surface inside findReason()'s try/catch,
-  // which exists to catch *per-ticker* failures (a flaky search, a bad
-  // reply) and correctly tags just that row "Source error" -- it has no way
-  // to tell a config problem apart from a real per-row failure, so it would
-  // silently mark every single pending row "Source error" one by one
-  // instead of stopping. (Exactly this happened during rollout on
-  // 2026-08-28: 35 real rows got tagged "Source error" in ~15 seconds before
-  // the run was caught and cancelled, and had to be manually reverted to
-  // Pending in Notion.)
-  need('NOTION_TOKEN');
-  need('NOTION_DAILY_TRACKING_DATA_SOURCE_ID');
-  need('ANTHROPIC_API_KEY');
-
   const pending = await fetchPending();
   console.log(`Found ${pending.length} pending row(s).`);
 
