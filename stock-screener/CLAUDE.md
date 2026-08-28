@@ -33,6 +33,7 @@ A ticker only enters the pool if it clears both stages.
 - **Screener Pool**: https://app.notion.com/p/1d107223596d410a8e4ed0069cb00bf3 (data source `2a722d47-ff3a-4a0b-90ae-0da599a238b8`) — Ticker, Company Name, Date Caught, Status, Filters Passed, Catch Price, Rationale, Notes, plus (added 2026-08-28) `Repeated` (checkbox), `Catalyst Confidence` (select), `Catalyst Reason` (rich text), `Catalyst Sources` (rich text) — see "Lane 1 — Mockup 1 + Repeated badge" below. These are separate properties from Daily Tracking's own `Catalyst Confidence`/Reason/Sources — Screener Pool's are the same-day catch-time verdict, Daily Tracking's are the post-catch-day verdict.
 - **Screener Config**: https://app.notion.com/p/3ee0315fe5c54839ba2c3341eefa934b (data source `f3deaad1-d937-4cea-a3b0-1d5c652d6d2a`), pre-populated with the 10 v1 default thresholds below.
 - **Daily Tracking**: https://app.notion.com/p/3a8c3c5dc9fb487f83abc398af75a625 (data source `f92e73ad-6e87-4f98-baac-e5c75853847f`) — the 5-trading-day post-catch tracking table, see "Post-catch tracking" below.
+- **Company Research** (added 2026-08-28): https://app.notion.com/p/31396f5e1de540798ac881aaceab47a6 (data source `c86c475d-3c49-41ee-9a05-f98abb4e750c`) — Ticker (title), Fundamentals, Qualitative, Sources (rich text), Last Researched (date). One row per company, keyed by Ticker — not per catch event, unlike Screener Pool. This is the `/level2` cache, see "Lane 3 — Company Research cache" below. `Qualitative` is written by the still-to-be-built `/level2` Worker command (Step 3); only `Fundamentals`/`Sources`/`Last Researched` are populated so far, by `fetch-fundamentals.js`.
 
 ## Config source of truth
 The Notion "Screener Config" database holds the live values for every threshold above
@@ -124,6 +125,49 @@ For every ticker that clears both stages, same run, before the Notion write:
 Actions) as of this write-up** — code and workflow wiring are in place, but this can't
 run live until they exist: `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`,
 `TAVILY_API_KEY`.
+
+## Lane 3 — Company Research cache (in progress, added 2026-08-28)
+Second piece of the redesign (Step 2 of 4 in the build order). This lands the data store
+and the SEC EDGAR fetch/format logic only — the actual `/level2` Telegram command that
+reads/writes this cache from the bot is not built yet (Step 3, next).
+
+**`stock-screener/scripts/fetch-fundamentals.js`** — standalone, zero-dependency Node
+script, same `need()`-fail-fast-before-any-write style as `stock-screen.js`/
+`track-pool.js`. `node fetch-fundamentals.js TICKER`:
+1. Looks up the ticker's SEC CIK number from the free public mapping file
+   (`sec.gov/files/company_tickers.json`) — no key required.
+2. Fetches that CIK's structured XBRL data from SEC EDGAR's free `companyfacts` API
+   (`data.sec.gov/api/xbrl/companyfacts/CIK##########.json`) — real numbers straight from
+   filings, no LLM needed to extract them.
+3. Pulls a curated set of us-gaap concepts (Revenue, Gross Profit, Operating Income, Net
+   Income, Diluted EPS, Assets, Liabilities, Stockholders' Equity, Cash) preferring the
+   most recent annual (10-K) figure over quarterly, formats them into a short readable
+   summary, and upserts (not inserts — one row per company) into the "Company Research"
+   Notion database.
+- **SEC requires a descriptive `User-Agent` on every request** identifying the requester,
+  or it will rate-limit/block. Read from a new required env var, `SEC_CONTACT_EMAIL` —
+  deliberately not hardcoded to any real address in source, so nothing gets sent to a
+  third party (SEC's servers) without an explicit, visible choice of what to send.
+- **Tested against synthetic SEC-shaped data only so far** (13/13 checks: number
+  formatting, annual-over-quarterly preference, fallback tag names, missing-concept and
+  empty-facts degradation) — this session's sandbox has the same blocked egress to
+  external data domains already documented under "Scheduling and infrastructure" below
+  (confirmed: `data.sec.gov` is blocked here too, same as `query1.finance.yahoo.com` and
+  `scanner.tradingview.com` already were), so a live SEC EDGAR call could only be smoke-
+  tested from GitHub Actions or the Cloudflare Worker, not this interactive session. Not
+  yet run against a live ticker.
+- **This script is a tested prototype, not (yet) wired into anything live.** No new
+  GitHub Actions workflow was added for it — the actual `/level2` command (Step 3) will
+  port this same fetch+format logic inline into `stock-screener/telegram-bot/worker.js`,
+  since a Cloudflare Worker can't `require()` a separate Node script. One thing to solve
+  in that port: `company_tickers.json` is a multi-MB file covering every US ticker —
+  worth caching in the existing `stock-screener-bot-state` KV namespace rather than
+  re-fetching it on every `/level2` call, not yet decided how (not a problem this script
+  needed to solve, since it's a one-shot CLI run).
+- **New required env var**, not yet added anywhere (no workflow references it yet, since
+  nothing calls this script automatically): `SEC_CONTACT_EMAIL`. `NOTION_TOKEN` and
+  `NOTION_COMPANY_RESEARCH_DATA_SOURCE_ID` (`c86c475d-3c49-41ee-9a05-f98abb4e750c`) are
+  also required — same Notion token already used everywhere else in this project.
 
 ## Post-catch tracking (5-trading-day window)
 For every Screener Pool ticker, for the 5 US-market trading days after it was caught,
