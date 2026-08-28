@@ -106,13 +106,45 @@ function formatLine(row) {
   return `${row.ticker} (day ${row.dayNumber}) ${changeStr} ${confMark}${reasonPart}`;
 }
 
-function groupByDate(rows) {
-  const byDate = new Map();
-  for (const row of rows) {
-    if (!byDate.has(row.date)) byDate.set(row.date, []);
-    byDate.get(row.date).push(row);
+// Telegram's sendMessage caps text at 4096 UTF-16 code units. A single day's
+// worth of reason-finding (let alone a multi-day catch-up) can easily blow
+// past that, so pack rows into chunks under this budget and send each as
+// its own message, marking only the rows in a chunk Notified once that
+// chunk actually sends -- a failure partway through leaves the remainder
+// correctly unmarked for the next run to pick up, rather than needing an
+// all-or-nothing retry.
+const CHUNK_BODY_LIMIT = 3200; // leaves headroom for the header/footer text added around each chunk
+
+function buildChunks(rowsSortedByDate) {
+  const chunks = [];
+  let text = '';
+  let lastDate = null;
+  let chunkRows = [];
+
+  const flush = () => {
+    if (chunkRows.length) chunks.push({ text, rows: chunkRows });
+    text = '';
+    lastDate = null;
+    chunkRows = [];
+  };
+
+  for (const row of rowsSortedByDate) {
+    const needsHeader = row.date !== lastDate;
+    const headerPart = needsHeader ? `${row.date}:\n` : '';
+    const separator = text ? (needsHeader ? '\n\n' : '\n') : '';
+    const piece = separator + headerPart + formatLine(row);
+
+    if (chunkRows.length > 0 && text.length + piece.length > CHUNK_BODY_LIMIT) {
+      flush();
+      text = `${row.date}:\n${formatLine(row)}`;
+    } else {
+      text += piece;
+    }
+    lastDate = row.date;
+    chunkRows.push(row);
   }
-  return [...byDate.entries()].sort(([a], [b]) => a.localeCompare(b));
+  flush();
+  return chunks;
 }
 
 async function main() {
@@ -133,20 +165,23 @@ async function main() {
       return;
     }
 
-    const sections = groupByDate(resolved)
-      .map(([date, dateRows]) => `${date}:\n${dateRows.map(formatLine).join('\n')}`)
-      .join('\n\n');
-    const pendingNote = stillPending.length > 0
-      ? `\n\n${stillPending.length} more row(s) still awaiting reason-finding (will be reported once resolved).`
-      : '';
+    const sorted = [...resolved].sort((a, b) => a.date.localeCompare(b.date));
+    const chunks = buildChunks(sorted);
 
-    const msg = `📋 Daily Tracking update (${resolved.length} newly reported):\n\n${sections}${pendingNote}`;
-    await sendTelegram(msg);
-
-    for (const row of resolved) {
-      await markNotified(row.id);
+    for (let i = 0; i < chunks.length; i++) {
+      const partNote = chunks.length > 1 ? ` (part ${i + 1}/${chunks.length})` : '';
+      const isLast = i === chunks.length - 1;
+      const pendingNote = isLast && stillPending.length > 0
+        ? `\n\n${stillPending.length} more row(s) still awaiting reason-finding (will be reported once resolved).`
+        : '';
+      const header = `📋 Daily Tracking update${partNote} — ${chunks[i].rows.length} row(s):\n\n`;
+      await sendTelegram(header + chunks[i].text + pendingNote);
+      for (const row of chunks[i].rows) {
+        await markNotified(row.id);
+      }
+      console.log(`Sent part ${i + 1}/${chunks.length} (${chunks[i].rows.length} rows).`);
     }
-    console.log(`Sent tracking summary for ${resolved.length} row(s); ${stillPending.length} still pending.`);
+    console.log(`Done: ${resolved.length} row(s) reported across ${chunks.length} message(s); ${stillPending.length} still pending.`);
   } catch (err) {
     console.error('FAILED:', err);
     try {
