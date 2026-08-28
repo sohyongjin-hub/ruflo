@@ -101,6 +101,7 @@ function formatLine(row) {
     'Plausible unconfirmed': '🟡',
     'No clear catalyst found': '⚪',
     'Source error': '⚠️',
+    'Below materiality threshold': '➖',
   }[row.confidence] || '❔';
   const reasonPart = row.reason ? ` — ${row.reason}` : '';
   return `${row.ticker} (day ${row.dayNumber}) ${changeStr} ${confMark}${reasonPart}`;

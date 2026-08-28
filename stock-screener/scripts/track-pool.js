@@ -5,12 +5,40 @@
 // (open egress) shortly after market close. This script does NOT find the
 // "reason" behind a move — that requires WebSearch + LLM synthesis, which
 // only works from a Claude Code session (see stock-screener/CLAUDE.md for
-// the reason-finding routine). This script only writes quantitative rows
-// with Catalyst Confidence = "Pending", leaving Reason/Sources blank for
-// the reason-finding step to fill in later.
+// the reason-finding routine). This script writes quantitative rows with
+// Catalyst Confidence = "Pending", leaving Reason/Sources blank for the
+// reason-finding step to fill in later -- EXCEPT for rows whose same-session
+// move is too small to plausibly have a discrete news driver (see
+// MATERIALITY_THRESHOLD_PCT below), which are tagged directly and never
+// handed to reason-finding at all. This is the pool-narrowing pass added
+// 2026-08-28 to cut how many rows the reason-finder (and its Claude usage)
+// has to touch, without changing the reason-finder itself.
 
 const fs = require('fs');
 const path = require('path');
+
+// A stock already had to move >= this much to enter the pool in the first
+// place (Stage 1's own "Change >= 3%" catch bar -- see this file's
+// CLAUDE.md "Screen rules"). Reusing that same bar here keeps "worth
+// explaining" consistent across the whole pipeline: a day's move below it
+// is tagged "Below materiality threshold" and skipped, never sent to the
+// reason-finder. Kept as a plain constant rather than read from the
+// Screener Config Notion database (unlike Stage 1's own thresholds) --
+// this script doesn't otherwise touch that database, and this is a cheap,
+// easy follow-up if it ever needs to be tunable without a code change.
+const MATERIALITY_THRESHOLD_PCT = 3;
+
+// Percent move for the session just tracked (today's close vs. the prior
+// trading day's close from the same 5-day Yahoo fetch) -- not to be
+// confused with "Change vs Catch Price", which is cumulative since the
+// original catch. Returns null when a prior close isn't available (e.g. a
+// very recently listed ticker), in which case the caller should default to
+// NOT filtering -- degrade to "send it to reason-finding" (today's existing
+// behavior), never to silently skipping something that might matter.
+function dayMovePct(quote) {
+  if (quote.prevClose === null || quote.prevClose === 0) return null;
+  return ((quote.close - quote.prevClose) / quote.prevClose) * 100;
+}
 
 function need(name) {
   const v = process.env[name];
@@ -104,9 +132,14 @@ async function fetchTodayQuote(ticker, retried = false) {
   if (!result) throw new Error(data.chart.error ? JSON.stringify(data.chart.error) : 'no result');
   const quote = result.indicators.quote[0];
   const lastIdx = quote.close.length - 1;
+  // The 5-day range fetch already includes the prior trading day's close --
+  // read it out for the materiality check below instead of fetching it
+  // separately; this costs nothing extra, it's already in this response.
+  const prevCloseRaw = lastIdx >= 1 ? quote.close[lastIdx - 1] : null;
   return {
     close: quote.close[lastIdx],
     volume: quote.volume[lastIdx],
+    prevClose: typeof prevCloseRaw === 'number' ? prevCloseRaw : null,
   };
 }
 
@@ -141,6 +174,30 @@ async function writeTrackingRow(item, quote) {
   const changeVsCatch = ((quote.close - item.catchPrice) / item.catchPrice) * 100;
   const marketCap = await fetchMarketCap(item.ticker);
 
+  const move = dayMovePct(quote);
+  const belowThreshold = move !== null && Math.abs(move) < MATERIALITY_THRESHOLD_PCT;
+
+  const properties = {
+    Ticker: { title: [{ text: { content: item.ticker } }] },
+    Date: { date: { start: item.today } },
+    'Day Number': { number: item.dayNumber },
+    Close: { number: quote.close },
+    'Change vs Catch Price': { number: Number(changeVsCatch.toFixed(2)) },
+    'Market Cap': marketCap !== null ? { number: marketCap } : undefined,
+    Volume: { number: quote.volume },
+    'Catalyst Confidence': { select: { name: belowThreshold ? 'Below materiality threshold' : 'Pending' } },
+  };
+  if (belowThreshold) {
+    const sign = move >= 0 ? '+' : '';
+    properties.Reason = {
+      rich_text: [{
+        text: {
+          content: `Daily move of ${sign}${move.toFixed(2)}% is below the ${MATERIALITY_THRESHOLD_PCT}% materiality threshold -- not sent to reason-finding to conserve budget; small moves like this rarely have a discrete news driver.`,
+        },
+      }],
+    };
+  }
+
   const res = await fetch('https://api.notion.com/v1/pages', {
     method: 'POST',
     headers: {
@@ -150,19 +207,10 @@ async function writeTrackingRow(item, quote) {
     },
     body: JSON.stringify({
       parent: { type: 'data_source_id', data_source_id: trackingId },
-      properties: {
-        Ticker: { title: [{ text: { content: item.ticker } }] },
-        Date: { date: { start: item.today } },
-        'Day Number': { number: item.dayNumber },
-        Close: { number: quote.close },
-        'Change vs Catch Price': { number: Number(changeVsCatch.toFixed(2)) },
-        'Market Cap': marketCap !== null ? { number: marketCap } : undefined,
-        Volume: { number: quote.volume },
-        'Catalyst Confidence': { select: { name: 'Pending' } },
-      },
+      properties,
     }),
   });
-  return res.ok;
+  return { ok: res.ok, belowThreshold };
 }
 
 async function main() {
@@ -173,7 +221,7 @@ async function main() {
   console.log(`${inWindow.length} pool tickers in their 5-day tracking window`);
 
   const alreadyTracked = await fetchAlreadyTrackedToday(todayISO);
-  let ok = 0, failed = 0, skippedDupes = 0;
+  let ok = 0, failed = 0, skippedDupes = 0, belowThresholdCount = 0;
 
   for (const item of inWindow) {
     if (alreadyTracked.has(item.ticker)) {
@@ -183,16 +231,23 @@ async function main() {
     }
     try {
       const quote = await fetchTodayQuote(item.ticker);
-      const success = await writeTrackingRow({ ...item, today: todayISO }, quote);
-      if (success) { ok++; console.log(`Tracked ${item.ticker}: day ${item.dayNumber}, close $${quote.close.toFixed(2)}`); }
-      else { failed++; console.error(`Notion write failed for ${item.ticker}`); }
+      const { ok: success, belowThreshold } = await writeTrackingRow({ ...item, today: todayISO }, quote);
+      if (success) {
+        ok++;
+        if (belowThreshold) belowThresholdCount++;
+        const note = belowThreshold ? ' (below materiality threshold, skipping reason-finding)' : '';
+        console.log(`Tracked ${item.ticker}: day ${item.dayNumber}, close $${quote.close.toFixed(2)}${note}`);
+      } else {
+        failed++;
+        console.error(`Notion write failed for ${item.ticker}`);
+      }
     } catch (err) {
       failed++;
       console.error(`Tracking failed for ${item.ticker}:`, err.message);
     }
   }
 
-  console.log(`Done. ok=${ok} failed=${failed} skippedDupes=${skippedDupes}`);
+  console.log(`Done. ok=${ok} failed=${failed} skippedDupes=${skippedDupes} belowMaterialityThreshold=${belowThresholdCount} sentToReasonFinding=${ok - belowThresholdCount}`);
   if (failed > 0 && ok === 0 && inWindow.length > 0) {
     process.exitCode = 1; // signal a bad run to the workflow, distinct from "nothing to track today"
   }

@@ -79,6 +79,22 @@ the original catch price, and writes a new row to the "Daily Tracking" database 
 fill in. Has its own same-day dedup check (query for today's already-tracked tickers,
 skip them), same pattern as the main screener.
 
+**Materiality pre-filter (added 2026-08-28), same script, same step:** the Yahoo fetch
+already pulls 5 days of daily bars (`range=5d`) but only used the most recent one — the
+prior day's close was sitting in the same response, unused. Reading it out costs zero
+extra API calls, so `track-pool.js` now also computes each row's actual same-session %
+move (today's close vs. prior close — distinct from `Change vs Catch Price`, which is
+cumulative since the original catch) and, if `|move| < 3%` (the same catch bar Stage 1
+already uses, see "Screen rules" — reused here to keep "worth explaining" consistent
+across the pipeline), tags the row `Catalyst Confidence = Below materiality threshold`
+directly and never hands it to reason-finding at all, instead of `Pending`. This exists
+purely to cut how much the reason-finder (and its Claude usage) has to touch, without
+changing the reason-finder itself — it's a fifth, honestly-distinct tag from the four
+below (a small day genuinely wasn't searched, which is different from "searched and
+found nothing"), added as a new Notion select option rather than repurposing "No clear
+catalyst found" for it. Degrades safely: if a prior close isn't available (e.g. a very
+recently listed ticker), the row is left `Pending` as before rather than guessing.
+
 **2. Reason-finding — cloud `RemoteTrigger` routine "Pool Reason-Finder (post-tracking)",
 weekdays 6:00pm ET (23:00 UTC winter / 22:00 UTC summer)**, a 90-minute buffer after the
 quant tracker's 4:30pm ET slot. **Moved from a 15-minute buffer (2026-08-27)** after a
@@ -92,10 +108,14 @@ margin, not a guess. Scans Daily Tracking for every
 row with `Catalyst Confidence = Pending` (this scan is also the self-healing catch-up
 mechanism — it processes every pending row regardless of age, not just today's, so a
 missed day gets picked up automatically on the next run rather than staying blank
-forever). For each, WebSearches news/financial-outlet/social sentiment for that ticker
-and that specific date, synthesizes what explains the move, and writes back:
-- **Catalyst Confidence** — exactly one of four values, chosen deliberately to keep
-  "the search worked and found nothing" distinguishable from "the search itself broke":
+forever — and now also excludes any row the materiality pre-filter above already tagged
+`Below materiality threshold`, since those were never set to `Pending`). For each,
+WebSearches news/financial-outlet/social sentiment for that ticker and that specific
+date, synthesizes what explains the move, and writes back:
+- **Catalyst Confidence** — one of four values the routine itself can choose (a fifth,
+  `Below materiality threshold`, is set upstream by `track-pool.js` before this routine
+  ever sees the row — see above), chosen deliberately to keep "the search worked and
+  found nothing" distinguishable from "the search itself broke":
   - `Confirmed catalyst` — named, dated cause sourced to a primary filing/press
     release/official statement, cross-corroborated by 2+ *independently-bylined* sources
     (two outlets syndicating one wire story does not count as two sources).
