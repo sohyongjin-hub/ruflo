@@ -224,6 +224,380 @@ async function sendTelegram(env, chatId, text, replyMarkup) {
   });
 }
 
+// Chunked send for messages that might exceed Telegram's 4096-char cap --
+// /level2's combined 5-section report is the one reply from this bot long
+// enough to risk it. Same defensive-chunking convention used by
+// notify-tracking.js / stock-screen.js elsewhere in this project.
+async function sendTelegramChunked(env, chatId, text) {
+  const LIMIT = 3900;
+  if (text.length <= LIMIT) {
+    await sendTelegram(env, chatId, text);
+    return;
+  }
+  let rest = text;
+  while (rest.length > 0) {
+    await sendTelegram(env, chatId, rest.slice(0, LIMIT));
+    rest = rest.slice(LIMIT);
+  }
+}
+
+// ---------------------------------------------------------------------
+// /level2 -- deep-dive research (Fundamentals, Qualitative, Quantitative,
+// Catalyst, Technical). See stock-screener/CLAUDE.md "Lane 3 — /level2".
+// Fundamentals/Qualitative are cached in the "Company Research" Notion
+// database (one row per company); Quantitative/Catalyst/Technical are
+// always pulled fresh from data this bot/pipeline already gathers
+// elsewhere, never cached, since they're cheap and time-sensitive.
+// ---------------------------------------------------------------------
+
+const RESEARCH_STALE_DAYS = 90;
+
+function secUserAgent(env) {
+  return `stock-screener (contact: ${env.SEC_CONTACT_EMAIL})`;
+}
+
+// SEC's ticker->CIK mapping file is several MB covering every US filer --
+// cached in the same KV namespace used for conversation state, 7-day TTL,
+// so a normal run of /level2 calls doesn't re-fetch it every time.
+async function fetchCikForTicker(ticker, env) {
+  const cacheKey = 'sec-cik-map';
+  let map = null;
+  const cached = await env.SCREENER_STATE.get(cacheKey);
+  if (cached) {
+    try { map = JSON.parse(cached); } catch { map = null; }
+  }
+  if (!map) {
+    const res = await fetch('https://www.sec.gov/files/company_tickers.json', {
+      headers: { 'User-Agent': secUserAgent(env) },
+    });
+    if (!res.ok) throw new Error(`SEC ticker map HTTP ${res.status}`);
+    const data = await res.json();
+    map = {};
+    for (const key of Object.keys(data)) {
+      const row = data[key];
+      map[row.ticker] = String(row.cik_str).padStart(10, '0');
+    }
+    await env.SCREENER_STATE.put(cacheKey, JSON.stringify(map), { expirationTtl: 7 * 24 * 3600 });
+  }
+  return map[ticker.toUpperCase()] || null;
+}
+
+async function fetchCompanyFacts(cik, env) {
+  const res = await fetch(`https://data.sec.gov/api/xbrl/companyfacts/CIK${cik}.json`, {
+    headers: { 'User-Agent': secUserAgent(env) },
+  });
+  if (!res.ok) throw new Error(`SEC companyfacts HTTP ${res.status}`);
+  return res.json();
+}
+
+// Same curated concepts + extraction logic as
+// stock-screener/scripts/fetch-fundamentals.js, duplicated here rather than
+// imported -- a Cloudflare Worker deployed as a single file can't
+// `require()` another script. Keep the two in sync if either changes.
+const FUNDAMENTALS_CONCEPTS = [
+  { key: 'Revenues', label: 'Revenue', fallbacks: ['RevenueFromContractWithCustomerExcludingAssessedTax'] },
+  { key: 'GrossProfit', label: 'Gross Profit' },
+  { key: 'OperatingIncomeLoss', label: 'Operating Income' },
+  { key: 'NetIncomeLoss', label: 'Net Income' },
+  { key: 'EarningsPerShareDiluted', label: 'Diluted EPS', isPerShare: true },
+  { key: 'Assets', label: 'Total Assets' },
+  { key: 'Liabilities', label: 'Total Liabilities' },
+  { key: 'StockholdersEquity', label: "Stockholders' Equity" },
+  { key: 'CashAndCashEquivalentsAtCarryingValue', label: 'Cash & Equivalents' },
+];
+
+function mostRecentFact(usGaap, concept) {
+  const names = [concept.key, ...(concept.fallbacks || [])];
+  const unitKey = concept.isPerShare ? 'USD/shares' : 'USD';
+  for (const name of names) {
+    const node = usGaap[name];
+    const entries = node?.units?.[unitKey];
+    if (!entries || entries.length === 0) continue;
+    const annual = entries.filter((e) => e.form === '10-K' && e.fp === 'FY');
+    const quarterly = entries.filter((e) => e.form === '10-Q');
+    const pool = annual.length > 0 ? annual : quarterly;
+    if (pool.length === 0) continue;
+    pool.sort((a, b) => (a.end < b.end ? 1 : -1));
+    const best = pool[0];
+    return { val: best.val, end: best.end, fy: best.fy, form: best.form };
+  }
+  return null;
+}
+
+function formatUSD(val) {
+  const abs = Math.abs(val);
+  if (abs >= 1e9) return `$${(val / 1e9).toFixed(2)}B`;
+  if (abs >= 1e6) return `$${(val / 1e6).toFixed(1)}M`;
+  if (abs >= 1e3) return `$${(val / 1e3).toFixed(1)}K`;
+  return `$${val.toFixed(2)}`;
+}
+
+function extractFundamentals(companyFacts) {
+  const usGaap = companyFacts.facts?.['us-gaap'] || {};
+  const lines = [];
+  for (const concept of FUNDAMENTALS_CONCEPTS) {
+    const fact = mostRecentFact(usGaap, concept);
+    if (!fact) continue;
+    const formatted = concept.isPerShare ? `$${fact.val.toFixed(2)}` : formatUSD(fact.val);
+    const period = fact.form === '10-K' ? `FY${fact.fy}` : `period ending ${fact.end}`;
+    lines.push(`${concept.label} (${period}, ${fact.form}): ${formatted}`);
+  }
+  return lines.length > 0
+    ? lines.join('\n')
+    : 'No structured fundamentals found in SEC EDGAR for this ticker (may be a non-XBRL filer, an ADR, or very recently listed).';
+}
+
+async function tavilySearch(query, env) {
+  const res = await fetch('https://api.tavily.com/search', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${env.TAVILY_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query, search_depth: 'basic', max_results: 5 }),
+  });
+  if (!res.ok) throw new Error(`Tavily HTTP ${res.status}`);
+  const data = await res.json();
+  return data.results || [];
+}
+
+const QUALITATIVE_JSON_SCHEMA = {
+  type: 'object',
+  properties: {
+    moat: { type: 'string' },
+    competitivePosition: { type: 'string' },
+    management: { type: 'string' },
+    industryPosition: { type: 'string' },
+  },
+};
+
+const QUALITATIVE_SYSTEM_PROMPT =
+  "You research US-listed public companies for a swing trader. Given search results about a " +
+  "ticker, extract only qualitative signal actually present in the sources -- moat/durable " +
+  "competitive advantage, competitive position vs peers, management quality/track record, and " +
+  "industry position/trends. Leave a field as an empty string if the sources don't say anything " +
+  "specific about it -- never invent or pad. Be concise: 1-2 sentences per field. Respond only " +
+  "with the JSON object matching the schema.";
+
+// Uses the Workers AI *binding* (env.AI.run), not the REST API stock-screen.js
+// calls from GitHub Actions -- this code already runs inside the Worker, so
+// no HTTP round-trip is needed, per the Option-C decision in the handover doc.
+async function synthesizeQualitative(ticker, searchResults, env) {
+  if (!searchResults || searchResults.length === 0) return null;
+  const context = searchResults.map((r) => `${r.title}\n${r.url}\n${r.content}`).join('\n\n');
+  try {
+    const result = await env.AI.run('@cf/meta/llama-3.1-8b-instruct-fp8-fast', {
+      messages: [
+        { role: 'system', content: QUALITATIVE_SYSTEM_PROMPT },
+        { role: 'user', content: `Ticker: ${ticker}\n\nSearch results:\n${context}` },
+      ],
+      response_format: { type: 'json_schema', json_schema: QUALITATIVE_JSON_SCHEMA },
+    });
+    // Not yet live-verified which shape the binding returns (no AI binding
+    // available from this interactive session to test against) -- check
+    // both `result.response` (matches the REST API's envelope) and `result`
+    // itself (the binding may return the parsed object directly).
+    const raw = result?.response !== undefined ? result.response : result;
+    return typeof raw === 'string' ? JSON.parse(raw) : raw;
+  } catch (err) {
+    console.error('Workers AI qualitative synthesis failed:', err.message);
+    return null;
+  }
+}
+
+function formatQualitativeForCache(qual) {
+  if (!qual) return '(no qualitative signal found)';
+  const lines = [];
+  if (qual.moat) lines.push(`Moat: ${qual.moat}`);
+  if (qual.competitivePosition) lines.push(`Competitive position: ${qual.competitivePosition}`);
+  if (qual.management) lines.push(`Management: ${qual.management}`);
+  if (qual.industryPosition) lines.push(`Industry position: ${qual.industryPosition}`);
+  return lines.length > 0 ? lines.join('\n') : '(no qualitative signal found)';
+}
+
+async function fetchExistingResearch(ticker, env) {
+  const res = await fetch(
+    `https://api.notion.com/v1/data_sources/${env.NOTION_COMPANY_RESEARCH_DATA_SOURCE_ID}/query`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.NOTION_TOKEN}`,
+        'Notion-Version': '2025-09-03',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ filter: { property: 'Ticker', title: { equals: ticker } }, page_size: 1 }),
+    }
+  );
+  if (!res.ok) throw new Error(`Notion Company Research query HTTP ${res.status}`);
+  const data = await res.json();
+  return data.results[0] || null;
+}
+
+function isResearchFresh(page) {
+  const lastResearched = page.properties?.['Last Researched']?.date?.start;
+  if (!lastResearched) return false;
+  const ageDays = (Date.now() - new Date(lastResearched + 'T00:00:00Z').getTime()) / 86400000;
+  return ageDays < RESEARCH_STALE_DAYS;
+}
+
+// Upsert -- Company Research is one row per company, not per catch event
+// (unlike Screener Pool), so a re-research always overwrites the same row.
+async function upsertResearch(ticker, fundamentalsText, qualitativeText, sourcesText, dateStr, env) {
+  const properties = {
+    Fundamentals: { rich_text: [{ text: { content: fundamentalsText.slice(0, 2000) } }] },
+    Qualitative: { rich_text: [{ text: { content: qualitativeText.slice(0, 2000) } }] },
+    Sources: { rich_text: [{ text: { content: sourcesText.slice(0, 2000) } }] },
+    'Last Researched': { date: { start: dateStr } },
+  };
+  const existing = await fetchExistingResearch(ticker, env);
+  const url = existing
+    ? `https://api.notion.com/v1/pages/${existing.id}`
+    : 'https://api.notion.com/v1/pages';
+  const body = existing
+    ? { properties }
+    : {
+        parent: { type: 'data_source_id', data_source_id: env.NOTION_COMPANY_RESEARCH_DATA_SOURCE_ID },
+        properties: { Ticker: { title: [{ text: { content: ticker } }] }, ...properties },
+      };
+  await fetch(url, {
+    method: existing ? 'PATCH' : 'POST',
+    headers: {
+      Authorization: `Bearer ${env.NOTION_TOKEN}`,
+      'Notion-Version': '2025-09-03',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+}
+
+// Most recent Screener Pool row for this ticker, for the Catalyst section --
+// same-day catch-time verdict from Lane 1, not re-researched here.
+async function fetchLatestPoolCatalyst(ticker, env) {
+  const res = await fetch(
+    `https://api.notion.com/v1/data_sources/${env.NOTION_SCREENER_POOL_DATA_SOURCE_ID}/query`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.NOTION_TOKEN}`,
+        'Notion-Version': '2025-09-03',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ filter: { property: 'Ticker', title: { equals: ticker } }, page_size: 100 }),
+    }
+  );
+  if (!res.ok) return null;
+  const data = await res.json();
+  let latest = null;
+  for (const row of data.results || []) {
+    const dateCaught = row.properties?.['Date Caught']?.date?.start;
+    if (!dateCaught) continue;
+    if (!latest || dateCaught > latest.dateCaught) {
+      latest = {
+        dateCaught,
+        confidence: row.properties?.['Catalyst Confidence']?.select?.name,
+        reason: row.properties?.['Catalyst Reason']?.rich_text?.[0]?.plain_text,
+        sources: row.properties?.['Catalyst Sources']?.rich_text?.[0]?.plain_text,
+      };
+    }
+  }
+  return latest;
+}
+
+async function buildLevel2Report(ticker, env) {
+  const existing = await fetchExistingResearch(ticker, env);
+  let fundamentalsText, qualitativeText, lastResearched, cached;
+
+  if (existing && isResearchFresh(existing)) {
+    cached = true;
+    fundamentalsText = existing.properties?.Fundamentals?.rich_text?.[0]?.plain_text || '(no fundamentals cached)';
+    qualitativeText = existing.properties?.Qualitative?.rich_text?.[0]?.plain_text || '(no qualitative cached)';
+    lastResearched = existing.properties?.['Last Researched']?.date?.start;
+  } else {
+    cached = false;
+    let fundText;
+    try {
+      const cik = await fetchCikForTicker(ticker, env);
+      fundText = cik
+        ? extractFundamentals(await fetchCompanyFacts(cik, env))
+        : 'No SEC CIK found for this ticker (may not be a US-listed filer).';
+    } catch (err) {
+      fundText = `Fundamentals fetch failed: ${err.message}`;
+    }
+    fundamentalsText = fundText;
+
+    let qualSearchResults = [];
+    try {
+      qualSearchResults = await tavilySearch(`${ticker} stock moat competitive advantage management industry position`, env);
+    } catch (err) {
+      console.error('Tavily search failed:', err.message);
+    }
+    const qualParsed = await synthesizeQualitative(ticker, qualSearchResults, env);
+    qualitativeText = formatQualitativeForCache(qualParsed);
+    const sourcesText = qualSearchResults.map((r) => r.url).join('; ') || '(no qualitative sources found)';
+    lastResearched = new Date().toISOString().slice(0, 10);
+
+    await upsertResearch(ticker, fundamentalsText, qualitativeText, sourcesText, lastResearched, env);
+  }
+
+  const fund = await fetchTickerFundamentals(ticker).catch(() => null);
+  let tech = null;
+  if (fund) {
+    try {
+      const config = await loadConfig(env);
+      tech = await fetchTechnicals(ticker, config);
+    } catch (err) {
+      console.error('Technical fetch failed:', err.message);
+    }
+  }
+  const catalyst = await fetchLatestPoolCatalyst(ticker, env).catch(() => null);
+
+  const lines = [];
+  lines.push(`🔎 *Level 2 — ${ticker}*${fund?.companyName ? ` (${fund.companyName})` : ''}`);
+  lines.push(cached ? `_Cached research from ${lastResearched}_` : `_Freshly researched ${lastResearched}_`);
+  lines.push('');
+  lines.push('*Fundamentals*');
+  lines.push(fundamentalsText);
+  lines.push('');
+  lines.push('*Qualitative*');
+  lines.push(qualitativeText);
+  lines.push('');
+  lines.push('*Quantitative*');
+  if (fund) {
+    lines.push(`Price: $${fund.close.toFixed(2)} (${fund.changePct >= 0 ? '+' : ''}${fund.changePct.toFixed(2)}%)`);
+    lines.push(`Market cap: $${(fund.marketCap / 1e9).toFixed(2)}B, Volume: ${(fund.volume / 1e6).toFixed(2)}M`);
+  } else {
+    lines.push("(couldn't fetch a live quote for this ticker)");
+  }
+  lines.push('');
+  lines.push('*Catalyst*');
+  if (catalyst) {
+    lines.push(`${catalyst.confidence || 'Unknown'} (from catch on ${catalyst.dateCaught})`);
+    if (catalyst.reason) lines.push(catalyst.reason);
+    if (catalyst.sources) lines.push(`Sources: ${catalyst.sources}`);
+  } else {
+    lines.push('(no catch-day catalyst on record — this ticker may not have gone through the screen yet)');
+  }
+  lines.push('');
+  lines.push('*Technical*');
+  if (tech && tech.insufficientHistory) {
+    lines.push(`Only ${tech.bars} days of trading history — not enough for a reliable read.`);
+  } else if (tech) {
+    lines.push(tech.hugging ? 'Hugging the EMA' : `${tech.dips} recovered-dip(s) recently`);
+    lines.push(tech.aboveSma ? `Above the ${tech.smaUsed}SMA ($${tech.smaVal.toFixed(2)})` : `Below the ${tech.smaUsed}SMA ($${tech.smaVal.toFixed(2)})`);
+  } else {
+    lines.push('(not available)');
+  }
+  return lines.join('\n');
+}
+
+async function runLevel2(rawTicker, chatId, env) {
+  const ticker = rawTicker.trim().toUpperCase();
+  await sendTelegram(env, chatId, `Researching ${ticker} (this can take a few seconds)...`);
+  try {
+    const report = await buildLevel2Report(ticker, env);
+    await sendTelegramChunked(env, chatId, report);
+  } catch (err) {
+    await sendTelegram(env, chatId, `⚠️ /level2 failed for ${ticker}: ${err.message}`);
+  }
+}
+
 async function addToPool(result, env) {
   const dateStr = new Date().toISOString().slice(0, 10);
   // Same-day dedup, matching the scheduled screener's own guard.
@@ -307,13 +681,35 @@ async function handleUpdate(update, env) {
   const state = stateRaw ? JSON.parse(stateRaw) : null;
 
   if (text === '/start' || text === '/help') {
-    await sendTelegram(env, chatId, 'Send /screen to check a specific ticker against the fundamental + technical screen.');
+    await sendTelegram(
+      env,
+      chatId,
+      'Send /screen to check a specific ticker against the fundamental + technical screen.\n' +
+        'Send /level2 TICKER for deep-dive research (Fundamentals, Qualitative, Quantitative, Catalyst, Technical).'
+    );
     return;
   }
 
   if (text === '/screen') {
     await env.SCREENER_STATE.put(stateKey, JSON.stringify({ step: 'awaiting_ticker' }), { expirationTtl: 600 });
     await sendTelegram(env, chatId, 'Type the ticker you want to screen (e.g. AAPL):');
+    return;
+  }
+
+  if (text === '/level2' || text.toLowerCase().startsWith('/level2 ')) {
+    const tickerArg = text.split(/\s+/)[1];
+    if (!tickerArg) {
+      await env.SCREENER_STATE.put(stateKey, JSON.stringify({ step: 'awaiting_level2_ticker' }), { expirationTtl: 600 });
+      await sendTelegram(env, chatId, 'Type the ticker you want deep research on (e.g. AAPL):');
+      return;
+    }
+    await runLevel2(tickerArg, chatId, env);
+    return;
+  }
+
+  if (state?.step === 'awaiting_level2_ticker') {
+    await env.SCREENER_STATE.delete(stateKey);
+    await runLevel2(text, chatId, env);
     return;
   }
 

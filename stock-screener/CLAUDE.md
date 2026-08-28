@@ -366,6 +366,62 @@ This coexists with the scheduled jobs with no conflict — same bot token, Teleg
 incoming messages to the webhook regardless of what else sends outgoing pushes to the
 same chat.
 
+## Interactive /level2 command (added 2026-08-28, code complete, not yet deployed)
+Step 3 of the pipeline redesign, in the same `worker.js` as `/screen` above. `/level2
+TICKER` (or bare `/level2`, which then prompts for one) replies with a combined report in
+a fixed order — Fundamentals, Qualitative, Quantitative, Catalyst, Technical:
+
+- **Fundamentals + Qualitative are cached** in the "Company Research" Notion database
+  (see "Notion databases (live)" above), one row per company. Cache-fresh (< 90 days
+  old, `RESEARCH_STALE_DAYS`) → replies immediately from Notion, no research run, $0. On
+  a miss or stale row, runs research and upserts the result before replying:
+  - **Fundamentals**: SEC EDGAR, same logic as `fetch-fundamentals.js` (see "Lane 3 —
+    Company Research cache" above), duplicated inline in `worker.js` rather than
+    imported (a Worker deployed as a single file can't `require()` another script —
+    keep the two copies in sync if either changes). The SEC ticker→CIK mapping file
+    (multi-MB, every US filer) is cached in the same `SCREENER_STATE` KV namespace used
+    for conversation state, 7-day TTL, so it isn't re-fetched on every call — the
+    caching gap flagged as unsolved when `fetch-fundamentals.js` landed is now closed.
+  - **Qualitative** (moat / competitive position / management / industry position, only
+    fields with real signal, never padded): Tavily search + **Workers AI binding**
+    (`env.AI.run(...)`), not the REST API `stock-screen.js` uses from GitHub Actions —
+    this code already runs inside the Worker, so no HTTP round-trip is needed. This is
+    the Option-C decision locked in during design (see the handover doc this was built
+    from).
+- **Quantitative, Catalyst, and Technical are always fetched live, never cached** — cheap
+  and time-sensitive, and mostly reused code already in this file: Quantitative reuses
+  `fetchTickerFundamentals()` (the same TradingView scanner call `/screen` already
+  makes), Technical reuses `fetchTechnicals()` (the same EMA/SMA logic `/screen` already
+  runs), and Catalyst reads the most recent Screener Pool row's catch-day
+  `Catalyst Confidence`/Reason/Sources (Lane 1's output) — no new research for any of
+  the three.
+- Reply is sent via a new `sendTelegramChunked()` helper (4096-char cap, same
+  chunking convention as `notify-tracking.js`/`stock-screen.js`) since a full 5-section
+  report is the one reply from this bot long enough to risk the limit.
+
+**Tested so far: local unit tests only (11/11 passing)** — number formatting, the SEC
+extraction logic (same as `fetch-fundamentals.js`'s own tests), qualitative-cache
+formatting (padding-free, degrades to a clear "no signal found" message), and the 90-day
+staleness check. **Not yet live-tested or deployed:**
+- **The Workers AI binding's exact response shape for JSON-schema mode is unverified** —
+  `synthesizeQualitative()` defensively checks both `result.response` (matching the REST
+  API envelope used elsewhere in this project) and `result` itself, but this needs a real
+  first call to confirm which one is right and simplify the code once known.
+- **Deployment is a manual follow-up, same situation as the GitHub Actions secrets in
+  Lane 1/3 above** — this session has no Cloudflare API credentials (confirmed: none in
+  its environment), so the updated `worker.js` source is pushed to the repo but not yet
+  live on Cloudflare. Before `/level2` can work, someone with Cloudflare dashboard access
+  needs to:
+  1. Redeploy `worker.js` to the `stock-screener-bot` Worker (same "deployed directly via
+     the Cloudflare API" process noted above).
+  2. Add a **Workers AI binding** named `AI` to the Worker (Settings → Bindings → Workers
+     AI) — without this, `env.AI` is undefined and `/level2` fails on every call.
+  3. Add three new Worker environment variables/secrets: `SEC_CONTACT_EMAIL`,
+     `TAVILY_API_KEY`, `NOTION_COMPANY_RESEARCH_DATA_SOURCE_ID`
+     (`c86c475d-3c49-41ee-9a05-f98abb4e750c`) — separate from the GitHub Actions secrets
+     of the same/similar names, since the Worker and GitHub Actions are two different
+     deployment targets that don't share a secret store.
+
 ## Trading account context
 [Optional — fill in if you want Claude Code to track actual positions/watchlist across
 sessions. Leave blank if you'd rather keep this stateless.]
