@@ -65,10 +65,9 @@ in place, and never remove it.
 ## Post-catch tracking (5-trading-day window)
 For every Screener Pool ticker, for the 5 US-market trading days after it was caught,
 the system records that session's close/%-change/market-cap/volume, and separately finds
-and records *why* the stock moved that day. **These two steps run back-to-back in the
-same GitHub Actions job (changed 2026-08-28, see below) — they used to be two separate
-systems on two separate schedules/infrastructures, which is what caused the race
-conditions narrated in this section's history.**
+and records *why* the stock moved that day. This is two deliberately separate systems on
+two separate schedules, not one combined job — they need different infrastructure (see
+"Data source" below for why) and a timing offset avoids a race condition between them.
 
 **1. Quant tracking — `stock-screener/scripts/track-pool.js`, GitHub Actions, 4:30pm ET
 (21:30 UTC winter / 20:30 UTC summer) weekdays.** Deterministic, no LLM. For every Pool
@@ -80,22 +79,21 @@ the original catch price, and writes a new row to the "Daily Tracking" database 
 fill in. Has its own same-day dedup check (query for today's already-tracked tickers,
 skip them), same pattern as the main screener.
 
-**2. Reason-finding — `stock-screener/scripts/find-reasons.js`, same `track-pool.yml`
-job, runs immediately as the next step after `track-pool.js`.** **Moved off the Claude
-Code cloud "Pool Reason-Finder" routine entirely (2026-08-28)** — see "Scheduling and
-infrastructure" below for the full rationale (cost: it was burning the account's shared
-Claude Code session quota, not metered billing; correctness: it removes the cross-job
-race this section used to spend most of its words on — the 15-minute-buffer incident,
-then the 90-minute-buffer widening that followed it, are both moot now that there is only
-one schedule to drift). It calls the Anthropic Messages API directly with **Claude Haiku
-4.5** and the server-side `web_search` tool (`web_search_20250305` — Haiku 4.5 doesn't
-qualify for the newer `_20260209` dynamic-filtering variant, which needs Opus/Sonnet
-tier). Scans Daily Tracking for every row with `Catalyst Confidence = Pending` (this scan
-is also the self-healing catch-up mechanism — it processes every pending row regardless
-of age, not just today's, so a missed day gets picked up automatically on the next run
-rather than staying blank forever). For each, web-searches news/financial-outlet/social
-sentiment for that ticker and that specific date, synthesizes what explains the move, and
-writes back:
+**2. Reason-finding — cloud `RemoteTrigger` routine "Pool Reason-Finder (post-tracking)",
+weekdays 6:00pm ET (23:00 UTC winter / 22:00 UTC summer)**, a 90-minute buffer after the
+quant tracker's 4:30pm ET slot. **Moved from a 15-minute buffer (2026-08-27)** after a
+real same-day race: `track-pool.yml` (GitHub Actions) fired late, this routine ran on
+schedule and correctly found an empty Daily Tracking table (nothing to do, not a bug),
+then `track-pool.yml` finally wrote 51 rows afterward — all stuck at `Pending` until the
+next day's self-healing catch-up run. GitHub Actions cron in this repo has shown delays
+up to ~100 minutes (the same day's `stock-screen.yml` fired ~101 minutes late), so a
+15-minute buffer was never going to be reliably enough; 90 minutes is a deliberate
+margin, not a guess. Scans Daily Tracking for every
+row with `Catalyst Confidence = Pending` (this scan is also the self-healing catch-up
+mechanism — it processes every pending row regardless of age, not just today's, so a
+missed day gets picked up automatically on the next run rather than staying blank
+forever). For each, WebSearches news/financial-outlet/social sentiment for that ticker
+and that specific date, synthesizes what explains the move, and writes back:
 - **Catalyst Confidence** — exactly one of four values, chosen deliberately to keep
   "the search worked and found nothing" distinguishable from "the search itself broke":
   - `Confirmed catalyst` — named, dated cause sourced to a primary filing/press
@@ -105,34 +103,25 @@ writes back:
     analyst speculation, or social chatter without primary confirmation.
   - `No clear catalyst found` — a legitimate, valid outcome, not a failure. The routine
     is explicitly instructed never to fabricate a reason to avoid landing on this tag.
-  - `Source error` — the API call or web search itself errored, or the model's reply
-    didn't parse into the expected format. Kept strictly separate from "No clear catalyst
-    found" so a quiet market session is never confused with a broken pipeline — if a
-    run's own log shows more than a couple of these, that's a regression worth
-    investigating, not routine noise. `find-reasons.js` retries 429/5xx once with backoff
-    before giving up and tagging a row this way.
+  - `Source error` — WebSearch itself errored or returned nothing usable. Kept strictly
+    separate from "No clear catalyst found" so a quiet market session is never confused
+    with a broken tool — if this run's own summary shows more than a couple of these,
+    that's a WebSearch regression worth investigating, not routine noise.
 - **Reason** — 1-2 sentences.
 - **Sources** — the actual URLs/headlines used, kept regardless of confidence tag
   (including on "No clear catalyst found" rows, to show what was actually checked) as
   the audit trail if a tag is ever disputed later.
 
-**History (kept for context — the race this describes no longer exists):** this step was
-originally a Claude Code cloud `RemoteTrigger` routine using the WebSearch tool, on its
-own separate schedule from `track-pool.js`. That design existed only because the cloud
-sandbox blocks raw HTTP to most domains except `api.anthropic.com` (confirmed by smoke
-test 2026-08-25 — WebSearch worked, everything else didn't), and running reason-finding
-required either an LLM session (cloud routine) or the Anthropic API directly. The
-separate-schedule design caused a real incident: `track-pool.yml` fired late, the cloud
-routine ran on its own schedule and correctly found an empty table (not a bug), then
-`track-pool.yml` finally wrote 51 rows afterward — all stuck at `Pending` until the next
-day's self-healing catch-up. The buffer between the two schedules was widened from 15 to
-90 minutes to paper over this (GitHub Actions cron in this repo has shown delays up to
-~100 minutes). **Replaced 2026-08-28** by moving reason-finding onto GitHub Actions as a
-second step in the same job as `track-pool.js` (see "Scheduling and infrastructure") —
-this removes the two-schedule race at its root instead of widening the buffer further,
-and also stops the routine from consuming the account's shared Claude Code session quota
-(a batch of 5 parallel cloud sub-agents hit a session rate limit mid-run on 2026-08-28
-and wrote nothing, which is what prompted this move).
+**Verified 2026-08-25 before this was scheduled:** WebSearch does work from this cloud
+sandbox despite its otherwise strict egress block — confirmed with two live test
+searches (NVIDIA, a mega-cap, and SRRK, a deliberately obscure small-cap) both returning
+real, differentiated results. This was not assumed; it was explicitly smoke-tested first,
+because everything else in this project's egress-blocked cloud sandbox (raw HTTP to
+TradingView/Yahoo/Telegram/`*.workers.dev`) had already turned out blocked. If WebSearch
+ever regresses, the documented fallback is calling the Anthropic Messages API directly
+via HTTPS from `track-pool.js` itself (server-side `web_search` tool), keeping
+reason-finding inside the already-working deterministic GitHub Actions script instead of
+the cloud routine — not yet built, since the primary path tested clean.
 
 **Precedence rule, also pinned as a legend on the Notion board itself:** Notion is
 today's truth; the markdown log is history only. If they ever disagree, Notion wins and
@@ -174,54 +163,39 @@ dedupe/lookback logic, and mandatory rationale on every status change — both w
 rejected as scope creep for a beginner's first build. Full reasoning captured in the
 approved plan this project was built from.
 
-## Scheduling and infrastructure (current, as of 2026-08-28)
-**All scheduled jobs now run on GitHub Actions — no Claude Code cloud routine left in
-this pipeline.** That wasn't true until 2026-08-28: reason-finding used to require a
-cloud `RemoteTrigger` routine because a Claude Code cloud sandbox's network egress proxy
-blocks raw HTTP to arbitrary domains — confirmed blocked: `scanner.tradingview.com`,
-`query1.finance.yahoo.com`, `api.telegram.org`, and even `*.workers.dev` (tested via an
-existing live Cloudflare Worker as a reachability probe) — while only api.anthropic.com,
-npm/pypi, and traffic through an attached MCP connector or an Anthropic-hosted tool call
-got through. Moving reason-finding to a **direct Anthropic API call** (Claude Haiku 4.5 +
-the server-side `web_search` tool) from a GitHub Actions runner sidesteps that
-restriction entirely, because GitHub's runners already have open egress to everything
-this pipeline needs, `api.anthropic.com` included — so there was never a reason for this
-piece to be special-cased once it stopped needing an interactive Claude Code session.
-Two other motivations: cost (the cloud routine drew on the account's shared Claude Code
-session/plan quota rather than metered pay-per-token billing, and a batch of 5 parallel
-cloud sub-agents hit a session rate limit mid-run on 2026-08-28, writing nothing) and
-correctness (collapsing two separately-scheduled jobs into one job's back-to-back steps
-removes the cross-schedule race condition documented at length above and in this file's
-git history — see "Post-catch tracking" → History).
+## Scheduling and infrastructure (current, as of 2026-08-25)
+Three separate scheduled jobs, on two different infrastructures, because of a real
+constraint discovered by testing (not assumed): a Claude Code cloud `RemoteTrigger`
+routine's sandbox has a strict network egress proxy that blocks raw HTTP to arbitrary
+domains — confirmed blocked: `scanner.tradingview.com`, `query1.finance.yahoo.com`,
+`api.telegram.org`, and even `*.workers.dev` (tested via an existing live Cloudflare
+Worker as a reachability probe). Only api.anthropic.com/npm/pypi and traffic through an
+attached MCP connector (Notion works) or an Anthropic-hosted tool call (WebSearch works,
+confirmed by smoke test) get through. This is why the architecture is split:
 
 1. **`/stock-screen`** (the main fundamental+technical screen) — **GitHub Actions**,
    `.github/workflows/stock-screen.yml`, weekdays 11am ET (16:00 UTC winter / 15:00 UTC
    summer). Runs `stock-screener/scripts/stock-screen.js`, a standalone deterministic
-   Node script — no LLM. Auto-commits `pool-log.md` and pushes.
-2. **`track-pool.js` + `find-reasons.js`** (quant post-catch tracking, then reason-finding
-   for every still-`Pending` row) — **GitHub Actions**, `.github/workflows/track-pool.yml`,
-   weekdays 4:30pm ET (21:30 UTC winter / 20:30 UTC summer), **two steps in one job**.
-   `track-pool.js` is deterministic (raw HTTP to Yahoo/TradingView, no LLM).
-   `find-reasons.js` calls the Anthropic Messages API directly with `claude-haiku-4-5` and
-   `web_search_20250305` (the basic web-search tool variant — Haiku 4.5 doesn't qualify
-   for the newer `_20260209` dynamic-filtering variant, which needs Opus/Sonnet tier),
-   parsing a fixed `CONFIDENCE:`/`REASON:`/`SOURCES:` text format out of the reply rather
-   than using structured outputs, to match this repo's existing raw-HTTP/zero-dependency
-   script style. Runs immediately after `track-pool.js` on the same runner — no separate
-   schedule to drift out of sync with. **Replaced the "Pool Reason-Finder" cloud routine
-   this same day** — see "Post-catch tracking" → History for the full incident.
-3. **`notify-tracking.js`** (consolidated Telegram push for step 2's quant data + reasons)
-   — **GitHub Actions**, `.github/workflows/notify-tracking.yml`, weekdays 6:30pm ET
-   (23:30 UTC winter / 22:30 UTC summer), a 60-minute buffer after step 2's slot (kept
-   generous even though step 2 itself no longer has an internal race — GitHub's own cron
-   trigger delays, up to ~100 minutes observed on this repo, are a separate risk this
-   buffer still guards against). **Self-healing since 2026-08-28** (see its own file
-   header): scans for any Daily Tracking row not yet marked `Notified`, regardless of
-   date, instead of an exact `Date == today` match — the latter broke outright the first
-   time a delayed cron run rolled past midnight UTC, silently sending "nothing tracked
-   today" while a full day's finished reason-finding sat unreported. Chunks its Telegram
-   sends to stay under `sendMessage`'s 4096-character cap (a second bug the self-healing
-   fix immediately exposed on its first real catch-up).
+   Node script — no LLM, no Claude Code session, because it needs raw HTTP to TradingView
+   and Yahoo Finance, and GitHub's runners have open egress. Auto-commits `pool-log.md`
+   and pushes.
+2. **`track-pool.js`** (quant post-catch tracking) — **GitHub Actions**,
+   `.github/workflows/track-pool.yml`, weekdays 4:30pm ET (21:30 UTC winter / 20:30 UTC
+   summer). Same reasoning: needs raw HTTP to Yahoo/TradingView.
+3. **"Pool Reason-Finder (post-tracking)"** (WebSearch synthesis) — **Claude Code cloud
+   `RemoteTrigger` routine**, `trig_011fTgySCCMhqQQDBRVPcCTe`, weekdays 6:00pm ET (23:00
+   UTC winter / 22:00 UTC summer). This one genuinely needs an LLM session (WebSearch +
+   reasoning/synthesis, not just an API call), which GitHub Actions can't provide — this
+   is the one piece of the whole project that actually fits the cloud-routine model.
+   **Widened from 4:45pm to 6:00pm ET (2026-08-27)** — see the timing-race note above.
+4. **`notify-tracking.js`** (consolidated Telegram push for steps 2+3) — **GitHub
+   Actions**, `.github/workflows/notify-tracking.yml`, weekdays 6:30pm ET (23:30 UTC
+   winter / 22:30 UTC summer). Exists because `api.telegram.org` is one of the domains
+   confirmed blocked in the cloud sandbox — the reason-finder (step 3) cannot send its
+   own Telegram push, so this reads back today's Daily Tracking rows (both the quant
+   data from step 2 and the reasons from step 3) and sends one combined summary, timed
+   to run after both upstream steps have had time to finish. **Moved from 5:00pm to
+   6:30pm ET (2026-08-27)**, same reason as step 3's move.
 
 **None of these auto-adjust for DST** — cron is UTC-fixed. Each drifts by 1 hour during
 EDT (roughly March-November) until manually updated; the exact adjusted cron for each is
@@ -230,9 +204,7 @@ noted above and in each workflow file's own comment.
 **GitHub Actions secrets required** (repo Settings → Secrets and variables → Actions):
 `NOTION_TOKEN`, `NOTION_SCREENER_POOL_DATA_SOURCE_ID`,
 `NOTION_SCREENER_CONFIG_DATA_SOURCE_ID`, `NOTION_DAILY_TRACKING_DATA_SOURCE_ID`,
-`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, and **`ANTHROPIC_API_KEY`** (added 2026-08-28
-for `find-reasons.js` — a plain Anthropic API key, `sk-ant-...`, not an OAuth token; get
-one from the Anthropic Console).
+`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
 
 **Local git push note:** when pushing to this repo interactively, always `git fetch`
 and check `git merge-base --is-ancestor origin/master HEAD` first — this repo has

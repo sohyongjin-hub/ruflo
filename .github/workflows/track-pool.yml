@@ -26,16 +26,3 @@ jobs:
           NOTION_SCREENER_POOL_DATA_SOURCE_ID: ${{ secrets.NOTION_SCREENER_POOL_DATA_SOURCE_ID }}
           NOTION_DAILY_TRACKING_DATA_SOURCE_ID: ${{ secrets.NOTION_DAILY_TRACKING_DATA_SOURCE_ID }}
         run: node stock-screener/scripts/track-pool.js
-
-      # Runs immediately after track-pool.js in the same job (2026-08-28) --
-      # replaces the old Claude Code cloud "Pool Reason-Finder" routine. See
-      # find-reasons.js's header comment for why: this removes the race
-      # condition between two separately-scheduled jobs on separate infra,
-      # and moves reason-finding off the account's shared Claude Code session
-      # quota onto metered per-token API billing (Haiku 4.5).
-      - name: Find reasons for pending rows
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DAILY_TRACKING_DATA_SOURCE_ID: ${{ secrets.NOTION_DAILY_TRACKING_DATA_SOURCE_ID }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node stock-screener/scripts/find-reasons.js
