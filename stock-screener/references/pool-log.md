@@ -20,6 +20,61 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-08-28 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| VEEV | Veeva Systems Inc. | $282.13 | change +15.2%, mktcap ~$45.83B, close $282.13, vol 6.41M | 4 recovered-dips (within range), above 200SMA ($198.98) | notion-live | OK |
+| TH | Target Hospitality Corp. | $18.96 | change +13.0%, mktcap ~$1.89B, close $18.96, vol 2.58M | 3 recovered-dips (within range), above 200SMA ($12.45) | notion-live | OK |
+| TENB | Tenable Holdings, Inc. | $37.62 | change +11.8%, mktcap ~$4.14B, close $37.62, vol 8.24M | 4 recovered-dips (within range), above 200SMA ($25.80) | notion-live | OK |
+| SRPT | Sarepta Therapeutics, Inc. | $21.59 | change +10.9%, mktcap ~$2.28B, close $21.59, vol 7.92M | 4 recovered-dips (within range), above 200SMA ($19.06) | notion-live | OK |
+| BRZE | Braze, Inc. | $34.09 | change +10.6%, mktcap ~$3.84B, close $34.09, vol 3.15M | 2 recovered-dips (within range), above 200SMA ($24.58) | notion-live | OK |
+| AMPL | Amplitude, Inc. | $14.28 | change +10.2%, mktcap ~$1.78B, close $14.28, vol 2.08M | 3 recovered-dips (within range), above 200SMA ($8.78) | notion-live | OK |
+| TEAM | Atlassian Corporation | $185.62 | change +10.2%, mktcap ~$46.99B, close $185.62, vol 6.07M | 2 recovered-dips (within range), above 200SMA ($108.17) | notion-live | OK |
+| UMAC | Unusual Machines, Inc. | $26.30 | change +10.1%, mktcap ~$1.31B, close $26.30, vol 3.07M | hugging 8EMA, above 200SMA ($16.91) | notion-live | OK |
+| NOW | ServiceNow, Inc. | $138.43 | change +10.0%, mktcap ~$143.14B, close $138.43, vol 27.82M | 4 recovered-dips (within range), above 200SMA ($119.41) | notion-live | OK |
+| PATH | UiPath, Inc. | $18.33 | change +9.4%, mktcap ~$9.50B, close $18.33, vol 72.07M | 2 recovered-dips (within range), above 200SMA ($12.78) | notion-live | OK |
+| NTSK | Netskope, Inc. | $15.12 | change +8.6%, mktcap ~$6.11B, close $15.12, vol 7.62M | 3 recovered-dips (within range), above 200SMA ($13.21) | notion-live | OK |
+| NCNO | nCino, Inc. | $23.32 | change +8.4%, mktcap ~$2.47B, close $23.32, vol 5.32M | 4 recovered-dips (within range), above 200SMA ($19.20) | notion-live | OK |
+| NET | Cloudflare, Inc. | $308.23 | change +8.2%, mktcap ~$109.75B, close $308.23, vol 4.25M | 3 recovered-dips (within range), above 200SMA ($220.35) | notion-live | OK |
+| INTA | Intapp, Inc. | $43.70 | change +8.2%, mktcap ~$3.34B, close $43.70, vol 0.72M | 4 recovered-dips (within range), above 200SMA ($30.87) | notion-live | OK |
+| FIVN | Five9, Inc. | $34.57 | change +8.0%, mktcap ~$2.58B, close $34.57, vol 1.60M | 4 recovered-dips (within range), above 200SMA ($20.85) | notion-live | OK |
+| BTU | Peabody Energy Corporation | $29.44 | change +7.8%, mktcap ~$3.59B, close $29.44, vol 3.14M | 4 recovered-dips (within range), above 200SMA ($28.99) | notion-live | OK |
+| ASAN | Asana, Inc. | $10.17 | change +7.7%, mktcap ~$2.34B, close $10.17, vol 5.51M | 4 recovered-dips (within range), above 200SMA ($8.90) | notion-live | OK |
+| APPN | Appian Corporation | $41.40 | change +7.7%, mktcap ~$2.97B, close $41.40, vol 0.82M | 3 recovered-dips (within range), above 200SMA ($28.46) | notion-live | OK |
+| ZM | Zoom Communications, Inc. | $100.27 | change +6.9%, mktcap ~$29.40B, close $100.27, vol 4.46M | 4 recovered-dips (within range), above 200SMA ($90.02) | notion-live | OK |
+| NTNX | Nutanix, Inc. | $69.84 | change +6.8%, mktcap ~$18.88B, close $69.84, vol 8.01M | 3 recovered-dips (within range), above 200SMA ($48.83) | notion-live | OK |
+| QLYS | Qualys, Inc. | $188.59 | change +6.7%, mktcap ~$6.52B, close $188.59, vol 0.94M | 3 recovered-dips (within range), above 200SMA ($123.76) | notion-live | OK |
+| CXM | Sprinklr, Inc. | $7.94 | change +6.3%, mktcap ~$1.86B, close $7.94, vol 4.89M | 3 recovered-dips (within range), above 200SMA ($6.20) | notion-live | OK |
+| TNK | Teekay Tankers Ltd. | $88.20 | change +6.0%, mktcap ~$3.06B, close $88.20, vol 0.71M | hugging 8EMA, above 200SMA ($69.99) | notion-live | OK |
+| FSLY | Fastly, Inc. | $24.64 | change +5.8%, mktcap ~$3.93B, close $24.64, vol 4.22M | hugging 8EMA, above 200SMA ($18.35) | notion-live | OK |
+| ESTC | Elastic N.V. | $83.74 | change +5.7%, mktcap ~$8.70B, close $83.74, vol 5.25M | 4 recovered-dips (within range), above 200SMA ($63.75) | notion-live | OK |
+| TWLO | Twilio Inc. | $241.34 | change +5.6%, mktcap ~$37.06B, close $241.34, vol 2.04M | 4 recovered-dips (within range), above 200SMA ($160.03) | notion-live | OK |
+| DHT | DHT Holdings, Inc. | $19.35 | change +5.6%, mktcap ~$3.12B, close $19.35, vol 3.16M | hugging 8EMA, above 200SMA ($16.47) | notion-live | OK |
+| APPS | Digital Turbine, Inc. | $11.44 | change +5.5%, mktcap ~$1.38B, close $11.44, vol 3.35M | 4 recovered-dips (within range), above 200SMA ($6.25) | notion-live | OK |
+| GGB | Gerdau S.A. | $4.70 | change +5.4%, mktcap ~$8.20B, close $4.70, vol 16.79M | 3 recovered-dips (within range), above 200SMA ($4.18) | notion-live | OK |
+| GWRE | Guidewire Software, Inc. | $201.09 | change +5.2%, mktcap ~$16.74B, close $201.09, vol 1.09M | 2 recovered-dips (within range), above 200SMA ($157.80) | notion-live | OK |
+| AVGO | Broadcom Inc. | $371.54 | change +4.5%, mktcap ~$1767.63B, close $371.54, vol 21.33M | hugging 8EMA, above 200SMA ($369.33) | notion-live | OK |
+| GENI | Genius Sports Limited | $7.96 | change +4.5%, mktcap ~$2.21B, close $7.96, vol 5.75M | hugging 8EMA, above 200SMA ($7.11) | notion-live | OK |
+| ATEN | A10 Networks, Inc. | $27.03 | change +4.4%, mktcap ~$1.96B, close $27.03, vol 1.53M | 4 recovered-dips (within range), above 200SMA ($24.58) | notion-live | OK |
+| INTC | Intel Corporation | $92.09 | change +4.4%, mktcap ~$483.89B, close $92.09, vol 100.55M | hugging 8EMA, above 200SMA ($72.53) | notion-live | OK |
+| TK | Teekay Corporation Ltd. | $12.77 | change +4.2%, mktcap ~$1.12B, close $12.77, vol 0.60M | hugging 8EMA, above 200SMA ($11.33) | notion-live | OK |
+| WIX | Wix.com Ltd. | $85.76 | change +4.2%, mktcap ~$3.59B, close $85.76, vol 1.05M | 4 recovered-dips (within range), above 200SMA ($76.56) | notion-live | OK |
+| WK | Workiva Inc. | $77.60 | change +4.2%, mktcap ~$4.22B, close $77.60, vol 1.01M | 4 recovered-dips (within range), above 200SMA ($66.00) | notion-live | OK |
+| CCC | CCC Intelligent Solutions Holdings Inc. | $7.60 | change +4.1%, mktcap ~$4.48B, close $7.60, vol 9.26M | 4 recovered-dips (within range), above 200SMA ($6.20) | notion-live | OK |
+| PCTY | Paylocity Holding Corporation | $158.15 | change +4.0%, mktcap ~$8.39B, close $158.15, vol 0.60M | 4 recovered-dips (within range), above 200SMA ($125.03) | notion-live | OK |
+| RNG | RingCentral, Inc. | $68.53 | change +3.7%, mktcap ~$5.72B, close $68.53, vol 1.60M | 3 recovered-dips (within range), above 200SMA ($38.49) | notion-live | OK |
+| NAT | Nordic American Tankers Limited | $6.76 | change +3.7%, mktcap ~$1.43B, close $6.76, vol 7.54M | hugging 8EMA, above 200SMA ($5.16) | notion-live | OK |
+| VET | Vermilion Energy Inc. | $12.71 | change +3.7%, mktcap ~$1.94B, close $12.71, vol 1.24M | 4 recovered-dips (within range), above 200SMA ($10.71) | notion-live | OK |
+| MANH | Manhattan Associates, Inc. | $223.76 | change +3.6%, mktcap ~$13.05B, close $223.76, vol 0.68M | 2 recovered-dips (within range), above 200SMA ($156.85) | notion-live | OK |
+| MUR | Murphy Oil Corporation | $35.95 | change +3.6%, mktcap ~$5.15B, close $35.95, vol 1.45M | hugging 8EMA, above 200SMA ($35.18) | notion-live | OK |
+| VSH | Vishay Intertechnology, Inc. | $31.74 | change +3.5%, mktcap ~$4.87B, close $31.74, vol 4.42M | hugging 8EMA, above 200SMA ($28.35) | notion-live | OK |
+| STNG | Scorpio Tankers Inc. | $77.44 | change +3.5%, mktcap ~$3.88B, close $77.44, vol 0.51M | hugging 8EMA, above 200SMA ($70.61) | notion-live | OK |
+| STM | STMicroelectronics N.V. | $51.34 | change +3.4%, mktcap ~$44.02B, close $51.34, vol 8.11M | hugging 8EMA, above 200SMA ($44.49) | notion-live | OK |
+
+47 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 47 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-08-26 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
