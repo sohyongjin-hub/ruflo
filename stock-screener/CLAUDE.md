@@ -30,7 +30,7 @@ here are the v1 defaults only.
 A ticker only enters the pool if it clears both stages.
 
 ## Notion databases (live)
-- **Screener Pool**: https://app.notion.com/p/1d107223596d410a8e4ed0069cb00bf3 (data source `2a722d47-ff3a-4a0b-90ae-0da599a238b8`) — Ticker, Company Name, Date Caught, Status, Filters Passed, Catch Price, Rationale, Notes.
+- **Screener Pool**: https://app.notion.com/p/1d107223596d410a8e4ed0069cb00bf3 (data source `2a722d47-ff3a-4a0b-90ae-0da599a238b8`) — Ticker, Company Name, Date Caught, Status, Filters Passed, Catch Price, Rationale, Notes, plus (added 2026-08-28) `Repeated` (checkbox), `Catalyst Confidence` (select), `Catalyst Reason` (rich text), `Catalyst Sources` (rich text) — see "Lane 1 — Mockup 1 + Repeated badge" below. These are separate properties from Daily Tracking's own `Catalyst Confidence`/Reason/Sources — Screener Pool's are the same-day catch-time verdict, Daily Tracking's are the post-catch-day verdict.
 - **Screener Config**: https://app.notion.com/p/3ee0315fe5c54839ba2c3341eefa934b (data source `f3deaad1-d937-4cea-a3b0-1d5c652d6d2a`), pre-populated with the 10 v1 default thresholds below.
 - **Daily Tracking**: https://app.notion.com/p/3a8c3c5dc9fb487f83abc398af75a625 (data source `f92e73ad-6e87-4f98-baac-e5c75853847f`) — the 5-trading-day post-catch tracking table, see "Post-catch tracking" below.
 
@@ -48,19 +48,82 @@ Every ticker that clears both stages on a given run gets three writes, all from 
 run so they never disagree on count:
 1. A new row in the Notion "Screener Pool" database: Ticker, Company Name (from
    TradingView's `description` field, no extra API call), Date Caught, Status=New,
-   which filters it passed, catch price. Duplicates of the same ticker caught on
-   different dates are separate rows, never merged.
+   which filters it passed, catch price, plus (added 2026-08-28) `Repeated` and the
+   catch-time `Catalyst Confidence`/Reason/Sources — see "Lane 1 — Mockup 1" below.
+   Duplicates of the same ticker caught on different dates are separate rows, never
+   merged.
 2. A new dated batch appended to `references/pool-log.md` (git-tracked, append-only —
    this is the audit trail, never the surface you edit by hand).
-3. A Telegram push: catch count + top-ranked ticker(s) on a normal day, or an explicit
-   confirmation message on a zero-catch or FAILED day (dead-man's-switch — silence must
-   never be the only signal that something went wrong).
+3. A Telegram push, either the structured Mockup 1 digest (see below) on a normal day, or
+   an explicit confirmation message on a zero-catch or FAILED day (dead-man's-switch —
+   silence must never be the only signal that something went wrong).
 
 **Same-day dedup (fixed 2026-08-25):** the write step first queries Notion for tickers
 already logged for today's date and skips them. This exists because the first live run
 was accidentally fired multiple times before the fix landed, writing most tickers 2-3x
 at different intraday prices — never assume a run is safe to re-fire without this check
 in place, and never remove it.
+
+## Lane 1 — Mockup 1 + Repeated badge (added 2026-08-28)
+First piece of a larger, agreed redesign of the whole post-catch pipeline: three lanes —
+this automatic same-day Lane 1, an opt-in `/track`+`/untrack` for continued 5-day quant
+monitoring, and an opt-in `/level2` for on-demand deep research. Only Lane 1 has landed so
+far; the "Post-catch tracking" section below still documents the *current*, always-on
+5-day tracker, which Lane 2 is going to replace once it lands (this section will be
+rewritten then — don't read it as final).
+
+Folded directly into `stock-screen.js`'s existing run, no new schedule or workflow file.
+For every ticker that clears both stages, same run, before the Notion write:
+
+- **`Repeated` badge**: queries Screener Pool for any prior row of the same ticker (any
+  status, any date) — the same query pattern already used for the "Previously Removed"
+  badge (see "Review workflow" below), just broadened from status to catch history. If
+  found, sets `Repeated` (checkbox) and surfaces it in the Telegram message (`🔁 REPEATED
+  — first caught <date>`). This is the deliberate, cheaper replacement for automatic
+  passive tracking of every catch: a name that re-qualifies for the full screen on a later
+  day is flagged with no background tracking infrastructure at all. Known, accepted
+  limitation: a ticker that moves without re-clearing the full screen won't show as
+  repeated.
+- **Catalyst search**: one reason-finding pass per caught ticker, answering "why did this
+  move enough to get caught today" — same size/shape of call the post-catch reason-finder
+  already makes, just moved up to catch day. `stock-screen.js` is a deterministic GitHub
+  Actions script with no LLM/Claude Code session access (unlike the cloud `RemoteTrigger`
+  routine used for post-catch reason-finding), so this calls two free external APIs
+  directly over HTTP, same zero-npm-dependency raw-`fetch` style as the rest of the
+  script:
+  - **Tavily Search** (`api.tavily.com/search`, free tier 1,000 credits/month, no card
+    required) for news context — `TAVILY_API_KEY`.
+  - **Cloudflare Workers AI** (`@cf/meta/llama-3.1-8b-instruct-fp8-fast`, JSON-schema
+    mode) to synthesize Tavily's results into a `{confidence, reason, sources}` verdict —
+    `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN`, called via Workers AI's plain REST
+    API (`POST .../ai/run/<model>`) rather than through the Cloudflare Worker/webhook —
+    confirmed this works standalone from any HTTP client, no Worker needed. This is the
+    same Workers AI backend already chosen for the still-to-be-built `/level2` (Lane 3);
+    using it here too keeps the pipeline on one LLM backend and $0 marginal cost.
+  - Same 4-tier confidence scale as the post-catch reason-finder (`Confirmed catalyst` /
+    `Plausible unconfirmed` / `No clear catalyst found` / `Source error`), for consistency
+    between Mockup 1 and the deeper post-catch write-ups.
+  - Degrades safely: zero Tavily results → `No clear catalyst found` without ever calling
+    the model; a Workers AI call that errors or returns something off-schema →
+    `Source error`, never a fabricated reason.
+- **Telegram message** rebuilt as a structured per-ticker block (Quant: price/change%/
+  volume/market cap; Catalyst: confidence tag + reason + sources; `🔁 REPEATED` flag when
+  set) in place of the old catch-count/top-ticker-only digest, batched for the whole run
+  and chunked under the 4096-char `sendMessage` cap the same way `notify-tracking.js`
+  already does (reused pattern) — `buildScreenMessages()` returns an array of chunks and
+  `main()` sends each in sequence.
+- **Fail-fast config check**: `main()` checks all 8 required env vars (`NOTION_TOKEN`,
+  `NOTION_SCREENER_POOL_DATA_SOURCE_ID`, `NOTION_SCREENER_CONFIG_DATA_SOURCE_ID`,
+  `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `CLOUDFLARE_ACCOUNT_ID`,
+  `CLOUDFLARE_API_TOKEN`, `TAVILY_API_KEY`) at the very top, before any Notion write —
+  the same fail-fast-before-any-mutation pattern adopted after a real incident with
+  `find-reasons.js` (see git history / prior session notes), never inside a per-row
+  handler.
+
+**New required secrets, not yet added to GitHub (repo Settings → Secrets and variables →
+Actions) as of this write-up** — code and workflow wiring are in place, but this can't
+run live until they exist: `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`,
+`TAVILY_API_KEY`.
 
 ## Post-catch tracking (5-trading-day window)
 For every Screener Pool ticker, for the 5 US-market trading days after it was caught,
@@ -224,7 +287,9 @@ noted above and in each workflow file's own comment.
 **GitHub Actions secrets required** (repo Settings → Secrets and variables → Actions):
 `NOTION_TOKEN`, `NOTION_SCREENER_POOL_DATA_SOURCE_ID`,
 `NOTION_SCREENER_CONFIG_DATA_SOURCE_ID`, `NOTION_DAILY_TRACKING_DATA_SOURCE_ID`,
-`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
+`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, plus (added 2026-08-28, for `stock-screen.yml`'s
+Lane 1 catalyst search — see "Lane 1 — Mockup 1" above; **not yet added to GitHub as of
+this write-up**) `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`, `TAVILY_API_KEY`.
 
 **Local git push note:** when pushing to this repo interactively, always `git fetch`
 and check `git merge-base --is-ancestor origin/master HEAD` first — this repo has

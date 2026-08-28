@@ -4,8 +4,20 @@
 // blocks scanner.tradingview.com, query1.finance.yahoo.com, api.telegram.org,
 // and *.workers.dev outright (confirmed 2026-08-25). See stock-screener/CLAUDE.md.
 //
+// Mockup 1 (added 2026-08-28): every ticker that clears both stages gets a
+// same-run "why did this move enough to get caught today" catalyst search, on
+// top of the quant data this script already had. This needs an LLM, which a
+// deterministic GitHub Actions script doesn't have on its own -- so it calls
+// Cloudflare Workers AI directly over plain HTTP (an open-weight model, free
+// tier, no Worker/webhook needed to invoke it) with Tavily supplying the
+// search results as context, since Workers AI has no built-in web search.
+// Same backend choice as /level2's deep-dive tier, for the same reason: free
+// and synchronous, at a known, accepted quality cost against Claude. See
+// stock-screener/CLAUDE.md for the full reasoning.
+//
 // Required env vars: NOTION_TOKEN, NOTION_SCREENER_POOL_DATA_SOURCE_ID,
-// NOTION_SCREENER_CONFIG_DATA_SOURCE_ID, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+// NOTION_SCREENER_CONFIG_DATA_SOURCE_ID, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID,
+// CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN, TAVILY_API_KEY
 
 const fs = require('fs');
 const path = require('path');
@@ -255,11 +267,144 @@ async function fetchPreviouslyRemovedTickers() {
   return removed;
 }
 
+// Same query pattern as fetchPreviouslyRemovedTickers, broadened: any prior
+// row for this ticker (any Status), not just Removed ones. Powers the
+// "Repeated" badge -- the user's chosen replacement for automatic passive
+// tracking of every catch. Paginated: unlike the Removed-only query, this
+// scans the whole table's history, which won't stay under 100 rows for long
+// at ~30 catches/day.
+async function fetchPriorCatchDates(dateStr) {
+  const token = need('NOTION_TOKEN');
+  const dataSourceId = need('NOTION_SCREENER_POOL_DATA_SOURCE_ID');
+  const priorByTicker = new Map(); // ticker -> most recent prior "Date Caught" (ISO)
+  try {
+    let cursor;
+    do {
+      const res = await fetch(`https://api.notion.com/v1/data_sources/${dataSourceId}/query`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Notion-Version': '2025-09-03',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          filter: { property: 'Date Caught', date: { before: dateStr } },
+          page_size: 100,
+          ...(cursor ? { start_cursor: cursor } : {}),
+        }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      for (const row of data.results) {
+        const t = row.properties?.Ticker?.title?.[0]?.plain_text;
+        const d = row.properties?.['Date Caught']?.date?.start;
+        if (t && d) {
+          const existing = priorByTicker.get(t);
+          if (!existing || d > existing) priorByTicker.set(t, d);
+        }
+      }
+      cursor = data.has_more ? data.next_cursor : undefined;
+    } while (cursor);
+  } catch (err) {
+    // Fail open — a missed Repeated badge is a UX miss, not worth blocking the run over.
+    console.error('Prior-catch check failed, proceeding without it:', err.message);
+  }
+  return priorByTicker;
+}
+
+async function tavilySearch(query) {
+  const apiKey = need('TAVILY_API_KEY');
+  const res = await fetch('https://api.tavily.com/search', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query, search_depth: 'basic', max_results: 5 }),
+  });
+  if (!res.ok) throw new Error(`Tavily HTTP ${res.status}`);
+  const data = await res.json();
+  return data.results || [];
+}
+
+const CATALYST_JSON_SCHEMA = {
+  type: 'object',
+  properties: {
+    confidence: {
+      type: 'string',
+      enum: ['Confirmed catalyst', 'Plausible unconfirmed', 'No clear catalyst found', 'Source error'],
+    },
+    reason: { type: 'string' },
+    sources: { type: 'string' },
+  },
+  required: ['confidence', 'reason', 'sources'],
+};
+
+async function callWorkersAI(messages) {
+  const accountId = need('CLOUDFLARE_ACCOUNT_ID');
+  const apiToken = need('CLOUDFLARE_API_TOKEN');
+  const model = '@cf/meta/llama-3.1-8b-instruct-fp8-fast'; // confirmed JSON-schema-mode compatible
+  const res = await fetch(`https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${model}`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${apiToken}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messages, response_format: { type: 'json_schema', json_schema: CATALYST_JSON_SCHEMA } }),
+  });
+  if (!res.ok) throw new Error(`Workers AI HTTP ${res.status}`);
+  const data = await res.json();
+  if (!data.success) throw new Error(`Workers AI error: ${JSON.stringify(data.errors)}`);
+  return data.result?.response;
+}
+
+const VALID_CATALYST_CONFIDENCE = new Set([
+  'Confirmed catalyst',
+  'Plausible unconfirmed',
+  'No clear catalyst found',
+  'Source error',
+]);
+
+// Every Mockup 1 catalyst search runs for a ticker that just cleared Stage 1's
+// own change% floor -- by construction the day's move is always material, so
+// unlike Daily Tracking there's no threshold gate here; every catch gets a
+// search. Workers AI has no built-in web search (unlike Claude's server-side
+// tool), so Tavily supplies the search results as plain context; the model's
+// job is synthesis and classification, not retrieval. JSON-schema mode isn't
+// guaranteed to be honored by every model, so the result is still validated,
+// not trusted blindly.
+async function findCatalyst(ticker, dateStr) {
+  try {
+    const results = await tavilySearch(`${ticker} stock news ${dateStr}`);
+    if (results.length === 0) {
+      return { confidence: 'No clear catalyst found', reason: 'Search returned no results for this ticker and date.', sources: '(none found)' };
+    }
+    const context = results.map((r) => `${r.title}\n${r.url}\n${r.content}`).join('\n\n');
+    const messages = [
+      {
+        role: 'system',
+        content: 'You classify why a US-listed stock moved on a given trading day, for a beginner swing trader\'s own research -- never suggest a buy/sell/hold action. Use exactly one confidence value: "Confirmed catalyst" (a named, dated cause tied to a primary filing/press release/official statement, corroborated by 2+ independently-bylined sources -- not two outlets syndicating one wire story), "Plausible unconfirmed" (a coherent narrative resting on a single source or speculation, no primary confirmation), "No clear catalyst found" (the search results don\'t support a defensible driver -- a legitimate outcome, never fabricate a reason to avoid it), or "Source error" (the provided search context is unusable, e.g. empty or irrelevant). Reason: 1-2 sentences. Sources: the actual URLs/headlines you used, semicolon-separated, kept even for "No clear catalyst found".',
+      },
+      {
+        role: 'user',
+        content: `Ticker: ${ticker}\nDate: ${dateStr}\n\nSearch results:\n${context}`,
+      },
+    ];
+    const raw = await callWorkersAI(messages);
+    const parsed = typeof raw === 'string' ? JSON.parse(raw) : raw;
+    if (!parsed || !VALID_CATALYST_CONFIDENCE.has(parsed.confidence)) {
+      return { confidence: 'Source error', reason: 'Model response did not match the expected schema.', sources: `(raw: ${JSON.stringify(raw).slice(0, 300)})` };
+    }
+    return {
+      confidence: parsed.confidence,
+      reason: parsed.reason || '(no reason returned)',
+      sources: parsed.sources || '(no sources returned)',
+    };
+  } catch (err) {
+    return { confidence: 'Source error', reason: `Catalyst search failed: ${err.message}`, sources: '(none — request error, see Reason)' };
+  }
+}
+
 async function writeNotionRows(passed, dateStr) {
   const token = need('NOTION_TOKEN');
   const dataSourceId = need('NOTION_SCREENER_POOL_DATA_SOURCE_ID');
   const alreadyCaught = await fetchAlreadyCaughtToday(dateStr);
   const previouslyRemoved = await fetchPreviouslyRemovedTickers();
+  const priorCatches = await fetchPriorCatchDates(dateStr);
   let ok = 0, failed = 0, skippedDupes = 0;
   for (const p of passed) {
     if (alreadyCaught.has(p.ticker)) {
@@ -268,6 +413,9 @@ async function writeNotionRows(passed, dateStr) {
       continue;
     }
     p.wasRemoved = previouslyRemoved.has(p.ticker);
+    p.priorCatchDate = priorCatches.get(p.ticker) || null;
+    p.repeated = p.priorCatchDate !== null;
+    p.catalyst = await findCatalyst(p.ticker, dateStr);
     const filtersPassed =
       `Fundamental: change +${p.changePct.toFixed(1)}%, mktcap ~$${(p.marketCap / 1e9).toFixed(2)}B, ` +
       `close $${p.close.toFixed(2)}, vol ${(p.volume / 1e6).toFixed(2)}M. ` +
@@ -290,6 +438,10 @@ async function writeNotionRows(passed, dateStr) {
             'Filters Passed': { rich_text: [{ text: { content: filtersPassed } }] },
             'Catch Price': { number: p.close },
             'Previously Removed': { checkbox: p.wasRemoved },
+            Repeated: { checkbox: p.repeated },
+            'Catalyst Confidence': { select: { name: p.catalyst.confidence } },
+            'Catalyst Reason': { rich_text: [{ text: { content: p.catalyst.reason.slice(0, 2000) } }] },
+            'Catalyst Sources': { rich_text: [{ text: { content: p.catalyst.sources.slice(0, 2000) } }] },
           },
         }),
       });
@@ -327,20 +479,67 @@ function appendPoolLog(dateStr, passed, skipped, configSource, notionResult) {
   fs.writeFileSync(POOL_LOG_PATH, content, 'utf8');
 }
 
-function buildScreenMessage(dateStr, s1, s2) {
-  const header = `📈 Stock Screen — ${dateStr}\n${s2.passed.length} caught (out of ${s1.totalCount} that passed the broad market filter)\n`;
+const CATALYST_MARK = {
+  'Confirmed catalyst': '✅',
+  'Plausible unconfirmed': '🟡',
+  'No clear catalyst found': '⚪',
+  'Source error': '⚠️',
+};
+
+function truncate(str, max) {
+  return str.length > max ? str.slice(0, max - 1) + '…' : str;
+}
+
+// Mockup 1: Quantitative + Catalyst, the two sections this pipeline actually
+// has real data for on catch day (Fundamentals/Qualitative/Technical are
+// /level2's job — see stock-screener/CLAUDE.md). Reason/Sources are
+// truncated harder here than in their Notion storage (2000 chars there) —
+// Telegram doesn't need the full audit trail, Notion is where that lives.
+function formatMockup1(p) {
+  const badges = [];
+  if (p.repeated) badges.push(`🔁 REPEATED — first caught ${p.priorCatchDate}`);
+  if (p.wasRemoved) badges.push('⚠️ previously Removed — check why before re-chasing');
+  const badgeLine = badges.length ? `\n${badges.join(' · ')}` : '';
+  const mark = CATALYST_MARK[p.catalyst.confidence] || '❔';
+  return (
+    `📋 ${p.ticker} — ${p.companyName || 'Unknown'}${badgeLine}\n\n` +
+    `📊 QUANTITATIVE\n` +
+    `Close $${p.close.toFixed(2)} | Vol ${(p.volume / 1e6).toFixed(2)}M | Mkt Cap $${(p.marketCap / 1e9).toFixed(2)}B | Change +${p.changePct.toFixed(1)}%\n\n` +
+    `🎯 CATALYST — ${mark} ${p.catalyst.confidence}\n` +
+    `${truncate(p.catalyst.reason, 400)}\n` +
+    `Sources: ${truncate(p.catalyst.sources, 300)}`
+  );
+}
+
+// Telegram's sendMessage caps text at 4096 UTF-16 code units; a full day's
+// catches (up to ~50 on a heavy day) needs chunking, same approach already
+// proven in notify-tracking.js.
+const CHUNK_BODY_LIMIT = 3400;
+
+function buildScreenMessages(dateStr, s1, s2) {
   if (s2.passed.length === 0) {
-    return `📊 Stock Screen — ${dateStr}\n0 caught today (${s1.totalCount} passed the broad market filter, none passed the technical check). This is a confirmed clean run, not a failure.`;
+    return [`📊 Stock Screen — ${dateStr}\n0 caught today (${s1.totalCount} passed the broad market filter, none passed the technical check). This is a confirmed clean run, not a failure.`];
   }
-  const lineFor = (p, i) => `${i + 1}. ${p.ticker} — ${p.companyName || 'Unknown'}${p.wasRemoved ? ' ⚠️ previously Removed — check why before re-chasing' : ''}`;
-  const list = s2.passed.map(lineFor).join('\n');
-  const full = header + '\n' + list;
-  // Telegram's hard cap is 4096 chars; truncate gracefully rather than let the send fail.
-  if (full.length <= 4000) return full;
-  const maxLines = s2.passed.findIndex((_, i) => (header + '\n' + s2.passed.slice(0, i + 1).map(lineFor).join('\n')).length > 3900);
-  const cutAt = maxLines === -1 ? s2.passed.length : maxLines;
-  const truncatedList = s2.passed.slice(0, cutAt).map(lineFor).join('\n');
-  return `${header}\n${truncatedList}\n...and ${s2.passed.length - cutAt} more (see Notion for the full list).`;
+  const entries = s2.passed.map(formatMockup1);
+  const chunks = [];
+  let current = '';
+  for (const entry of entries) {
+    const piece = current ? `\n\n${entry}` : entry;
+    if (current && current.length + piece.length > CHUNK_BODY_LIMIT) {
+      chunks.push(current);
+      current = entry;
+    } else {
+      current += piece;
+    }
+  }
+  if (current) chunks.push(current);
+
+  const total = s2.passed.length;
+  return chunks.map((body, i) => {
+    const part = chunks.length > 1 ? ` (part ${i + 1}/${chunks.length})` : '';
+    const header = `📈 Stock Screen — ${dateStr}${part}\n${total} caught (out of ${s1.totalCount} that passed the broad market filter)\n\n`;
+    return header + body;
+  });
 }
 
 async function sendTelegram(text) {
@@ -362,6 +561,19 @@ async function main() {
   const dateStr = new Date().toISOString().slice(0, 10);
   console.log(`Stock screen run for ${dateStr}`);
 
+  // Fail fast on missing config before any Notion/Telegram writes happen —
+  // a lesson from this project's own history: a missing secret checked only
+  // inside a per-row error handler once mis-tagged real rows as a false
+  // per-row failure state instead of stopping the run. See CLAUDE.md.
+  need('NOTION_TOKEN');
+  need('NOTION_SCREENER_POOL_DATA_SOURCE_ID');
+  need('NOTION_SCREENER_CONFIG_DATA_SOURCE_ID');
+  need('TELEGRAM_BOT_TOKEN');
+  need('TELEGRAM_CHAT_ID');
+  need('CLOUDFLARE_ACCOUNT_ID');
+  need('CLOUDFLARE_API_TOKEN');
+  need('TAVILY_API_KEY');
+
   let config, configSource, s1, s2, notionResult;
   try {
     ({ config, source: configSource } = await loadConfig());
@@ -379,9 +591,11 @@ async function main() {
 
     appendPoolLog(dateStr, s2.passed, s2.skipped, configSource, notionResult);
 
-    const msg = buildScreenMessage(dateStr, s1, s2);
-    await sendTelegram(msg);
-    console.log('Done.');
+    const messages = buildScreenMessages(dateStr, s1, s2);
+    for (const msg of messages) {
+      await sendTelegram(msg);
+    }
+    console.log(`Done. Sent ${messages.length} Telegram message(s).`);
   } catch (err) {
     console.error('FAILED:', err);
     try {
