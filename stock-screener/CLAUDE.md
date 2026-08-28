@@ -30,7 +30,7 @@ here are the v1 defaults only.
 A ticker only enters the pool if it clears both stages.
 
 ## Notion databases (live)
-- **Screener Pool**: https://app.notion.com/p/1d107223596d410a8e4ed0069cb00bf3 (data source `2a722d47-ff3a-4a0b-90ae-0da599a238b8`) — Ticker, Company Name, Date Caught, Status, Filters Passed, Catch Price, Rationale, Notes, plus (added 2026-08-28) `Repeated` (checkbox), `Catalyst Confidence` (select), `Catalyst Reason` (rich text), `Catalyst Sources` (rich text) — see "Lane 1 — Mockup 1 + Repeated badge" below. These are separate properties from Daily Tracking's own `Catalyst Confidence`/Reason/Sources — Screener Pool's are the same-day catch-time verdict, Daily Tracking's are the post-catch-day verdict.
+- **Screener Pool**: https://app.notion.com/p/1d107223596d410a8e4ed0069cb00bf3 (data source `2a722d47-ff3a-4a0b-90ae-0da599a238b8`) — Ticker, Company Name, Date Caught, Status, Filters Passed, Catch Price, Rationale, Notes, plus (added 2026-08-28) `Repeated` (checkbox), `Catalyst Confidence` (select), `Catalyst Reason` (rich text), `Catalyst Sources` (rich text) — see "Lane 1 — Mockup 1 + Repeated badge" below — and `Tracked` (checkbox, also added 2026-08-28) — see "Lane 2 — /track and /untrack" below. These `Catalyst *` properties are separate from Daily Tracking's own `Catalyst Confidence`/Reason/Sources — Screener Pool's are the same-day catch-time verdict, Daily Tracking's are the post-catch-day verdict.
 - **Screener Config**: https://app.notion.com/p/3ee0315fe5c54839ba2c3341eefa934b (data source `f3deaad1-d937-4cea-a3b0-1d5c652d6d2a`), pre-populated with the 10 v1 default thresholds below.
 - **Daily Tracking**: https://app.notion.com/p/3a8c3c5dc9fb487f83abc398af75a625 (data source `f92e73ad-6e87-4f98-baac-e5c75853847f`) — the 5-trading-day post-catch tracking table, see "Post-catch tracking" below.
 - **Company Research** (added 2026-08-28): https://app.notion.com/p/31396f5e1de540798ac881aaceab47a6 (data source `c86c475d-3c49-41ee-9a05-f98abb4e750c`) — Ticker (title), Fundamentals, Qualitative, Sources (rich text), Last Researched (date). One row per company, keyed by Ticker — not per catch event, unlike Screener Pool. This is the `/level2` cache, see "Lane 3 — Company Research cache" below. `Qualitative` is written by the still-to-be-built `/level2` Worker command (Step 3); only `Fundamentals`/`Sources`/`Last Researched` are populated so far, by `fetch-fundamentals.js`.
@@ -157,34 +157,57 @@ script, same `need()`-fail-fast-before-any-write style as `stock-screen.js`/
   tested from GitHub Actions or the Cloudflare Worker, not this interactive session. Not
   yet run against a live ticker.
 - **This script is a tested prototype, not (yet) wired into anything live.** No new
-  GitHub Actions workflow was added for it — the actual `/level2` command (Step 3) will
-  port this same fetch+format logic inline into `stock-screener/telegram-bot/worker.js`,
-  since a Cloudflare Worker can't `require()` a separate Node script. One thing to solve
-  in that port: `company_tickers.json` is a multi-MB file covering every US ticker —
-  worth caching in the existing `stock-screener-bot-state` KV namespace rather than
-  re-fetching it on every `/level2` call, not yet decided how (not a problem this script
-  needed to solve, since it's a one-shot CLI run).
+  GitHub Actions workflow was added for it — the actual `/level2` command ported this
+  same fetch+format logic inline into `stock-screener/telegram-bot/worker.js` in Step 3
+  (done, see "Interactive /level2 command" below), since a Cloudflare Worker can't
+  `require()` a separate Node script. The `company_tickers.json` caching gap noted here
+  when this script first landed is now closed in that port (7-day KV cache) — this
+  standalone script itself still refetches it every run, since it's a one-shot CLI tool
+  where that doesn't matter.
 - **New required env var**, not yet added anywhere (no workflow references it yet, since
   nothing calls this script automatically): `SEC_CONTACT_EMAIL`. `NOTION_TOKEN` and
   `NOTION_COMPANY_RESEARCH_DATA_SOURCE_ID` (`c86c475d-3c49-41ee-9a05-f98abb4e750c`) are
   also required — same Notion token already used everywhere else in this project.
 
-## Post-catch tracking (5-trading-day window)
-For every Screener Pool ticker, for the 5 US-market trading days after it was caught,
-the system records that session's close/%-change/market-cap/volume, and separately finds
-and records *why* the stock moved that day. This is two deliberately separate systems on
-two separate schedules, not one combined job — they need different infrastructure (see
-"Data source" below for why) and a timing offset avoids a race condition between them.
+## Post-catch tracking (5-trading-day window, opt-in via /track since 2026-08-28)
+**Changed 2026-08-28 (Step 4 of the pipeline redesign): this used to run automatically for
+every Screener Pool ticker. It no longer does.** Lane 1's same-day Mockup 1 + `Repeated`
+badge (see above) replaced blanket tracking as the default "did I miss something" signal,
+at zero background cost. What's below now only runs for a ticker once the user opts it in
+with `/track` (see "Interactive /track and /untrack commands" below) — for the 5 US-market
+trading days after it was caught, the system records that session's close/%-change/
+market-cap/volume, and separately finds and records *why* the stock moved that day. This
+is two deliberately separate systems on two separate schedules, not one combined job —
+they need different infrastructure (see "Data source" below for why) and a timing offset
+avoids a race condition between them.
 
 **1. Quant tracking — `stock-screener/scripts/track-pool.js`, GitHub Actions, 4:30pm ET
 (21:30 UTC winter / 20:30 UTC summer) weekdays.** Deterministic, no LLM. For every Pool
-ticker whose Date Caught puts it 1-5 trading days in the past, fetches that day's
-close/volume from Yahoo Finance and market cap from a single-ticker TradingView scanner
-lookup (`filter: [{left:"name",operation:"equal",right:TICKER}]`), computes % change vs.
+ticker with `Tracked = true` whose Date Caught puts it 1-5 trading days in the past
+(**trading-day math is now market-holiday-aware, not just weekend-aware** — see the
+`tradingDaysBetween()` note below), fetches that day's close/volume from Yahoo Finance and
+market cap from a single-ticker TradingView scanner lookup
+(`filter: [{left:"name",operation:"equal",right:TICKER}]`), computes % change vs.
 the original catch price, and writes a new row to the "Daily Tracking" database with
 `Catalyst Confidence = Pending` — Reason and Sources are left blank for the next step to
 fill in. Has its own same-day dedup check (query for today's already-tracked tickers,
 skip them), same pattern as the main screener.
+
+**Market-holiday-aware trading-day math (fixed 2026-08-28):** `tradingDaysBetween()`
+used to only skip Saturday/Sunday — a known, documented approximation from when tracking
+was blanket and a stray extra day barely mattered. Now that `/track` makes tracking a
+deliberate per-ticker choice with a hard 5-session cutoff, an off-by-one from an
+unaccounted NYSE holiday (e.g. Thanksgiving, Independence Day observed on a Friday) could
+silently extend or shrink someone's tracking window by a real day. Fixed with a proper US
+market holiday calendar (New Year's, MLK Day, Washington's Birthday, Good Friday —
+computed from Easter Sunday via the Anonymous Gregorian algorithm — Memorial Day,
+Juneteenth, Independence Day, Labor Day, Thanksgiving, Christmas, with the standard
+Saturday→Friday / Sunday→Monday observance shift), duplicated identically in
+`track-pool.js` and `worker.js` (same "Worker can't `require()` another script"
+constraint as the SEC fundamentals code). Tested against 15 hand-verified 2026 dates and
+two holiday-spanning windows (15/15 checks) — not yet exercised against a real multi-year
+boundary (e.g. does the Set-per-year cache handle a window crossing Dec 31 → Jan 1
+correctly); worth a live sanity check whenever that case is convenient to hit.
 
 **Materiality pre-filter (added 2026-08-28), same script, same step:** the Yahoo fetch
 already pulls 5 days of daily bars (`range=5d`) but only used the most recent one — the
@@ -421,6 +444,40 @@ staleness check. **Not yet live-tested or deployed:**
      (`c86c475d-3c49-41ee-9a05-f98abb4e750c`) — separate from the GitHub Actions secrets
      of the same/similar names, since the Worker and GitHub Actions are two different
      deployment targets that don't share a secret store.
+
+## Interactive /track and /untrack commands (added 2026-08-28, code complete, not yet deployed)
+Step 4 (last step) of the pipeline redesign, same `worker.js`, same deploy status/caveats
+as `/level2` above (needs a manual Cloudflare redeploy — no new binding or secrets
+required for these two commands specifically, they only need `NOTION_TOKEN` and
+`NOTION_SCREENER_POOL_DATA_SOURCE_ID`, both already configured on the Worker today).
+
+- **`/track TICKER`** (or bare `/track`, which then prompts for one, same UX pattern as
+  `/screen` and `/level2`): looks up the ticker's most recent Screener Pool row and sets
+  `Tracked = true` on it. If the ticker was never caught, says so and suggests `/screen`
+  instead of silently no-op'ing. If the 5-trading-day window (from the row's Date Caught,
+  using the same holiday-aware `tradingDaysBetween()` described above) has already
+  elapsed, says so explicitly rather than turning the flag on and letting it quietly do
+  nothing — `/track` can't backfill days that have already passed.
+- **`/untrack TICKER`**: clears `Tracked` back to `false` immediately, ending monitoring
+  before the 5 sessions are up. Only touches the `Tracked` checkbox — the row's Ticker,
+  Date Caught, Catch Price, Status, and every other field (including the Lane 1 catalyst
+  fields) are untouched, and the row itself is never deleted. If the ticker isn't
+  currently tracked, says so rather than silently succeeding.
+- `track-pool.js` (the 4:30pm ET quant tracker) now skips any pool row where
+  `Tracked !== true`, logging a count of how many it skipped for that reason — see
+  "Post-catch tracking" above. This is the actual mechanism that makes tracking opt-in;
+  `/track`/`/untrack` only ever flip that one checkbox.
+- Every screened ticker's Screener Pool row stays permanent regardless of track/untrack
+  state, same as before this redesign — rows are never deleted or merged, and duplicate
+  catches on different dates remain separate rows.
+
+**Tested so far: local unit tests only** — the holiday calendar and trading-day math
+(15/15 checks against 2026 NYSE dates, cross-checked identically in both the
+`track-pool.js` and `worker.js` copies). The Notion read/write paths (`fetchLatestPoolRow`,
+`setTracked`) follow the same query/patch pattern already live-verified elsewhere in this
+project (e.g. the `Previously Removed` badge), but haven't themselves been exercised
+against a live Screener Pool row yet — worth a real `/track AAPL` / `/untrack AAPL` round
+trip once deployed, before relying on it.
 
 ## Trading account context
 [Optional — fill in if you want Claude Code to track actual positions/watchlist across

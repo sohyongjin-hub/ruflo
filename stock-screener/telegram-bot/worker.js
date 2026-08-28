@@ -587,6 +587,201 @@ async function buildLevel2Report(ticker, env) {
   return lines.join('\n');
 }
 
+// ---------------------------------------------------------------------
+// /track and /untrack -- opt-in continued 5-trading-day quant monitoring.
+// See stock-screener/CLAUDE.md "Lane 2 — /track and /untrack". Same
+// holiday-aware trading-day math as stock-screener/scripts/track-pool.js,
+// duplicated here for the same reason as the SEC fundamentals code above
+// (a Worker deployed as a single file can't `require()` another script) --
+// keep the two copies in sync if either changes.
+// ---------------------------------------------------------------------
+
+function easterSundayUTC(year) {
+  const a = year % 19;
+  const b = Math.floor(year / 100);
+  const c = year % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const month = Math.floor((h + l - 7 * m + 114) / 31);
+  const day = ((h + l - 7 * m + 114) % 31) + 1;
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
+function nthWeekdayOfMonth(year, month, weekday, n) {
+  const d = new Date(Date.UTC(year, month, 1));
+  let count = 0;
+  while (true) {
+    if (d.getUTCDay() === weekday) {
+      count++;
+      if (count === n) return new Date(d);
+    }
+    d.setUTCDate(d.getUTCDate() + 1);
+  }
+}
+
+function lastWeekdayOfMonth(year, month, weekday) {
+  const d = new Date(Date.UTC(year, month + 1, 0));
+  while (d.getUTCDay() !== weekday) d.setUTCDate(d.getUTCDate() - 1);
+  return d;
+}
+
+function observedDate(d) {
+  const day = d.getUTCDay();
+  if (day === 6) { const o = new Date(d); o.setUTCDate(o.getUTCDate() - 1); return o; }
+  if (day === 0) { const o = new Date(d); o.setUTCDate(o.getUTCDate() + 1); return o; }
+  return d;
+}
+
+function usMarketHolidays(year) {
+  const goodFriday = easterSundayUTC(year);
+  goodFriday.setUTCDate(goodFriday.getUTCDate() - 2);
+  const dates = [
+    observedDate(new Date(Date.UTC(year, 0, 1))),
+    nthWeekdayOfMonth(year, 0, 1, 3),
+    nthWeekdayOfMonth(year, 1, 1, 3),
+    goodFriday,
+    lastWeekdayOfMonth(year, 4, 1),
+    observedDate(new Date(Date.UTC(year, 5, 19))),
+    observedDate(new Date(Date.UTC(year, 6, 4))),
+    nthWeekdayOfMonth(year, 8, 1, 1),
+    nthWeekdayOfMonth(year, 10, 4, 4),
+    observedDate(new Date(Date.UTC(year, 11, 25))),
+  ];
+  return new Set(dates.map((d) => d.toISOString().slice(0, 10)));
+}
+
+const HOLIDAY_CACHE = new Map();
+function isMarketHoliday(dateISO) {
+  const year = Number(dateISO.slice(0, 4));
+  if (!HOLIDAY_CACHE.has(year)) HOLIDAY_CACHE.set(year, usMarketHolidays(year));
+  return HOLIDAY_CACHE.get(year).has(dateISO);
+}
+
+function tradingDaysBetween(fromISO, toISO) {
+  const from = new Date(fromISO + 'T00:00:00Z');
+  const to = new Date(toISO + 'T00:00:00Z');
+  let count = 0;
+  const cur = new Date(from);
+  while (cur < to) {
+    cur.setUTCDate(cur.getUTCDate() + 1);
+    const day = cur.getUTCDay();
+    const iso = cur.toISOString().slice(0, 10);
+    if (day !== 0 && day !== 6 && !isMarketHoliday(iso)) count++;
+  }
+  return count;
+}
+
+// Most recent Screener Pool row for a ticker (any status) -- /track and
+// /untrack act on this row's Tracked checkbox. Separate from
+// fetchLatestPoolCatalyst above (that one reads Catalyst fields for a
+// report; this one needs the row id + Tracked state to write to it).
+async function fetchLatestPoolRow(ticker, env) {
+  const res = await fetch(
+    `https://api.notion.com/v1/data_sources/${env.NOTION_SCREENER_POOL_DATA_SOURCE_ID}/query`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.NOTION_TOKEN}`,
+        'Notion-Version': '2025-09-03',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ filter: { property: 'Ticker', title: { equals: ticker } }, page_size: 100 }),
+    }
+  );
+  if (!res.ok) throw new Error(`Notion pool query HTTP ${res.status}`);
+  const data = await res.json();
+  let latest = null;
+  for (const row of data.results || []) {
+    const dateCaught = row.properties?.['Date Caught']?.date?.start;
+    if (!dateCaught) continue;
+    if (!latest || dateCaught > latest.dateCaught) {
+      latest = { id: row.id, dateCaught, tracked: row.properties?.Tracked?.checkbox === true };
+    }
+  }
+  return latest;
+}
+
+async function setTracked(pageId, tracked, env) {
+  const res = await fetch(`https://api.notion.com/v1/pages/${pageId}`, {
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${env.NOTION_TOKEN}`,
+      'Notion-Version': '2025-09-03',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ properties: { Tracked: { checkbox: tracked } } }),
+  });
+  return res.ok;
+}
+
+async function runTrack(rawTicker, chatId, env) {
+  const ticker = rawTicker.trim().toUpperCase();
+  try {
+    const row = await fetchLatestPoolRow(ticker, env);
+    if (!row) {
+      await sendTelegram(env, chatId, `${ticker} hasn't been caught by the screen yet — nothing to track. Try /screen first.`);
+      return;
+    }
+    const todayISO = new Date().toISOString().slice(0, 10);
+    const daysSince = tradingDaysBetween(row.dateCaught, todayISO);
+    // /track only turns the flag on for track-pool.js's own 1-5-trading-day
+    // window check to act on next run -- it can't backfill days that have
+    // already passed, so tell the user plainly rather than silently no-op.
+    if (daysSince > 5) {
+      await sendTelegram(
+        env,
+        chatId,
+        `⚠️ ${ticker}'s 5-trading-day window (caught ${row.dateCaught}) has already passed — turning on tracking now won't backfill missed days.`
+      );
+      return;
+    }
+    const ok = await setTracked(row.id, true, env);
+    await sendTelegram(
+      env,
+      chatId,
+      ok
+        ? `✅ Tracking ${ticker} for its remaining 5-trading-day window (caught ${row.dateCaught}). Use /untrack ${ticker} to stop early.`
+        : `⚠️ Failed to enable tracking for ${ticker}.`
+    );
+  } catch (err) {
+    await sendTelegram(env, chatId, `⚠️ /track failed for ${ticker}: ${err.message}`);
+  }
+}
+
+async function runUntrack(rawTicker, chatId, env) {
+  const ticker = rawTicker.trim().toUpperCase();
+  try {
+    const row = await fetchLatestPoolRow(ticker, env);
+    if (!row) {
+      await sendTelegram(env, chatId, `${ticker} hasn't been caught by the screen — nothing to untrack.`);
+      return;
+    }
+    if (!row.tracked) {
+      await sendTelegram(env, chatId, `${ticker} isn't currently being tracked.`);
+      return;
+    }
+    // Only clears the Tracked flag -- the original catch row (Ticker, Date
+    // Caught, Catch Price, Status, etc.) is never touched or deleted.
+    const ok = await setTracked(row.id, false, env);
+    await sendTelegram(
+      env,
+      chatId,
+      ok
+        ? `✅ Stopped tracking ${ticker}. Its Screener Pool catch record is untouched.`
+        : `⚠️ Failed to disable tracking for ${ticker}.`
+    );
+  } catch (err) {
+    await sendTelegram(env, chatId, `⚠️ /untrack failed for ${ticker}: ${err.message}`);
+  }
+}
+
 async function runLevel2(rawTicker, chatId, env) {
   const ticker = rawTicker.trim().toUpperCase();
   await sendTelegram(env, chatId, `Researching ${ticker} (this can take a few seconds)...`);
@@ -685,7 +880,8 @@ async function handleUpdate(update, env) {
       env,
       chatId,
       'Send /screen to check a specific ticker against the fundamental + technical screen.\n' +
-        'Send /level2 TICKER for deep-dive research (Fundamentals, Qualitative, Quantitative, Catalyst, Technical).'
+        'Send /level2 TICKER for deep-dive research (Fundamentals, Qualitative, Quantitative, Catalyst, Technical).\n' +
+        'Send /track TICKER to keep quant-monitoring a caught ticker for its remaining 5-trading-day window, /untrack TICKER to stop early.'
     );
     return;
   }
@@ -710,6 +906,40 @@ async function handleUpdate(update, env) {
   if (state?.step === 'awaiting_level2_ticker') {
     await env.SCREENER_STATE.delete(stateKey);
     await runLevel2(text, chatId, env);
+    return;
+  }
+
+  if (text === '/track' || text.toLowerCase().startsWith('/track ')) {
+    const tickerArg = text.split(/\s+/)[1];
+    if (!tickerArg) {
+      await env.SCREENER_STATE.put(stateKey, JSON.stringify({ step: 'awaiting_track_ticker' }), { expirationTtl: 600 });
+      await sendTelegram(env, chatId, 'Type the ticker you want to track (e.g. AAPL):');
+      return;
+    }
+    await runTrack(tickerArg, chatId, env);
+    return;
+  }
+
+  if (state?.step === 'awaiting_track_ticker') {
+    await env.SCREENER_STATE.delete(stateKey);
+    await runTrack(text, chatId, env);
+    return;
+  }
+
+  if (text === '/untrack' || text.toLowerCase().startsWith('/untrack ')) {
+    const tickerArg = text.split(/\s+/)[1];
+    if (!tickerArg) {
+      await env.SCREENER_STATE.put(stateKey, JSON.stringify({ step: 'awaiting_untrack_ticker' }), { expirationTtl: 600 });
+      await sendTelegram(env, chatId, 'Type the ticker you want to stop tracking (e.g. AAPL):');
+      return;
+    }
+    await runUntrack(tickerArg, chatId, env);
+    return;
+  }
+
+  if (state?.step === 'awaiting_untrack_ticker') {
+    await env.SCREENER_STATE.delete(stateKey);
+    await runUntrack(text, chatId, env);
     return;
   }
 

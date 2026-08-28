@@ -1,8 +1,10 @@
 #!/usr/bin/env node
-// Post-catch tracking: for every Screener Pool ticker still within its 5
-// US-market-trading-day window, records that session's close/%change/mktcap/
-// volume into the "Daily Tracking" Notion database. Runs on GitHub Actions
-// (open egress) shortly after market close. This script does NOT find the
+// Post-catch tracking: for every Screener Pool ticker opted into tracking
+// via the Telegram bot's /track command (see stock-screener/CLAUDE.md
+// "Lane 2 — /track and /untrack") and still within its 5-US-market-trading
+// -day window, records that session's close/%change/mktcap/volume into the
+// "Daily Tracking" Notion database. Runs on GitHub Actions (open egress)
+// shortly after market close. This script does NOT find the
 // "reason" behind a move — that requires WebSearch + LLM synthesis, which
 // only works from a Claude Code session (see stock-screener/CLAUDE.md for
 // the reason-finding routine). This script writes quantitative rows with
@@ -46,8 +48,87 @@ function need(name) {
   return v;
 }
 
-// Trading-day count between two ISO dates, weekdays only (doesn't account for
-// market holidays — acceptable approximation for a 5-day window).
+// US market (NYSE/NASDAQ) holiday calendar -- fixed 2026-08-28. Previously
+// tradingDaysBetween() only skipped weekends, a known, documented
+// approximation; now that tracking is a deliberate per-ticker /track choice
+// (see "Lane 2 — /track and /untrack" in CLAUDE.md) rather than blanket, an
+// off-by-one from an unaccounted holiday matters more than it used to, so
+// this was fixed properly as part of that build.
+//
+// Good Friday's date depends on Easter Sunday, computed with the Anonymous
+// Gregorian algorithm (Meeus/Jones/Butcher). Fixed-date holidays that fall
+// on a weekend are observed the preceding Friday (Saturday) or following
+// Monday (Sunday), the standard NYSE/US-federal observance rule.
+function easterSundayUTC(year) {
+  const a = year % 19;
+  const b = Math.floor(year / 100);
+  const c = year % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const month = Math.floor((h + l - 7 * m + 114) / 31); // 3 = March, 4 = April
+  const day = ((h + l - 7 * m + 114) % 31) + 1;
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
+function nthWeekdayOfMonth(year, month, weekday, n) {
+  const d = new Date(Date.UTC(year, month, 1));
+  let count = 0;
+  while (true) {
+    if (d.getUTCDay() === weekday) {
+      count++;
+      if (count === n) return new Date(d);
+    }
+    d.setUTCDate(d.getUTCDate() + 1);
+  }
+}
+
+function lastWeekdayOfMonth(year, month, weekday) {
+  const d = new Date(Date.UTC(year, month + 1, 0)); // last day of month
+  while (d.getUTCDay() !== weekday) d.setUTCDate(d.getUTCDate() - 1);
+  return d;
+}
+
+function observedDate(d) {
+  const day = d.getUTCDay();
+  if (day === 6) { const o = new Date(d); o.setUTCDate(o.getUTCDate() - 1); return o; }
+  if (day === 0) { const o = new Date(d); o.setUTCDate(o.getUTCDate() + 1); return o; }
+  return d;
+}
+
+function usMarketHolidays(year) {
+  const goodFriday = easterSundayUTC(year);
+  goodFriday.setUTCDate(goodFriday.getUTCDate() - 2);
+  const dates = [
+    observedDate(new Date(Date.UTC(year, 0, 1))),  // New Year's Day
+    nthWeekdayOfMonth(year, 0, 1, 3),               // MLK Day: 3rd Monday of January
+    nthWeekdayOfMonth(year, 1, 1, 3),               // Washington's Birthday: 3rd Monday of February
+    goodFriday,
+    lastWeekdayOfMonth(year, 4, 1),                 // Memorial Day: last Monday of May
+    observedDate(new Date(Date.UTC(year, 5, 19))),  // Juneteenth (since 2022)
+    observedDate(new Date(Date.UTC(year, 6, 4))),   // Independence Day
+    nthWeekdayOfMonth(year, 8, 1, 1),                // Labor Day: 1st Monday of September
+    nthWeekdayOfMonth(year, 10, 4, 4),               // Thanksgiving: 4th Thursday of November
+    observedDate(new Date(Date.UTC(year, 11, 25))), // Christmas
+  ];
+  return new Set(dates.map((d) => d.toISOString().slice(0, 10)));
+}
+
+const HOLIDAY_CACHE = new Map();
+function isMarketHoliday(dateISO) {
+  const year = Number(dateISO.slice(0, 4));
+  if (!HOLIDAY_CACHE.has(year)) HOLIDAY_CACHE.set(year, usMarketHolidays(year));
+  return HOLIDAY_CACHE.get(year).has(dateISO);
+}
+
+// Trading-day count between two ISO dates -- weekdays only, excluding NYSE
+// market holidays.
 function tradingDaysBetween(fromISO, toISO) {
   const from = new Date(fromISO + 'T00:00:00Z');
   const to = new Date(toISO + 'T00:00:00Z');
@@ -56,7 +137,8 @@ function tradingDaysBetween(fromISO, toISO) {
   while (cur < to) {
     cur.setUTCDate(cur.getUTCDate() + 1);
     const day = cur.getUTCDay();
-    if (day !== 0 && day !== 6) count++;
+    const iso = cur.toISOString().slice(0, 10);
+    if (day !== 0 && day !== 6 && !isMarketHoliday(iso)) count++;
   }
   return count;
 }
@@ -77,19 +159,29 @@ async function fetchPoolTickersInWindow(todayISO) {
   const data = await res.json();
   const inWindow = [];
   let skippedRemoved = 0;
+  let skippedNotTracked = 0;
   for (const row of data.results) {
     const ticker = row.properties?.Ticker?.title?.[0]?.plain_text;
     const catchPriceProp = row.properties?.['Catch Price']?.number;
     const dateCaught = row.properties?.['Date Caught']?.date?.start;
     const status = row.properties?.Status?.select?.name;
+    const tracked = row.properties?.Tracked?.checkbox === true;
     if (!ticker || !dateCaught || catchPriceProp === null || catchPriceProp === undefined) continue;
     if (status === 'Removed') { skippedRemoved++; continue; }
+    // Gated on the /track opt-in flag (added 2026-08-28) -- this replaced
+    // blanket 5-day tracking of every catch. See CLAUDE.md "Lane 2 — /track
+    // and /untrack" for why: the user's own Repeated-badge proposal covers
+    // the "did I miss something" case Lane 2's automatic tracking used to,
+    // at zero background cost, so only explicitly-opted-in tickers reach
+    // this quant fetch now.
+    if (!tracked) { skippedNotTracked++; continue; }
     const daysSince = tradingDaysBetween(dateCaught, todayISO);
     if (daysSince >= 1 && daysSince <= 5) {
       inWindow.push({ ticker, catchPrice: catchPriceProp, dateCaught, dayNumber: daysSince });
     }
   }
   if (skippedRemoved > 0) console.log(`Skipped ${skippedRemoved} pool ticker(s) marked Removed`);
+  if (skippedNotTracked > 0) console.log(`Skipped ${skippedNotTracked} pool ticker(s) not opted into /track`);
   return inWindow;
 }
 
