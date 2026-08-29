@@ -20,6 +20,34 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-08-29 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| ESTC | Elastic N.V. | $99.91 | change +19.3%, mktcap ~$10.39B, close $99.91, vol 10.11M | 4 recovered-dips (within range), above 200SMA ($63.75) | notion-live | OK |
+| PD | PagerDuty, Inc. | $13.83 | change +9.5%, mktcap ~$1.09B, close $13.83, vol 3.68M | 4 recovered-dips (within range), above 200SMA ($9.66) | notion-live | OK |
+| WDAY | Workday, Inc. | $204.72 | change +5.8%, mktcap ~$49.34B, close $204.72, vol 8.67M | hugging 8EMA, above 200SMA ($160.96) | notion-live | OK |
+| DAR | Darling Ingredients Inc. | $64.32 | change +4.8%, mktcap ~$10.15B, close $64.32, vol 2.97M | 4 recovered-dips (within range), above 200SMA ($52.58) | notion-live | OK |
+| NOW | ServiceNow, Inc. | $144.71 | change +4.5%, mktcap ~$149.63B, close $144.71, vol 29.03M | 4 recovered-dips (within range), above 200SMA ($119.41) | notion-live | OK |
+| GFL | GFL Environmental Inc. Subordinate voting shares, no par value | $42.83 | change +4.4%, mktcap ~$15.46B, close $42.83, vol 4.02M | hugging 8EMA, above 200SMA ($41.02) | notion-live | OK |
+| CLMT | Calumet, Inc | $47.75 | change +4.3%, mktcap ~$4.20B, close $47.75, vol 1.26M | 4 recovered-dips (within range), above 200SMA ($30.66) | notion-live | OK |
+| GO | Grocery Outlet Holding Corp. | $12.17 | change +4.0%, mktcap ~$1.21B, close $12.17, vol 2.99M | hugging 8EMA, above 200SMA ($9.23) | notion-live | OK |
+| VSNT | Versant Media Group, Inc. | $41.02 | change +3.9%, mktcap ~$5.69B, close $41.02, vol 1.44M | hugging 8EMA, above 100SMA ($39.03) | notion-live | OK |
+| SPOT | Spotify Technology S.A. | $547.51 | change +3.8%, mktcap ~$112.72B, close $547.51, vol 1.39M | hugging 8EMA, above 200SMA ($509.93) | notion-live | OK |
+| NPPXF | NTT Inc. | $1.02 | change +3.8%, mktcap ~$86.94B, close $1.02, vol 1.12M | hugging 8EMA, above 200SMA ($0.96) | notion-live | OK |
+| UMC | United Microelectronics Corporation (NEW) | $19.79 | change +3.8%, mktcap ~$51.51B, close $19.79, vol 19.85M | hugging 8EMA, above 200SMA ($13.88) | notion-live | OK |
+| CHEF | The Chefs' Warehouse, Inc. | $115.00 | change +3.4%, mktcap ~$4.69B, close $115.00, vol 0.88M | hugging 8EMA, above 200SMA ($75.87) | notion-live | OK |
+| BEKE | KE Holdings Inc | $18.32 | change +3.3%, mktcap ~$20.64B, close $18.32, vol 14.14M | hugging 8EMA, above 200SMA ($16.76) | notion-live | OK |
+| COTY | Coty Inc. | $2.85 | change +3.3%, mktcap ~$2.51B, close $2.85, vol 6.89M | hugging 8EMA, above 200SMA ($2.62) | notion-live | OK |
+| SONY | Sony Group Corporation | $24.85 | change +3.2%, mktcap ~$145.98B, close $24.85, vol 4.81M | hugging 8EMA, above 200SMA ($22.92) | notion-live | OK |
+| HQY | HealthEquity, Inc. | $96.37 | change +3.2%, mktcap ~$7.97B, close $96.37, vol 2.26M | 4 recovered-dips (within range), above 200SMA ($89.48) | notion-live | OK |
+| ADM | Archer-Daniels-Midland Company | $81.54 | change +3.1%, mktcap ~$39.30B, close $81.54, vol 3.61M | hugging 8EMA, above 200SMA ($71.35) | notion-live | OK |
+| MMED | MiniMed Group, Inc. | $20.10 | change +3.0%, mktcap ~$5.66B, close $20.10, vol 1.33M | hugging 8EMA, above 100SMA ($15.07) | notion-live | OK |
+| HPQ | HP Inc. | $30.52 | change +3.0%, mktcap ~$27.52B, close $30.52, vol 15.85M | hugging 8EMA, above 200SMA ($22.66) | notion-live | OK |
+
+20 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 20 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-08-28 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
