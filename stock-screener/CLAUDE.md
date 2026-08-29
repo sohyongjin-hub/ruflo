@@ -396,7 +396,7 @@ This coexists with the scheduled jobs with no conflict — same bot token, Teleg
 incoming messages to the webhook regardless of what else sends outgoing pushes to the
 same chat.
 
-## Interactive /level2 command (added 2026-08-28, code complete, not yet deployed)
+## Interactive /level2 command (added 2026-08-28, deployed and verified live 2026-08-29)
 Step 3 of the pipeline redesign, in the same `worker.js` as `/screen` above. `/level2
 TICKER` (or bare `/level2`, which then prompts for one) replies with a combined report in
 a fixed order — Fundamentals, Qualitative, Quantitative, Catalyst, Technical:
@@ -429,34 +429,35 @@ a fixed order — Fundamentals, Qualitative, Quantitative, Catalyst, Technical:
   chunking convention as `notify-tracking.js`/`stock-screen.js`) since a full 5-section
   report is the one reply from this bot long enough to risk the limit.
 
-**Tested so far: local unit tests only (11/11 passing)** — number formatting, the SEC
-extraction logic (same as `fetch-fundamentals.js`'s own tests), qualitative-cache
-formatting (padding-free, degrades to a clear "no signal found" message), and the 90-day
-staleness check. **Not yet live-tested or deployed:**
-- **The Workers AI binding's exact response shape for JSON-schema mode is unverified** —
-  `synthesizeQualitative()` defensively checks both `result.response` (matching the REST
-  API envelope used elsewhere in this project) and `result` itself, but this needs a real
-  first call to confirm which one is right and simplify the code once known.
-- **Deployment is a manual follow-up, same situation as the GitHub Actions secrets in
-  Lane 1/3 above** — this session has no Cloudflare API credentials (confirmed: none in
-  its environment), so the updated `worker.js` source is pushed to the repo but not yet
-  live on Cloudflare. Before `/level2` can work, someone with Cloudflare dashboard access
-  needs to:
-  1. Redeploy `worker.js` to the `stock-screener-bot` Worker (same "deployed directly via
-     the Cloudflare API" process noted above).
-  2. Add a **Workers AI binding** named `AI` to the Worker (Settings → Bindings → Workers
-     AI) — without this, `env.AI` is undefined and `/level2` fails on every call.
-  3. Add three new Worker environment variables/secrets: `SEC_CONTACT_EMAIL`,
-     `TAVILY_API_KEY`, `NOTION_COMPANY_RESEARCH_DATA_SOURCE_ID`
-     (`c86c475d-3c49-41ee-9a05-f98abb4e750c`) — separate from the GitHub Actions secrets
-     of the same/similar names, since the Worker and GitHub Actions are two different
-     deployment targets that don't share a secret store.
+**Tested locally (11/11 unit tests) then deployed and confirmed live 2026-08-29**: this
+session had no Cloudflare API credentials, so deployment was manual (user pasted the code
+via the dashboard's Edit Code view, added a Workers AI binding named `AI`, and added the
+three new env vars — `SEC_CONTACT_EMAIL`, `TAVILY_API_KEY`,
+`NOTION_COMPANY_RESEARCH_DATA_SOURCE_ID`). First live `/level2 ESTC` call failed with
+`Notion Company Research query HTTP 404` — **root cause: the "Company Research" database,
+created via the Notion MCP connection during this build, was never shared with the same
+Notion integration `NOTION_TOKEN` belongs to** (unlike Screener Pool/Config/Daily Tracking,
+which already had that integration connected from earlier setup). Fixed by the user adding
+that integration under the database's Connections menu — **remember this for any future
+Notion database created by Claude via MCP: it needs to be explicitly connected to the
+integration the scripts/Worker actually authenticate as, it doesn't inherit access
+automatically.** After that fix, `/level2` completed successfully. Not yet independently
+confirmed: which exact shape the Workers AI binding returns for JSON-schema mode
+(`synthesizeQualitative()` still defensively checks both `result.response` and `result`
+itself) — a successful run doesn't by itself prove which branch fired; check a live
+Qualitative section's actual content (not just "no signal found") to confirm which shape
+is correct and simplify the code once known.
 
-## Interactive /track and /untrack commands (added 2026-08-28, code complete, not yet deployed)
-Step 4 (last step) of the pipeline redesign, same `worker.js`, same deploy status/caveats
-as `/level2` above (needs a manual Cloudflare redeploy — no new binding or secrets
-required for these two commands specifically, they only need `NOTION_TOKEN` and
-`NOTION_SCREENER_POOL_DATA_SOURCE_ID`, both already configured on the Worker today).
+## Interactive /track and /untrack commands (added 2026-08-28, deployed and verified live 2026-08-29)
+Step 4 (last step) of the pipeline redesign, same `worker.js` deploy as `/level2` above —
+no new binding or secrets required for these two commands specifically, they only need
+`NOTION_TOKEN` and `NOTION_SCREENER_POOL_DATA_SOURCE_ID`, both already configured on the
+Worker today.
+
+**Usage note (real user confusion, worth flagging): the command needs a literal space**
+— `/track NOW` works, `/tracknow` (no space) does not match either the bare-`/track` or
+the `/track `-prefix branch and silently falls through to the generic help reply. Not a
+bug, but confusing enough on a live test that it's worth documenting here.
 
 - **`/track TICKER`** (or bare `/track`, which then prompts for one, same UX pattern as
   `/screen` and `/level2`): looks up the ticker's most recent Screener Pool row and sets
@@ -478,13 +479,9 @@ required for these two commands specifically, they only need `NOTION_TOKEN` and
   state, same as before this redesign — rows are never deleted or merged, and duplicate
   catches on different dates remain separate rows.
 
-**Tested so far: local unit tests only** — the holiday calendar and trading-day math
-(15/15 checks against 2026 NYSE dates, cross-checked identically in both the
-`track-pool.js` and `worker.js` copies). The Notion read/write paths (`fetchLatestPoolRow`,
-`setTracked`) follow the same query/patch pattern already live-verified elsewhere in this
-project (e.g. the `Previously Removed` badge), but haven't themselves been exercised
-against a live Screener Pool row yet — worth a real `/track AAPL` / `/untrack AAPL` round
-trip once deployed, before relying on it.
+**Tested locally (15/15 holiday-calendar checks) then verified live 2026-08-29**: real
+`/track` round trip on a same-day catch confirmed the `Tracked` checkbox write works
+correctly against a live Screener Pool row.
 
 ## Trading account context
 [Optional — fill in if you want Claude Code to track actual positions/watchlist across
