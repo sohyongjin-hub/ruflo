@@ -879,9 +879,13 @@ async function handleUpdate(update, env) {
     await sendTelegram(
       env,
       chatId,
-      'Send /screen to check a specific ticker against the fundamental + technical screen.\n' +
-        'Send /level2 TICKER for deep-dive research (Fundamentals, Qualitative, Quantitative, Catalyst, Technical).\n' +
-        'Send /track TICKER to keep quant-monitoring a caught ticker for its remaining 5-trading-day window, /untrack TICKER to stop early.'
+      '*Commands*\n\n' +
+        '/screen TICKER — Run the fundamental + technical screen on one ticker. If it passes both stages, asks whether to add it to the Screener Pool.\n\n' +
+        '/level2 TICKER — Deep-dive report: Fundamentals, Qualitative, Quantitative, Catalyst, Technical. Cached 90 days — instant and free on repeat calls for the same ticker.\n\n' +
+        '/track TICKER — Opt a ticker already in the Screener Pool into quant monitoring (close/volume/% change) for its remaining 5-trading-day window after catch.\n\n' +
+        '/untrack TICKER — Stop monitoring a tracked ticker early. Never touches its original catch record.\n\n' +
+        '/help — Show this message.\n\n' +
+        '_Every ticker the daily automatic screen catches already gets a same-day report pushed here automatically — no command needed for that._'
     );
     return;
   }

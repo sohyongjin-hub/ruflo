@@ -396,6 +396,13 @@ This coexists with the scheduled jobs with no conflict — same bot token, Teleg
 incoming messages to the webhook regardless of what else sends outgoing pushes to the
 same chat.
 
+**`/start`/`/help` (rewritten 2026-08-29)** lists every command (`/screen`, `/level2`,
+`/track`, `/untrack`, `/help`) with a one-line description each, plus a note that the
+daily automatic screen already pushes Mockup 1 with no command needed — this replaced a
+terse 3-line version once the bot grew past just `/screen`. Telegram's native "/" command
+menu (via BotFather's `/setcommands`) is a separate, optional layer on top of this — see
+"Telegram command menu (BotFather)" further below.
+
 ## Interactive /level2 command (added 2026-08-28, deployed and verified live 2026-08-29)
 Step 3 of the pipeline redesign, in the same `worker.js` as `/screen` above. `/level2
 TICKER` (or bare `/level2`, which then prompts for one) replies with a combined report in
@@ -483,6 +490,19 @@ bug, but confusing enough on a live test that it's worth documenting here.
 `/track` round trip on a same-day catch confirmed the `Tracked` checkbox write works
 correctly against a live Screener Pool row.
 
-## Trading account context
+## Telegram command menu (BotFather, added 2026-08-29)
+Separate from the in-chat `/help` text above: Telegram bots can register a native "/"
+command menu (the autocomplete list shown when tapping the menu button or typing `/`),
+configured entirely on Telegram's side via **@BotFather → `/setcommands` → select this
+bot**, pasting:
+```
+screen - Screen a specific ticker
+level2 - Deep-dive research (Fundamentals/Qualitative/Quant/Catalyst/Technical)
+track - Keep monitoring a caught ticker for its remaining 5-day window
+untrack - Stop monitoring a tracked ticker early
+help - List all commands
+```
+No code change or redeploy needed — this is pure Telegram bot metadata, unrelated to
+`worker.js`. Not yet confirmed whether the user has actually run this against BotFather.
 [Optional — fill in if you want Claude Code to track actual positions/watchlist across
 sessions. Leave blank if you'd rather keep this stateless.]
