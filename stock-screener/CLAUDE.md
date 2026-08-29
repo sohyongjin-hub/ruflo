@@ -121,10 +121,17 @@ For every ticker that clears both stages, same run, before the Notion write:
   `find-reasons.js` (see git history / prior session notes), never inside a per-row
   handler.
 
-**New required secrets, not yet added to GitHub (repo Settings → Secrets and variables →
-Actions) as of this write-up** — code and workflow wiring are in place, but this can't
-run live until they exist: `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`,
-`TAVILY_API_KEY`.
+**New required secrets**: `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`, `TAVILY_API_KEY`
+— added to GitHub 2026-08-29.
+
+**Verified live 2026-08-29** via `workflow_dispatch`: 64 tickers screened, 20 passed both
+stages, all 20 got real `Catalyst Confidence`/`Reason`/`Sources` written to Screener Pool
+(Tavily + Workers AI both reachable and working from GitHub Actions), `Repeated` correctly
+flagged `true` for the 3 tickers with a prior catch (ESTC, GO, NOW) and `false` for the
+other 17, and 4 chunked Telegram messages sent. One row (HPQ) landed `Source error` —
+Workers AI returned malformed JSON that failed `JSON.parse` — confirming the degrade-safely
+path works as designed rather than crashing or fabricating a reason; worth watching if this
+becomes frequent (1/20 on a first run isn't concerning on its own). Lane 1 is fully live.
 
 ## Lane 3 — Company Research cache (in progress, added 2026-08-28)
 Second piece of the redesign (Step 2 of 4 in the build order). This lands the data store
