@@ -20,6 +20,27 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-08-31 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| HNGE | Hinge Health, Inc. | $92.56 | change +6.0%, mktcap ~$7.47B, close $92.56, vol 2.00M | 4 recovered-dips (within range), above 200SMA ($55.79) | notion-live | OK |
+| HTFL | Heartflow, Inc. | $50.39 | change +5.5%, mktcap ~$4.38B, close $50.39, vol 2.59M | 4 recovered-dips (within range), above 200SMA ($29.47) | notion-live | OK |
+| FJIKY | Fujikura Ltd. | $17.14 | change +5.3%, mktcap ~$58.51B, close $17.14, vol 0.54M | 4 recovered-dips (within range), above 200SMA ($14.04) | notion-live | OK |
+| ALVO | Alvotech | $5.19 | change +4.8%, mktcap ~$2.03B, close $5.19, vol 1.25M | 3 recovered-dips (within range), above 200SMA ($4.15) | notion-live | OK |
+| KXIAY | KIOXIA HLDGS CORP | $31.33 | change +4.8%, mktcap ~$163.99B, close $31.33, vol 1.39M | hugging 8EMA, above 200SMA ($23.68) | notion-live | OK |
+| XNCR | Xencor, Inc. | $27.27 | change +4.6%, mktcap ~$2.03B, close $27.27, vol 1.81M | hugging 8EMA, above 200SMA ($14.90) | notion-live | OK |
+| ZYME | Zymeworks Inc. | $29.41 | change +4.0%, mktcap ~$2.10B, close $29.41, vol 0.72M | 2 recovered-dips (within range), above 200SMA ($24.74) | notion-live | OK |
+| ABSI | Absci Corporation | $9.04 | change +3.8%, mktcap ~$1.55B, close $9.04, vol 5.25M | hugging 8EMA, above 200SMA ($5.16) | notion-live | OK |
+| FLOC | Flowco Holdings Inc. | $21.94 | change +3.7%, mktcap ~$1.98B, close $21.94, vol 0.77M | hugging 8EMA, above 200SMA ($21.51) | notion-live | OK |
+| OMDA | Omada Health, Inc. | $24.55 | change +3.6%, mktcap ~$1.50B, close $24.55, vol 1.40M | 4 recovered-dips (within range), above 200SMA ($16.94) | notion-live | OK |
+| AXTI | AXT Inc | $60.61 | change +3.4%, mktcap ~$3.97B, close $60.61, vol 6.36M | 3 recovered-dips (within range), above 200SMA ($53.68) | notion-live | OK |
+| ZBIO | Zenas BioPharma, Inc. | $32.32 | change +3.4%, mktcap ~$2.11B, close $32.32, vol 0.53M | hugging 8EMA, above 200SMA ($26.05) | notion-live | OK |
+| VEEV | Veeva Systems Inc. | $285.69 | change +3.3%, mktcap ~$46.26B, close $285.69, vol 2.84M | 4 recovered-dips (within range), above 200SMA ($198.82) | notion-live | OK |
+
+13 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 13 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-08-29 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
