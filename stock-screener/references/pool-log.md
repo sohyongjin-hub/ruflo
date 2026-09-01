@@ -20,6 +20,24 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-01 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| MRNA | Moderna, Inc. | $149.49 | change +6.5%, mktcap ~$59.68B, close $149.49, vol 16.83M | 4 recovered-dips (within range), above 200SMA ($52.96) | notion-live | OK |
+| TAL | TAL Education Group | $12.28 | change +4.6%, mktcap ~$5.65B, close $12.28, vol 1.98M | 4 recovered-dips (within range), above 200SMA ($10.98) | notion-live | OK |
+| BHVN | Biohaven Ltd. | $15.92 | change +4.3%, mktcap ~$2.40B, close $15.92, vol 1.49M | 4 recovered-dips (within range), above 200SMA ($11.56) | notion-live | OK |
+| JAN | Janus Living, Inc. | $30.90 | change +3.9%, mktcap ~$9.51B, close $30.90, vol 1.54M | hugging 8EMA, above 100SMA ($27.90) | notion-live | OK |
+| TDW | Tidewater Inc. | $96.64 | change +3.8%, mktcap ~$4.81B, close $96.64, vol 0.52M | 4 recovered-dips (within range), above 200SMA ($72.63) | notion-live | OK |
+| DLTR | Dollar Tree, Inc. | $131.03 | change +3.5%, mktcap ~$24.59B, close $131.03, vol 0.94M | hugging 8EMA, above 200SMA ($116.58) | notion-live | OK |
+| CNQ | Canadian Natural Resources Limited | $51.77 | change +3.4%, mktcap ~$106.72B, close $51.77, vol 3.27M | 4 recovered-dips (within range), above 200SMA ($42.17) | notion-live | OK |
+| CLOV | Clover Health Investments, Corp. | $4.29 | change +3.3%, mktcap ~$2.28B, close $4.29, vol 2.44M | hugging 8EMA, above 200SMA ($3.10) | notion-live | OK |
+| WIX | Wix.com Ltd. | $91.05 | change +3.2%, mktcap ~$3.81B, close $91.05, vol 1.60M | 4 recovered-dips (within range), above 200SMA ($76.13) | notion-live | OK |
+| BHC | Bausch Health Companies Inc. | $6.57 | change +3.1%, mktcap ~$2.46B, close $6.57, vol 1.71M | hugging 8EMA, above 200SMA ($5.85) | notion-live | OK |
+
+10 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 10 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-08-31 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
