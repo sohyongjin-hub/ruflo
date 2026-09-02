@@ -20,6 +20,43 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-02 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| SRPT | Sarepta Therapeutics, Inc. | $23.00 | change +7.8%, mktcap ~$2.43B, close $23.00, vol 2.68M | 4 recovered-dips (within range), above 200SMA ($19.12) | notion-live | OK |
+| SVM | Silvercorp Metals Inc. | $12.70 | change +6.7%, mktcap ~$2.81B, close $12.70, vol 1.38M | hugging 8EMA, above 200SMA ($10.75) | notion-live | OK |
+| GGB | Gerdau S.A. | $5.00 | change +6.5%, mktcap ~$8.45B, close $5.00, vol 7.29M | 3 recovered-dips (within range), above 200SMA ($4.20) | notion-live | OK |
+| VSAT | ViaSat, Inc. | $70.27 | change +6.0%, mktcap ~$9.68B, close $70.27, vol 1.06M | hugging 8EMA, above 200SMA ($56.66) | notion-live | OK |
+| AUR | Aurora Innovation, Inc. | $5.78 | change +5.9%, mktcap ~$11.58B, close $5.78, vol 17.47M | hugging 8EMA, above 200SMA ($5.32) | notion-live | OK |
+| XYZ | Block, Inc. | $82.25 | change +5.6%, mktcap ~$49.41B, close $82.25, vol 3.26M | hugging 8EMA, above 200SMA ($68.45) | notion-live | OK |
+| ATRC | AtriCure, Inc. | $51.66 | change +5.6%, mktcap ~$2.63B, close $51.66, vol 0.70M | 4 recovered-dips (within range), above 200SMA ($34.25) | notion-live | OK |
+| AFRM | Affirm Holdings, Inc. | $73.78 | change +5.5%, mktcap ~$24.89B, close $73.78, vol 4.09M | hugging 8EMA, above 200SMA ($66.47) | notion-live | OK |
+| AG | First Majestic Silver Corp. | $20.91 | change +5.3%, mktcap ~$10.30B, close $20.91, vol 6.60M | hugging 8EMA, above 200SMA ($19.61) | notion-live | OK |
+| GENI | Genius Sports Limited | $7.55 | change +5.2%, mktcap ~$2.10B, close $7.55, vol 2.89M | hugging 8EMA, above 200SMA ($7.06) | notion-live | OK |
+| VSH | Vishay Intertechnology, Inc. | $31.05 | change +4.8%, mktcap ~$4.76B, close $31.05, vol 1.53M | hugging 8EMA, above 200SMA ($28.59) | notion-live | OK |
+| PENN | PENN Entertainment, Inc. | $17.18 | change +4.8%, mktcap ~$2.30B, close $17.18, vol 1.13M | 4 recovered-dips (within range), above 200SMA ($16.50) | notion-live | OK |
+| SSRM | SSR Mining Inc. | $37.40 | change +4.4%, mktcap ~$7.63B, close $37.40, vol 1.25M | hugging 8EMA, above 200SMA ($27.87) | notion-live | OK |
+| IAG | Iamgold Corporation | $20.14 | change +4.4%, mktcap ~$11.50B, close $20.14, vol 2.79M | hugging 8EMA, above 200SMA ($17.72) | notion-live | OK |
+| LTH | Life Time Group Holdings, Inc. | $43.62 | change +4.3%, mktcap ~$9.75B, close $43.62, vol 1.19M | hugging 8EMA, above 200SMA ($32.15) | notion-live | OK |
+| NVO | Novo Nordisk A/S | $46.94 | change +4.0%, mktcap ~$200.91B, close $46.94, vol 7.36M | hugging 8EMA, above 200SMA ($46.38) | notion-live | OK |
+| FSM | Fortuna Mining Corp. | $12.21 | change +3.9%, mktcap ~$3.61B, close $12.21, vol 3.56M | hugging 8EMA, above 200SMA ($10.01) | notion-live | OK |
+| PGY | Pagaya Technologies Ltd. | $21.75 | change +3.8%, mktcap ~$1.81B, close $21.75, vol 0.81M | hugging 8EMA, above 200SMA ($17.32) | notion-live | OK |
+| PAY | Paymentus Holdings, Inc. | $36.46 | change +3.8%, mktcap ~$4.59B, close $36.46, vol 1.37M | 4 recovered-dips (within range), above 200SMA ($28.71) | notion-live | OK |
+| RUM | RUM Group Inc. | $8.85 | change +3.7%, mktcap ~$4.39B, close $8.85, vol 1.81M | hugging 8EMA, above 200SMA ($6.58) | notion-live | OK |
+| FLYW | Flywire Corporation - Voting | $18.85 | change +3.7%, mktcap ~$2.29B, close $18.85, vol 0.88M | hugging 8EMA, above 200SMA ($14.67) | notion-live | OK |
+| PRCH | Porch Group, Inc. | $17.98 | change +3.6%, mktcap ~$2.04B, close $17.98, vol 0.73M | 4 recovered-dips (within range), above 200SMA ($10.39) | notion-live | OK |
+| GLBE | Global-E Online Ltd. | $38.31 | change +3.6%, mktcap ~$6.43B, close $38.31, vol 0.71M | hugging 8EMA, above 200SMA ($35.54) | notion-live | OK |
+| BTG | B2Gold Corp | $5.38 | change +3.6%, mktcap ~$7.12B, close $5.38, vol 26.84M | hugging 8EMA, above 200SMA ($4.67) | notion-live | OK |
+| SWK | Stanley Black & Decker, Inc. | $97.84 | change +3.5%, mktcap ~$14.78B, close $97.84, vol 0.81M | hugging 8EMA, above 200SMA ($81.49) | notion-live | OK |
+| PYPL | PayPal Holdings, Inc. | $54.19 | change +3.4%, mktcap ~$46.36B, close $54.19, vol 6.57M | 3 recovered-dips (within range), above 200SMA ($51.08) | notion-live | OK |
+| ARIS | Aris Mining Corporation | $19.49 | change +3.3%, mktcap ~$4.02B, close $19.49, vol 1.08M | 4 recovered-dips (within range), above 200SMA ($17.31) | notion-live | OK |
+| ILMN | Illumina, Inc. | $213.89 | change +3.3%, mktcap ~$32.30B, close $213.89, vol 1.00M | hugging 8EMA, above 200SMA ($150.40) | notion-live | OK |
+| CVNA | Carvana Co. | $74.52 | change +3.2%, mktcap ~$82.01B, close $74.52, vol 4.22M | hugging 8EMA, above 200SMA ($72.88) | notion-live | OK |
+
+29 tickers caught. 3 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 29 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-01 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
