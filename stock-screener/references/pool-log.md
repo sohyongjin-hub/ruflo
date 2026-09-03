@@ -20,6 +20,52 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-03 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| APPS | Digital Turbine, Inc. | $10.61 | change +8.5%, mktcap ~$1.28B, close $10.61, vol 1.73M | hugging 8EMA, above 200SMA ($6.37) | notion-live | OK |
+| OBIIF | Obic Co. Ltd. | $34.14 | change +7.3%, mktcap ~$14.59B, close $34.14, vol 1.00M | 2 recovered-dips (within range), above 200SMA ($28.44) | notion-live | OK |
+| LOTMY | LOTTOMATICA GROUP SPA | $27.94 | change +6.9%, mktcap ~$6.67B, close $27.94, vol 1.05M | hugging 8EMA, above 200SMA ($27.70) | notion-live | OK |
+| RBRK | Rubrik, Inc. | $92.59 | change +6.2%, mktcap ~$19.20B, close $92.59, vol 2.10M | hugging 8EMA, above 200SMA ($68.80) | notion-live | OK |
+| HMY | Harmony Gold Mining Company Limited | $20.65 | change +6.2%, mktcap ~$12.23B, close $20.65, vol 3.19M | hugging 8EMA, above 200SMA ($18.29) | notion-live | OK |
+| RNG | RingCentral, Inc. | $76.86 | change +5.9%, mktcap ~$6.42B, close $76.86, vol 1.07M | 3 recovered-dips (within range), above 200SMA ($39.60) | notion-live | OK |
+| SAIL | SailPoint, Inc. | $19.39 | change +5.9%, mktcap ~$10.99B, close $19.39, vol 1.25M | hugging 8EMA, above 200SMA ($16.01) | notion-live | OK |
+| AXON | Axon Enterprise, Inc. | $535.66 | change +5.7%, mktcap ~$43.52B, close $535.66, vol 0.51M | 4 recovered-dips (within range), above 200SMA ($505.69) | notion-live | OK |
+| GWRE | Guidewire Software, Inc. | $203.40 | change +5.5%, mktcap ~$16.93B, close $203.40, vol 0.98M | 3 recovered-dips (within range), above 200SMA ($157.34) | notion-live | OK |
+| P | Everpure, Inc. | $97.20 | change +5.2%, mktcap ~$32.31B, close $97.20, vol 1.39M | hugging 8EMA, above 200SMA ($75.29) | notion-live | OK |
+| DOCN | DigitalOcean Holdings, Inc. | $110.22 | change +5.1%, mktcap ~$12.96B, close $110.22, vol 0.98M | hugging 8EMA, above 200SMA ($96.77) | notion-live | OK |
+| TEAM | Atlassian Corporation | $195.90 | change +5.1%, mktcap ~$49.59B, close $195.90, vol 1.93M | 2 recovered-dips (within range), above 200SMA ($109.06) | notion-live | OK |
+| CRWD | CrowdStrike Holdings, Inc. | $213.65 | change +5.0%, mktcap ~$218.76B, close $213.65, vol 7.83M | hugging 8EMA, above 200SMA ($142.08) | notion-live | OK |
+| CBRE | CBRE Group Inc | $149.00 | change +4.9%, mktcap ~$43.15B, close $149.00, vol 0.90M | hugging 8EMA, above 200SMA ($147.19) | notion-live | OK |
+| NET | Cloudflare, Inc. | $285.48 | change +4.7%, mktcap ~$101.65B, close $285.48, vol 2.05M | hugging 8EMA, above 200SMA ($221.97) | notion-live | OK |
+| AEM | Agnico Eagle Mines Limited | $205.44 | change +4.5%, mktcap ~$104.67B, close $205.44, vol 1.79M | hugging 8EMA, above 200SMA ($186.33) | notion-live | OK |
+| NEXA | Nexa Resources S.A. | $13.93 | change +4.4%, mktcap ~$1.84B, close $13.93, vol 0.60M | hugging 8EMA, above 200SMA ($12.15) | notion-live | OK |
+| IBKR | Interactive Brokers Group, Inc. | $93.03 | change +4.4%, mktcap ~$158.26B, close $93.03, vol 2.14M | hugging 8EMA, above 200SMA ($78.75) | notion-live | OK |
+| NTSK | Netskope, Inc. | $14.35 | change +4.3%, mktcap ~$5.79B, close $14.35, vol 9.63M | hugging 8EMA, above 200SMA ($13.05) | notion-live | OK |
+| LSEGY | London Stock Exchange Group plc | $30.08 | change +4.1%, mktcap ~$55.87B, close $30.08, vol 1.39M | hugging 8EMA, above 200SMA ($29.57) | notion-live | OK |
+| MGYOY | MOL Magyar Olaj-Es Gazipari RT | $8.15 | change +3.8%, mktcap ~$12.52B, close $8.15, vol 0.65M | hugging 8EMA, above 200SMA ($6.13) | notion-live | OK |
+| PYPL | PayPal Holdings, Inc. | $56.74 | change +3.8%, mktcap ~$48.54B, close $56.74, vol 9.83M | hugging 8EMA, above 200SMA ($51.05) | notion-live | OK |
+| NAVN | Navan, Inc. | $27.89 | change +3.7%, mktcap ~$7.09B, close $27.89, vol 0.86M | hugging 8EMA, above 200SMA ($17.89) | notion-live | OK |
+| ZS | Zscaler, Inc. | $179.01 | change +3.6%, mktcap ~$28.95B, close $179.01, vol 2.90M | hugging 8EMA, above 200SMA ($173.08) | notion-live | OK |
+| WDAY | Workday, Inc. | $208.15 | change +3.6%, mktcap ~$50.16B, close $208.15, vol 1.83M | 3 recovered-dips (within range), above 200SMA ($160.33) | notion-live | OK |
+| WLY | John Wiley & Sons, Inc. | $52.87 | change +3.6%, mktcap ~$2.69B, close $52.87, vol 0.67M | hugging 8EMA, above 200SMA ($39.93) | notion-live | OK |
+| TEM | Tempus AI, Inc. | $64.14 | change +3.5%, mktcap ~$11.57B, close $64.14, vol 3.48M | hugging 8EMA, above 200SMA ($56.42) | notion-live | OK |
+| JHX | James Hardie Industries plc. | $29.46 | change +3.5%, mktcap ~$17.11B, close $29.46, vol 2.44M | hugging 8EMA, above 200SMA ($23.12) | notion-live | OK |
+| NIQ | NIQ Global Intelligence plc | $18.98 | change +3.5%, mktcap ~$5.60B, close $18.98, vol 0.67M | hugging 8EMA, above 200SMA ($12.72) | notion-live | OK |
+| U | Unity Software Inc. | $42.15 | change +3.4%, mktcap ~$18.55B, close $42.15, vol 6.90M | hugging 8EMA, above 200SMA ($32.03) | notion-live | OK |
+| AMT | American Tower Corporation (REIT) | $178.78 | change +3.4%, mktcap ~$83.30B, close $178.78, vol 0.91M | hugging 8EMA, above 200SMA ($177.67) | notion-live | OK |
+| SAP | SAP SE | $216.77 | change +3.4%, mktcap ~$245.48B, close $216.77, vol 1.58M | hugging 8EMA, above 200SMA ($196.56) | notion-live | OK |
+| WT | WisdomTree, Inc. | $24.52 | change +3.3%, mktcap ~$3.72B, close $24.52, vol 1.61M | 4 recovered-dips (within range), above 200SMA ($16.90) | notion-live | OK |
+| ARM | Arm Holdings plc | $242.47 | change +3.2%, mktcap ~$250.83B, close $242.47, vol 2.39M | hugging 8EMA, above 200SMA ($201.21) | notion-live | OK |
+| W | Wayfair Inc. | $97.42 | change +3.0%, mktcap ~$13.34B, close $97.42, vol 1.22M | hugging 8EMA, above 200SMA ($88.17) | notion-live | OK |
+| KKR | KKR & Co. Inc. | $109.66 | change +3.0%, mktcap ~$98.43B, close $109.66, vol 2.28M | hugging 8EMA, above 200SMA ($105.71) | notion-live | OK |
+| OBICY | Obic Co. Ltd. | $16.30 | change +3.0%, mktcap ~$13.25B, close $16.30, vol 7.79M | 4 recovered-dips (within range), above 100SMA ($13.30) | notion-live | OK |
+| GENI | Genius Sports Limited | $7.64 | change +3.0%, mktcap ~$2.12B, close $7.64, vol 1.74M | hugging 8EMA, above 200SMA ($7.04) | notion-live | OK |
+
+38 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 38 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-02 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
