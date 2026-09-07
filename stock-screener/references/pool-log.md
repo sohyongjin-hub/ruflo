@@ -20,6 +20,44 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-07 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| AXTI | AXT Inc | $61.64 | change +9.7%, mktcap ~$4.04B, close $61.64, vol 10.90M | hugging 8EMA, above 200SMA ($54.62) | notion-live | OK |
+| TTMI | TTM Technologies, Inc. | $125.60 | change +8.8%, mktcap ~$13.23B, close $125.60, vol 2.32M | 4 recovered-dips (within range), above 200SMA ($120.15) | notion-live | OK |
+| VAC | Marriott Vacations Worldwide Corporation | $106.62 | change +7.5%, mktcap ~$3.67B, close $106.62, vol 0.74M | hugging 8EMA, above 200SMA ($76.76) | notion-live | OK |
+| FORM | FormFactor, Inc. | $103.90 | change +7.4%, mktcap ~$8.12B, close $103.90, vol 1.10M | hugging 8EMA, above 200SMA ($102.04) | notion-live | OK |
+| KLAC | KLA Corporation | $185.60 | change +7.3%, mktcap ~$242.50B, close $185.60, vol 12.73M | 4 recovered-dips (within range), above 200SMA ($171.52) | notion-live | OK |
+| ACMR | ACM Research, Inc. | $74.44 | change +7.2%, mktcap ~$5.18B, close $74.44, vol 0.64M | hugging 8EMA, above 200SMA ($63.25) | notion-live | OK |
+| COHR | Coherent Corp. | $281.86 | change +6.6%, mktcap ~$55.20B, close $281.86, vol 5.04M | hugging 8EMA, above 200SMA ($276.44) | notion-live | OK |
+| ONTO | Onto Innovation Inc. | $268.01 | change +6.2%, mktcap ~$13.15B, close $268.01, vol 0.72M | hugging 8EMA, above 200SMA ($241.04) | notion-live | OK |
+| VSTS | Vestis Corporation | $13.26 | change +5.7%, mktcap ~$1.75B, close $13.26, vol 1.27M | 3 recovered-dips (within range), above 200SMA ($10.00) | notion-live | OK |
+| TER | Teradyne, Inc. | $357.03 | change +5.4%, mktcap ~$55.82B, close $357.03, vol 2.25M | hugging 8EMA, above 200SMA ($316.29) | notion-live | OK |
+| TH | Target Hospitality Corp. | $19.52 | change +5.3%, mktcap ~$1.94B, close $19.52, vol 1.43M | 2 recovered-dips (within range), above 200SMA ($12.82) | notion-live | OK |
+| AAOI | Applied Optoelectronics, Inc. | $105.53 | change +5.1%, mktcap ~$8.96B, close $105.53, vol 6.84M | 4 recovered-dips (within range), above 200SMA ($101.51) | notion-live | OK |
+| FIVE | Five Below, Inc. | $252.20 | change +5.1%, mktcap ~$13.88B, close $252.20, vol 1.91M | 3 recovered-dips (within range), above 200SMA ($208.35) | notion-live | OK |
+| TREX | Trex Company, Inc. | $45.63 | change +4.4%, mktcap ~$4.65B, close $45.63, vol 0.96M | hugging 8EMA, above 200SMA ($41.13) | notion-live | OK |
+| AMAT | Applied Materials, Inc. | $454.71 | change +4.3%, mktcap ~$360.86B, close $454.71, vol 6.02M | hugging 8EMA, above 200SMA ($407.06) | notion-live | OK |
+| ACVA | ACV Auctions Inc. | $6.98 | change +4.2%, mktcap ~$1.19B, close $6.98, vol 2.67M | hugging 8EMA, above 200SMA ($6.67) | notion-live | OK |
+| ASML | ASML Holding N.V. - New York Registry Shares | $1714.88 | change +4.2%, mktcap ~$650.95B, close $1714.88, vol 1.29M | hugging 8EMA, above 200SMA ($1480.53) | notion-live | OK |
+| LITE | Lumentum Holdings Inc. | $881.25 | change +4.0%, mktcap ~$79.05B, close $881.25, vol 3.56M | hugging 8EMA, above 200SMA ($685.22) | notion-live | OK |
+| ARHS | Arhaus, Inc. | $8.73 | change +3.9%, mktcap ~$1.24B, close $8.73, vol 0.86M | hugging 8EMA, above 200SMA ($8.53) | notion-live | OK |
+| VOYG | Voyager Technologies, Inc. | $33.94 | change +3.9%, mktcap ~$2.07B, close $33.94, vol 0.99M | hugging 8EMA, above 200SMA ($30.87) | notion-live | OK |
+| ULCC | Frontier Group Holdings, Inc. | $5.96 | change +3.8%, mktcap ~$1.37B, close $5.96, vol 1.95M | 3 recovered-dips (within range), above 200SMA ($5.25) | notion-live | OK |
+| SKM | SK Telecom Co., Ltd. | $38.70 | change +3.8%, mktcap ~$14.43B, close $38.70, vol 2.70M | hugging 8EMA, above 200SMA ($31.11) | notion-live | OK |
+| KLIC | Kulicke and Soffa Industries, Inc. | $81.61 | change +3.5%, mktcap ~$4.27B, close $81.61, vol 0.64M | hugging 8EMA, above 200SMA ($79.02) | notion-live | OK |
+| MTSI | MACOM Technology Solutions Holdings, Inc. | $268.95 | change +3.5%, mktcap ~$20.54B, close $268.95, vol 1.01M | hugging 8EMA, above 200SMA ($263.58) | notion-live | OK |
+| TAL | TAL Education Group | $12.40 | change +3.4%, mktcap ~$5.97B, close $12.40, vol 6.89M | 4 recovered-dips (within range), above 200SMA ($11.00) | notion-live | OK |
+| RXO | RXO, Inc. | $20.66 | change +3.3%, mktcap ~$3.41B, close $20.66, vol 1.59M | hugging 8EMA, above 200SMA ($18.92) | notion-live | OK |
+| SHOO | Steven Madden, Ltd. | $43.68 | change +3.3%, mktcap ~$3.20B, close $43.68, vol 1.11M | hugging 8EMA, above 200SMA ($41.14) | notion-live | OK |
+| NRIX | Nurix Therapeutics, Inc. | $26.14 | change +3.2%, mktcap ~$2.71B, close $26.14, vol 1.23M | hugging 8EMA, above 200SMA ($18.91) | notion-live | OK |
+| LPG | Dorian LPG Ltd. | $55.20 | change +3.0%, mktcap ~$2.36B, close $55.20, vol 0.62M | 4 recovered-dips (within range), above 200SMA ($36.21) | notion-live | OK |
+| GTES | Gates Industrial Corporation Ltd. | $25.95 | change +3.0%, mktcap ~$6.57B, close $25.95, vol 1.27M | hugging 8EMA, above 200SMA ($24.97) | notion-live | OK |
+
+30 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 30 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-04 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
