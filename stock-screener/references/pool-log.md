@@ -20,6 +20,37 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-08 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| AXTI | AXT Inc | $69.64 | change +13.0%, mktcap ~$4.57B, close $69.64, vol 10.33M | 3 recovered-dips (within range), above 200SMA ($54.92) | notion-live | OK |
+| CRWV | CoreWeave, Inc. | $100.80 | change +12.8%, mktcap ~$55.59B, close $100.80, vol 41.82M | 4 recovered-dips (within range), above 200SMA ($91.60) | notion-live | OK |
+| GLW | Corning Incorporated | $167.94 | change +8.8%, mktcap ~$144.66B, close $167.94, vol 8.91M | 4 recovered-dips (within range), above 200SMA ($144.22) | notion-live | OK |
+| AAOI | Applied Optoelectronics, Inc. | $113.61 | change +7.7%, mktcap ~$9.65B, close $113.61, vol 9.24M | 4 recovered-dips (within range), above 200SMA ($101.97) | notion-live | OK |
+| RDW | Redwire Corporation | $11.14 | change +5.8%, mktcap ~$2.79B, close $11.14, vol 9.45M | 4 recovered-dips (within range), above 200SMA ($10.61) | notion-live | OK |
+| HRI | Herc Holdings Inc. | $147.58 | change +4.7%, mktcap ~$4.93B, close $147.58, vol 0.80M | hugging 8EMA, above 200SMA ($141.51) | notion-live | OK |
+| FSLY | Fastly, Inc. | $21.55 | change +4.7%, mktcap ~$3.43B, close $21.55, vol 4.02M | hugging 8EMA, above 200SMA ($18.70) | notion-live | OK |
+| TTMI | TTM Technologies, Inc. | $131.36 | change +4.6%, mktcap ~$13.84B, close $131.36, vol 1.14M | 4 recovered-dips (within range), above 200SMA ($120.49) | notion-live | OK |
+| CRGY | Crescent Energy Company | $14.39 | change +4.5%, mktcap ~$4.75B, close $14.39, vol 4.02M | 4 recovered-dips (within range), above 200SMA ($11.10) | notion-live | OK |
+| TER | Teradyne, Inc. | $372.82 | change +4.4%, mktcap ~$58.29B, close $372.82, vol 1.58M | 4 recovered-dips (within range), above 200SMA ($317.33) | notion-live | OK |
+| TH | Target Hospitality Corp. | $20.38 | change +4.4%, mktcap ~$2.03B, close $20.38, vol 1.02M | 2 recovered-dips (within range), above 200SMA ($12.89) | notion-live | OK |
+| PBR | Petroleo Brasileiro S.A. Petrobras | $20.97 | change +4.2%, mktcap ~$124.08B, close $20.97, vol 22.11M | 4 recovered-dips (within range), above 200SMA ($17.11) | notion-live | OK |
+| VOYG | Voyager Technologies, Inc. | $35.28 | change +4.0%, mktcap ~$2.15B, close $35.28, vol 0.80M | 4 recovered-dips (within range), above 200SMA ($30.95) | notion-live | OK |
+| ATRC | AtriCure, Inc. | $53.44 | change +3.7%, mktcap ~$2.72B, close $53.44, vol 1.15M | 4 recovered-dips (within range), above 200SMA ($34.63) | notion-live | OK |
+| BG | Bunge Limited | $122.91 | change +3.5%, mktcap ~$23.61B, close $122.91, vol 1.41M | 4 recovered-dips (within range), above 200SMA ($114.33) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $64.83 | change +3.5%, mktcap ~$8.45B, close $64.83, vol 1.73M | 4 recovered-dips (within range), above 200SMA ($29.19) | notion-live | OK |
+| VIK | Viking Holdings Ltd | $88.75 | change +3.4%, mktcap ~$39.60B, close $88.75, vol 2.36M | hugging 8EMA, above 200SMA ($82.55) | notion-live | OK |
+| DINO | HF Sinclair Corporation | $108.87 | change +3.3%, mktcap ~$19.36B, close $108.87, vol 1.04M | 3 recovered-dips (within range), above 200SMA ($65.90) | notion-live | OK |
+| KOS | Kosmos Energy Ltd. | $2.87 | change +3.2%, mktcap ~$1.71B, close $2.87, vol 5.53M | hugging 8EMA, above 200SMA ($2.20) | notion-live | OK |
+| EQNR | Equinor ASA | $43.43 | change +3.2%, mktcap ~$102.56B, close $43.43, vol 2.78M | hugging 8EMA, above 200SMA ($33.54) | notion-live | OK |
+| SN | SharkNinja, Inc. | $178.89 | change +3.2%, mktcap ~$25.20B, close $178.89, vol 1.22M | hugging 8EMA, above 200SMA ($128.63) | notion-live | OK |
+| VSXY | Victorias Secret & Co. | $77.95 | change +3.2%, mktcap ~$6.22B, close $77.95, vol 0.98M | 3 recovered-dips (within range), above 200SMA ($63.10) | notion-live | OK |
+| SRRK | Scholar Rock Holding Corporation | $56.99 | change +3.0%, mktcap ~$6.94B, close $56.99, vol 0.61M | hugging 8EMA, above 200SMA ($47.81) | notion-live | OK |
+
+23 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 23 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-07 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
