@@ -20,6 +20,20 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-09 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| NET | Cloudflare, Inc. | $316.73 | change +11.4%, mktcap ~$112.78B, close $316.73, vol 3.26M | 4 recovered-dips (within range), above 200SMA ($223.38) | notion-live | OK |
+| META | Meta Platforms, Inc. | $653.25 | change +6.5%, mktcap ~$1664.16B, close $653.25, vol 26.18M | 4 recovered-dips (within range), above 200SMA ($622.69) | notion-live | OK |
+| SRPT | Sarepta Therapeutics, Inc. | $22.20 | change +6.0%, mktcap ~$2.34B, close $22.20, vol 3.01M | 4 recovered-dips (within range), above 200SMA ($19.23) | notion-live | OK |
+| BHVN | Biohaven Ltd. | $15.40 | change +4.6%, mktcap ~$2.33B, close $15.40, vol 1.59M | hugging 8EMA, above 200SMA ($11.77) | notion-live | OK |
+| ACHC | Acadia Healthcare Company, Inc. | $28.72 | change +4.4%, mktcap ~$2.67B, close $28.72, vol 0.78M | hugging 8EMA, above 200SMA ($23.08) | notion-live | OK |
+| IAG | Iamgold Corporation | $20.73 | change +3.1%, mktcap ~$11.83B, close $20.73, vol 1.72M | hugging 8EMA, above 200SMA ($17.89) | notion-live | OK |
+
+6 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 6 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-08 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
