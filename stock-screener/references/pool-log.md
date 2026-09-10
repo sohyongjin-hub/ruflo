@@ -20,6 +20,19 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-10 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| NTSK | Netskope, Inc. | $15.05 | change +4.1%, mktcap ~$6.15B, close $15.05, vol 3.10M | 4 recovered-dips (within range), above 200SMA ($12.97) | notion-live | OK |
+| MDB | MongoDB, Inc. | $371.95 | change +3.8%, mktcap ~$29.96B, close $371.95, vol 1.06M | 4 recovered-dips (within range), above 200SMA ($342.86) | notion-live | OK |
+| F | Ford Motor Company | $13.90 | change +3.3%, mktcap ~$55.43B, close $13.90, vol 28.87M | hugging 8EMA, above 200SMA ($13.52) | notion-live | OK |
+| RDW | Redwire Corporation | $11.05 | change +3.3%, mktcap ~$2.76B, close $11.05, vol 9.49M | hugging 8EMA, above 200SMA ($10.67) | notion-live | OK |
+| ICLR | ICON plc | $164.69 | change +3.2%, mktcap ~$12.71B, close $164.69, vol 0.58M | hugging 8EMA, above 200SMA ($147.43) | notion-live | OK |
+
+5 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 5 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-09 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
