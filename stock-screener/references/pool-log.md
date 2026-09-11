@@ -20,6 +20,41 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-11 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| HTFL | Heartflow, Inc. | $49.63 | change +9.1%, mktcap ~$4.32B, close $49.63, vol 1.13M | 4 recovered-dips (within range), above 200SMA ($30.31) | notion-live | OK |
+| MRNA | Moderna, Inc. | $148.15 | change +8.4%, mktcap ~$59.14B, close $148.15, vol 11.60M | 4 recovered-dips (within range), above 200SMA ($57.14) | notion-live | OK |
+| IBRX | ImmunityBio, Inc. | $8.21 | change +6.3%, mktcap ~$8.70B, close $8.21, vol 8.82M | hugging 8EMA, above 200SMA ($6.72) | notion-live | OK |
+| DSGX | The Descartes Systems Group Inc. | $75.55 | change +5.9%, mktcap ~$6.47B, close $75.55, vol 1.31M | hugging 8EMA, above 200SMA ($75.34) | notion-live | OK |
+| PURR | Hyperliquid Strategies Inc | $11.65 | change +5.8%, mktcap ~$2.30B, close $11.65, vol 18.29M | hugging 8EMA, above 100SMA ($8.16) | notion-live | OK |
+| SPSC | SPS Commerce, Inc. | $81.61 | change +5.7%, mktcap ~$2.94B, close $81.61, vol 1.45M | 3 recovered-dips (within range), above 200SMA ($68.80) | notion-live | OK |
+| VYX | NCR Voyix Corporation | $8.48 | change +5.1%, mktcap ~$1.17B, close $8.48, vol 1.13M | hugging 8EMA, above 200SMA ($8.31) | notion-live | OK |
+| NVAX | Novavax, Inc. | $9.73 | change +4.7%, mktcap ~$1.61B, close $9.73, vol 3.81M | hugging 8EMA, above 200SMA ($8.62) | notion-live | OK |
+| NLST | Netlist, Inc. | $4.86 | change +4.6%, mktcap ~$1.72B, close $4.86, vol 0.77M | 4 recovered-dips (within range), above 200SMA ($2.28) | notion-live | OK |
+| AFRM | Affirm Holdings, Inc. | $70.95 | change +4.4%, mktcap ~$23.94B, close $70.95, vol 3.09M | hugging 8EMA, above 200SMA ($66.62) | notion-live | OK |
+| PENG | Penguin Solutions, Inc. | $50.68 | change +4.2%, mktcap ~$2.60B, close $50.68, vol 0.74M | hugging 8EMA, above 200SMA ($37.27) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $69.08 | change +4.1%, mktcap ~$9.00B, close $69.08, vol 1.04M | 4 recovered-dips (within range), above 200SMA ($29.95) | notion-live | OK |
+| INGM | Ingram Micro Holding Corporation | $27.41 | change +3.9%, mktcap ~$6.32B, close $27.41, vol 2.68M | hugging 8EMA, above 200SMA ($25.41) | notion-live | OK |
+| QCOM | QUALCOMM Incorporated | $183.81 | change +3.9%, mktcap ~$193.04B, close $183.81, vol 6.91M | 4 recovered-dips (within range), above 200SMA ($168.11) | notion-live | OK |
+| ALAB | Astera Labs, Inc. | $295.05 | change +3.7%, mktcap ~$51.19B, close $295.05, vol 1.24M | hugging 8EMA, above 200SMA ($228.17) | notion-live | OK |
+| UAL | United Airlines Holdings, Inc. | $110.42 | change +3.7%, mktcap ~$35.84B, close $110.42, vol 3.90M | hugging 8EMA, above 200SMA ($108.62) | notion-live | OK |
+| VNO | Vornado Realty Trust | $35.63 | change +3.7%, mktcap ~$6.65B, close $35.63, vol 0.73M | hugging 8EMA, above 200SMA ($33.44) | notion-live | OK |
+| VSXY | Victorias Secret & Co. | $76.05 | change +3.6%, mktcap ~$6.07B, close $76.05, vol 0.76M | 3 recovered-dips (within range), above 200SMA ($63.71) | notion-live | OK |
+| P | Everpure, Inc. | $97.47 | change +3.6%, mktcap ~$32.48B, close $97.47, vol 0.93M | hugging 8EMA, above 200SMA ($75.73) | notion-live | OK |
+| DFTX | Definium Therapeutics, Inc. | $39.02 | change +3.4%, mktcap ~$5.24B, close $39.02, vol 0.63M | hugging 8EMA, above 200SMA ($25.47) | notion-live | OK |
+| OPK | Opko Health, Inc. | $1.54 | change +3.4%, mktcap ~$1.15B, close $1.54, vol 2.67M | hugging 8EMA, above 200SMA ($1.30) | notion-live | OK |
+| GEV | GE Vernova Inc. | $953.49 | change +3.2%, mktcap ~$253.95B, close $953.49, vol 0.78M | hugging 8EMA, above 200SMA ($893.80) | notion-live | OK |
+| OC | Owens Corning Inc | $131.49 | change +3.1%, mktcap ~$10.39B, close $131.49, vol 0.56M | hugging 8EMA, above 200SMA ($125.40) | notion-live | OK |
+| CARG | CarGurus, Inc. | $34.34 | change +3.1%, mktcap ~$3.06B, close $34.34, vol 0.57M | hugging 8EMA, above 200SMA ($33.95) | notion-live | OK |
+| TER | Teradyne, Inc. | $381.62 | change +3.1%, mktcap ~$59.66B, close $381.62, vol 1.16M | 4 recovered-dips (within range), above 200SMA ($320.59) | notion-live | OK |
+| ILMN | Illumina, Inc. | $207.32 | change +3.0%, mktcap ~$31.31B, close $207.32, vol 1.20M | hugging 8EMA, above 200SMA ($153.57) | notion-live | OK |
+| HOG | Harley-Davidson, Inc. | $27.77 | change +3.0%, mktcap ~$2.89B, close $27.77, vol 0.60M | hugging 8EMA, above 200SMA ($23.10) | notion-live | OK |
+
+27 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 27 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-10 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
