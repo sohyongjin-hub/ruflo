@@ -20,6 +20,59 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-14 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| NTSK | Netskope, Inc. | $17.38 | change +18.2%, mktcap ~$7.10B, close $17.38, vol 11.50M | 4 recovered-dips (within range), above 200SMA ($12.94) | notion-live | OK |
+| QLYS | Qualys, Inc. | $173.03 | change +15.1%, mktcap ~$5.99B, close $173.03, vol 0.80M | 4 recovered-dips (within range), above 200SMA ($125.32) | notion-live | OK |
+| TENB | Tenable Holdings, Inc. | $34.62 | change +15.0%, mktcap ~$3.81B, close $34.62, vol 9.81M | 4 recovered-dips (within range), above 200SMA ($26.23) | notion-live | OK |
+| RUM | RUM Group Inc. | $8.06 | change +12.5%, mktcap ~$4.00B, close $8.06, vol 23.71M | hugging 8EMA, above 200SMA ($6.68) | notion-live | OK |
+| APPN | Appian Corporation | $38.08 | change +9.6%, mktcap ~$2.73B, close $38.08, vol 0.80M | 4 recovered-dips (within range), above 200SMA ($28.24) | notion-live | OK |
+| NET | Cloudflare, Inc. | $332.75 | change +8.6%, mktcap ~$118.49B, close $332.75, vol 3.45M | 4 recovered-dips (within range), above 200SMA ($225.26) | notion-live | OK |
+| AMPL | Amplitude, Inc. | $13.55 | change +7.6%, mktcap ~$1.69B, close $13.55, vol 1.11M | 4 recovered-dips (within range), above 200SMA ($8.94) | notion-live | OK |
+| PGY | Pagaya Technologies Ltd. | $21.48 | change +7.6%, mktcap ~$1.79B, close $21.48, vol 1.95M | hugging 8EMA, above 200SMA ($17.29) | notion-live | OK |
+| IOVA | Iovance Biotherapeutics, Inc. | $9.22 | change +7.2%, mktcap ~$4.18B, close $9.22, vol 10.93M | 4 recovered-dips (within range), above 200SMA ($4.09) | notion-live | OK |
+| TEAM | Atlassian Corporation | $191.72 | change +6.7%, mktcap ~$48.53B, close $191.72, vol 2.95M | 3 recovered-dips (within range), above 200SMA ($110.14) | notion-live | OK |
+| PATH | UiPath, Inc. | $14.64 | change +6.5%, mktcap ~$7.63B, close $14.64, vol 49.21M | 2 recovered-dips (within range), above 200SMA ($12.91) | notion-live | OK |
+| BRZE | Braze, Inc. | $25.46 | change +6.3%, mktcap ~$2.89B, close $25.46, vol 2.06M | 2 recovered-dips (within range), above 200SMA ($24.69) | notion-live | OK |
+| FIGS | FIGS, Inc. | $14.19 | change +6.3%, mktcap ~$2.36B, close $14.19, vol 2.12M | hugging 8EMA, above 200SMA ($12.62) | notion-live | OK |
+| CLDX | Celldex Therapeutics, Inc. | $39.08 | change +5.9%, mktcap ~$3.07B, close $39.08, vol 0.62M | hugging 8EMA, above 200SMA ($31.88) | notion-live | OK |
+| PCOR | Procore Technologies, Inc. | $56.38 | change +5.9%, mktcap ~$8.57B, close $56.38, vol 1.43M | hugging 8EMA, above 200SMA ($56.57) | notion-live | OK |
+| AMLX | Amylyx Pharmaceuticals, Inc. | $33.47 | change +5.8%, mktcap ~$4.20B, close $33.47, vol 1.25M | hugging 8EMA, above 200SMA ($17.33) | notion-live | OK |
+| RNG | RingCentral, Inc. | $72.87 | change +5.7%, mktcap ~$6.09B, close $72.87, vol 1.35M | 4 recovered-dips (within range), above 200SMA ($40.92) | notion-live | OK |
+| MDB | MongoDB, Inc. | $382.44 | change +5.6%, mktcap ~$30.81B, close $382.44, vol 1.33M | hugging 8EMA, above 200SMA ($343.33) | notion-live | OK |
+| AJG | Arthur J. Gallagher & Co. | $253.38 | change +5.4%, mktcap ~$64.94B, close $253.38, vol 1.15M | hugging 8EMA, above 200SMA ($233.83) | notion-live | OK |
+| TEM | Tempus AI, Inc. | $62.20 | change +5.4%, mktcap ~$11.22B, close $62.20, vol 3.89M | hugging 8EMA, above 200SMA ($56.20) | notion-live | OK |
+| SN | SharkNinja, Inc. | $169.39 | change +5.3%, mktcap ~$23.86B, close $169.39, vol 1.20M | hugging 8EMA, above 200SMA ($130.18) | notion-live | OK |
+| MANH | Manhattan Associates, Inc. | $212.16 | change +5.1%, mktcap ~$12.37B, close $212.16, vol 0.55M | hugging 8EMA, above 200SMA ($159.05) | notion-live | OK |
+| WDAY | Workday, Inc. | $194.16 | change +4.6%, mktcap ~$46.79B, close $194.16, vol 1.98M | hugging 8EMA, above 200SMA ($159.28) | notion-live | OK |
+| GO | Grocery Outlet Holding Corp. | $11.76 | change +4.5%, mktcap ~$1.17B, close $11.76, vol 1.12M | hugging 8EMA, above 200SMA ($9.27) | notion-live | OK |
+| ORIC | Oric Pharmaceuticals, Inc. | $12.58 | change +4.5%, mktcap ~$1.30B, close $12.58, vol 0.85M | hugging 8EMA, above 200SMA ($10.68) | notion-live | OK |
+| TLX | Telix Pharmaceuticals Limited | $11.79 | change +4.5%, mktcap ~$3.82B, close $11.79, vol 0.57M | hugging 8EMA, above 200SMA ($9.51) | notion-live | OK |
+| PCTY | Paylocity Holding Corporation | $147.94 | change +4.4%, mktcap ~$7.85B, close $147.94, vol 0.54M | hugging 8EMA, above 200SMA ($125.26) | notion-live | OK |
+| OMDA | Omada Health, Inc. | $20.53 | change +4.4%, mktcap ~$1.26B, close $20.53, vol 0.67M | 2 recovered-dips (within range), above 200SMA ($17.05) | notion-live | OK |
+| PD | PagerDuty, Inc. | $14.70 | change +4.3%, mktcap ~$1.16B, close $14.70, vol 1.40M | 4 recovered-dips (within range), above 200SMA ($9.59) | notion-live | OK |
+| PLTR | Palantir Technologies Inc. | $174.15 | change +4.1%, mktcap ~$418.49B, close $174.15, vol 23.88M | hugging 8EMA, above 200SMA ($151.58) | notion-live | OK |
+| SHOP | Shopify Inc. | $134.11 | change +4.1%, mktcap ~$172.55B, close $134.11, vol 5.92M | hugging 8EMA, above 200SMA ($130.88) | notion-live | OK |
+| RHHBY | Roche Holding Ltd | $54.92 | change +4.1%, mktcap ~$336.40B, close $54.92, vol 1.46M | hugging 8EMA, above 200SMA ($52.84) | notion-live | OK |
+| ATEN | A10 Networks, Inc. | $25.75 | change +4.1%, mktcap ~$1.87B, close $25.75, vol 1.02M | 4 recovered-dips (within range), above 200SMA ($25.02) | notion-live | OK |
+| NCNO | nCino, Inc. | $22.11 | change +4.0%, mktcap ~$2.34B, close $22.11, vol 1.57M | hugging 8EMA, above 200SMA ($19.06) | notion-live | OK |
+| TOST | Toast, Inc. | $33.38 | change +3.9%, mktcap ~$19.39B, close $33.38, vol 4.81M | hugging 8EMA, above 200SMA ($30.10) | notion-live | OK |
+| GEN | Gen Digital Inc. | $31.43 | change +3.8%, mktcap ~$18.81B, close $31.43, vol 3.76M | 4 recovered-dips (within range), above 200SMA ($24.71) | notion-live | OK |
+| PURR | Hyperliquid Strategies Inc | $12.05 | change +3.8%, mktcap ~$2.38B, close $12.05, vol 11.34M | hugging 8EMA, above 100SMA ($8.23) | notion-live | OK |
+| NWS | News Corporation | $33.89 | change +3.6%, mktcap ~$17.11B, close $33.89, vol 0.54M | hugging 8EMA, above 200SMA ($29.97) | notion-live | OK |
+| EXLS | ExlService Holdings, Inc. | $36.52 | change +3.6%, mktcap ~$5.54B, close $36.52, vol 0.95M | hugging 8EMA, above 200SMA ($33.40) | notion-live | OK |
+| AXGN | Axogen, Inc. | $43.67 | change +3.6%, mktcap ~$2.35B, close $43.67, vol 1.24M | 4 recovered-dips (within range), above 200SMA ($38.00) | notion-live | OK |
+| TRLV | Trulieve Cannabis Corp. Subordinate Voting Shares | $11.71 | change +3.5%, mktcap ~$2.25B, close $11.71, vol 1.30M | hugging 8EMA, above 200SMA ($8.25) | notion-live | OK |
+| BOX | Box, Inc. | $34.93 | change +3.5%, mktcap ~$4.79B, close $34.93, vol 1.56M | hugging 8EMA, above 200SMA ($27.51) | notion-live | OK |
+| NVCR | NovoCure Limited | $16.03 | change +3.4%, mktcap ~$1.87B, close $16.03, vol 0.54M | hugging 8EMA, above 200SMA ($14.46) | notion-live | OK |
+| BTSG | BrightSpring Health Services, Inc. | $60.68 | change +3.3%, mktcap ~$12.01B, close $60.68, vol 1.76M | hugging 8EMA, above 200SMA ($50.79) | notion-live | OK |
+| VOR | Vor Biopharma Inc. | $23.04 | change +3.3%, mktcap ~$1.36B, close $23.04, vol 0.64M | hugging 8EMA, above 200SMA ($16.02) | notion-live | OK |
+
+45 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 45 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-11 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
