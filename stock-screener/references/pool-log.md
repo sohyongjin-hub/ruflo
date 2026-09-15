@@ -20,6 +20,40 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-15 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| TENB | Tenable Holdings, Inc. | $38.60 | change +10.0%, mktcap ~$4.25B, close $38.60, vol 4.98M | 3 recovered-dips (within range), above 200SMA ($26.29) | notion-live | OK |
+| QLYS | Qualys, Inc. | $185.56 | change +7.3%, mktcap ~$6.42B, close $185.56, vol 0.69M | 3 recovered-dips (within range), above 200SMA ($125.53) | notion-live | OK |
+| PBF | PBF Energy Inc. | $74.85 | change +6.3%, mktcap ~$8.87B, close $74.85, vol 7.38M | hugging 8EMA, above 200SMA ($45.47) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $74.38 | change +6.1%, mktcap ~$9.69B, close $74.38, vol 1.88M | 4 recovered-dips (within range), above 200SMA ($30.48) | notion-live | OK |
+| CRGY | Crescent Energy Company | $15.35 | change +5.2%, mktcap ~$5.07B, close $15.35, vol 4.48M | 4 recovered-dips (within range), above 200SMA ($11.24) | notion-live | OK |
+| DINO | HF Sinclair Corporation | $112.30 | change +5.0%, mktcap ~$19.97B, close $112.30, vol 1.85M | 3 recovered-dips (within range), above 200SMA ($67.29) | notion-live | OK |
+| NAVN | Navan, Inc. | $22.43 | change +4.9%, mktcap ~$5.84B, close $22.43, vol 2.76M | 3 recovered-dips (within range), above 200SMA ($18.20) | notion-live | OK |
+| VOYG | Voyager Technologies, Inc. | $34.70 | change +4.8%, mktcap ~$2.12B, close $34.70, vol 0.81M | hugging 8EMA, above 200SMA ($31.30) | notion-live | OK |
+| QCOM | QUALCOMM Incorporated | $188.61 | change +4.7%, mktcap ~$198.08B, close $188.61, vol 9.94M | 4 recovered-dips (within range), above 200SMA ($168.30) | notion-live | OK |
+| AESI | Atlas Energy Solutions Inc. | $13.74 | change +4.6%, mktcap ~$1.72B, close $13.74, vol 1.56M | hugging 8EMA, above 200SMA ($13.20) | notion-live | OK |
+| PDM | Piedmont Realty Trust, Inc. | $9.57 | change +4.0%, mktcap ~$1.20B, close $9.57, vol 11.17M | hugging 8EMA, above 200SMA ($8.49) | notion-live | OK |
+| ATEN | A10 Networks, Inc. | $26.63 | change +4.0%, mktcap ~$1.93B, close $26.63, vol 0.66M | 4 recovered-dips (within range), above 200SMA ($25.07) | notion-live | OK |
+| P | Everpure, Inc. | $97.43 | change +3.9%, mktcap ~$32.47B, close $97.43, vol 1.72M | hugging 8EMA, above 200SMA ($75.86) | notion-live | OK |
+| MRVI | Maravai LifeSciences Holdings, Inc. | $6.95 | change +3.9%, mktcap ~$1.80B, close $6.95, vol 1.11M | hugging 8EMA, above 200SMA ($4.60) | notion-live | OK |
+| MXL | MaxLinear, Inc | $67.27 | change +3.8%, mktcap ~$6.10B, close $67.27, vol 1.24M | hugging 8EMA, above 200SMA ($49.10) | notion-live | OK |
+| NVGS | Navigator Holdings Ltd. | $24.36 | change +3.8%, mktcap ~$1.50B, close $24.36, vol 0.60M | 4 recovered-dips (within range), above 200SMA ($20.32) | notion-live | OK |
+| LYB | LyondellBasell Industries NV | $65.08 | change +3.7%, mktcap ~$21.02B, close $65.08, vol 1.49M | hugging 8EMA, above 200SMA ($61.08) | notion-live | OK |
+| HLIT | Harmonic Inc. | $11.66 | change +3.7%, mktcap ~$1.27B, close $11.66, vol 1.36M | hugging 8EMA, above 200SMA ($11.46) | notion-live | OK |
+| DAR | Darling Ingredients Inc. | $67.30 | change +3.7%, mktcap ~$10.62B, close $67.30, vol 1.55M | hugging 8EMA, above 200SMA ($54.51) | notion-live | OK |
+| CF | CF Industries Holdings, Inc. | $135.90 | change +3.6%, mktcap ~$20.57B, close $135.90, vol 1.24M | hugging 8EMA, above 200SMA ($109.76) | notion-live | OK |
+| PSX | Phillips 66 | $265.94 | change +3.5%, mktcap ~$106.12B, close $265.94, vol 1.59M | 4 recovered-dips (within range), above 200SMA ($176.16) | notion-live | OK |
+| KMTS | Kestra Medical Technologies, Ltd. | $24.89 | change +3.4%, mktcap ~$1.46B, close $24.89, vol 0.67M | hugging 8EMA, above 200SMA ($23.53) | notion-live | OK |
+| FTI | TechnipFMC plc | $75.29 | change +3.3%, mktcap ~$29.53B, close $75.29, vol 1.77M | hugging 8EMA, above 200SMA ($65.35) | notion-live | OK |
+| NTSK | Netskope, Inc. | $17.52 | change +3.1%, mktcap ~$7.16B, close $17.52, vol 7.37M | 3 recovered-dips (within range), above 200SMA ($12.94) | notion-live | OK |
+| LH | Labcorp Holdings Inc. | $325.03 | change +3.1%, mktcap ~$26.36B, close $325.03, vol 0.51M | hugging 8EMA, above 200SMA ($277.18) | notion-live | OK |
+| AXGN | Axogen, Inc. | $45.11 | change +3.0%, mktcap ~$2.43B, close $45.11, vol 0.63M | hugging 8EMA, above 200SMA ($38.09) | notion-live | OK |
+
+26 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 26 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-14 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
