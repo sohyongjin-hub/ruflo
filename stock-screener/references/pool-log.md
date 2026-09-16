@@ -20,6 +20,35 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-16 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| AXTI | AXT Inc | $63.36 | change +9.8%, mktcap ~$4.15B, close $63.36, vol 8.65M | 4 recovered-dips (within range), above 200SMA ($56.51) | notion-live | OK |
+| LITE | Lumentum Holdings Inc. | $901.57 | change +7.5%, mktcap ~$80.87B, close $901.57, vol 4.66M | hugging 8EMA, above 200SMA ($707.73) | notion-live | OK |
+| ALVO | Alvotech | $5.31 | change +5.8%, mktcap ~$2.07B, close $5.31, vol 2.52M | 4 recovered-dips (within range), above 200SMA ($4.15) | notion-live | OK |
+| TRMD | TORM plc | $36.81 | change +5.4%, mktcap ~$3.75B, close $36.81, vol 1.96M | 4 recovered-dips (within range), above 200SMA ($27.81) | notion-live | OK |
+| COHR | Coherent Corp. | $285.49 | change +5.3%, mktcap ~$55.91B, close $285.49, vol 4.87M | hugging 8EMA, above 200SMA ($281.51) | notion-live | OK |
+| XERS | Xeris Biopharma Holdings, Inc. | $7.86 | change +4.9%, mktcap ~$1.43B, close $7.86, vol 0.93M | hugging 8EMA, above 200SMA ($7.07) | notion-live | OK |
+| OMER | Omeros Corporation | $17.96 | change +4.6%, mktcap ~$1.30B, close $17.96, vol 0.80M | 4 recovered-dips (within range), above 200SMA ($12.47) | notion-live | OK |
+| EAT | Brinker International, Inc. | $212.54 | change +4.5%, mktcap ~$8.88B, close $212.54, vol 0.68M | hugging 8EMA, above 200SMA ($166.45) | notion-live | OK |
+| INTC | Intel Corporation | $101.37 | change +4.4%, mktcap ~$535.85B, close $101.37, vol 84.19M | hugging 8EMA, above 200SMA ($76.47) | notion-live | OK |
+| IOVA | Iovance Biotherapeutics, Inc. | $9.77 | change +4.3%, mktcap ~$4.42B, close $9.77, vol 12.30M | 4 recovered-dips (within range), above 200SMA ($4.16) | notion-live | OK |
+| GEV | GE Vernova Inc. | $920.92 | change +4.3%, mktcap ~$245.27B, close $920.92, vol 2.52M | hugging 8EMA, above 200SMA ($898.47) | notion-live | OK |
+| LIND | Lindblad Expeditions Holdings Inc. | $27.20 | change +4.3%, mktcap ~$1.79B, close $27.20, vol 0.60M | 4 recovered-dips (within range), above 200SMA ($21.34) | notion-live | OK |
+| TGTX | TG Therapeutics, Inc. | $55.28 | change +4.2%, mktcap ~$8.46B, close $55.28, vol 1.56M | hugging 8EMA, above 200SMA ($39.81) | notion-live | OK |
+| VSTS | Vestis Corporation | $13.83 | change +4.2%, mktcap ~$1.83B, close $13.83, vol 0.96M | 3 recovered-dips (within range), above 200SMA ($10.25) | notion-live | OK |
+| ANF | Abercrombie & Fitch Company | $140.70 | change +4.1%, mktcap ~$5.97B, close $140.70, vol 0.81M | hugging 8EMA, above 200SMA ($99.46) | notion-live | OK |
+| JKHY | Jack Henry & Associates, Inc. | $160.12 | change +3.9%, mktcap ~$11.23B, close $160.12, vol 0.91M | hugging 8EMA, above 200SMA ($159.60) | notion-live | OK |
+| DOCN | DigitalOcean Holdings, Inc. | $122.39 | change +3.9%, mktcap ~$14.39B, close $122.39, vol 0.97M | hugging 8EMA, above 200SMA ($99.92) | notion-live | OK |
+| HUT | Hut 8 Corp. | $90.34 | change +3.7%, mktcap ~$11.14B, close $90.34, vol 2.18M | hugging 8EMA, above 200SMA ($77.06) | notion-live | OK |
+| CROX | Crocs, Inc. | $115.59 | change +3.7%, mktcap ~$5.54B, close $115.59, vol 0.70M | hugging 8EMA, above 200SMA ($104.40) | notion-live | OK |
+| SBH | Sally Beauty Holdings, Inc. (Name to be changed from Sally Holdings, Inc.) | $16.25 | change +3.7%, mktcap ~$1.52B, close $16.25, vol 0.54M | hugging 8EMA, above 200SMA ($14.83) | notion-live | OK |
+| SN | SharkNinja, Inc. | $172.30 | change +3.1%, mktcap ~$24.27B, close $172.30, vol 1.24M | hugging 8EMA, above 200SMA ($130.92) | notion-live | OK |
+
+21 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 21 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-15 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
