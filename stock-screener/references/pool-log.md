@@ -20,6 +20,49 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-17 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| BHVN | Biohaven Ltd. | $13.35 | change +11.1%, mktcap ~$2.02B, close $13.35, vol 2.72M | hugging 8EMA, above 200SMA ($11.86) | notion-live | OK |
+| CRSP | CRISPR Therapeutics AG | $57.08 | change +9.3%, mktcap ~$5.52B, close $57.08, vol 2.00M | 4 recovered-dips (within range), above 200SMA ($53.29) | notion-live | OK |
+| ABCL | AbCellera Biologics Inc. | $12.68 | change +8.6%, mktcap ~$4.11B, close $12.68, vol 6.16M | 4 recovered-dips (within range), above 200SMA ($5.45) | notion-live | OK |
+| MRNA | Moderna, Inc. | $157.88 | change +8.4%, mktcap ~$63.03B, close $157.88, vol 15.05M | 4 recovered-dips (within range), above 200SMA ($59.60) | notion-live | OK |
+| TH | Target Hospitality Corp. | $20.34 | change +8.4%, mktcap ~$2.03B, close $20.34, vol 1.61M | 3 recovered-dips (within range), above 200SMA ($13.30) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $78.25 | change +7.7%, mktcap ~$10.20B, close $78.25, vol 2.09M | 3 recovered-dips (within range), above 200SMA ($31.04) | notion-live | OK |
+| NEXA | Nexa Resources S.A. | $12.94 | change +7.1%, mktcap ~$1.71B, close $12.94, vol 0.93M | hugging 8EMA, above 200SMA ($12.46) | notion-live | OK |
+| NEWP | New Pacific Metals Corp. | $5.93 | change +6.8%, mktcap ~$1.10B, close $5.93, vol 0.72M | hugging 8EMA, above 200SMA ($4.64) | notion-live | OK |
+| MRVI | Maravai LifeSciences Holdings, Inc. | $7.29 | change +6.7%, mktcap ~$1.89B, close $7.29, vol 1.72M | 4 recovered-dips (within range), above 200SMA ($4.63) | notion-live | OK |
+| EXK | Endeavour Silver Corporation | $10.15 | change +6.5%, mktcap ~$3.01B, close $10.15, vol 4.70M | hugging 8EMA, above 200SMA ($9.93) | notion-live | OK |
+| CDE | Coeur Mining, Inc. | $20.13 | change +6.1%, mktcap ~$20.69B, close $20.13, vol 34.40M | hugging 8EMA, above 200SMA ($19.15) | notion-live | OK |
+| ALVO | Alvotech | $5.41 | change +6.0%, mktcap ~$2.11B, close $5.41, vol 0.88M | 4 recovered-dips (within range), above 200SMA ($4.15) | notion-live | OK |
+| HIMX | Himax Technologies, Inc. | $13.82 | change +5.9%, mktcap ~$2.22B, close $13.82, vol 0.54M | hugging 8EMA, above 200SMA ($12.03) | notion-live | OK |
+| NUVB | Nuvation Bio Inc. | $6.12 | change +5.9%, mktcap ~$2.15B, close $6.12, vol 3.83M | hugging 8EMA, above 200SMA ($5.92) | notion-live | OK |
+| SNDK | Sandisk Corporation | $1608.18 | change +5.8%, mktcap ~$235.47B, close $1608.18, vol 6.69M | hugging 8EMA, above 200SMA ($1060.32) | notion-live | OK |
+| IAUX | i-80 Gold Corp. | $1.75 | change +5.8%, mktcap ~$1.51B, close $1.75, vol 9.18M | hugging 8EMA, above 200SMA ($1.59) | notion-live | OK |
+| ULCC | Frontier Group Holdings, Inc. | $5.92 | change +5.6%, mktcap ~$1.36B, close $5.92, vol 1.30M | 4 recovered-dips (within range), above 200SMA ($5.32) | notion-live | OK |
+| SRPT | Sarepta Therapeutics, Inc. | $20.83 | change +5.4%, mktcap ~$2.20B, close $20.83, vol 1.46M | hugging 8EMA, above 200SMA ($19.27) | notion-live | OK |
+| TGB | Trekor Metals Limited | $8.37 | change +5.3%, mktcap ~$3.06B, close $8.37, vol 2.23M | hugging 8EMA, above 200SMA ($7.21) | notion-live | OK |
+| KURA | Kura Oncology, Inc. | $11.79 | change +5.2%, mktcap ~$1.05B, close $11.79, vol 1.18M | hugging 8EMA, above 200SMA ($9.82) | notion-live | OK |
+| BMNR | BitMine Immersion Technologies, Inc. | $23.96 | change +5.1%, mktcap ~$14.46B, close $23.96, vol 31.01M | hugging 8EMA, above 200SMA ($22.10) | notion-live | OK |
+| HPK | HighPeak Energy, Inc. | $8.27 | change +5.0%, mktcap ~$1.05B, close $8.27, vol 2.14M | hugging 8EMA, above 200SMA ($6.39) | notion-live | OK |
+| AXTI | AXT Inc | $67.52 | change +5.0%, mktcap ~$4.43B, close $67.52, vol 6.13M | 4 recovered-dips (within range), above 200SMA ($56.80) | notion-live | OK |
+| RXO | RXO, Inc. | $20.03 | change +5.0%, mktcap ~$3.30B, close $20.03, vol 0.86M | hugging 8EMA, above 200SMA ($19.23) | notion-live | OK |
+| VSXY | Victorias Secret & Co. | $77.39 | change +4.6%, mktcap ~$6.17B, close $77.39, vol 1.04M | 4 recovered-dips (within range), above 200SMA ($64.41) | notion-live | OK |
+| CMBT | CMB.TECH NV | $20.57 | change +4.6%, mktcap ~$5.97B, close $20.57, vol 1.17M | 4 recovered-dips (within range), above 200SMA ($14.05) | notion-live | OK |
+| SIMO | Silicon Motion Technology Corporation | $252.29 | change +4.6%, mktcap ~$8.18B, close $252.29, vol 0.56M | hugging 8EMA, above 200SMA ($191.27) | notion-live | OK |
+| HBM | Hudbay Minerals Inc. | $26.43 | change +4.6%, mktcap ~$11.74B, close $26.43, vol 1.71M | hugging 8EMA, above 200SMA ($23.97) | notion-live | OK |
+| MARA | MARA Holdings, Inc. | $11.54 | change +4.5%, mktcap ~$4.46B, close $11.54, vol 59.18M | hugging 8EMA, above 200SMA ($10.94) | notion-live | OK |
+| EGO | Eldorado Gold Corporation | $42.36 | change +4.4%, mktcap ~$11.07B, close $42.36, vol 2.82M | hugging 8EMA, above 200SMA ($36.53) | notion-live | OK |
+| BTG | B2Gold Corp | $5.37 | change +4.4%, mktcap ~$7.09B, close $5.37, vol 11.96M | hugging 8EMA, above 200SMA ($4.74) | notion-live | OK |
+| CCC | CCC Intelligent Solutions Holdings Inc. | $6.61 | change +4.3%, mktcap ~$3.89B, close $6.61, vol 6.52M | 3 recovered-dips (within range), above 200SMA ($6.18) | notion-live | OK |
+| RCUS | Arcus Biosciences, Inc. | $25.72 | change +4.3%, mktcap ~$3.28B, close $25.72, vol 1.10M | hugging 8EMA, above 200SMA ($24.73) | notion-live | OK |
+| GLBE | Global-E Online Ltd. | $38.51 | change +4.3%, mktcap ~$6.47B, close $38.51, vol 0.69M | 4 recovered-dips (within range), above 200SMA ($35.56) | notion-live | OK |
+| ITT | ITT Inc. | $202.74 | change +4.2%, mktcap ~$18.12B, close $202.74, vol 0.79M | hugging 8EMA, above 200SMA ($195.38) | notion-live | OK |
+
+35 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 35 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-16 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
