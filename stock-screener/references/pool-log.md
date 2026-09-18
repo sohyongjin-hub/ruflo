@@ -20,6 +20,23 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-18 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| ALVO | Alvotech | $5.91 | change +10.6%, mktcap ~$2.31B, close $5.91, vol 2.02M | 4 recovered-dips (within range), above 200SMA ($4.15) | notion-live | OK |
+| INSP | Inspire Medical Systems, Inc. | $76.69 | change +5.4%, mktcap ~$2.22B, close $76.69, vol 0.87M | 4 recovered-dips (within range), above 200SMA ($64.56) | notion-live | OK |
+| LRCX | Lam Research Corporation | $282.19 | change +4.8%, mktcap ~$353.11B, close $282.19, vol 6.29M | hugging 8EMA, above 200SMA ($267.17) | notion-live | OK |
+| AMAT | Applied Materials, Inc. | $434.70 | change +4.1%, mktcap ~$344.98B, close $434.70, vol 4.96M | hugging 8EMA, above 200SMA ($416.21) | notion-live | OK |
+| TRMD | TORM plc | $38.09 | change +4.0%, mktcap ~$3.88B, close $38.09, vol 1.28M | 4 recovered-dips (within range), above 200SMA ($27.97) | notion-live | OK |
+| NLST | Netlist, Inc. | $4.97 | change +4.0%, mktcap ~$1.76B, close $4.97, vol 1.16M | 4 recovered-dips (within range), above 200SMA ($2.38) | notion-live | OK |
+| WDC | Western Digital Corporation | $440.64 | change +4.0%, mktcap ~$158.87B, close $440.64, vol 3.70M | hugging 8EMA, above 200SMA ($385.87) | notion-live | OK |
+| OMDA | Omada Health, Inc. | $20.50 | change +3.4%, mktcap ~$1.26B, close $20.50, vol 0.63M | hugging 8EMA, above 200SMA ($17.08) | notion-live | OK |
+| WT | WisdomTree, Inc. | $22.95 | change +3.2%, mktcap ~$3.48B, close $22.95, vol 2.01M | hugging 8EMA, above 200SMA ($17.52) | notion-live | OK |
+
+9 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 9 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-17 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
