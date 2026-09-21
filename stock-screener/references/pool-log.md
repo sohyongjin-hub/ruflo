@@ -20,6 +20,33 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-21 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| AXTI | AXT Inc | $79.84 | change +14.0%, mktcap ~$5.24B, close $79.84, vol 10.44M | 4 recovered-dips (within range), above 200SMA ($57.44) | notion-live | OK |
+| MRNA | Moderna, Inc. | $172.55 | change +12.0%, mktcap ~$68.89B, close $172.55, vol 18.50M | 4 recovered-dips (within range), above 200SMA ($61.00) | notion-live | OK |
+| META | Meta Platforms, Inc. | $743.49 | change +11.7%, mktcap ~$1894.05B, close $743.49, vol 43.09M | 3 recovered-dips (within range), above 200SMA ($624.63) | notion-live | OK |
+| NET | Cloudflare, Inc. | $351.50 | change +8.6%, mktcap ~$125.16B, close $351.50, vol 3.22M | 3 recovered-dips (within range), above 200SMA ($228.60) | notion-live | OK |
+| RNG | RingCentral, Inc. | $77.23 | change +7.5%, mktcap ~$6.45B, close $77.23, vol 1.04M | 4 recovered-dips (within range), above 200SMA ($42.05) | notion-live | OK |
+| SHOP | Shopify Inc. | $137.54 | change +7.0%, mktcap ~$176.97B, close $137.54, vol 13.50M | 4 recovered-dips (within range), above 200SMA ($130.25) | notion-live | OK |
+| GLW | Corning Incorporated | $159.05 | change +5.9%, mktcap ~$137.00B, close $159.05, vol 6.02M | 4 recovered-dips (within range), above 200SMA ($147.44) | notion-live | OK |
+| VSXY | Victorias Secret & Co. | $82.03 | change +5.3%, mktcap ~$6.54B, close $82.03, vol 1.17M | 4 recovered-dips (within range), above 200SMA ($64.78) | notion-live | OK |
+| DUOL | Duolingo, Inc. | $149.29 | change +5.2%, mktcap ~$6.98B, close $149.29, vol 0.90M | hugging 8EMA, above 200SMA ($129.76) | notion-live | OK |
+| ULCC | Frontier Group Holdings, Inc. | $6.11 | change +4.9%, mktcap ~$1.41B, close $6.11, vol 1.30M | 4 recovered-dips (within range), above 200SMA ($5.33) | notion-live | OK |
+| OKTA | Okta, Inc. | $190.90 | change +4.7%, mktcap ~$33.37B, close $190.90, vol 3.00M | 4 recovered-dips (within range), above 200SMA ($106.88) | notion-live | OK |
+| NTSK | Netskope, Inc. | $18.30 | change +4.6%, mktcap ~$7.48B, close $18.30, vol 6.65M | 3 recovered-dips (within range), above 200SMA ($12.93) | notion-live | OK |
+| GLBE | Global-E Online Ltd. | $39.74 | change +4.5%, mktcap ~$6.68B, close $39.74, vol 1.28M | 4 recovered-dips (within range), above 200SMA ($35.54) | notion-live | OK |
+| U | Unity Software Inc. | $43.13 | change +4.2%, mktcap ~$18.98B, close $43.13, vol 8.96M | 4 recovered-dips (within range), above 200SMA ($32.14) | notion-live | OK |
+| PRCH | Porch Group, Inc. | $16.55 | change +4.1%, mktcap ~$1.88B, close $16.55, vol 0.71M | 4 recovered-dips (within range), above 200SMA ($10.86) | notion-live | OK |
+| IMNM | Immunome, Inc. | $24.93 | change +4.0%, mktcap ~$2.83B, close $24.93, vol 0.86M | 4 recovered-dips (within range), above 200SMA ($22.65) | notion-live | OK |
+| AXGN | Axogen, Inc. | $45.94 | change +3.9%, mktcap ~$2.70B, close $45.94, vol 0.87M | hugging 8EMA, above 200SMA ($38.42) | notion-live | OK |
+| BRZE | Braze, Inc. | $25.33 | change +3.7%, mktcap ~$2.88B, close $25.33, vol 1.26M | hugging 8EMA, above 200SMA ($24.60) | notion-live | OK |
+| TRLV | Trulieve Cannabis Corp. Subordinate Voting Shares | $11.47 | change +3.6%, mktcap ~$2.21B, close $11.47, vol 1.13M | hugging 8EMA, above 200SMA ($8.40) | notion-live | OK |
+
+19 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 19 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-18 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
