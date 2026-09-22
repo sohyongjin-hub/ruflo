@@ -20,6 +20,43 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-22 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| BLLN | BillionToOne, Inc. | $117.67 | change +13.3%, mktcap ~$5.55B, close $117.67, vol 0.85M | 4 recovered-dips (within range), above 200SMA ($94.75) | notion-live | OK |
+| SHOP | Shopify Inc. | $147.57 | change +7.0%, mktcap ~$189.88B, close $147.57, vol 19.38M | 4 recovered-dips (within range), above 200SMA ($130.19) | notion-live | OK |
+| GME | GameStop Corporation | $24.32 | change +6.8%, mktcap ~$12.27B, close $24.32, vol 10.51M | 4 recovered-dips (within range), above 200SMA ($22.19) | notion-live | OK |
+| MRNA | Moderna, Inc. | $184.15 | change +6.5%, mktcap ~$73.52B, close $184.15, vol 19.35M | 4 recovered-dips (within range), above 200SMA ($61.79) | notion-live | OK |
+| SRRK | Scholar Rock Holding Corporation | $51.12 | change +6.1%, mktcap ~$6.23B, close $51.12, vol 1.82M | hugging 8EMA, above 200SMA ($48.30) | notion-live | OK |
+| GLBE | Global-E Online Ltd. | $41.90 | change +5.6%, mktcap ~$7.04B, close $41.90, vol 1.36M | 4 recovered-dips (within range), above 200SMA ($35.55) | notion-live | OK |
+| NTLA | Intellia Therapeutics, Inc. | $12.82 | change +5.0%, mktcap ~$1.80B, close $12.82, vol 2.72M | 4 recovered-dips (within range), above 200SMA ($12.75) | notion-live | OK |
+| SLS | SELLAS Life Sciences Group, Inc. | $11.93 | change +4.9%, mktcap ~$2.41B, close $11.93, vol 4.42M | hugging 8EMA, above 200SMA ($7.39) | notion-live | OK |
+| IOVA | Iovance Biotherapeutics, Inc. | $10.68 | change +4.9%, mktcap ~$4.84B, close $10.68, vol 9.98M | 4 recovered-dips (within range), above 200SMA ($4.32) | notion-live | OK |
+| BOBS | Bob's Discount Furniture, Inc. | $15.13 | change +4.8%, mktcap ~$1.98B, close $15.13, vol 0.75M | hugging 8EMA, above 100SMA ($15.04) | notion-live | OK |
+| NVAX | Novavax, Inc. | $10.90 | change +4.8%, mktcap ~$1.80B, close $10.90, vol 5.61M | 4 recovered-dips (within range), above 200SMA ($8.73) | notion-live | OK |
+| REPL | Replimune Group, Inc. | $13.47 | change +4.7%, mktcap ~$1.27B, close $13.47, vol 0.81M | hugging 8EMA, above 200SMA ($8.80) | notion-live | OK |
+| VOR | Vor Biopharma Inc. | $22.86 | change +4.4%, mktcap ~$1.35B, close $22.86, vol 1.77M | hugging 8EMA, above 200SMA ($16.44) | notion-live | OK |
+| OC | Owens Corning Inc | $126.79 | change +4.3%, mktcap ~$10.02B, close $126.79, vol 0.56M | hugging 8EMA, above 200SMA ($125.91) | notion-live | OK |
+| CAKE | The Cheesecake Factory Incorporated | $103.67 | change +4.2%, mktcap ~$5.16B, close $103.67, vol 0.94M | 4 recovered-dips (within range), above 200SMA ($71.64) | notion-live | OK |
+| AMGN | Amgen Inc. | $409.66 | change +4.2%, mktcap ~$221.48B, close $409.66, vol 2.42M | 4 recovered-dips (within range), above 200SMA ($360.94) | notion-live | OK |
+| SRPT | Sarepta Therapeutics, Inc. | $20.98 | change +4.1%, mktcap ~$2.22B, close $20.98, vol 0.90M | hugging 8EMA, above 200SMA ($19.26) | notion-live | OK |
+| BBNX | Beta Bionics, Inc. | $22.92 | change +4.0%, mktcap ~$1.24B, close $22.92, vol 0.58M | 4 recovered-dips (within range), above 200SMA ($16.18) | notion-live | OK |
+| ERAS | Erasca, Inc. | $15.62 | change +3.9%, mktcap ~$5.46B, close $15.62, vol 1.73M | hugging 8EMA, above 200SMA ($13.54) | notion-live | OK |
+| AXTA | Axalta Coating Systems Ltd. | $33.05 | change +3.7%, mktcap ~$7.07B, close $33.05, vol 2.64M | hugging 8EMA, above 200SMA ($32.05) | notion-live | OK |
+| OMDA | Omada Health, Inc. | $21.36 | change +3.6%, mktcap ~$1.31B, close $21.36, vol 0.80M | 3 recovered-dips (within range), above 200SMA ($17.11) | notion-live | OK |
+| RLAY | Relay Therapeutics, Inc. | $18.84 | change +3.6%, mktcap ~$4.13B, close $18.84, vol 1.91M | hugging 8EMA, above 200SMA ($13.60) | notion-live | OK |
+| PRCH | Porch Group, Inc. | $17.23 | change +3.5%, mktcap ~$1.96B, close $17.23, vol 0.50M | 4 recovered-dips (within range), above 200SMA ($10.89) | notion-live | OK |
+| HMY | Harmony Gold Mining Company Limited | $19.67 | change +3.5%, mktcap ~$12.14B, close $19.67, vol 4.16M | hugging 8EMA, above 200SMA ($18.41) | notion-live | OK |
+| SWK | Stanley Black & Decker, Inc. | $91.60 | change +3.3%, mktcap ~$13.83B, close $91.60, vol 0.65M | hugging 8EMA, above 200SMA ($83.16) | notion-live | OK |
+| CDNA | CareDx, Inc. | $56.09 | change +3.2%, mktcap ~$2.90B, close $56.09, vol 0.80M | 4 recovered-dips (within range), above 200SMA ($27.00) | notion-live | OK |
+| MOS | Mosaic Company (The) | $24.83 | change +3.2%, mktcap ~$7.89B, close $24.83, vol 3.44M | hugging 8EMA, above 200SMA ($24.57) | notion-live | OK |
+| VSXY | Victorias Secret & Co. | $84.19 | change +3.1%, mktcap ~$6.72B, close $84.19, vol 0.87M | 4 recovered-dips (within range), above 200SMA ($64.99) | notion-live | OK |
+| TREX | Trex Company, Inc. | $44.20 | change +3.0%, mktcap ~$4.50B, close $44.20, vol 0.91M | hugging 8EMA, above 200SMA ($41.73) | notion-live | OK |
+
+29 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 29 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-21 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
