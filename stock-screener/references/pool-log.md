@@ -20,6 +20,23 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-23 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| NLST | Netlist, Inc. | $5.92 | change +12.5%, mktcap ~$2.24B, close $5.92, vol 2.57M | 4 recovered-dips (within range), above 200SMA ($2.43) | notion-live | OK |
+| ASAN | Asana, Inc. | $9.46 | change +4.2%, mktcap ~$2.17B, close $9.46, vol 5.82M | hugging 8EMA, above 200SMA ($8.63) | notion-live | OK |
+| VEEV | Veeva Systems Inc. | $271.30 | change +4.0%, mktcap ~$43.93B, close $271.30, vol 0.82M | 4 recovered-dips (within range), above 200SMA ($199.44) | notion-live | OK |
+| GEO | Geo Group Inc (The) REIT | $30.91 | change +3.9%, mktcap ~$4.07B, close $30.91, vol 1.41M | hugging 8EMA, above 200SMA ($22.43) | notion-live | OK |
+| AMPL | Amplitude, Inc. | $13.65 | change +3.9%, mktcap ~$1.71B, close $13.65, vol 0.88M | 4 recovered-dips (within range), above 200SMA ($9.04) | notion-live | OK |
+| TEAM | Atlassian Corporation | $194.75 | change +3.2%, mktcap ~$49.30B, close $194.75, vol 1.69M | 3 recovered-dips (within range), above 200SMA ($111.38) | notion-live | OK |
+| DOCU | DocuSign, Inc. | $68.90 | change +3.2%, mktcap ~$12.88B, close $68.90, vol 1.60M | hugging 8EMA, above 200SMA ($53.69) | notion-live | OK |
+| FORM | FormFactor, Inc. | $129.99 | change +3.2%, mktcap ~$10.15B, close $129.99, vol 0.72M | 4 recovered-dips (within range), above 200SMA ($105.34) | notion-live | OK |
+| OKTA | Okta, Inc. | $202.82 | change +3.2%, mktcap ~$35.46B, close $202.82, vol 3.40M | 4 recovered-dips (within range), above 200SMA ($107.46) | notion-live | OK |
+
+9 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 9 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-22 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
