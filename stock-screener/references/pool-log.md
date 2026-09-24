@@ -20,6 +20,37 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-24 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| CDNA | CareDx, Inc. | $62.18 | change +14.5%, mktcap ~$3.22B, close $62.18, vol 1.82M | 4 recovered-dips (within range), above 200SMA ($27.21) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $85.54 | change +13.1%, mktcap ~$11.15B, close $85.54, vol 2.61M | 3 recovered-dips (within range), above 200SMA ($32.26) | notion-live | OK |
+| BLLN | BillionToOne, Inc. | $127.11 | change +11.1%, mktcap ~$6.00B, close $127.11, vol 0.73M | 4 recovered-dips (within range), above 200SMA ($94.84) | notion-live | OK |
+| KOS | Kosmos Energy Ltd. | $2.82 | change +6.4%, mktcap ~$1.68B, close $2.82, vol 9.46M | hugging 8EMA, above 200SMA ($2.29) | notion-live | OK |
+| GDDY | GoDaddy Inc. | $102.28 | change +6.1%, mktcap ~$12.95B, close $102.28, vol 7.89M | hugging 8EMA, above 200SMA ($94.48) | notion-live | OK |
+| MRNA | Moderna, Inc. | $192.90 | change +5.9%, mktcap ~$77.01B, close $192.90, vol 12.80M | 4 recovered-dips (within range), above 200SMA ($63.39) | notion-live | OK |
+| AXTI | AXT Inc | $77.28 | change +5.9%, mktcap ~$5.07B, close $77.28, vol 6.10M | 4 recovered-dips (within range), above 200SMA ($58.40) | notion-live | OK |
+| CXW | CoreCivic, Inc. | $34.15 | change +5.8%, mktcap ~$3.38B, close $34.15, vol 1.23M | hugging 8EMA, above 200SMA ($24.07) | notion-live | OK |
+| A | Agilent Technologies, Inc. | $173.89 | change +5.2%, mktcap ~$49.02B, close $173.89, vol 1.84M | 3 recovered-dips (within range), above 200SMA ($131.82) | notion-live | OK |
+| UMAC | Unusual Machines, Inc. | $23.81 | change +4.9%, mktcap ~$1.19B, close $23.81, vol 1.86M | hugging 8EMA, above 200SMA ($18.26) | notion-live | OK |
+| AFRM | Affirm Holdings, Inc. | $71.37 | change +4.8%, mktcap ~$24.08B, close $71.37, vol 3.26M | hugging 8EMA, above 200SMA ($66.72) | notion-live | OK |
+| META | Meta Platforms, Inc. | $777.76 | change +4.5%, mktcap ~$1981.36B, close $777.76, vol 29.06M | 3 recovered-dips (within range), above 200SMA ($626.04) | notion-live | OK |
+| RGEN | Repligen Corporation | $192.01 | change +4.1%, mktcap ~$10.84B, close $192.01, vol 1.04M | 4 recovered-dips (within range), above 200SMA ($142.58) | notion-live | OK |
+| NCNO | nCino, Inc. | $19.96 | change +3.8%, mktcap ~$2.11B, close $19.96, vol 1.60M | 3 recovered-dips (within range), above 200SMA ($18.92) | notion-live | OK |
+| IOVA | Iovance Biotherapeutics, Inc. | $10.56 | change +3.6%, mktcap ~$4.78B, close $10.56, vol 8.11M | 3 recovered-dips (within range), above 200SMA ($4.40) | notion-live | OK |
+| WLTH | Wealthfront Corporation | $10.19 | change +3.5%, mktcap ~$1.59B, close $10.19, vol 3.41M | hugging 8EMA, above 100SMA ($9.87) | notion-live | OK |
+| MUR | Murphy Oil Corporation | $37.45 | change +3.4%, mktcap ~$5.37B, close $37.45, vol 1.04M | hugging 8EMA, above 200SMA ($35.80) | notion-live | OK |
+| AVTR | Avantor, Inc. | $15.26 | change +3.4%, mktcap ~$10.32B, close $15.26, vol 4.41M | hugging 8EMA, above 200SMA ($10.59) | notion-live | OK |
+| CTAS | Cintas Corporation | $198.34 | change +3.3%, mktcap ~$79.48B, close $198.34, vol 1.96M | hugging 8EMA, above 200SMA ($187.70) | notion-live | OK |
+| GEO | Geo Group Inc (The) REIT | $31.59 | change +3.2%, mktcap ~$4.16B, close $31.59, vol 1.39M | hugging 8EMA, above 200SMA ($22.50) | notion-live | OK |
+| NET | Cloudflare, Inc. | $363.38 | change +3.1%, mktcap ~$129.39B, close $363.38, vol 2.26M | 3 recovered-dips (within range), above 200SMA ($230.12) | notion-live | OK |
+| TALO | Talos Energy, Inc. | $17.07 | change +3.1%, mktcap ~$2.85B, close $17.07, vol 1.18M | hugging 8EMA, above 200SMA ($14.17) | notion-live | OK |
+| GME | GameStop Corporation | $24.95 | change +3.1%, mktcap ~$12.58B, close $24.95, vol 9.83M | 4 recovered-dips (within range), above 200SMA ($22.21) | notion-live | OK |
+
+23 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 23 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-23 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
