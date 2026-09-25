@@ -20,6 +20,30 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-25 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| BHPLF | BHP Group Limited | $43.59 | change +7.6%, mktcap ~$221.58B, close $43.59, vol 0.71M | hugging 8EMA, above 200SMA ($38.96) | notion-live | OK |
+| AXTI | AXT Inc | $79.89 | change +5.3%, mktcap ~$5.24B, close $79.89, vol 5.83M | 4 recovered-dips (within range), above 200SMA ($58.73) | notion-live | OK |
+| PYPL | PayPal Holdings, Inc. | $55.34 | change +5.2%, mktcap ~$47.34B, close $55.34, vol 13.68M | 2 recovered-dips (within range), above 200SMA ($50.45) | notion-live | OK |
+| CDNA | CareDx, Inc. | $64.46 | change +5.0%, mktcap ~$3.33B, close $64.46, vol 1.70M | 4 recovered-dips (within range), above 200SMA ($27.62) | notion-live | OK |
+| CVS | CVS Health Corporation | $89.04 | change +4.7%, mktcap ~$113.88B, close $89.04, vol 9.36M | hugging 8EMA, above 200SMA ($87.51) | notion-live | OK |
+| MFG | Mizuho Financial Group, Inc. Sponosred | $11.04 | change +4.5%, mktcap ~$127.10B, close $11.04, vol 3.45M | hugging 8EMA, above 200SMA ($9.19) | notion-live | OK |
+| MHK | Mohawk Industries, Inc. | $124.78 | change +4.4%, mktcap ~$7.54B, close $124.78, vol 0.66M | hugging 8EMA, above 200SMA ($114.85) | notion-live | OK |
+| SMFG | Sumitomo Mitsui Financial Group Inc Unsponsored | $26.61 | change +4.3%, mktcap ~$159.37B, close $26.61, vol 1.16M | hugging 8EMA, above 200SMA ($22.72) | notion-live | OK |
+| MGA | Magna International, Inc. | $64.85 | change +4.2%, mktcap ~$17.21B, close $64.85, vol 0.83M | hugging 8EMA, above 200SMA ($61.39) | notion-live | OK |
+| MUFG | Mitsubishi UFJ Financial Group, Inc. | $23.50 | change +4.1%, mktcap ~$251.51B, close $23.50, vol 1.98M | hugging 8EMA, above 200SMA ($19.41) | notion-live | OK |
+| BWA | BorgWarner Inc. | $60.81 | change +4.0%, mktcap ~$12.39B, close $60.81, vol 1.42M | hugging 8EMA, above 200SMA ($59.03) | notion-live | OK |
+| KXIAY | KIOXIA HLDGS CORP | $35.90 | change +3.7%, mktcap ~$188.50B, close $35.90, vol 0.84M | hugging 8EMA, above 200SMA ($26.27) | notion-live | OK |
+| APPS | Digital Turbine, Inc. | $11.25 | change +3.4%, mktcap ~$1.36B, close $11.25, vol 2.61M | hugging 8EMA, above 200SMA ($6.87) | notion-live | OK |
+| BTG | B2Gold Corp | $5.50 | change +3.3%, mktcap ~$7.26B, close $5.50, vol 16.24M | hugging 8EMA, above 200SMA ($4.77) | notion-live | OK |
+| PBF | PBF Energy Inc. | $74.19 | change +3.2%, mktcap ~$8.79B, close $74.19, vol 1.35M | hugging 8EMA, above 200SMA ($47.08) | notion-live | OK |
+| ST | Sensata Technologies Holding plc | $42.33 | change +3.1%, mktcap ~$6.16B, close $42.33, vol 0.61M | hugging 8EMA, above 200SMA ($40.99) | notion-live | OK |
+
+16 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 16 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-24 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
