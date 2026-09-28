@@ -20,6 +20,30 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-28 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| ABCL | AbCellera Biologics Inc. | $13.92 | change +9.6%, mktcap ~$4.51B, close $13.92, vol 7.78M | 4 recovered-dips (within range), above 200SMA ($5.77) | notion-live | OK |
+| ALVO | Alvotech | $6.15 | change +7.0%, mktcap ~$2.40B, close $6.15, vol 1.43M | 4 recovered-dips (within range), above 200SMA ($4.18) | notion-live | OK |
+| VSXY | Victorias Secret & Co. | $88.29 | change +6.5%, mktcap ~$7.04B, close $88.29, vol 2.23M | 4 recovered-dips (within range), above 200SMA ($65.71) | notion-live | OK |
+| TRAX | First Tracks Biotherapeutics, Inc. | $36.65 | change +6.5%, mktcap ~$1.31B, close $36.65, vol 0.67M | hugging 8EMA, above 100SMA ($30.85) | notion-live | OK |
+| DFTX | Definium Therapeutics, Inc. | $38.41 | change +6.2%, mktcap ~$5.16B, close $38.41, vol 2.99M | hugging 8EMA, above 200SMA ($26.90) | notion-live | OK |
+| VOYG | Voyager Technologies, Inc. | $33.18 | change +5.8%, mktcap ~$2.02B, close $33.18, vol 2.77M | hugging 8EMA, above 200SMA ($31.82) | notion-live | OK |
+| IDYA | IDEAYA Biosciences, Inc. | $38.22 | change +4.2%, mktcap ~$3.69B, close $38.22, vol 1.05M | hugging 8EMA, above 200SMA ($33.99) | notion-live | OK |
+| LKNCY | Luckin Coffee Inc. | $33.79 | change +3.8%, mktcap ~$9.33B, close $33.79, vol 0.78M | hugging 8EMA, above 200SMA ($33.66) | notion-live | OK |
+| PCVX | Vaxcyte, Inc. | $58.27 | change +3.7%, mktcap ~$8.67B, close $58.27, vol 1.85M | hugging 8EMA, above 200SMA ($54.89) | notion-live | OK |
+| VRNS | Varonis Systems, Inc. | $47.92 | change +3.6%, mktcap ~$5.50B, close $47.92, vol 1.75M | hugging 8EMA, above 200SMA ($33.72) | notion-live | OK |
+| TVTX | Travere Therapeutics, Inc. | $61.57 | change +3.6%, mktcap ~$5.80B, close $61.57, vol 1.22M | hugging 8EMA, above 200SMA ($44.53) | notion-live | OK |
+| OKTA | Okta, Inc. | $202.18 | change +3.6%, mktcap ~$35.35B, close $202.18, vol 3.62M | 4 recovered-dips (within range), above 200SMA ($109.74) | notion-live | OK |
+| ROIV | Roivant Sciences Ltd. | $36.98 | change +3.3%, mktcap ~$26.71B, close $36.98, vol 6.97M | hugging 8EMA, above 200SMA ($29.89) | notion-live | OK |
+| ZS | Zscaler, Inc. | $199.39 | change +3.3%, mktcap ~$32.51B, close $199.39, vol 3.78M | hugging 8EMA, above 200SMA ($167.22) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $88.50 | change +3.3%, mktcap ~$11.53B, close $88.50, vol 3.37M | 3 recovered-dips (within range), above 200SMA ($33.26) | notion-live | OK |
+| TRMD | TORM plc | $35.42 | change +3.2%, mktcap ~$3.61B, close $35.42, vol 1.79M | hugging 8EMA, above 200SMA ($28.39) | notion-live | OK |
+
+16 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 16 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-25 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
