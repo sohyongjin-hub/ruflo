@@ -20,6 +20,40 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-29 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| IOVA | Iovance Biotherapeutics, Inc. | $14.45 | change +31.5%, mktcap ~$6.55B, close $14.45, vol 75.85M | 3 recovered-dips (within range), above 200SMA ($4.55) | notion-live | OK |
+| ABCL | AbCellera Biologics Inc. | $14.82 | change +6.5%, mktcap ~$4.80B, close $14.82, vol 9.06M | 4 recovered-dips (within range), above 200SMA ($5.82) | notion-live | OK |
+| SFTBY | Softbank Group Corp | $20.46 | change +6.5%, mktcap ~$226.34B, close $20.46, vol 6.96M | hugging 8EMA, above 200SMA ($16.47) | notion-live | OK |
+| DUOL | Duolingo, Inc. | $142.62 | change +6.2%, mktcap ~$6.67B, close $142.62, vol 1.07M | hugging 8EMA, above 200SMA ($128.13) | notion-live | OK |
+| AXTI | AXT Inc | $78.18 | change +6.1%, mktcap ~$5.13B, close $78.18, vol 9.08M | 4 recovered-dips (within range), above 200SMA ($59.33) | notion-live | OK |
+| SMMT | Summit Therapeutics Inc. | $16.39 | change +5.9%, mktcap ~$13.08B, close $16.39, vol 27.16M | hugging 8EMA, above 200SMA ($16.37) | notion-live | OK |
+| HSLV | Highlander Silver Corp. | $5.37 | change +4.9%, mktcap ~$1.09B, close $5.37, vol 0.52M | hugging 8EMA, above 100SMA ($5.10) | notion-live | OK |
+| FCEL | FuelCell Energy, Inc. | $16.90 | change +4.7%, mktcap ~$1.35B, close $16.90, vol 6.58M | hugging 8EMA, above 200SMA ($14.19) | notion-live | OK |
+| ATI | ATI Inc. | $188.95 | change +4.6%, mktcap ~$25.73B, close $188.95, vol 1.70M | hugging 8EMA, above 200SMA ($165.83) | notion-live | OK |
+| BOX | Box, Inc. | $32.75 | change +4.5%, mktcap ~$4.49B, close $32.75, vol 3.85M | hugging 8EMA, above 200SMA ($27.65) | notion-live | OK |
+| FORM | FormFactor, Inc. | $136.25 | change +4.0%, mktcap ~$10.64B, close $136.25, vol 1.26M | 4 recovered-dips (within range), above 200SMA ($107.15) | notion-live | OK |
+| RXT | Rackspace Technology, Inc. | $3.94 | change +4.0%, mktcap ~$1.00B, close $3.94, vol 4.80M | hugging 8EMA, above 200SMA ($2.95) | notion-live | OK |
+| RLAY | Relay Therapeutics, Inc. | $18.36 | change +3.8%, mktcap ~$4.02B, close $18.36, vol 3.52M | hugging 8EMA, above 200SMA ($13.85) | notion-live | OK |
+| SMA | SmartStop Self Storage REIT, Inc. | $32.35 | change +3.7%, mktcap ~$1.92B, close $32.35, vol 1.28M | hugging 8EMA, above 200SMA ($32.35) | notion-live | OK |
+| ARM | Arm Holdings plc | $293.67 | change +3.6%, mktcap ~$302.60B, close $293.67, vol 5.98M | hugging 8EMA, above 200SMA ($213.30) | notion-live | OK |
+| NAVN | Navan, Inc. | $20.69 | change +3.6%, mktcap ~$5.39B, close $20.69, vol 3.24M | hugging 8EMA, above 200SMA ($18.49) | notion-live | OK |
+| CRSP | CRISPR Therapeutics AG | $56.00 | change +3.5%, mktcap ~$5.41B, close $56.00, vol 1.57M | hugging 8EMA, above 200SMA ($53.31) | notion-live | OK |
+| REPL | Replimune Group, Inc. | $13.00 | change +3.5%, mktcap ~$1.22B, close $13.00, vol 4.36M | hugging 8EMA, above 200SMA ($8.86) | notion-live | OK |
+| COHR | Coherent Corp. | $292.21 | change +3.5%, mktcap ~$57.22B, close $292.21, vol 5.42M | hugging 8EMA, above 200SMA ($287.08) | notion-live | OK |
+| VIRT | Virtu Financial, Inc. | $53.75 | change +3.4%, mktcap ~$8.34B, close $53.75, vol 1.46M | hugging 8EMA, above 200SMA ($49.45) | notion-live | OK |
+| W | Wayfair Inc. | $101.95 | change +3.4%, mktcap ~$13.96B, close $101.95, vol 2.50M | hugging 8EMA, above 200SMA ($88.20) | notion-live | OK |
+| META | Meta Platforms, Inc. | $738.96 | change +3.3%, mktcap ~$1882.52B, close $738.96, vol 22.77M | 4 recovered-dips (within range), above 200SMA ($627.21) | notion-live | OK |
+| PD | PagerDuty, Inc. | $14.95 | change +3.2%, mktcap ~$1.18B, close $14.95, vol 1.66M | 4 recovered-dips (within range), above 200SMA ($9.70) | notion-live | OK |
+| MRNA | Moderna, Inc. | $203.46 | change +3.1%, mktcap ~$81.23B, close $203.46, vol 13.03M | 4 recovered-dips (within range), above 200SMA ($65.97) | notion-live | OK |
+| AFRM | Affirm Holdings, Inc. | $69.30 | change +3.1%, mktcap ~$23.38B, close $69.30, vol 3.47M | hugging 8EMA, above 200SMA ($66.74) | notion-live | OK |
+| CXW | CoreCivic, Inc. | $32.67 | change +3.1%, mktcap ~$3.23B, close $32.67, vol 1.56M | hugging 8EMA, above 200SMA ($24.34) | notion-live | OK |
+
+26 tickers caught. 2 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 26 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-28 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
