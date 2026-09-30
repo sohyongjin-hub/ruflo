@@ -20,6 +20,37 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-09-30 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| FORM | FormFactor, Inc. | $149.31 | change +9.6%, mktcap ~$11.66B, close $149.31, vol 2.20M | 4 recovered-dips (within range), above 200SMA ($107.61) | notion-live | OK |
+| BRZE | Braze, Inc. | $25.10 | change +8.4%, mktcap ~$2.85B, close $25.10, vol 2.88M | 3 recovered-dips (within range), above 200SMA ($24.35) | notion-live | OK |
+| OMDA | Omada Health, Inc. | $20.81 | change +7.4%, mktcap ~$1.27B, close $20.81, vol 1.62M | 4 recovered-dips (within range), above 200SMA ($17.23) | notion-live | OK |
+| NLST | Netlist, Inc. | $5.75 | change +5.6%, mktcap ~$2.17B, close $5.75, vol 0.87M | 3 recovered-dips (within range), above 200SMA ($2.57) | notion-live | OK |
+| TRMD | TORM plc | $38.05 | change +5.3%, mktcap ~$3.88B, close $38.05, vol 1.91M | 4 recovered-dips (within range), above 200SMA ($28.55) | notion-live | OK |
+| AMBQ | Ambiq Micro, Inc. | $68.17 | change +5.2%, mktcap ~$1.65B, close $68.17, vol 0.54M | hugging 8EMA, above 200SMA ($50.92) | notion-live | OK |
+| SYRE | Spyre Therapeutics, Inc. | $89.03 | change +5.1%, mktcap ~$7.85B, close $89.03, vol 2.10M | hugging 8EMA, above 200SMA ($67.04) | notion-live | OK |
+| ALMR | Alamar Biosciences, Inc. | $34.07 | change +4.3%, mktcap ~$2.36B, close $34.07, vol 0.74M | 4 recovered-dips (within range), above 100SMA ($26.75) | notion-live | OK |
+| PATH | UiPath, Inc. | $12.84 | change +4.2%, mktcap ~$6.69B, close $12.84, vol 41.99M | hugging 8EMA, above 200SMA ($12.71) | notion-live | OK |
+| MH | McGraw Hill, Inc. | $13.11 | change +4.2%, mktcap ~$2.51B, close $13.11, vol 0.76M | hugging 8EMA, above 200SMA ($12.92) | notion-live | OK |
+| NICE | NICE Ltd | $111.18 | change +4.1%, mktcap ~$6.34B, close $111.18, vol 0.53M | hugging 8EMA, above 200SMA ($104.77) | notion-live | OK |
+| TENB | Tenable Holdings, Inc. | $36.39 | change +4.0%, mktcap ~$4.01B, close $36.39, vol 5.10M | 4 recovered-dips (within range), above 200SMA ($26.79) | notion-live | OK |
+| DK | Delek US Holdings, Inc. | $71.37 | change +3.8%, mktcap ~$4.37B, close $71.37, vol 1.95M | hugging 8EMA, above 200SMA ($48.04) | notion-live | OK |
+| FDS | FactSet Research Systems Inc. | $269.95 | change +3.8%, mktcap ~$9.60B, close $269.95, vol 1.49M | hugging 8EMA, above 200SMA ($249.29) | notion-live | OK |
+| GME | GameStop Corporation | $24.65 | change +3.7%, mktcap ~$12.44B, close $24.65, vol 13.41M | 4 recovered-dips (within range), above 200SMA ($22.24) | notion-live | OK |
+| EWTX | Edgewise Therapeutics, Inc. | $40.60 | change +3.6%, mktcap ~$4.41B, close $40.60, vol 1.67M | hugging 8EMA, above 200SMA ($34.63) | notion-live | OK |
+| OSCR | Oscar Health, Inc. | $30.84 | change +3.6%, mktcap ~$8.43B, close $30.84, vol 5.25M | hugging 8EMA, above 200SMA ($21.79) | notion-live | OK |
+| ADEA | Adeia Inc. | $25.60 | change +3.6%, mktcap ~$2.82B, close $25.60, vol 2.44M | hugging 8EMA, above 200SMA ($24.91) | notion-live | OK |
+| DBX | Dropbox, Inc. | $33.85 | change +3.5%, mktcap ~$7.36B, close $33.85, vol 5.50M | hugging 8EMA, above 200SMA ($28.14) | notion-live | OK |
+| ETSY | Etsy, Inc. | $71.49 | change +3.2%, mktcap ~$6.56B, close $71.49, vol 3.72M | hugging 8EMA, above 200SMA ($65.49) | notion-live | OK |
+| ERAS | Erasca, Inc. | $14.66 | change +3.2%, mktcap ~$5.13B, close $14.66, vol 5.27M | hugging 8EMA, above 200SMA ($13.87) | notion-live | OK |
+| NOW | ServiceNow, Inc. | $134.01 | change +3.1%, mktcap ~$138.57B, close $134.01, vol 8.95M | hugging 8EMA, above 200SMA ($116.03) | notion-live | OK |
+| U | Unity Software Inc. | $40.93 | change +3.0%, mktcap ~$18.01B, close $40.93, vol 8.72M | hugging 8EMA, above 200SMA ($31.94) | notion-live | OK |
+
+23 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 23 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-29 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
