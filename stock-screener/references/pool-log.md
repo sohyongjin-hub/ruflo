@@ -20,6 +20,54 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-01 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| SNPS | Synopsys, Inc. | $490.54 | change +12.8%, mktcap ~$94.01B, close $490.54, vol 6.31M | 3 recovered-dips (within range), above 200SMA ($444.72) | notion-live | OK |
+| GWRE | Guidewire Software, Inc. | $155.32 | change +8.9%, mktcap ~$12.74B, close $155.32, vol 1.56M | 4 recovered-dips (within range), above 200SMA ($151.40) | notion-live | OK |
+| CRDO | Credo Technology Group Holding Ltd | $210.17 | change +7.9%, mktcap ~$39.50B, close $210.17, vol 9.35M | 4 recovered-dips (within range), above 200SMA ($176.99) | notion-live | OK |
+| LIND | Lindblad Expeditions Holdings Inc. | $33.63 | change +7.0%, mktcap ~$2.21B, close $33.63, vol 1.80M | 4 recovered-dips (within range), above 200SMA ($22.25) | notion-live | OK |
+| NCNO | nCino, Inc. | $19.35 | change +6.7%, mktcap ~$2.05B, close $19.35, vol 2.02M | hugging 8EMA, above 200SMA ($18.74) | notion-live | OK |
+| CVI | CVR Energy Inc. | $54.36 | change +6.6%, mktcap ~$5.46B, close $54.36, vol 0.96M | 4 recovered-dips (within range), above 200SMA ($32.20) | notion-live | OK |
+| EXLS | ExlService Holdings, Inc. | $36.48 | change +6.1%, mktcap ~$5.53B, close $36.48, vol 3.02M | 4 recovered-dips (within range), above 200SMA ($33.07) | notion-live | OK |
+| CDW | CDW Corporation | $135.83 | change +6.0%, mktcap ~$16.98B, close $135.83, vol 1.65M | hugging 8EMA, above 200SMA ($131.69) | notion-live | OK |
+| ASAN | Asana, Inc. | $8.93 | change +5.9%, mktcap ~$2.04B, close $8.93, vol 7.39M | hugging 8EMA, above 200SMA ($8.43) | notion-live | OK |
+| TEAM | Atlassian Corporation | $189.91 | change +5.9%, mktcap ~$48.07B, close $189.91, vol 2.48M | 4 recovered-dips (within range), above 200SMA ($112.21) | notion-live | OK |
+| MTSI | MACOM Technology Solutions Holdings, Inc. | $301.63 | change +5.9%, mktcap ~$23.04B, close $301.63, vol 1.17M | 4 recovered-dips (within range), above 200SMA ($272.54) | notion-live | OK |
+| NGL | NGL ENERGY PARTNERS LP | $15.60 | change +5.8%, mktcap ~$1.95B, close $15.60, vol 0.60M | hugging 8EMA, above 200SMA ($14.21) | notion-live | OK |
+| AXTI | AXT Inc | $81.81 | change +5.7%, mktcap ~$5.36B, close $81.81, vol 8.75M | 4 recovered-dips (within range), above 200SMA ($59.98) | notion-live | OK |
+| DINO | HF Sinclair Corporation | $112.70 | change +5.0%, mktcap ~$20.04B, close $112.70, vol 2.44M | 3 recovered-dips (within range), above 200SMA ($70.80) | notion-live | OK |
+| WK | Workiva Inc. | $69.63 | change +4.6%, mktcap ~$3.79B, close $69.63, vol 0.89M | hugging 8EMA, above 200SMA ($63.87) | notion-live | OK |
+| PAYC | Paycom Software, Inc. | $227.47 | change +4.5%, mktcap ~$10.07B, close $227.47, vol 0.52M | 3 recovered-dips (within range), above 200SMA ($154.57) | notion-live | OK |
+| APA | APA Corporation | $43.34 | change +4.3%, mktcap ~$15.18B, close $43.34, vol 6.89M | hugging 8EMA, above 200SMA ($35.25) | notion-live | OK |
+| CLF | Cleveland-Cliffs Inc. | $11.47 | change +4.2%, mktcap ~$6.54B, close $11.47, vol 14.78M | hugging 8EMA, above 200SMA ($11.39) | notion-live | OK |
+| TH | Target Hospitality Corp. | $20.48 | change +3.9%, mktcap ~$2.04B, close $20.48, vol 1.73M | 4 recovered-dips (within range), above 200SMA ($13.92) | notion-live | OK |
+| PR | Permian Resources Corporation | $21.93 | change +3.8%, mktcap ~$18.37B, close $21.93, vol 9.63M | hugging 8EMA, above 200SMA ($19.34) | notion-live | OK |
+| GNW | Genworth Financial Inc | $9.31 | change +3.8%, mktcap ~$3.52B, close $9.31, vol 4.84M | hugging 8EMA, above 200SMA ($9.10) | notion-live | OK |
+| PATH | UiPath, Inc. | $13.32 | change +3.7%, mktcap ~$6.94B, close $13.32, vol 42.45M | 2 recovered-dips (within range), above 200SMA ($12.69) | notion-live | OK |
+| OVV | Ovintiv Inc. (DE) | $59.98 | change +3.7%, mktcap ~$16.52B, close $59.98, vol 3.04M | hugging 8EMA, above 200SMA ($54.61) | notion-live | OK |
+| SBLK | Star Bulk Carriers Corp. | $30.43 | change +3.6%, mktcap ~$3.41B, close $30.43, vol 1.59M | hugging 8EMA, above 200SMA ($25.51) | notion-live | OK |
+| HRB | H&R Block, Inc. | $42.32 | change +3.6%, mktcap ~$5.18B, close $42.32, vol 2.34M | hugging 8EMA, above 200SMA ($38.82) | notion-live | OK |
+| ZBIO | Zenas BioPharma, Inc. | $27.94 | change +3.6%, mktcap ~$1.82B, close $27.94, vol 0.88M | hugging 8EMA, above 200SMA ($25.30) | notion-live | OK |
+| CMBT | CMB.TECH NV | $19.61 | change +3.6%, mktcap ~$5.69B, close $19.61, vol 0.71M | 4 recovered-dips (within range), above 200SMA ($14.49) | notion-live | OK |
+| PSX | Phillips 66 | $264.23 | change +3.5%, mktcap ~$105.43B, close $264.23, vol 2.52M | 3 recovered-dips (within range), above 200SMA ($183.40) | notion-live | OK |
+| PTEN | Patterson-UTI Energy, Inc. | $11.30 | change +3.5%, mktcap ~$4.31B, close $11.30, vol 8.37M | hugging 8EMA, above 200SMA ($10.00) | notion-live | OK |
+| XPRO | Expro Ltd | $16.30 | change +3.4%, mktcap ~$1.83B, close $16.30, vol 0.82M | hugging 8EMA, above 200SMA ($16.23) | notion-live | OK |
+| J | Jacobs Solutions Inc. | $139.79 | change +3.3%, mktcap ~$16.36B, close $139.79, vol 0.92M | hugging 8EMA, above 200SMA ($133.10) | notion-live | OK |
+| ZM | Zoom Communications, Inc. | $93.80 | change +3.3%, mktcap ~$27.37B, close $93.80, vol 3.65M | 4 recovered-dips (within range), above 200SMA ($91.09) | notion-live | OK |
+| URI | United Rentals, Inc. | $1034.11 | change +3.3%, mktcap ~$64.37B, close $1034.11, vol 0.53M | hugging 8EMA, above 200SMA ($946.45) | notion-live | OK |
+| TRGP | Targa Resources, Inc. | $279.31 | change +3.3%, mktcap ~$59.89B, close $279.31, vol 1.34M | hugging 8EMA, above 200SMA ($247.71) | notion-live | OK |
+| SBET | Sharplink, Inc. | $9.58 | change +3.2%, mktcap ~$2.08B, close $9.58, vol 5.33M | hugging 8EMA, above 200SMA ($7.39) | notion-live | OK |
+| FTDR | Frontdoor, Inc. | $75.45 | change +3.2%, mktcap ~$5.20B, close $75.45, vol 0.58M | hugging 8EMA, above 200SMA ($67.00) | notion-live | OK |
+| PD | PagerDuty, Inc. | $15.58 | change +3.2%, mktcap ~$1.23B, close $15.58, vol 1.74M | 4 recovered-dips (within range), above 200SMA ($9.72) | notion-live | OK |
+| VSTS | Vestis Corporation | $13.78 | change +3.1%, mktcap ~$1.82B, close $13.78, vol 1.52M | hugging 8EMA, above 200SMA ($10.63) | notion-live | OK |
+| HNI | HNI Corporation | $46.73 | change +3.1%, mktcap ~$3.37B, close $46.73, vol 0.53M | hugging 8EMA, above 200SMA ($41.44) | notion-live | OK |
+| CRM | Salesforce, Inc. | $236.69 | change +3.1%, mktcap ~$194.80B, close $236.69, vol 9.56M | hugging 8EMA, above 200SMA ($200.60) | notion-live | OK |
+
+40 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 40 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-09-30 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
