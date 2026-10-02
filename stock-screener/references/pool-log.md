@@ -20,6 +20,46 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-02 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| MTSI | MACOM Technology Solutions Holdings, Inc. | $321.95 | change +6.7%, mktcap ~$24.59B, close $321.95, vol 1.10M | 4 recovered-dips (within range), above 200SMA ($273.27) | notion-live | OK |
+| ETON | Eton Pharmaceuticals, Inc. | $55.41 | change +6.6%, mktcap ~$1.58B, close $55.41, vol 0.56M | hugging 8EMA, above 200SMA ($32.11) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $93.44 | change +5.3%, mktcap ~$12.17B, close $93.44, vol 2.90M | 2 recovered-dips (within range), above 200SMA ($34.75) | notion-live | OK |
+| ARXS | Arxis, Inc. | $50.00 | change +5.2%, mktcap ~$21.54B, close $50.00, vol 1.37M | hugging 8EMA, above 100SMA ($46.85) | notion-live | OK |
+| AXTI | AXT Inc | $86.00 | change +5.1%, mktcap ~$5.64B, close $86.00, vol 6.46M | 4 recovered-dips (within range), above 200SMA ($60.33) | notion-live | OK |
+| KEEL | Keel Infrastructure Corp. | $3.62 | change +5.1%, mktcap ~$2.23B, close $3.62, vol 23.08M | hugging 8EMA, above 200SMA ($3.45) | notion-live | OK |
+| LIFE | Ethos Technologies Inc. | $34.12 | change +4.8%, mktcap ~$2.18B, close $34.12, vol 1.10M | hugging 8EMA, above 100SMA ($26.06) | notion-live | OK |
+| BULL | Webull Corporation | $7.36 | change +4.6%, mktcap ~$3.90B, close $7.36, vol 10.40M | hugging 8EMA, above 200SMA ($7.07) | notion-live | OK |
+| BFLY | Butterfly Network, Inc. | $8.91 | change +4.5%, mktcap ~$2.42B, close $8.91, vol 3.91M | hugging 8EMA, above 200SMA ($5.67) | notion-live | OK |
+| ACHC | Acadia Healthcare Company, Inc. | $28.09 | change +4.3%, mktcap ~$2.62B, close $28.09, vol 1.19M | hugging 8EMA, above 200SMA ($24.17) | notion-live | OK |
+| CRDO | Credo Technology Group Holding Ltd | $218.67 | change +4.0%, mktcap ~$41.10B, close $218.67, vol 9.35M | 4 recovered-dips (within range), above 200SMA ($177.37) | notion-live | OK |
+| EAT | Brinker International, Inc. | $202.11 | change +4.0%, mktcap ~$8.46B, close $202.11, vol 0.74M | hugging 8EMA, above 200SMA ($169.89) | notion-live | OK |
+| FCX | Freeport-McMoRan, Inc. | $72.05 | change +4.0%, mktcap ~$103.47B, close $72.05, vol 9.58M | hugging 8EMA, above 200SMA ($63.61) | notion-live | OK |
+| NEO | NeoGenomics, Inc. | $18.48 | change +4.0%, mktcap ~$2.37B, close $18.48, vol 1.97M | hugging 8EMA, above 200SMA ($12.32) | notion-live | OK |
+| GGB | Gerdau S.A. | $5.00 | change +4.0%, mktcap ~$8.84B, close $5.00, vol 18.78M | 4 recovered-dips (within range), above 200SMA ($4.35) | notion-live | OK |
+| AUGO | Aura Minerals Inc. | $81.96 | change +3.9%, mktcap ~$6.87B, close $81.96, vol 0.77M | hugging 8EMA, above 200SMA ($72.77) | notion-live | OK |
+| GFL | GFL Environmental Inc. Subordinate voting shares, no par value | $41.99 | change +3.9%, mktcap ~$18.31B, close $41.99, vol 6.33M | hugging 8EMA, above 200SMA ($40.71) | notion-live | OK |
+| SLS | SELLAS Life Sciences Group, Inc. | $11.77 | change +3.9%, mktcap ~$2.38B, close $11.77, vol 3.31M | hugging 8EMA, above 200SMA ($7.78) | notion-live | OK |
+| DASH | DoorDash, Inc. | $189.13 | change +3.8%, mktcap ~$81.95B, close $189.13, vol 3.66M | hugging 8EMA, above 200SMA ($186.73) | notion-live | OK |
+| VSXY | Victorias Secret & Co. | $91.86 | change +3.8%, mktcap ~$7.33B, close $91.86, vol 0.93M | 3 recovered-dips (within range), above 200SMA ($66.43) | notion-live | OK |
+| CLOV | Clover Health Investments, Corp. | $4.38 | change +3.7%, mktcap ~$2.33B, close $4.38, vol 3.40M | hugging 8EMA, above 200SMA ($3.33) | notion-live | OK |
+| LIND | Lindblad Expeditions Holdings Inc. | $34.82 | change +3.5%, mktcap ~$2.28B, close $34.82, vol 0.84M | 4 recovered-dips (within range), above 200SMA ($22.36) | notion-live | OK |
+| ADPT | Adaptive Biotechnologies Corporation | $28.32 | change +3.5%, mktcap ~$4.52B, close $28.32, vol 1.23M | hugging 8EMA, above 200SMA ($18.66) | notion-live | OK |
+| WEGZY | Weg SA | $9.75 | change +3.3%, mktcap ~$39.70B, close $9.75, vol 0.76M | hugging 8EMA, above 200SMA ($9.33) | notion-live | OK |
+| CNC | Centene Corporation | $62.97 | change +3.2%, mktcap ~$31.11B, close $62.97, vol 2.63M | hugging 8EMA, above 200SMA ($52.79) | notion-live | OK |
+| TIGO | Millicom International Cellular S.A. | $88.36 | change +3.2%, mktcap ~$14.80B, close $88.36, vol 0.75M | hugging 8EMA, above 200SMA ($80.20) | notion-live | OK |
+| USFD | US Foods Holding Corp. | $96.94 | change +3.2%, mktcap ~$20.97B, close $96.94, vol 2.94M | 4 recovered-dips (within range), above 200SMA ($92.18) | notion-live | OK |
+| PGY | Pagaya Technologies Ltd. | $17.99 | change +3.2%, mktcap ~$1.50B, close $17.99, vol 2.20M | hugging 8EMA, above 200SMA ($16.94) | notion-live | OK |
+| DNOW | DNOW Inc. | $15.76 | change +3.1%, mktcap ~$2.85B, close $15.76, vol 1.38M | hugging 8EMA, above 200SMA ($13.87) | notion-live | OK |
+| TRMD | TORM plc | $40.00 | change +3.1%, mktcap ~$4.09B, close $40.00, vol 1.22M | 4 recovered-dips (within range), above 200SMA ($28.74) | notion-live | OK |
+| GLNCY | Glencore Plc | $14.93 | change +3.1%, mktcap ~$84.36B, close $14.93, vol 0.82M | hugging 8EMA, above 200SMA ($14.33) | notion-live | OK |
+| FTRE | Fortrea Holdings Inc. | $20.00 | change +3.1%, mktcap ~$1.90B, close $20.00, vol 0.82M | hugging 8EMA, above 200SMA ($15.18) | notion-live | OK |
+
+32 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 32 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-01 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
