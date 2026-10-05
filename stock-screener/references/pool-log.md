@@ -20,6 +20,45 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-05 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| BOLSY | B3 SA Brasil Bolsa Balcao | $13.98 | change +30.0%, mktcap ~$17.66B, close $13.98, vol 1.43M | 3 recovered-dips (within range), above 200SMA ($9.59) | notion-live | OK |
+| AGBK | AGI Inc | $6.74 | change +23.4%, mktcap ~$1.08B, close $6.74, vol 0.79M | 4 recovered-dips (within range), above 100SMA ($6.67) | notion-live | OK |
+| PAGS | PagSeguro Digital Ltd. | $10.95 | change +21.4%, mktcap ~$3.04B, close $10.95, vol 18.83M | 4 recovered-dips (within range), above 200SMA ($9.76) | notion-live | OK |
+| NVAX | Novavax, Inc. | $12.56 | change +20.1%, mktcap ~$2.07B, close $12.56, vol 28.61M | 4 recovered-dips (within range), above 200SMA ($8.92) | notion-live | OK |
+| SBS | Companhia de saneamento Basico Do Estado De Sao Paulo - Sabesp | $6.26 | change +16.4%, mktcap ~$19.03B, close $6.26, vol 28.76M | 3 recovered-dips (within range), above 200SMA ($5.58) | notion-live | OK |
+| BDORY | Banco Do Brasil SA | $5.29 | change +15.0%, mktcap ~$25.95B, close $5.29, vol 2.30M | 4 recovered-dips (within range), above 200SMA ($4.34) | notion-live | OK |
+| SDGR | Schrodinger, Inc. | $32.60 | change +7.6%, mktcap ~$2.44B, close $32.60, vol 4.61M | 4 recovered-dips (within range), above 200SMA ($16.04) | notion-live | OK |
+| CAI | Caris Life Sciences, Inc. | $30.39 | change +7.4%, mktcap ~$8.59B, close $30.39, vol 4.96M | hugging 8EMA, above 200SMA ($21.23) | notion-live | OK |
+| GWRE | Guidewire Software, Inc. | $163.23 | change +7.3%, mktcap ~$13.38B, close $163.23, vol 2.12M | 4 recovered-dips (within range), above 200SMA ($151.03) | notion-live | OK |
+| NEOG | Neogen Corporation | $13.01 | change +7.1%, mktcap ~$2.84B, close $13.01, vol 5.15M | hugging 8EMA, above 200SMA ($10.02) | notion-live | OK |
+| MRNA | Moderna, Inc. | $203.21 | change +6.9%, mktcap ~$81.13B, close $203.21, vol 19.27M | 4 recovered-dips (within range), above 200SMA ($69.25) | notion-live | OK |
+| WDC | Western Digital Corporation | $441.64 | change +6.3%, mktcap ~$159.23B, close $441.64, vol 11.28M | hugging 8EMA, above 200SMA ($401.36) | notion-live | OK |
+| SHOP | Shopify Inc. | $160.11 | change +5.8%, mktcap ~$206.00B, close $160.11, vol 8.95M | 4 recovered-dips (within range), above 200SMA ($129.53) | notion-live | OK |
+| ZLAB | Zai Lab Limited | $25.62 | change +5.3%, mktcap ~$2.84B, close $25.62, vol 0.79M | hugging 8EMA, above 200SMA ($20.44) | notion-live | OK |
+| LPLA | LPL Financial Holdings Inc. | $331.98 | change +4.9%, mktcap ~$26.14B, close $331.98, vol 1.35M | 4 recovered-dips (within range), above 200SMA ($327.19) | notion-live | OK |
+| GPN | Global Payments Inc. | $82.18 | change +4.8%, mktcap ~$21.75B, close $82.18, vol 2.42M | hugging 8EMA, above 200SMA ($76.48) | notion-live | OK |
+| BRZE | Braze, Inc. | $26.61 | change +4.7%, mktcap ~$3.02B, close $26.61, vol 1.69M | 3 recovered-dips (within range), above 200SMA ($24.24) | notion-live | OK |
+| TEAM | Atlassian Corporation | $196.65 | change +4.7%, mktcap ~$49.78B, close $196.65, vol 3.04M | 4 recovered-dips (within range), above 200SMA ($112.54) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $97.74 | change +4.5%, mktcap ~$12.73B, close $97.74, vol 3.10M | 2 recovered-dips (within range), above 200SMA ($35.16) | notion-live | OK |
+| TENB | Tenable Holdings, Inc. | $38.51 | change +4.5%, mktcap ~$4.24B, close $38.51, vol 3.45M | 4 recovered-dips (within range), above 200SMA ($26.97) | notion-live | OK |
+| STX | Seagate Technology Holdings PLC | $887.09 | change +4.5%, mktcap ~$201.72B, close $887.09, vol 5.59M | hugging 8EMA, above 200SMA ($653.70) | notion-live | OK |
+| SDRL | Seadrill Limited | $45.79 | change +4.4%, mktcap ~$2.85B, close $45.79, vol 0.91M | hugging 8EMA, above 200SMA ($43.65) | notion-live | OK |
+| RGEN | Repligen Corporation | $189.50 | change +4.3%, mktcap ~$10.69B, close $189.50, vol 1.61M | 4 recovered-dips (within range), above 200SMA ($143.66) | notion-live | OK |
+| ZYME | Zymeworks Inc. | $26.21 | change +4.2%, mktcap ~$1.87B, close $26.21, vol 1.04M | hugging 8EMA, above 200SMA ($25.10) | notion-live | OK |
+| NIQ | NIQ Global Intelligence plc | $17.32 | change +4.1%, mktcap ~$5.11B, close $17.32, vol 3.68M | hugging 8EMA, above 200SMA ($12.99) | notion-live | OK |
+| SAN | Banco Santander, S.A. Sponsored | $13.90 | change +4.0%, mktcap ~$193.17B, close $13.90, vol 20.93M | hugging 8EMA, above 200SMA ($12.84) | notion-live | OK |
+| CDNA | CareDx, Inc. | $69.85 | change +4.0%, mktcap ~$3.61B, close $69.85, vol 1.64M | 3 recovered-dips (within range), above 200SMA ($29.01) | notion-live | OK |
+| EC | Ecopetrol S.A. | $17.25 | change +3.9%, mktcap ~$34.14B, close $17.25, vol 2.06M | 4 recovered-dips (within range), above 200SMA ($14.42) | notion-live | OK |
+| ICLR | ICON plc | $168.33 | change +3.9%, mktcap ~$12.99B, close $168.33, vol 0.93M | hugging 8EMA, above 200SMA ($146.37) | notion-live | OK |
+| CVI | CVR Energy Inc. | $56.94 | change +3.8%, mktcap ~$5.72B, close $56.94, vol 0.84M | 4 recovered-dips (within range), above 200SMA ($32.46) | notion-live | OK |
+| NOV | NOV Inc. | $19.51 | change +3.8%, mktcap ~$6.95B, close $19.51, vol 4.45M | hugging 8EMA, above 200SMA ($19.40) | notion-live | OK |
+
+31 tickers caught. 2 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 31 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-02 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
