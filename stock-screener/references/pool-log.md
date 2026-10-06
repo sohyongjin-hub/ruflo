@@ -20,6 +20,27 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-06 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| NLST | Netlist, Inc. | $6.66 | change +17.9%, mktcap ~$2.52B, close $6.66, vol 6.90M | 3 recovered-dips (within range), above 200SMA ($2.67) | notion-live | OK |
+| LW | Lamb Weston Holdings, Inc. | $47.91 | change +7.5%, mktcap ~$6.59B, close $47.91, vol 8.38M | 4 recovered-dips (within range), above 200SMA ($45.73) | notion-live | OK |
+| MTSI | MACOM Technology Solutions Holdings, Inc. | $350.67 | change +6.8%, mktcap ~$26.78B, close $350.67, vol 1.54M | 4 recovered-dips (within range), above 200SMA ($274.95) | notion-live | OK |
+| RCL | Royal Caribbean Cruises Ltd. | $288.78 | change +5.0%, mktcap ~$77.23B, close $288.78, vol 2.35M | 2 recovered-dips (within range), above 200SMA ($286.90) | notion-live | OK |
+| CRDO | Credo Technology Group Holding Ltd | $220.83 | change +3.9%, mktcap ~$41.51B, close $220.83, vol 6.93M | 4 recovered-dips (within range), above 200SMA ($178.16) | notion-live | OK |
+| PBT | Permian Basin Royalty Trust | $33.55 | change +3.7%, mktcap ~$1.56B, close $33.55, vol 0.87M | 4 recovered-dips (within range), above 200SMA ($25.32) | notion-live | OK |
+| RUM | RUM Group Inc. | $7.65 | change +3.7%, mktcap ~$3.79B, close $7.65, vol 3.25M | hugging 8EMA, above 200SMA ($6.77) | notion-live | OK |
+| BLFS | BioLife Solutions, Inc. | $38.61 | change +3.5%, mktcap ~$1.89B, close $38.61, vol 4.45M | 4 recovered-dips (within range), above 200SMA ($26.62) | notion-live | OK |
+| BIP | Brookfield Infrastructure Partners LP Limited Partnership | $37.43 | change +3.5%, mktcap ~$24.36B, close $37.43, vol 0.89M | 3 recovered-dips (within range), above 200SMA ($37.26) | notion-live | OK |
+| SNPS | Synopsys, Inc. | $505.17 | change +3.4%, mktcap ~$96.81B, close $505.17, vol 2.74M | 3 recovered-dips (within range), above 200SMA ($445.29) | notion-live | OK |
+| HUT | Hut 8 Corp. | $92.22 | change +3.3%, mktcap ~$11.37B, close $92.22, vol 5.67M | hugging 8EMA, above 200SMA ($80.77) | notion-live | OK |
+| PANW | Palo Alto Networks, Inc. | $419.91 | change +3.2%, mktcap ~$343.49B, close $419.91, vol 5.44M | 4 recovered-dips (within range), above 200SMA ($252.62) | notion-live | OK |
+| KOS | Kosmos Energy Ltd. | $2.60 | change +3.2%, mktcap ~$1.55B, close $2.60, vol 16.29M | hugging 8EMA, above 200SMA ($2.36) | notion-live | OK |
+
+13 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 13 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-05 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
