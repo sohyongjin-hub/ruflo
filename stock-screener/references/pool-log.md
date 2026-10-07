@@ -20,6 +20,22 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-07 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| BRZE | Braze, Inc. | $28.46 | change +8.0%, mktcap ~$3.23B, close $28.46, vol 4.04M | 3 recovered-dips (within range), above 200SMA ($24.16) | notion-live | OK |
+| ZBIO | Zenas BioPharma, Inc. | $28.18 | change +4.6%, mktcap ~$1.84B, close $28.18, vol 0.51M | hugging 8EMA, above 200SMA ($25.15) | notion-live | OK |
+| NLST | Netlist, Inc. | $6.95 | change +4.5%, mktcap ~$2.63B, close $6.95, vol 5.65M | 3 recovered-dips (within range), above 200SMA ($2.70) | notion-live | OK |
+| NAVN | Navan, Inc. | $22.28 | change +4.4%, mktcap ~$5.81B, close $22.28, vol 3.02M | 3 recovered-dips (within range), above 200SMA ($18.72) | notion-live | OK |
+| PRGO | Perrigo Company plc | $14.55 | change +3.9%, mktcap ~$2.02B, close $14.55, vol 1.91M | hugging 8EMA, above 200SMA ($12.31) | notion-live | OK |
+| ZYME | Zymeworks Inc. | $26.53 | change +3.4%, mktcap ~$1.90B, close $26.53, vol 1.20M | hugging 8EMA, above 200SMA ($25.10) | notion-live | OK |
+| CNK | Cinemark Holdings, Inc. | $36.42 | change +3.2%, mktcap ~$4.22B, close $36.42, vol 1.41M | hugging 8EMA, above 200SMA ($29.97) | notion-live | OK |
+| TLX | Telix Pharmaceuticals Limited | $11.12 | change +3.2%, mktcap ~$3.66B, close $11.12, vol 0.82M | hugging 8EMA, above 200SMA ($9.70) | notion-live | OK |
+
+8 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 8 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-06 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
