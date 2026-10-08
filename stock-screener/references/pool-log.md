@@ -20,6 +20,43 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-08 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| HAE | Haemonetics Corporation | $119.47 | change +17.5%, mktcap ~$5.44B, close $119.47, vol 2.77M | 3 recovered-dips (within range), above 200SMA ($75.56) | notion-live | OK |
+| BBY | Best Buy Co., Inc. | $88.40 | change +4.5%, mktcap ~$18.54B, close $88.40, vol 3.81M | hugging 8EMA, above 200SMA ($73.24) | notion-live | OK |
+| CBOE | Cboe Global Markets, Inc. | $294.08 | change +4.4%, mktcap ~$30.71B, close $294.08, vol 1.90M | 4 recovered-dips (within range), above 200SMA ($287.77) | notion-live | OK |
+| DINO | HF Sinclair Corporation | $120.72 | change +4.4%, mktcap ~$21.46B, close $120.72, vol 2.42M | 3 recovered-dips (within range), above 200SMA ($72.50) | notion-live | OK |
+| CMBT | CMB.TECH NV | $20.81 | change +4.3%, mktcap ~$6.04B, close $20.81, vol 1.08M | 4 recovered-dips (within range), above 200SMA ($14.75) | notion-live | OK |
+| TEAM | Atlassian Corporation | $203.57 | change +4.0%, mktcap ~$51.53B, close $203.57, vol 2.84M | 4 recovered-dips (within range), above 200SMA ($113.07) | notion-live | OK |
+| EXLS | ExlService Holdings, Inc. | $36.87 | change +3.8%, mktcap ~$5.59B, close $36.87, vol 2.51M | 4 recovered-dips (within range), above 200SMA ($32.91) | notion-live | OK |
+| CVI | CVR Energy Inc. | $59.54 | change +3.8%, mktcap ~$5.99B, close $59.54, vol 0.75M | 4 recovered-dips (within range), above 200SMA ($32.90) | notion-live | OK |
+| DAR | Darling Ingredients Inc. | $62.25 | change +3.7%, mktcap ~$9.82B, close $62.25, vol 2.82M | hugging 8EMA, above 200SMA ($56.74) | notion-live | OK |
+| PSX | Phillips 66 | $281.60 | change +3.7%, mktcap ~$112.36B, close $281.60, vol 2.37M | 3 recovered-dips (within range), above 200SMA ($186.87) | notion-live | OK |
+| MMED | MiniMed Group, Inc. | $19.80 | change +3.6%, mktcap ~$5.57B, close $19.80, vol 23.34M | hugging 8EMA, above 100SMA ($17.52) | notion-live | OK |
+| NMAX | Newsmax, Inc. | $10.36 | change +3.6%, mktcap ~$1.34B, close $10.36, vol 0.63M | hugging 8EMA, above 200SMA ($7.95) | notion-live | OK |
+| LPG | Dorian LPG Ltd. | $58.23 | change +3.6%, mktcap ~$2.49B, close $58.23, vol 0.51M | 4 recovered-dips (within range), above 200SMA ($39.76) | notion-live | OK |
+| NAVN | Navan, Inc. | $23.08 | change +3.6%, mktcap ~$6.02B, close $23.08, vol 2.99M | 3 recovered-dips (within range), above 200SMA ($18.76) | notion-live | OK |
+| SBS | Companhia de saneamento Basico Do Estado De Sao Paulo - Sabesp | $6.59 | change +3.5%, mktcap ~$22.52B, close $6.59, vol 17.62M | 3 recovered-dips (within range), above 200SMA ($5.60) | notion-live | OK |
+| KFY | Korn Ferry | $72.93 | change +3.4%, mktcap ~$3.98B, close $72.93, vol 0.67M | hugging 8EMA, above 200SMA ($70.55) | notion-live | OK |
+| PCTY | Paylocity Holding Corporation | $153.02 | change +3.4%, mktcap ~$8.12B, close $153.02, vol 0.71M | 4 recovered-dips (within range), above 200SMA ($125.02) | notion-live | OK |
+| COP | ConocoPhillips | $134.19 | change +3.4%, mktcap ~$161.21B, close $134.19, vol 6.06M | 4 recovered-dips (within range), above 200SMA ($117.29) | notion-live | OK |
+| WRB | W.R. Berkley Corporation | $72.05 | change +3.3%, mktcap ~$26.75B, close $72.05, vol 2.24M | 4 recovered-dips (within range), above 200SMA ($68.92) | notion-live | OK |
+| HRB | H&R Block, Inc. | $44.59 | change +3.3%, mktcap ~$5.46B, close $44.59, vol 1.85M | 3 recovered-dips (within range), above 200SMA ($38.80) | notion-live | OK |
+| DBX | Dropbox, Inc. | $34.14 | change +3.2%, mktcap ~$7.42B, close $34.14, vol 3.06M | hugging 8EMA, above 200SMA ($28.30) | notion-live | OK |
+| EQNR | Equinor ASA | $42.93 | change +3.2%, mktcap ~$100.67B, close $42.93, vol 4.99M | hugging 8EMA, above 200SMA ($35.77) | notion-live | OK |
+| CGAU | Centerra Gold Inc. | $21.82 | change +3.2%, mktcap ~$4.27B, close $21.82, vol 1.12M | hugging 8EMA, above 200SMA ($18.46) | notion-live | OK |
+| BFH | Bread Financial Holdings, Inc. | $100.73 | change +3.2%, mktcap ~$3.87B, close $100.73, vol 0.57M | hugging 8EMA, above 200SMA ($89.61) | notion-live | OK |
+| IOVA | Iovance Biotherapeutics, Inc. | $13.31 | change +3.1%, mktcap ~$6.03B, close $13.31, vol 14.80M | hugging 8EMA, above 200SMA ($4.95) | notion-live | OK |
+| GLBE | Global-E Online Ltd. | $40.15 | change +3.1%, mktcap ~$6.74B, close $40.15, vol 1.47M | hugging 8EMA, above 200SMA ($35.56) | notion-live | OK |
+| FRPT | Freshpet, Inc. | $65.18 | change +3.1%, mktcap ~$3.13B, close $65.18, vol 1.39M | 2 recovered-dips (within range), above 200SMA ($63.59) | notion-live | OK |
+| WK | Workiva Inc. | $73.69 | change +3.0%, mktcap ~$4.01B, close $73.69, vol 1.26M | 4 recovered-dips (within range), above 200SMA ($63.48) | notion-live | OK |
+| SJM | The J.M. Smucker Company | $119.41 | change +3.0%, mktcap ~$12.76B, close $119.41, vol 1.30M | hugging 8EMA, above 200SMA ($108.98) | notion-live | OK |
+
+29 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 29 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-07 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
