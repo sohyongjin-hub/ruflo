@@ -20,6 +20,52 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-09 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| PICS | PicS N.V. | $13.60 | change +13.5%, mktcap ~$1.76B, close $13.60, vol 1.00M | 4 recovered-dips (within range), above 100SMA ($10.85) | notion-live | OK |
+| IOVA | Iovance Biotherapeutics, Inc. | $14.62 | change +9.8%, mktcap ~$6.62B, close $14.62, vol 16.58M | 3 recovered-dips (within range), above 200SMA ($5.01) | notion-live | OK |
+| TRUMY | Terumo Corp. | $14.28 | change +7.7%, mktcap ~$21.60B, close $14.28, vol 1.07M | hugging 8EMA, above 200SMA ($13.96) | notion-live | OK |
+| HSLV | Highlander Silver Corp. | $5.10 | change +7.6%, mktcap ~$1.04B, close $5.10, vol 0.82M | hugging 8EMA, above 100SMA ($5.03) | notion-live | OK |
+| SYRE | Spyre Therapeutics, Inc. | $85.69 | change +7.2%, mktcap ~$7.91B, close $85.69, vol 1.12M | hugging 8EMA, above 200SMA ($68.89) | notion-live | OK |
+| VSAT | ViaSat, Inc. | $72.01 | change +6.8%, mktcap ~$9.92B, close $72.01, vol 2.93M | hugging 8EMA, above 200SMA ($61.78) | notion-live | OK |
+| TENB | Tenable Holdings, Inc. | $41.59 | change +6.6%, mktcap ~$4.58B, close $41.59, vol 5.09M | 4 recovered-dips (within range), above 200SMA ($27.27) | notion-live | OK |
+| ORKA | Oruka Therapeutics, Inc. | $82.11 | change +6.2%, mktcap ~$5.44B, close $82.11, vol 1.21M | hugging 8EMA, above 200SMA ($65.19) | notion-live | OK |
+| RGEN | Repligen Corporation | $173.88 | change +6.1%, mktcap ~$11.04B, close $173.88, vol 1.34M | hugging 8EMA, above 200SMA ($143.85) | notion-live | OK |
+| ATEN | A10 Networks, Inc. | $29.63 | change +6.0%, mktcap ~$2.15B, close $29.63, vol 1.00M | 4 recovered-dips (within range), above 200SMA ($25.90) | notion-live | OK |
+| CRSP | CRISPR Therapeutics AG | $53.39 | change +5.8%, mktcap ~$5.16B, close $53.39, vol 1.46M | hugging 8EMA, above 200SMA ($53.23) | notion-live | OK |
+| CERT | Certara, Inc. | $9.13 | change +5.7%, mktcap ~$1.39B, close $9.13, vol 4.43M | hugging 8EMA, above 200SMA ($7.19) | notion-live | OK |
+| ATRC | AtriCure, Inc. | $55.81 | change +5.6%, mktcap ~$2.84B, close $55.81, vol 0.71M | 2 recovered-dips (within range), above 200SMA ($36.67) | notion-live | OK |
+| NET | Cloudflare, Inc. | $360.93 | change +5.6%, mktcap ~$128.52B, close $360.93, vol 2.62M | 4 recovered-dips (within range), above 200SMA ($239.10) | notion-live | OK |
+| OKTA | Okta, Inc. | $232.13 | change +5.4%, mktcap ~$40.58B, close $232.13, vol 2.48M | 3 recovered-dips (within range), above 200SMA ($115.42) | notion-live | OK |
+| NEWP | New Pacific Metals Corp. | $6.58 | change +5.3%, mktcap ~$1.22B, close $6.58, vol 0.84M | 4 recovered-dips (within range), above 200SMA ($4.90) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $159.78 | change +5.1%, mktcap ~$10.52B, close $159.78, vol 3.54M | 4 recovered-dips (within range), above 200SMA ($80.44) | notion-live | OK |
+| GME | GameStop Corporation | $26.56 | change +5.1%, mktcap ~$13.40B, close $26.56, vol 16.14M | 3 recovered-dips (within range), above 200SMA ($22.34) | notion-live | OK |
+| AZTA | Azenta, Inc. | $37.72 | change +4.8%, mktcap ~$1.65B, close $37.72, vol 0.83M | 2 recovered-dips (within range), above 200SMA ($28.27) | notion-live | OK |
+| CMPS | COMPASS Pathways Plc - American Depository Shares | $12.00 | change +4.6%, mktcap ~$1.59B, close $12.00, vol 2.28M | hugging 8EMA, above 200SMA ($10.06) | notion-live | OK |
+| MT | Arcelor Mittal NY Registry Shares NEW | $64.11 | change +4.6%, mktcap ~$45.22B, close $64.11, vol 1.31M | hugging 8EMA, above 200SMA ($62.57) | notion-live | OK |
+| FCEL | FuelCell Energy, Inc. | $18.03 | change +4.6%, mktcap ~$1.44B, close $18.03, vol 6.10M | hugging 8EMA, above 200SMA ($14.57) | notion-live | OK |
+| ERO | Ero Copper Corp. | $37.61 | change +4.5%, mktcap ~$3.92B, close $37.61, vol 1.52M | hugging 8EMA, above 200SMA ($30.35) | notion-live | OK |
+| PAGS | PagSeguro Digital Ltd. | $11.16 | change +4.5%, mktcap ~$3.10B, close $11.16, vol 4.47M | 3 recovered-dips (within range), above 200SMA ($9.78) | notion-live | OK |
+| HTFL | Heartflow, Inc. | $49.74 | change +4.4%, mktcap ~$4.33B, close $49.74, vol 0.80M | hugging 8EMA, above 200SMA ($32.37) | notion-live | OK |
+| ABCL | AbCellera Biologics Inc. | $12.54 | change +4.4%, mktcap ~$4.07B, close $12.54, vol 4.62M | 4 recovered-dips (within range), above 200SMA ($6.22) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $80.65 | change +4.4%, mktcap ~$10.51B, close $80.65, vol 3.68M | 2 recovered-dips (within range), above 200SMA ($36.41) | notion-live | OK |
+| AYA | Aya Gold & Silver Inc. | $27.42 | change +4.2%, mktcap ~$3.95B, close $27.42, vol 0.88M | hugging 8EMA, above 200SMA ($20.07) | notion-live | OK |
+| CRSR | Corsair Gaming, Inc. | $13.63 | change +4.1%, mktcap ~$1.47B, close $13.63, vol 0.88M | hugging 8EMA, above 200SMA ($8.45) | notion-live | OK |
+| RDNT | RadNet, Inc. | $70.91 | change +4.0%, mktcap ~$5.58B, close $70.91, vol 0.51M | hugging 8EMA, above 200SMA ($65.40) | notion-live | OK |
+| BDORY | Banco Do Brasil SA | $5.00 | change +4.0%, mktcap ~$27.60B, close $5.00, vol 0.81M | 4 recovered-dips (within range), above 200SMA ($4.36) | notion-live | OK |
+| SHOP | Shopify Inc. | $170.85 | change +3.8%, mktcap ~$219.82B, close $170.85, vol 6.72M | 4 recovered-dips (within range), above 200SMA ($129.52) | notion-live | OK |
+| VCYT | Veracyte, Inc. | $45.23 | change +3.7%, mktcap ~$3.64B, close $45.23, vol 0.97M | hugging 8EMA, above 200SMA ($42.56) | notion-live | OK |
+| ROIV | Roivant Sciences Ltd. | $35.44 | change +3.6%, mktcap ~$25.60B, close $35.44, vol 5.53M | hugging 8EMA, above 200SMA ($30.49) | notion-live | OK |
+| OMDA | Omada Health, Inc. | $21.55 | change +3.5%, mktcap ~$1.32B, close $21.55, vol 0.84M | 4 recovered-dips (within range), above 200SMA ($17.44) | notion-live | OK |
+| SLS | SELLAS Life Sciences Group, Inc. | $11.65 | change +3.5%, mktcap ~$2.35B, close $11.65, vol 4.13M | hugging 8EMA, above 200SMA ($8.01) | notion-live | OK |
+| AMLX | Amylyx Pharmaceuticals, Inc. | $28.14 | change +3.5%, mktcap ~$3.53B, close $28.14, vol 1.47M | hugging 8EMA, above 200SMA ($18.91) | notion-live | OK |
+| CBOE | Cboe Global Markets, Inc. | $304.16 | change +3.4%, mktcap ~$31.76B, close $304.16, vol 1.42M | 4 recovered-dips (within range), above 200SMA ($288.03) | notion-live | OK |
+
+38 tickers caught. 3 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 38 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-08 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
