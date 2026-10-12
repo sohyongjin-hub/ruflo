@@ -20,6 +20,25 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-12 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| VSXY | Victorias Secret & Co. | $88.59 | change +6.9%, mktcap ~$7.07B, close $88.59, vol 1.56M | 4 recovered-dips (within range), above 200SMA ($67.38) | notion-live | OK |
+| DHT | DHT Holdings, Inc. | $26.22 | change +6.4%, mktcap ~$4.23B, close $26.22, vol 8.15M | 4 recovered-dips (within range), above 200SMA ($17.91) | notion-live | OK |
+| ECO | Okeanis Eco Tankers Corp. | $98.63 | change +5.9%, mktcap ~$3.78B, close $98.63, vol 0.95M | 4 recovered-dips (within range), above 200SMA ($54.91) | notion-live | OK |
+| FRO | Frontline Plc | $59.19 | change +5.5%, mktcap ~$13.18B, close $59.19, vol 5.44M | 4 recovered-dips (within range), above 200SMA ($37.06) | notion-live | OK |
+| SHOP | Shopify Inc. | $179.22 | change +4.9%, mktcap ~$230.59B, close $179.22, vol 12.45M | 4 recovered-dips (within range), above 200SMA ($129.57) | notion-live | OK |
+| LW | Lamb Weston Holdings, Inc. | $50.18 | change +4.8%, mktcap ~$6.91B, close $50.18, vol 3.26M | 3 recovered-dips (within range), above 200SMA ($45.77) | notion-live | OK |
+| KSPI | Joint Stock Company Kaspi.kz - American Depository Shares | $97.17 | change +4.5%, mktcap ~$17.77B, close $97.17, vol 0.56M | 4 recovered-dips (within range), above 200SMA ($85.59) | notion-live | OK |
+| NAT | Nordic American Tankers Limited | $8.79 | change +3.8%, mktcap ~$1.86B, close $8.79, vol 5.88M | 4 recovered-dips (within range), above 200SMA ($5.80) | notion-live | OK |
+| BFLY | Butterfly Network, Inc. | $8.55 | change +3.6%, mktcap ~$2.32B, close $8.55, vol 3.86M | hugging 8EMA, above 200SMA ($5.82) | notion-live | OK |
+| AHR | American Healthcare REIT, Inc. | $52.52 | change +3.4%, mktcap ~$11.53B, close $52.52, vol 2.44M | 4 recovered-dips (within range), above 200SMA ($51.10) | notion-live | OK |
+| MICC | The Magnum Ice Cream Company N.V. | $17.83 | change +3.2%, mktcap ~$10.92B, close $17.83, vol 0.64M | hugging 8EMA, above 200SMA ($16.94) | notion-live | OK |
+
+11 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 11 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-09 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
