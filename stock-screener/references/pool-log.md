@@ -20,6 +20,31 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-13 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| AGBK | AGI Inc | $7.38 | change +8.4%, mktcap ~$1.18B, close $7.38, vol 0.77M | 4 recovered-dips (within range), above 100SMA ($6.65) | notion-live | OK |
+| CVI | CVR Energy Inc. | $63.12 | change +7.1%, mktcap ~$6.35B, close $63.12, vol 0.81M | 4 recovered-dips (within range), above 200SMA ($33.41) | notion-live | OK |
+| LIFE | Ethos Technologies Inc. | $39.61 | change +6.0%, mktcap ~$2.53B, close $39.61, vol 1.21M | 4 recovered-dips (within range), above 100SMA ($27.08) | notion-live | OK |
+| VRNS | Varonis Systems, Inc. | $48.72 | change +5.1%, mktcap ~$5.60B, close $48.72, vol 1.45M | hugging 8EMA, above 200SMA ($34.54) | notion-live | OK |
+| DEC | Diversified Energy Company | $14.86 | change +4.9%, mktcap ~$1.05B, close $14.86, vol 0.93M | 4 recovered-dips (within range), above 200SMA ($14.40) | notion-live | OK |
+| CNH | CNH Industrial N.V. | $12.17 | change +4.5%, mktcap ~$15.06B, close $12.17, vol 15.62M | hugging 8EMA, above 200SMA ($11.22) | notion-live | OK |
+| DINO | HF Sinclair Corporation | $128.23 | change +4.3%, mktcap ~$22.80B, close $128.23, vol 2.18M | 3 recovered-dips (within range), above 200SMA ($73.67) | notion-live | OK |
+| AXTI | AXT Inc | $64.63 | change +4.3%, mktcap ~$4.24B, close $64.63, vol 10.27M | 3 recovered-dips (within range), above 200SMA ($62.42) | notion-live | OK |
+| PSX | Phillips 66 | $292.73 | change +4.0%, mktcap ~$116.81B, close $292.73, vol 2.57M | 3 recovered-dips (within range), above 200SMA ($189.20) | notion-live | OK |
+| NPPXF | NTT Inc. | $1.10 | change +3.8%, mktcap ~$93.76B, close $1.10, vol 1.48M | hugging 8EMA, above 200SMA ($0.98) | notion-live | OK |
+| CTOS | Custom Truck One Source, Inc. | $9.56 | change +3.7%, mktcap ~$2.17B, close $9.56, vol 0.87M | hugging 8EMA, above 200SMA ($8.64) | notion-live | OK |
+| CDNA | CareDx, Inc. | $65.43 | change +3.7%, mktcap ~$3.38B, close $65.43, vol 1.50M | 4 recovered-dips (within range), above 200SMA ($30.33) | notion-live | OK |
+| GRMN | Garmin Ltd. | $276.41 | change +3.6%, mktcap ~$53.31B, close $276.41, vol 0.77M | hugging 8EMA, above 200SMA ($248.80) | notion-live | OK |
+| LW | Lamb Weston Holdings, Inc. | $51.96 | change +3.5%, mktcap ~$7.16B, close $51.96, vol 2.77M | 3 recovered-dips (within range), above 200SMA ($45.82) | notion-live | OK |
+| ANF | Abercrombie & Fitch Company | $150.88 | change +3.4%, mktcap ~$6.40B, close $150.88, vol 1.48M | 4 recovered-dips (within range), above 200SMA ($102.19) | notion-live | OK |
+| ENR | Energizer Holdings, Inc. | $21.85 | change +3.2%, mktcap ~$1.50B, close $21.85, vol 0.90M | hugging 8EMA, above 200SMA ($20.27) | notion-live | OK |
+| CAKE | The Cheesecake Factory Incorporated | $112.37 | change +3.1%, mktcap ~$5.59B, close $112.37, vol 1.45M | 4 recovered-dips (within range), above 200SMA ($75.95) | notion-live | OK |
+
+17 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 17 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-12 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
