@@ -20,6 +20,22 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-14 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| HRB | H&R Block, Inc. | $45.90 | change +4.7%, mktcap ~$5.62B, close $45.90, vol 1.00M | 3 recovered-dips (within range), above 200SMA ($38.82) | notion-live | OK |
+| RPRX | Royalty Pharma plc | $58.89 | change +4.1%, mktcap ~$33.86B, close $58.89, vol 1.81M | 4 recovered-dips (within range), above 200SMA ($51.81) | notion-live | OK |
+| CBOE | Cboe Global Markets, Inc. | $302.86 | change +3.6%, mktcap ~$31.63B, close $302.86, vol 0.88M | 4 recovered-dips (within range), above 200SMA ($288.65) | notion-live | OK |
+| WLTH | Wealthfront Corporation | $10.43 | change +3.2%, mktcap ~$1.63B, close $10.43, vol 2.15M | hugging 8EMA, above 200SMA ($9.80) | notion-live | OK |
+| IBRX | ImmunityBio, Inc. | $10.12 | change +3.2%, mktcap ~$10.72B, close $10.12, vol 26.29M | hugging 8EMA, above 200SMA ($7.52) | notion-live | OK |
+| REGN | Regeneron Pharmaceuticals, Inc. | $777.04 | change +3.2%, mktcap ~$80.00B, close $777.04, vol 0.52M | 4 recovered-dips (within range), above 200SMA ($735.25) | notion-live | OK |
+| VRTX | Vertex Pharmaceuticals Incorporated | $500.53 | change +3.2%, mktcap ~$126.86B, close $500.53, vol 1.16M | hugging 8EMA, above 200SMA ($475.44) | notion-live | OK |
+| ABBV | AbbVie Inc. | $282.96 | change +3.1%, mktcap ~$500.03B, close $282.96, vol 3.17M | 4 recovered-dips (within range), above 200SMA ($233.40) | notion-live | OK |
+
+8 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 8 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-13 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
