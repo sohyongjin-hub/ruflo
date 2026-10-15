@@ -20,6 +20,37 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-15 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| ARHS | Arhaus, Inc. | $10.21 | change +9.7%, mktcap ~$1.45B, close $10.21, vol 1.33M | 4 recovered-dips (within range), above 200SMA ($8.30) | notion-live | OK |
+| APPS | Digital Turbine, Inc. | $10.39 | change +9.1%, mktcap ~$1.26B, close $10.39, vol 1.48M | hugging 8EMA, above 200SMA ($7.26) | notion-live | OK |
+| INTA | Intapp, Inc. | $42.77 | change +8.1%, mktcap ~$3.28B, close $42.77, vol 0.58M | 4 recovered-dips (within range), above 200SMA ($30.02) | notion-live | OK |
+| MRVI | Maravai LifeSciences Holdings, Inc. | $7.07 | change +7.9%, mktcap ~$1.83B, close $7.07, vol 1.16M | hugging 8EMA, above 200SMA ($5.02) | notion-live | OK |
+| CBRL | Cracker Barrel Old Country Store, Inc. | $67.25 | change +7.2%, mktcap ~$1.50B, close $67.25, vol 0.83M | 4 recovered-dips (within range), above 200SMA ($40.54) | notion-live | OK |
+| ELF | e.l.f. Beauty, Inc. | $115.42 | change +6.7%, mktcap ~$6.81B, close $115.42, vol 1.39M | 2 recovered-dips (within range), above 200SMA ($79.55) | notion-live | OK |
+| KOD | Kodiak Sciences Inc | $86.51 | change +6.7%, mktcap ~$5.44B, close $86.51, vol 0.93M | hugging 8EMA, above 200SMA ($38.54) | notion-live | OK |
+| FIVN | Five9, Inc. | $35.28 | change +6.7%, mktcap ~$2.64B, close $35.28, vol 0.84M | hugging 8EMA, above 200SMA ($23.24) | notion-live | OK |
+| GWRE | Guidewire Software, Inc. | $175.80 | change +6.6%, mktcap ~$14.41B, close $175.80, vol 1.06M | 4 recovered-dips (within range), above 200SMA ($149.59) | notion-live | OK |
+| DUOL | Duolingo, Inc. | $148.86 | change +6.5%, mktcap ~$6.96B, close $148.86, vol 1.03M | hugging 8EMA, above 200SMA ($125.76) | notion-live | OK |
+| WK | Workiva Inc. | $77.36 | change +6.5%, mktcap ~$4.21B, close $77.36, vol 0.63M | 4 recovered-dips (within range), above 200SMA ($63.13) | notion-live | OK |
+| BRZE | Braze, Inc. | $29.98 | change +6.1%, mktcap ~$3.40B, close $29.98, vol 1.32M | 3 recovered-dips (within range), above 200SMA ($23.96) | notion-live | OK |
+| AFRM | Affirm Holdings, Inc. | $74.63 | change +5.8%, mktcap ~$25.18B, close $74.63, vol 3.96M | hugging 8EMA, above 200SMA ($66.81) | notion-live | OK |
+| ADSK | Autodesk, Inc. | $244.42 | change +5.7%, mktcap ~$51.08B, close $244.42, vol 1.51M | 3 recovered-dips (within range), above 200SMA ($236.03) | notion-live | OK |
+| NEWP | New Pacific Metals Corp. | $6.16 | change +5.5%, mktcap ~$1.14B, close $6.16, vol 0.58M | hugging 8EMA, above 200SMA ($4.95) | notion-live | OK |
+| PAYC | Paycom Software, Inc. | $251.69 | change +5.3%, mktcap ~$11.15B, close $251.69, vol 0.55M | 4 recovered-dips (within range), above 200SMA ($158.02) | notion-live | OK |
+| ZLAB | Zai Lab Limited | $23.68 | change +5.2%, mktcap ~$2.53B, close $23.68, vol 0.54M | hugging 8EMA, above 200SMA ($20.70) | notion-live | OK |
+| NAVN | Navan, Inc. | $25.23 | change +5.1%, mktcap ~$6.58B, close $25.23, vol 2.42M | 3 recovered-dips (within range), above 200SMA ($18.96) | notion-live | OK |
+| VFC | V.F. Corporation | $17.32 | change +5.1%, mktcap ~$6.81B, close $17.32, vol 9.75M | 2 recovered-dips (within range), above 200SMA ($17.05) | notion-live | OK |
+| HRB | H&R Block, Inc. | $48.35 | change +5.1%, mktcap ~$5.92B, close $48.35, vol 0.76M | 2 recovered-dips (within range), above 200SMA ($38.84) | notion-live | OK |
+| CTSH | Cognizant Technology Solutions Corporation | $65.63 | change +5.1%, mktcap ~$29.56B, close $65.63, vol 5.07M | 4 recovered-dips (within range), above 200SMA ($59.86) | notion-live | OK |
+| PRCH | Porch Group, Inc. | $17.27 | change +5.0%, mktcap ~$1.96B, close $17.27, vol 1.49M | hugging 8EMA, above 200SMA ($11.54) | notion-live | OK |
+| EXLS | ExlService Holdings, Inc. | $39.22 | change +5.0%, mktcap ~$5.95B, close $39.22, vol 1.60M | 3 recovered-dips (within range), above 200SMA ($32.76) | notion-live | OK |
+
+23 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 23 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-14 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
