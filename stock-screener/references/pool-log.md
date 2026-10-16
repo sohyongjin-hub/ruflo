@@ -20,6 +20,17 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-16 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| NGL | NGL ENERGY PARTNERS LP | $15.35 | change +3.6%, mktcap ~$1.92B, close $15.35, vol 1.00M | 4 recovered-dips (within range), above 200SMA ($14.51) | notion-live | OK |
+| DNOW | DNOW Inc. | $15.54 | change +3.4%, mktcap ~$2.81B, close $15.54, vol 1.51M | hugging 8EMA, above 200SMA ($13.96) | notion-live | OK |
+| COP | ConocoPhillips | $146.07 | change +3.1%, mktcap ~$175.48B, close $146.07, vol 4.31M | 4 recovered-dips (within range), above 200SMA ($118.72) | notion-live | OK |
+
+3 tickers caught. 2 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 3 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-15 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
