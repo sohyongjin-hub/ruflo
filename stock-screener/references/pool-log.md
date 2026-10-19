@@ -20,6 +20,40 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-19 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| IRON | Disc Medicine, Inc. | $78.93 | change +38.9%, mktcap ~$3.03B, close $78.93, vol 8.47M | 4 recovered-dips (within range), above 200SMA ($70.66) | notion-live | OK |
+| COHU | Cohu, Inc. | $53.87 | change +6.0%, mktcap ~$2.55B, close $53.87, vol 1.28M | 4 recovered-dips (within range), above 200SMA ($46.02) | notion-live | OK |
+| ASST | Strive, Inc. | $25.54 | change +6.0%, mktcap ~$2.59B, close $25.54, vol 8.16M | 4 recovered-dips (within range), above 200SMA ($16.12) | notion-live | OK |
+| MBX | MBX Biosciences, Inc. | $52.48 | change +5.8%, mktcap ~$2.53B, close $52.48, vol 0.52M | hugging 8EMA, above 200SMA ($44.70) | notion-live | OK |
+| ANF | Abercrombie & Fitch Company | $162.01 | change +5.7%, mktcap ~$6.87B, close $162.01, vol 1.58M | 3 recovered-dips (within range), above 200SMA ($102.72) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $139.77 | change +5.3%, mktcap ~$9.20B, close $139.77, vol 1.59M | 3 recovered-dips (within range), above 200SMA ($83.80) | notion-live | OK |
+| QLYS | Qualys, Inc. | $190.08 | change +5.0%, mktcap ~$6.58B, close $190.08, vol 0.62M | hugging 8EMA, above 200SMA ($130.77) | notion-live | OK |
+| RLAY | Relay Therapeutics, Inc. | $17.09 | change +5.0%, mktcap ~$3.75B, close $17.09, vol 1.75M | hugging 8EMA, above 200SMA ($14.52) | notion-live | OK |
+| CXM | Sprinklr, Inc. | $6.12 | change +5.0%, mktcap ~$1.42B, close $6.12, vol 2.67M | 3 recovered-dips (within range), above 200SMA ($5.87) | notion-live | OK |
+| TENB | Tenable Holdings, Inc. | $38.93 | change +4.7%, mktcap ~$4.29B, close $38.93, vol 3.56M | hugging 8EMA, above 200SMA ($27.73) | notion-live | OK |
+| PTGX | Protagonist Therapeutics, Inc. | $134.44 | change +4.4%, mktcap ~$8.70B, close $134.44, vol 0.65M | hugging 8EMA, above 200SMA ($114.00) | notion-live | OK |
+| TTAN | ServiceTitan, Inc. | $78.26 | change +4.4%, mktcap ~$7.55B, close $78.26, vol 1.33M | 4 recovered-dips (within range), above 200SMA ($73.22) | notion-live | OK |
+| PLTR | Palantir Technologies Inc. | $194.15 | change +4.4%, mktcap ~$466.55B, close $194.15, vol 23.71M | hugging 8EMA, above 200SMA ($152.73) | notion-live | OK |
+| IOVA | Iovance Biotherapeutics, Inc. | $14.21 | change +4.3%, mktcap ~$6.44B, close $14.21, vol 8.50M | hugging 8EMA, above 200SMA ($5.35) | notion-live | OK |
+| AMLX | Amylyx Pharmaceuticals, Inc. | $27.33 | change +3.8%, mktcap ~$3.43B, close $27.33, vol 1.38M | hugging 8EMA, above 200SMA ($19.35) | notion-live | OK |
+| NLST | Netlist, Inc. | $5.95 | change +3.7%, mktcap ~$2.25B, close $5.95, vol 0.70M | hugging 8EMA, above 200SMA ($2.91) | notion-live | OK |
+| LIFE | Ethos Technologies Inc. | $38.86 | change +3.6%, mktcap ~$2.53B, close $38.86, vol 0.56M | 4 recovered-dips (within range), above 100SMA ($27.83) | notion-live | OK |
+| ROIV | Roivant Sciences Ltd. | $34.70 | change +3.5%, mktcap ~$25.06B, close $34.70, vol 6.30M | hugging 8EMA, above 200SMA ($30.85) | notion-live | OK |
+| TEAM | Atlassian Corporation | $214.75 | change +3.3%, mktcap ~$54.09B, close $214.75, vol 1.85M | 3 recovered-dips (within range), above 200SMA ($114.70) | notion-live | OK |
+| PD | PagerDuty, Inc. | $16.69 | change +3.3%, mktcap ~$1.31B, close $16.69, vol 1.21M | 4 recovered-dips (within range), above 200SMA ($9.91) | notion-live | OK |
+| ACN | Accenture plc | $236.93 | change +3.2%, mktcap ~$145.06B, close $236.93, vol 6.91M | 4 recovered-dips (within range), above 200SMA ($192.70) | notion-live | OK |
+| KYMR | Kymera Therapeutics, Inc. | $108.07 | change +3.1%, mktcap ~$8.99B, close $108.07, vol 0.68M | hugging 8EMA, above 200SMA ($94.50) | notion-live | OK |
+| ESTC | Elastic N.V. | $94.60 | change +3.1%, mktcap ~$9.93B, close $94.60, vol 1.59M | hugging 8EMA, above 200SMA ($66.07) | notion-live | OK |
+| VSXY | Victorias Secret & Co. | $89.98 | change +3.0%, mktcap ~$7.18B, close $89.98, vol 1.69M | 4 recovered-dips (within range), above 200SMA ($68.24) | notion-live | OK |
+| ARHS | Arhaus, Inc. | $10.23 | change +3.0%, mktcap ~$1.45B, close $10.23, vol 1.51M | 4 recovered-dips (within range), above 200SMA ($8.29) | notion-live | OK |
+| PTRN | Pattern Group Inc. - Series A | $17.76 | change +3.0%, mktcap ~$3.15B, close $17.76, vol 1.26M | hugging 8EMA, above 200SMA ($17.36) | notion-live | OK |
+
+26 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 26 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-16 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
