@@ -20,6 +20,43 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-20 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| BRZE | Braze, Inc. | $45.45 | change +51.3%, mktcap ~$5.16B, close $45.45, vol 60.32M | 2 recovered-dips (within range), above 200SMA ($23.98) | notion-live | OK |
+| HAS | Hasbro, Inc. | $108.97 | change +10.6%, mktcap ~$15.37B, close $108.97, vol 6.36M | 4 recovered-dips (within range), above 200SMA ($91.20) | notion-live | OK |
+| GWRE | Guidewire Software, Inc. | $185.37 | change +8.1%, mktcap ~$15.20B, close $185.37, vol 0.96M | 3 recovered-dips (within range), above 200SMA ($149.26) | notion-live | OK |
+| IMCR | Immunocore Holdings plc | $32.18 | change +7.8%, mktcap ~$1.54B, close $32.18, vol 0.62M | 3 recovered-dips (within range), above 200SMA ($31.82) | notion-live | OK |
+| OMDA | Omada Health, Inc. | $19.19 | change +6.3%, mktcap ~$1.17B, close $19.19, vol 0.69M | hugging 8EMA, above 200SMA ($17.55) | notion-live | OK |
+| LIFE | Ethos Technologies Inc. | $41.22 | change +6.1%, mktcap ~$2.68B, close $41.22, vol 1.58M | 3 recovered-dips (within range), above 100SMA ($28.05) | notion-live | OK |
+| NCNO | nCino, Inc. | $21.57 | change +6.0%, mktcap ~$2.28B, close $21.57, vol 0.90M | 4 recovered-dips (within range), above 200SMA ($18.37) | notion-live | OK |
+| QTWO | Q2 Holdings, Inc. | $65.92 | change +5.9%, mktcap ~$4.11B, close $65.92, vol 0.54M | 3 recovered-dips (within range), above 200SMA ($54.67) | notion-live | OK |
+| BMNR | BitMine Immersion Technologies, Inc. | $22.80 | change +5.7%, mktcap ~$13.75B, close $22.80, vol 23.68M | hugging 8EMA, above 200SMA ($21.33) | notion-live | OK |
+| TEM | Tempus AI, Inc. | $67.93 | change +5.6%, mktcap ~$12.26B, close $67.93, vol 3.06M | hugging 8EMA, above 200SMA ($56.84) | notion-live | OK |
+| ABSI | Absci Corporation | $8.99 | change +5.3%, mktcap ~$1.54B, close $8.99, vol 1.92M | hugging 8EMA, above 200SMA ($6.21) | notion-live | OK |
+| APPN | Appian Corporation | $44.53 | change +5.3%, mktcap ~$3.19B, close $44.53, vol 0.74M | 4 recovered-dips (within range), above 200SMA ($28.24) | notion-live | OK |
+| ARHS | Arhaus, Inc. | $10.76 | change +5.2%, mktcap ~$1.53B, close $10.76, vol 1.84M | 4 recovered-dips (within range), above 200SMA ($8.29) | notion-live | OK |
+| PAGS | PagSeguro Digital Ltd. | $11.67 | change +4.9%, mktcap ~$3.24B, close $11.67, vol 2.70M | 2 recovered-dips (within range), above 200SMA ($9.83) | notion-live | OK |
+| CXM | Sprinklr, Inc. | $6.42 | change +4.8%, mktcap ~$1.49B, close $6.42, vol 2.36M | 3 recovered-dips (within range), above 200SMA ($5.86) | notion-live | OK |
+| SN | SharkNinja, Inc. | $197.88 | change +4.7%, mktcap ~$27.88B, close $197.88, vol 0.71M | 4 recovered-dips (within range), above 200SMA ($139.38) | notion-live | OK |
+| BOLSY | B3 SA Brasil Bolsa Balcao | $13.98 | change +4.7%, mktcap ~$21.59B, close $13.98, vol 0.60M | 4 recovered-dips (within range), above 200SMA ($9.91) | notion-live | OK |
+| MDB | MongoDB, Inc. | $364.88 | change +4.6%, mktcap ~$29.39B, close $364.88, vol 0.93M | hugging 8EMA, above 200SMA ($339.21) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $145.91 | change +4.4%, mktcap ~$9.61B, close $145.91, vol 1.50M | 3 recovered-dips (within range), above 200SMA ($84.36) | notion-live | OK |
+| PCOR | Procore Technologies, Inc. | $60.54 | change +4.4%, mktcap ~$9.20B, close $60.54, vol 1.01M | 3 recovered-dips (within range), above 200SMA ($53.81) | notion-live | OK |
+| IOVA | Iovance Biotherapeutics, Inc. | $14.82 | change +4.3%, mktcap ~$6.72B, close $14.82, vol 7.80M | 4 recovered-dips (within range), above 200SMA ($5.42) | notion-live | OK |
+| COCO | The Vita Coco Company, Inc. | $61.63 | change +4.3%, mktcap ~$3.54B, close $61.63, vol 0.86M | 4 recovered-dips (within range), above 200SMA ($61.60) | notion-live | OK |
+| DHC | Diversified Healthcare Trust | $7.68 | change +4.2%, mktcap ~$1.86B, close $7.68, vol 0.59M | 4 recovered-dips (within range), above 200SMA ($7.67) | notion-live | OK |
+| NU | Nu Holdings Ltd. | $15.12 | change +4.2%, mktcap ~$73.04B, close $15.12, vol 60.31M | hugging 8EMA, above 200SMA ($14.62) | notion-live | OK |
+| TVTX | Travere Therapeutics, Inc. | $52.53 | change +4.0%, mktcap ~$4.95B, close $52.53, vol 0.97M | hugging 8EMA, above 200SMA ($45.94) | notion-live | OK |
+| LFST | LifeStance Health Group, Inc. | $12.24 | change +4.0%, mktcap ~$4.68B, close $12.24, vol 0.95M | hugging 8EMA, above 200SMA ($9.11) | notion-live | OK |
+| SLG | SL Green Realty Corp | $46.81 | change +4.0%, mktcap ~$3.58B, close $46.81, vol 1.05M | hugging 8EMA, above 200SMA ($46.74) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $72.69 | change +4.0%, mktcap ~$9.47B, close $72.69, vol 1.94M | 2 recovered-dips (within range), above 200SMA ($38.35) | notion-live | OK |
+| PAYC | Paycom Software, Inc. | $262.71 | change +3.8%, mktcap ~$11.63B, close $262.71, vol 0.50M | 4 recovered-dips (within range), above 200SMA ($159.50) | notion-live | OK |
+
+29 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 29 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-19 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
