@@ -20,6 +20,55 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-21 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| ASST | Strive, Inc. | $31.00 | change +14.5%, mktcap ~$3.15B, close $31.00, vol 11.83M | 4 recovered-dips (within range), above 200SMA ($16.22) | notion-live | OK |
+| APPN | Appian Corporation | $49.02 | change +10.1%, mktcap ~$3.51B, close $49.02, vol 1.30M | 4 recovered-dips (within range), above 200SMA ($28.31) | notion-live | OK |
+| SMCI | Super Micro Computer, Inc. | $35.51 | change +9.4%, mktcap ~$23.33B, close $35.51, vol 70.52M | hugging 8EMA, above 200SMA ($32.52) | notion-live | OK |
+| LIFE | Ethos Technologies Inc. | $44.50 | change +8.4%, mktcap ~$2.89B, close $44.50, vol 1.77M | 3 recovered-dips (within range), above 100SMA ($28.30) | notion-live | OK |
+| BE | Bloom Energy Corporation | $240.17 | change +7.9%, mktcap ~$70.74B, close $240.17, vol 9.29M | hugging 8EMA, above 200SMA ($218.29) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $153.22 | change +7.4%, mktcap ~$10.09B, close $153.22, vol 1.79M | 3 recovered-dips (within range), above 200SMA ($84.94) | notion-live | OK |
+| OKTA | Okta, Inc. | $207.93 | change +7.2%, mktcap ~$36.35B, close $207.93, vol 2.94M | 3 recovered-dips (within range), above 200SMA ($120.20) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $76.14 | change +6.5%, mktcap ~$9.92B, close $76.14, vol 2.36M | 3 recovered-dips (within range), above 200SMA ($38.64) | notion-live | OK |
+| CRDO | Credo Technology Group Holding Ltd | $182.31 | change +6.3%, mktcap ~$34.27B, close $182.31, vol 5.67M | hugging 8EMA, above 200SMA ($180.68) | notion-live | OK |
+| AMX | America Movil, S.A.B. de C.V. | $24.23 | change +5.8%, mktcap ~$69.94B, close $24.23, vol 3.63M | 4 recovered-dips (within range), above 200SMA ($24.27) | notion-live | OK |
+| NET | Cloudflare, Inc. | $308.29 | change +5.7%, mktcap ~$109.77B, close $308.29, vol 2.92M | 3 recovered-dips (within range), above 200SMA ($243.78) | notion-live | OK |
+| DELL | Dell Technologies Inc. | $487.22 | change +5.6%, mktcap ~$309.78B, close $487.22, vol 5.61M | hugging 8EMA, above 200SMA ($319.13) | notion-live | OK |
+| COHU | Cohu, Inc. | $55.66 | change +5.5%, mktcap ~$2.63B, close $55.66, vol 0.55M | 4 recovered-dips (within range), above 200SMA ($46.31) | notion-live | OK |
+| INSW | International Seaways, Inc. | $110.44 | change +5.4%, mktcap ~$5.47B, close $110.44, vol 0.82M | hugging 8EMA, above 200SMA ($83.76) | notion-live | OK |
+| PURR | Hyperliquid Strategies Inc | $9.64 | change +5.4%, mktcap ~$2.68B, close $9.64, vol 8.46M | hugging 8EMA, above 200SMA ($7.44) | notion-live | OK |
+| CRWD | CrowdStrike Holdings, Inc. | $239.48 | change +5.3%, mktcap ~$245.21B, close $239.48, vol 7.24M | hugging 8EMA, above 200SMA ($162.31) | notion-live | OK |
+| CMBT | CMB.TECH NV | $18.29 | change +4.9%, mktcap ~$5.31B, close $18.29, vol 0.80M | hugging 8EMA, above 200SMA ($15.17) | notion-live | OK |
+| MRNA | Moderna, Inc. | $253.68 | change +4.8%, mktcap ~$101.28B, close $253.68, vol 12.16M | 4 recovered-dips (within range), above 200SMA ($80.55) | notion-live | OK |
+| TLN | Talen Energy Corporation | $366.07 | change +4.8%, mktcap ~$17.32B, close $366.07, vol 0.68M | hugging 8EMA, above 200SMA ($350.78) | notion-live | OK |
+| ROIV | Roivant Sciences Ltd. | $36.53 | change +4.6%, mktcap ~$26.39B, close $36.53, vol 12.85M | 4 recovered-dips (within range), above 200SMA ($30.99) | notion-live | OK |
+| ABCL | AbCellera Biologics Inc. | $12.23 | change +4.4%, mktcap ~$3.96B, close $12.23, vol 2.34M | hugging 8EMA, above 200SMA ($6.56) | notion-live | OK |
+| ASX | ASE Technology Holding Co., Ltd. | $42.55 | change +4.4%, mktcap ~$89.04B, close $42.55, vol 4.72M | hugging 8EMA, above 200SMA ($32.53) | notion-live | OK |
+| S | SentinelOne, Inc. | $22.95 | change +4.3%, mktcap ~$7.99B, close $22.95, vol 9.50M | hugging 8EMA, above 200SMA ($17.28) | notion-live | OK |
+| WIT | Wipro Limited | $2.13 | change +4.1%, mktcap ~$18.99B, close $2.13, vol 12.89M | 4 recovered-dips (within range), above 200SMA ($2.10) | notion-live | OK |
+| STX | Seagate Technology Holdings PLC | $701.90 | change +4.0%, mktcap ~$159.61B, close $701.90, vol 3.69M | hugging 8EMA, above 200SMA ($680.38) | notion-live | OK |
+| AMD | Advanced Micro Devices, Inc. | $555.62 | change +3.9%, mktcap ~$907.04B, close $555.62, vol 13.39M | hugging 8EMA, above 200SMA ($399.10) | notion-live | OK |
+| HOOD | Robinhood Markets, Inc. | $101.92 | change +3.8%, mktcap ~$91.63B, close $101.92, vol 11.16M | hugging 8EMA, above 200SMA ($93.49) | notion-live | OK |
+| MAN | ManpowerGroup | $44.59 | change +3.7%, mktcap ~$2.07B, close $44.59, vol 0.56M | 3 recovered-dips (within range), above 200SMA ($39.31) | notion-live | OK |
+| DHT | DHT Holdings, Inc. | $24.18 | change +3.5%, mktcap ~$3.90B, close $24.18, vol 3.78M | hugging 8EMA, above 200SMA ($18.33) | notion-live | OK |
+| ENTG | Entegris, Inc. | $147.91 | change +3.5%, mktcap ~$22.60B, close $147.91, vol 0.82M | hugging 8EMA, above 200SMA ($136.63) | notion-live | OK |
+| TWLO | Twilio Inc. | $267.77 | change +3.5%, mktcap ~$41.12B, close $267.77, vol 1.14M | hugging 8EMA, above 200SMA ($184.77) | notion-live | OK |
+| WMB | Williams Companies, Inc. (The) | $72.75 | change +3.4%, mktcap ~$88.99B, close $72.75, vol 5.05M | hugging 8EMA, above 200SMA ($71.97) | notion-live | OK |
+| TER | Teradyne, Inc. | $348.12 | change +3.4%, mktcap ~$54.43B, close $348.12, vol 1.14M | 3 recovered-dips (within range), above 200SMA ($346.71) | notion-live | OK |
+| GH | Guardant Health, Inc. | $168.09 | change +3.4%, mktcap ~$22.56B, close $168.09, vol 1.23M | hugging 8EMA, above 200SMA ($128.17) | notion-live | OK |
+| IBKR | Interactive Brokers Group, Inc. | $85.70 | change +3.4%, mktcap ~$145.81B, close $85.70, vol 2.66M | hugging 8EMA, above 200SMA ($82.63) | notion-live | OK |
+| TRMD | TORM plc | $39.27 | change +3.3%, mktcap ~$4.01B, close $39.27, vol 0.92M | hugging 8EMA, above 200SMA ($30.03) | notion-live | OK |
+| P | Everpure, Inc. | $130.71 | change +3.3%, mktcap ~$43.55B, close $130.71, vol 1.48M | 4 recovered-dips (within range), above 200SMA ($83.41) | notion-live | OK |
+| NTAP | NetApp, Inc. | $216.76 | change +3.2%, mktcap ~$42.58B, close $216.76, vol 0.81M | hugging 8EMA, above 200SMA ($146.19) | notion-live | OK |
+| TXN | Texas Instruments Incorporated | $286.46 | change +3.1%, mktcap ~$261.61B, close $286.46, vol 6.14M | hugging 8EMA, above 200SMA ($255.83) | notion-live | OK |
+| HAS | Hasbro, Inc. | $112.86 | change +3.1%, mktcap ~$15.92B, close $112.86, vol 3.10M | 4 recovered-dips (within range), above 200SMA ($91.34) | notion-live | OK |
+| ET | Energy Transfer LP | $20.14 | change +3.0%, mktcap ~$69.37B, close $20.14, vol 7.94M | hugging 8EMA, above 200SMA ($19.51) | notion-live | OK |
+
+41 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 41 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-20 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
