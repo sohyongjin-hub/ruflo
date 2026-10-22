@@ -20,6 +20,34 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-22 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| BHVN | Biohaven Ltd. | $14.82 | change +26.1%, mktcap ~$2.24B, close $14.82, vol 28.16M | 4 recovered-dips (within range), above 200SMA ($12.12) | notion-live | OK |
+| RHI | Robert Half Inc. | $37.35 | change +7.8%, mktcap ~$3.82B, close $37.35, vol 1.53M | 4 recovered-dips (within range), above 200SMA ($31.76) | notion-live | OK |
+| FRPT | Freshpet, Inc. | $66.54 | change +6.3%, mktcap ~$3.20B, close $66.54, vol 0.71M | 2 recovered-dips (within range), above 200SMA ($63.77) | notion-live | OK |
+| ACN | Accenture plc | $255.38 | change +6.3%, mktcap ~$150.94B, close $255.38, vol 4.75M | 4 recovered-dips (within range), above 200SMA ($192.38) | notion-live | OK |
+| NCNO | nCino, Inc. | $23.28 | change +5.8%, mktcap ~$2.46B, close $23.28, vol 1.39M | 4 recovered-dips (within range), above 200SMA ($18.35) | notion-live | OK |
+| SLG | SL Green Realty Corp | $49.33 | change +5.7%, mktcap ~$3.77B, close $49.33, vol 1.30M | 4 recovered-dips (within range), above 200SMA ($46.74) | notion-live | OK |
+| CTSH | Cognizant Technology Solutions Corporation | $73.43 | change +5.6%, mktcap ~$33.08B, close $73.43, vol 4.86M | 4 recovered-dips (within range), above 200SMA ($59.51) | notion-live | OK |
+| VRSK | Verisk Analytics, Inc. | $203.07 | change +5.6%, mktcap ~$26.43B, close $203.07, vol 0.87M | 4 recovered-dips (within range), above 200SMA ($187.29) | notion-live | OK |
+| PAYX | Paychex, Inc. | $118.63 | change +5.4%, mktcap ~$42.23B, close $118.63, vol 1.88M | 2 recovered-dips (within range), above 200SMA ($103.42) | notion-live | OK |
+| ARHS | Arhaus, Inc. | $11.53 | change +5.4%, mktcap ~$1.63B, close $11.53, vol 1.82M | 4 recovered-dips (within range), above 200SMA ($8.29) | notion-live | OK |
+| HRB | H&R Block, Inc. | $50.18 | change +4.9%, mktcap ~$6.15B, close $50.18, vol 0.92M | 2 recovered-dips (within range), above 200SMA ($38.97) | notion-live | OK |
+| APPN | Appian Corporation | $50.91 | change +4.5%, mktcap ~$3.65B, close $50.91, vol 1.20M | 4 recovered-dips (within range), above 200SMA ($28.40) | notion-live | OK |
+| CXM | Sprinklr, Inc. | $6.71 | change +4.4%, mktcap ~$1.56B, close $6.71, vol 1.91M | 3 recovered-dips (within range), above 200SMA ($5.86) | notion-live | OK |
+| GWRE | Guidewire Software, Inc. | $189.97 | change +4.4%, mktcap ~$15.58B, close $189.97, vol 0.76M | 3 recovered-dips (within range), above 200SMA ($149.24) | notion-live | OK |
+| TTEK | Tetra Tech, Inc. | $36.58 | change +4.4%, mktcap ~$9.37B, close $36.58, vol 1.04M | 4 recovered-dips (within range), above 200SMA ($33.02) | notion-live | OK |
+| EXLS | ExlService Holdings, Inc. | $42.80 | change +4.4%, mktcap ~$6.49B, close $42.80, vol 2.02M | 3 recovered-dips (within range), above 200SMA ($32.72) | notion-live | OK |
+| ADSK | Autodesk, Inc. | $255.40 | change +4.3%, mktcap ~$53.38B, close $255.40, vol 1.02M | 3 recovered-dips (within range), above 200SMA ($234.84) | notion-live | OK |
+| CRM | Salesforce, Inc. | $252.03 | change +4.2%, mktcap ~$207.42B, close $252.03, vol 6.68M | 4 recovered-dips (within range), above 200SMA ($198.75) | notion-live | OK |
+| STE | STERIS plc (Ireland) | $230.71 | change +4.2%, mktcap ~$22.49B, close $230.71, vol 0.56M | 4 recovered-dips (within range), above 200SMA ($225.63) | notion-live | OK |
+| LW | Lamb Weston Holdings, Inc. | $55.31 | change +4.2%, mktcap ~$7.62B, close $55.31, vol 1.21M | 3 recovered-dips (within range), above 200SMA ($46.23) | notion-live | OK |
+
+20 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 20 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-21 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
