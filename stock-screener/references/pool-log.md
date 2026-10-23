@@ -20,6 +20,42 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-23 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| RHI | Robert Half Inc. | $46.22 | change +22.7%, mktcap ~$4.73B, close $46.22, vol 4.44M | 3 recovered-dips (within range), above 200SMA ($31.85) | notion-live | OK |
+| ZLAB | Zai Lab Limited | $24.04 | change +9.1%, mktcap ~$2.58B, close $24.04, vol 3.00M | hugging 8EMA, above 200SMA ($20.87) | notion-live | OK |
+| NET | Cloudflare, Inc. | $325.50 | change +7.2%, mktcap ~$115.91B, close $325.50, vol 3.12M | 4 recovered-dips (within range), above 200SMA ($244.91) | notion-live | OK |
+| SLB | SLB Limited | $52.88 | change +6.7%, mktcap ~$78.47B, close $52.88, vol 14.23M | 4 recovered-dips (within range), above 200SMA ($51.26) | notion-live | OK |
+| OKTA | Okta, Inc. | $213.26 | change +5.9%, mktcap ~$37.28B, close $213.26, vol 2.24M | 4 recovered-dips (within range), above 200SMA ($121.34) | notion-live | OK |
+| TEM | Tempus AI, Inc. | $67.54 | change +5.8%, mktcap ~$12.31B, close $67.54, vol 3.06M | hugging 8EMA, above 200SMA ($56.81) | notion-live | OK |
+| FTI | TechnipFMC plc | $70.01 | change +4.8%, mktcap ~$27.46B, close $70.01, vol 1.51M | hugging 8EMA, above 200SMA ($68.75) | notion-live | OK |
+| GBCI | Glacier Bancorp, Inc. | $48.17 | change +4.8%, mktcap ~$6.27B, close $48.17, vol 1.63M | 4 recovered-dips (within range), above 200SMA ($47.66) | notion-live | OK |
+| SDGR | Schrodinger, Inc. | $23.66 | change +4.7%, mktcap ~$1.77B, close $23.66, vol 0.67M | hugging 8EMA, above 200SMA ($16.52) | notion-live | OK |
+| COHU | Cohu, Inc. | $48.39 | change +4.6%, mktcap ~$2.29B, close $48.39, vol 0.54M | 3 recovered-dips (within range), above 200SMA ($46.52) | notion-live | OK |
+| SM | SM Energy Company | $40.19 | change +4.6%, mktcap ~$9.56B, close $40.19, vol 1.61M | 4 recovered-dips (within range), above 200SMA ($29.79) | notion-live | OK |
+| AGBK | AGI Inc | $7.56 | change +4.0%, mktcap ~$1.21B, close $7.56, vol 0.73M | 3 recovered-dips (within range), above 100SMA ($6.66) | notion-live | OK |
+| VET | Vermilion Energy Inc. | $13.97 | change +3.9%, mktcap ~$2.14B, close $13.97, vol 1.74M | 4 recovered-dips (within range), above 200SMA ($11.48) | notion-live | OK |
+| COP | ConocoPhillips | $151.27 | change +3.9%, mktcap ~$181.73B, close $151.27, vol 4.79M | 3 recovered-dips (within range), above 200SMA ($119.99) | notion-live | OK |
+| FTNT | Fortinet, Inc. | $179.49 | change +3.8%, mktcap ~$131.69B, close $179.49, vol 1.94M | hugging 8EMA, above 200SMA ($126.25) | notion-live | OK |
+| XP | XP Inc. | $30.43 | change +3.7%, mktcap ~$15.73B, close $30.43, vol 9.11M | hugging 8EMA, above 200SMA ($19.26) | notion-live | OK |
+| NAT | Nordic American Tankers Limited | $7.81 | change +3.6%, mktcap ~$1.65B, close $7.81, vol 2.44M | hugging 8EMA, above 200SMA ($5.99) | notion-live | OK |
+| ADPT | Adaptive Biotechnologies Corporation | $25.26 | change +3.5%, mktcap ~$4.03B, close $25.26, vol 0.96M | hugging 8EMA, above 200SMA ($19.35) | notion-live | OK |
+| TS | Tenaris S.A. | $58.31 | change +3.4%, mktcap ~$29.83B, close $58.31, vol 0.67M | hugging 8EMA, above 200SMA ($55.68) | notion-live | OK |
+| ABCL | AbCellera Biologics Inc. | $11.76 | change +3.4%, mktcap ~$3.81B, close $11.76, vol 2.31M | 4 recovered-dips (within range), above 200SMA ($6.64) | notion-live | OK |
+| EOG | EOG Resources, Inc. | $163.34 | change +3.4%, mktcap ~$85.68B, close $163.34, vol 1.46M | 4 recovered-dips (within range), above 200SMA ($135.67) | notion-live | OK |
+| TWLO | Twilio Inc. | $262.25 | change +3.4%, mktcap ~$40.27B, close $262.25, vol 1.22M | hugging 8EMA, above 200SMA ($185.94) | notion-live | OK |
+| CVE | Cenovus Energy Inc | $33.07 | change +3.3%, mktcap ~$60.07B, close $33.07, vol 5.10M | hugging 8EMA, above 200SMA ($27.12) | notion-live | OK |
+| CBOE | Cboe Global Markets, Inc. | $338.52 | change +3.3%, mktcap ~$35.35B, close $338.52, vol 1.19M | 4 recovered-dips (within range), above 200SMA ($290.96) | notion-live | OK |
+| PAA | Plains All American Pipeline, L.P. | $26.75 | change +3.3%, mktcap ~$18.87B, close $26.75, vol 2.53M | 2 recovered-dips (within range), above 200SMA ($22.63) | notion-live | OK |
+| SNOW | Snowflake Inc. | $324.13 | change +3.2%, mktcap ~$114.35B, close $324.13, vol 1.86M | hugging 8EMA, above 200SMA ($236.28) | notion-live | OK |
+| NAVN | Navan, Inc. | $26.86 | change +3.2%, mktcap ~$7.00B, close $26.86, vol 1.14M | 2 recovered-dips (within range), above 200SMA ($19.24) | notion-live | OK |
+| TGTX | TG Therapeutics, Inc. | $54.84 | change +3.2%, mktcap ~$8.39B, close $54.84, vol 1.31M | hugging 8EMA, above 200SMA ($43.09) | notion-live | OK |
+
+28 tickers caught. 2 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 28 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-22 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
