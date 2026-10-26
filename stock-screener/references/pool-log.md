@@ -20,6 +20,41 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-26 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| PARR | Par Pacific Holdings, Inc. Common Stock | $83.17 | change +7.8%, mktcap ~$4.17B, close $83.17, vol 0.65M | hugging 8EMA, above 200SMA ($63.45) | notion-live | OK |
+| BBNX | Beta Bionics, Inc. | $20.51 | change +7.0%, mktcap ~$1.11B, close $20.51, vol 1.63M | 4 recovered-dips (within range), above 200SMA ($14.81) | notion-live | OK |
+| CVI | CVR Energy Inc. | $62.02 | change +6.6%, mktcap ~$6.23B, close $62.02, vol 0.70M | 4 recovered-dips (within range), above 200SMA ($35.01) | notion-live | OK |
+| P | Everpure, Inc. | $131.33 | change +6.5%, mktcap ~$43.76B, close $131.33, vol 3.62M | hugging 8EMA, above 200SMA ($84.27) | notion-live | OK |
+| CLMT | Calumet, Inc | $52.17 | change +5.8%, mktcap ~$4.59B, close $52.17, vol 1.57M | 4 recovered-dips (within range), above 200SMA ($37.94) | notion-live | OK |
+| PBF | PBF Energy Inc. | $80.55 | change +5.8%, mktcap ~$9.55B, close $80.55, vol 2.20M | hugging 8EMA, above 200SMA ($52.79) | notion-live | OK |
+| ANF | Abercrombie & Fitch Company | $164.73 | change +5.7%, mktcap ~$6.99B, close $164.73, vol 1.09M | 4 recovered-dips (within range), above 200SMA ($103.57) | notion-live | OK |
+| SNPS | Synopsys, Inc. | $454.33 | change +5.6%, mktcap ~$87.07B, close $454.33, vol 2.76M | hugging 8EMA, above 200SMA ($444.28) | notion-live | OK |
+| MXL | MaxLinear, Inc | $66.47 | change +4.7%, mktcap ~$6.05B, close $66.47, vol 3.62M | 4 recovered-dips (within range), above 200SMA ($58.88) | notion-live | OK |
+| ENTG | Entegris, Inc. | $140.22 | change +4.2%, mktcap ~$21.43B, close $140.22, vol 2.61M | hugging 8EMA, above 200SMA ($137.16) | notion-live | OK |
+| IRON | Disc Medicine, Inc. | $77.66 | change +4.2%, mktcap ~$2.98B, close $77.66, vol 1.20M | 3 recovered-dips (within range), above 200SMA ($70.60) | notion-live | OK |
+| BHVN | Biohaven Ltd. | $14.45 | change +4.1%, mktcap ~$2.18B, close $14.45, vol 2.67M | 4 recovered-dips (within range), above 200SMA ($12.14) | notion-live | OK |
+| RDY | Dr. Reddy's Laboratories Ltd | $13.75 | change +4.1%, mktcap ~$10.75B, close $13.75, vol 4.12M | 4 recovered-dips (within range), above 200SMA ($13.20) | notion-live | OK |
+| INTC | Intel Corporation | $90.47 | change +4.0%, mktcap ~$478.23B, close $90.47, vol 97.81M | 4 recovered-dips (within range), above 200SMA ($86.06) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $145.25 | change +3.8%, mktcap ~$9.56B, close $145.25, vol 1.36M | hugging 8EMA, above 200SMA ($86.49) | notion-live | OK |
+| HPE | Hewlett Packard Enterprise Company | $58.72 | change +3.6%, mktcap ~$77.95B, close $58.72, vol 9.73M | hugging 8EMA, above 200SMA ($40.05) | notion-live | OK |
+| ATRC | AtriCure, Inc. | $61.08 | change +3.6%, mktcap ~$3.11B, close $61.08, vol 0.81M | 2 recovered-dips (within range), above 200SMA ($37.62) | notion-live | OK |
+| ARMK | Aramark | $54.39 | change +3.5%, mktcap ~$14.34B, close $54.39, vol 2.79M | hugging 8EMA, above 200SMA ($49.76) | notion-live | OK |
+| RTX | RTX Corporation | $197.48 | change +3.4%, mktcap ~$266.49B, close $197.48, vol 5.57M | 4 recovered-dips (within range), above 200SMA ($195.23) | notion-live | OK |
+| WTTR | Select Water Solutions, Inc. | $18.75 | change +3.4%, mktcap ~$2.42B, close $18.75, vol 4.73M | hugging 8EMA, above 200SMA ($17.21) | notion-live | OK |
+| EXTR | Extreme Networks, Inc. | $22.70 | change +3.3%, mktcap ~$3.00B, close $22.70, vol 1.31M | hugging 8EMA, above 200SMA ($21.90) | notion-live | OK |
+| OKTA | Okta, Inc. | $220.01 | change +3.3%, mktcap ~$38.46B, close $220.01, vol 2.62M | 4 recovered-dips (within range), above 200SMA ($121.97) | notion-live | OK |
+| FIGS | FIGS, Inc. | $20.83 | change +3.1%, mktcap ~$3.46B, close $20.83, vol 2.17M | 4 recovered-dips (within range), above 200SMA ($13.27) | notion-live | OK |
+| BEKE | KE Holdings Inc | $17.61 | change +3.1%, mktcap ~$19.42B, close $17.61, vol 4.43M | hugging 8EMA, above 200SMA ($16.84) | notion-live | OK |
+| DAL | Delta Air Lines, Inc. | $79.16 | change +3.1%, mktcap ~$52.08B, close $79.16, vol 6.36M | hugging 8EMA, above 200SMA ($76.48) | notion-live | OK |
+| FIVE | Five Below, Inc. | $230.00 | change +3.0%, mktcap ~$12.66B, close $230.00, vol 0.78M | 4 recovered-dips (within range), above 200SMA ($217.11) | notion-live | OK |
+| GENI | Genius Sports Limited | $6.52 | change +3.0%, mktcap ~$1.81B, close $6.52, vol 10.63M | hugging 8EMA, above 200SMA ($6.32) | notion-live | OK |
+
+27 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 27 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-23 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
