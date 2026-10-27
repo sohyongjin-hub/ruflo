@@ -20,6 +20,27 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-27 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| IBRX | ImmunityBio, Inc. | $8.63 | change +10.5%, mktcap ~$9.15B, close $8.63, vol 10.48M | hugging 8EMA, above 200SMA ($7.82) | notion-live | OK |
+| OUST | Ouster, Inc. | $32.79 | change +10.4%, mktcap ~$2.36B, close $32.79, vol 2.92M | 4 recovered-dips (within range), above 200SMA ($32.35) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $159.85 | change +10.1%, mktcap ~$10.52B, close $159.85, vol 1.73M | 4 recovered-dips (within range), above 200SMA ($87.11) | notion-live | OK |
+| SDGR | Schrodinger, Inc. | $26.72 | change +9.1%, mktcap ~$2.00B, close $26.72, vol 1.52M | 3 recovered-dips (within range), above 200SMA ($16.59) | notion-live | OK |
+| OMER | Omeros Corporation | $17.49 | change +7.4%, mktcap ~$1.27B, close $17.49, vol 0.89M | 4 recovered-dips (within range), above 200SMA ($13.40) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $78.02 | change +6.9%, mktcap ~$10.17B, close $78.02, vol 1.95M | 4 recovered-dips (within range), above 200SMA ($39.70) | notion-live | OK |
+| NVAX | Novavax, Inc. | $10.02 | change +6.6%, mktcap ~$1.65B, close $10.02, vol 6.76M | 4 recovered-dips (within range), above 200SMA ($9.26) | notion-live | OK |
+| CDNS | Cadence Design Systems, Inc. | $343.08 | change +6.5%, mktcap ~$94.48B, close $343.08, vol 4.54M | 4 recovered-dips (within range), above 200SMA ($327.28) | notion-live | OK |
+| BHVN | Biohaven Ltd. | $15.29 | change +5.8%, mktcap ~$2.31B, close $15.29, vol 2.41M | 4 recovered-dips (within range), above 200SMA ($12.16) | notion-live | OK |
+| UPS | United Parcel Service, Inc. | $106.14 | change +5.8%, mktcap ~$90.30B, close $106.14, vol 9.72M | 4 recovered-dips (within range), above 200SMA ($104.59) | notion-live | OK |
+| RCL | Royal Caribbean Cruises Ltd. | $295.92 | change +5.5%, mktcap ~$79.14B, close $295.92, vol 4.94M | 4 recovered-dips (within range), above 200SMA ($286.20) | notion-live | OK |
+| AUGO | Aura Minerals Inc. | $81.23 | change +5.3%, mktcap ~$6.81B, close $81.23, vol 0.65M | hugging 8EMA, above 200SMA ($75.60) | notion-live | OK |
+| AZTA | Azenta, Inc. | $39.08 | change +5.1%, mktcap ~$1.71B, close $39.08, vol 1.30M | 4 recovered-dips (within range), above 200SMA ($28.34) | notion-live | OK |
+
+13 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 13 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-26 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
