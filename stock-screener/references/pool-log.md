@@ -20,6 +20,32 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-28 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| AXGN | Axogen, Inc. | $49.25 | change +31.5%, mktcap ~$2.89B, close $49.25, vol 9.28M | 4 recovered-dips (within range), above 200SMA ($39.38) | notion-live | OK |
+| SDGR | Schrodinger, Inc. | $30.87 | change +15.5%, mktcap ~$2.31B, close $30.87, vol 3.31M | 3 recovered-dips (within range), above 200SMA ($16.65) | notion-live | OK |
+| JLL | Jones Lang LaSalle Incorporated | $333.34 | change +11.1%, mktcap ~$15.34B, close $333.34, vol 1.10M | 4 recovered-dips (within range), above 200SMA ($324.17) | notion-live | OK |
+| LH | Labcorp Holdings Inc. | $360.25 | change +8.8%, mktcap ~$29.22B, close $360.25, vol 1.80M | 3 recovered-dips (within range), above 200SMA ($286.48) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $173.45 | change +8.5%, mktcap ~$11.42B, close $173.45, vol 3.48M | 4 recovered-dips (within range), above 200SMA ($87.79) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $83.62 | change +7.2%, mktcap ~$10.89B, close $83.62, vol 5.04M | 4 recovered-dips (within range), above 200SMA ($40.02) | notion-live | OK |
+| GEHC | GE HealthCare Technologies Inc. | $75.82 | change +6.6%, mktcap ~$34.25B, close $75.82, vol 9.56M | 3 recovered-dips (within range), above 200SMA ($69.90) | notion-live | OK |
+| HP | Helmerich & Payne, Inc. | $41.81 | change +5.3%, mktcap ~$4.18B, close $41.81, vol 1.19M | 4 recovered-dips (within range), above 200SMA ($37.22) | notion-live | OK |
+| STX | Seagate Technology Holdings PLC | $697.97 | change +4.5%, mktcap ~$158.71B, close $697.97, vol 10.72M | 4 recovered-dips (within range), above 200SMA ($689.02) | notion-live | OK |
+| COHU | Cohu, Inc. | $53.14 | change +4.2%, mktcap ~$2.52B, close $53.14, vol 1.51M | 4 recovered-dips (within range), above 200SMA ($46.88) | notion-live | OK |
+| KYMR | Kymera Therapeutics, Inc. | $122.51 | change +4.2%, mktcap ~$10.19B, close $122.51, vol 0.76M | 3 recovered-dips (within range), above 200SMA ($95.92) | notion-live | OK |
+| IRON | Disc Medicine, Inc. | $83.20 | change +4.1%, mktcap ~$3.19B, close $83.20, vol 1.07M | 3 recovered-dips (within range), above 200SMA ($70.63) | notion-live | OK |
+| APPN | Appian Corporation | $51.96 | change +4.0%, mktcap ~$3.72B, close $51.96, vol 1.01M | 4 recovered-dips (within range), above 200SMA ($28.75) | notion-live | OK |
+| ALVO | Alvotech | $4.94 | change +4.0%, mktcap ~$1.93B, close $4.94, vol 0.63M | hugging 8EMA, above 200SMA ($4.21) | notion-live | OK |
+| AZTA | Azenta, Inc. | $40.63 | change +4.0%, mktcap ~$1.78B, close $40.63, vol 0.90M | 4 recovered-dips (within range), above 200SMA ($28.36) | notion-live | OK |
+| CBRL | Cracker Barrel Old Country Store, Inc. | $70.87 | change +3.9%, mktcap ~$1.58B, close $70.87, vol 1.00M | 3 recovered-dips (within range), above 200SMA ($42.34) | notion-live | OK |
+| MSM | MSC Industrial Direct Company, Inc. | $122.59 | change +3.6%, mktcap ~$6.85B, close $122.59, vol 1.06M | hugging 8EMA, above 200SMA ($109.03) | notion-live | OK |
+| ACN | Accenture plc | $243.40 | change +3.5%, mktcap ~$143.86B, close $243.40, vol 5.58M | hugging 8EMA, above 200SMA ($191.68) | notion-live | OK |
+
+18 tickers caught. 2 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 18 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-27 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
