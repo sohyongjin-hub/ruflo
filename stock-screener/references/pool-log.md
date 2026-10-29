@@ -20,6 +20,35 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-29 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| KPLT | Katapult Holdings, Inc. | $12.52 | change +37.6%, mktcap ~$1.06B, close $12.52, vol 1.04M | 4 recovered-dips (within range), above 200SMA ($6.72) | notion-live | OK |
+| ARHS | Arhaus, Inc. | $12.71 | change +10.3%, mktcap ~$1.80B, close $12.71, vol 3.63M | 3 recovered-dips (within range), above 200SMA ($8.31) | notion-live | OK |
+| OWL | Blue Owl Capital Inc. | $10.41 | change +7.7%, mktcap ~$16.23B, close $10.41, vol 37.82M | 4 recovered-dips (within range), above 200SMA ($10.34) | notion-live | OK |
+| VFC | V.F. Corporation | $18.33 | change +6.4%, mktcap ~$7.21B, close $18.33, vol 11.99M | 2 recovered-dips (within range), above 200SMA ($16.96) | notion-live | OK |
+| BHVN | Biohaven Ltd. | $16.49 | change +6.2%, mktcap ~$2.49B, close $16.49, vol 2.43M | 3 recovered-dips (within range), above 200SMA ($12.21) | notion-live | OK |
+| JLL | Jones Lang LaSalle Incorporated | $353.47 | change +6.0%, mktcap ~$16.26B, close $353.47, vol 0.94M | 4 recovered-dips (within range), above 200SMA ($324.21) | notion-live | OK |
+| OMER | Omeros Corporation | $18.95 | change +6.0%, mktcap ~$1.37B, close $18.95, vol 3.63M | 4 recovered-dips (within range), above 200SMA ($13.46) | notion-live | OK |
+| SN | SharkNinja, Inc. | $209.12 | change +5.5%, mktcap ~$29.46B, close $209.12, vol 2.33M | 4 recovered-dips (within range), above 200SMA ($142.17) | notion-live | OK |
+| COAG | Hemab Therapeutics Holdings, Inc. | $40.42 | change +5.0%, mktcap ~$1.89B, close $40.42, vol 1.20M | 3 recovered-dips (within range), above 100SMA ($39.32) | notion-live | OK |
+| KSS | Kohl's Corporation | $24.50 | change +5.0%, mktcap ~$2.78B, close $24.50, vol 3.54M | 4 recovered-dips (within range), above 200SMA ($16.95) | notion-live | OK |
+| FIVE | Five Below, Inc. | $245.50 | change +4.7%, mktcap ~$13.52B, close $245.50, vol 1.29M | 4 recovered-dips (within range), above 200SMA ($217.66) | notion-live | OK |
+| TXRH | Texas Roadhouse, Inc. | $182.96 | change +4.7%, mktcap ~$12.01B, close $182.96, vol 1.78M | 4 recovered-dips (within range), above 200SMA ($178.86) | notion-live | OK |
+| GD | General Dynamics Corporation | $370.82 | change +4.6%, mktcap ~$100.33B, close $370.82, vol 1.81M | 4 recovered-dips (within range), above 200SMA ($354.83) | notion-live | OK |
+| LEVI | Levi Strauss & Co | $22.61 | change +4.5%, mktcap ~$8.67B, close $22.61, vol 2.49M | 4 recovered-dips (within range), above 200SMA ($21.69) | notion-live | OK |
+| KIM | Kimco Realty Corporation (HC) | $24.42 | change +4.4%, mktcap ~$16.38B, close $24.42, vol 6.96M | 2 recovered-dips (within range), above 200SMA ($23.51) | notion-live | OK |
+| FIGS | FIGS, Inc. | $21.56 | change +4.4%, mktcap ~$3.58B, close $21.56, vol 4.77M | 4 recovered-dips (within range), above 200SMA ($13.40) | notion-live | OK |
+| LIND | Lindblad Expeditions Holdings Inc. | $37.38 | change +4.4%, mktcap ~$2.45B, close $37.38, vol 0.84M | 4 recovered-dips (within range), above 200SMA ($24.33) | notion-live | OK |
+| FERG | Ferguson Enterprises Inc. | $240.45 | change +4.2%, mktcap ~$46.52B, close $240.45, vol 0.95M | 4 recovered-dips (within range), above 200SMA ($237.51) | notion-live | OK |
+| OMC | Omnicom Group Inc. | $80.97 | change +4.1%, mktcap ~$22.09B, close $80.97, vol 2.81M | hugging 8EMA, above 200SMA ($78.21) | notion-live | OK |
+| RCL | Royal Caribbean Cruises Ltd. | $310.54 | change +4.1%, mktcap ~$83.06B, close $310.54, vol 2.70M | 4 recovered-dips (within range), above 200SMA ($286.28) | notion-live | OK |
+| DB | Deutsche Bank AG | $34.86 | change +4.0%, mktcap ~$65.30B, close $34.86, vol 3.64M | 2 recovered-dips (within range), above 200SMA ($34.72) | notion-live | OK |
+
+21 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 21 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-28 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
