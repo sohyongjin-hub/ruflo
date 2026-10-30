@@ -20,6 +20,31 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-10-30 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| CDNA | CareDx, Inc. | $87.41 | change +22.2%, mktcap ~$4.52B, close $87.41, vol 3.53M | 4 recovered-dips (within range), above 200SMA ($33.64) | notion-live | OK |
+| REGN | Regeneron Pharmaceuticals, Inc. | $927.89 | change +13.3%, mktcap ~$95.53B, close $927.89, vol 2.83M | 3 recovered-dips (within range), above 200SMA ($737.54) | notion-live | OK |
+| INTA | Intapp, Inc. | $42.21 | change +8.0%, mktcap ~$3.24B, close $42.21, vol 1.10M | hugging 8EMA, above 200SMA ($30.04) | notion-live | OK |
+| REAL | The RealReal, Inc. | $11.95 | change +5.3%, mktcap ~$1.45B, close $11.95, vol 9.22M | 4 recovered-dips (within range), above 200SMA ($11.01) | notion-live | OK |
+| CTSH | Cognizant Technology Solutions Corporation | $65.11 | change +4.1%, mktcap ~$29.33B, close $65.11, vol 7.53M | 4 recovered-dips (within range), above 200SMA ($58.95) | notion-live | OK |
+| VLO | Valero Energy Corporation | $399.66 | change +3.9%, mktcap ~$111.46B, close $399.66, vol 4.15M | hugging 8EMA, above 200SMA ($285.71) | notion-live | OK |
+| RIG | Transocean Ltd (Switzerland) | $6.94 | change +3.7%, mktcap ~$7.75B, close $6.94, vol 45.23M | 4 recovered-dips (within range), above 200SMA ($5.86) | notion-live | OK |
+| VAL | Valaris Limited | $105.31 | change +3.5%, mktcap ~$7.31B, close $105.31, vol 0.84M | 3 recovered-dips (within range), above 200SMA ($86.13) | notion-live | OK |
+| DK | Delek US Holdings, Inc. | $73.57 | change +3.5%, mktcap ~$4.50B, close $73.57, vol 1.22M | hugging 8EMA, above 200SMA ($53.00) | notion-live | OK |
+| HP | Helmerich & Payne, Inc. | $42.99 | change +3.4%, mktcap ~$4.30B, close $42.99, vol 2.28M | 4 recovered-dips (within range), above 200SMA ($37.33) | notion-live | OK |
+| PSX | Phillips 66 | $282.83 | change +3.4%, mktcap ~$110.32B, close $282.83, vol 3.58M | hugging 8EMA, above 200SMA ($198.91) | notion-live | OK |
+| KYMR | Kymera Therapeutics, Inc. | $126.63 | change +3.3%, mktcap ~$10.53B, close $126.63, vol 1.58M | 3 recovered-dips (within range), above 200SMA ($96.42) | notion-live | OK |
+| HRB | H&R Block, Inc. | $51.31 | change +3.3%, mktcap ~$6.29B, close $51.31, vol 2.88M | 3 recovered-dips (within range), above 200SMA ($39.14) | notion-live | OK |
+| CRGY | Crescent Energy Company | $14.20 | change +3.3%, mktcap ~$5.83B, close $14.20, vol 6.79M | 4 recovered-dips (within range), above 200SMA ($12.01) | notion-live | OK |
+| ADSK | Autodesk, Inc. | $249.61 | change +3.3%, mktcap ~$52.17B, close $249.61, vol 2.43M | 4 recovered-dips (within range), above 200SMA ($233.95) | notion-live | OK |
+| PBF | PBF Energy Inc. | $78.00 | change +3.3%, mktcap ~$9.25B, close $78.00, vol 2.88M | hugging 8EMA, above 200SMA ($53.63) | notion-live | OK |
+| BSY | Bentley Systems, Incorporated | $40.90 | change +3.1%, mktcap ~$12.36B, close $40.90, vol 4.28M | 4 recovered-dips (within range), above 200SMA ($34.34) | notion-live | OK |
+
+17 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 17 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-29 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
