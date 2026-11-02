@@ -20,6 +20,32 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-02 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| PRG | PROG Holdings, Inc. | $38.19 | change +9.9%, mktcap ~$1.49B, close $38.19, vol 1.28M | 4 recovered-dips (within range), above 200SMA ($35.70) | notion-live | OK |
+| REAL | The RealReal, Inc. | $13.02 | change +8.9%, mktcap ~$1.62B, close $13.02, vol 7.48M | 4 recovered-dips (within range), above 200SMA ($10.99) | notion-live | OK |
+| EXPO | Exponent, Inc. | $86.58 | change +7.9%, mktcap ~$4.12B, close $86.58, vol 0.74M | 4 recovered-dips (within range), above 200SMA ($66.62) | notion-live | OK |
+| CWK | Cushman & Wakefield Ltd. | $14.33 | change +7.7%, mktcap ~$3.36B, close $14.33, vol 5.07M | 3 recovered-dips (within range), above 200SMA ($13.37) | notion-live | OK |
+| INTA | Intapp, Inc. | $45.03 | change +6.7%, mktcap ~$3.45B, close $45.03, vol 1.15M | 4 recovered-dips (within range), above 200SMA ($30.07) | notion-live | OK |
+| VVV | Valvoline Inc. | $34.37 | change +6.4%, mktcap ~$4.39B, close $34.37, vol 4.04M | 3 recovered-dips (within range), above 200SMA ($34.35) | notion-live | OK |
+| CALY | Callaway Golf Company | $16.10 | change +6.2%, mktcap ~$2.87B, close $16.10, vol 2.60M | 4 recovered-dips (within range), above 200SMA ($15.46) | notion-live | OK |
+| DASH | DoorDash, Inc. | $190.07 | change +6.2%, mktcap ~$82.30B, close $190.07, vol 6.21M | 4 recovered-dips (within range), above 200SMA ($182.60) | notion-live | OK |
+| VFC | V.F. Corporation | $19.39 | change +6.0%, mktcap ~$7.63B, close $19.39, vol 11.53M | 2 recovered-dips (within range), above 200SMA ($16.95) | notion-live | OK |
+| JLL | Jones Lang LaSalle Incorporated | $379.29 | change +5.4%, mktcap ~$17.33B, close $379.29, vol 0.75M | 3 recovered-dips (within range), above 200SMA ($324.44) | notion-live | OK |
+| PII | Polaris Inc. | $62.57 | change +5.3%, mktcap ~$3.56B, close $62.57, vol 0.99M | 3 recovered-dips (within range), above 200SMA ($62.50) | notion-live | OK |
+| BAX | Baxter International Inc. | $24.22 | change +5.3%, mktcap ~$12.53B, close $24.22, vol 10.16M | hugging 8EMA, above 200SMA ($21.36) | notion-live | OK |
+| TNET | TriNet Group, Inc. | $67.55 | change +5.1%, mktcap ~$3.09B, close $67.55, vol 0.79M | hugging 8EMA, above 200SMA ($53.44) | notion-live | OK |
+| URGN | UroGen Pharma Ltd. | $34.36 | change +5.0%, mktcap ~$1.68B, close $34.36, vol 2.04M | hugging 8EMA, above 200SMA ($31.38) | notion-live | OK |
+| QTWO | Q2 Holdings, Inc. | $70.44 | change +5.0%, mktcap ~$4.35B, close $70.44, vol 0.88M | 4 recovered-dips (within range), above 200SMA ($54.61) | notion-live | OK |
+| BC | Brunswick Corporation | $79.05 | change +4.9%, mktcap ~$5.12B, close $79.05, vol 1.10M | 3 recovered-dips (within range), above 200SMA ($77.30) | notion-live | OK |
+| LW | Lamb Weston Holdings, Inc. | $56.58 | change +4.6%, mktcap ~$7.80B, close $56.58, vol 2.41M | 3 recovered-dips (within range), above 200SMA ($46.66) | notion-live | OK |
+| RCL | Royal Caribbean Cruises Ltd. | $321.07 | change +4.5%, mktcap ~$85.88B, close $321.07, vol 2.78M | 4 recovered-dips (within range), above 200SMA ($286.64) | notion-live | OK |
+
+18 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 18 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-10-30 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
