@@ -20,6 +20,29 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-03 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| PENG | Penguin Solutions, Inc. | $53.19 | change +12.0%, mktcap ~$3.20B, close $53.19, vol 3.13M | 4 recovered-dips (within range), above 200SMA ($44.29) | notion-live | OK |
+| IOVA | Iovance Biotherapeutics, Inc. | $8.83 | change +10.1%, mktcap ~$4.00B, close $8.83, vol 13.71M | 4 recovered-dips (within range), above 200SMA ($5.90) | notion-live | OK |
+| ABCL | AbCellera Biologics Inc. | $12.18 | change +9.5%, mktcap ~$3.95B, close $12.18, vol 2.49M | hugging 8EMA, above 200SMA ($6.93) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $140.30 | change +8.7%, mktcap ~$9.24B, close $140.30, vol 1.94M | 4 recovered-dips (within range), above 200SMA ($89.95) | notion-live | OK |
+| TNGX | Tango Therapeutics, Inc. | $23.17 | change +6.5%, mktcap ~$3.91B, close $23.17, vol 2.46M | hugging 8EMA, above 200SMA ($22.43) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $65.29 | change +5.9%, mktcap ~$8.51B, close $65.29, vol 2.61M | 3 recovered-dips (within range), above 200SMA ($41.00) | notion-live | OK |
+| PWR | Quanta Services, Inc. | $657.00 | change +5.8%, mktcap ~$98.99B, close $657.00, vol 1.12M | 4 recovered-dips (within range), above 200SMA ($628.05) | notion-live | OK |
+| PURR | Hyperliquid Strategies Inc | $10.16 | change +4.6%, mktcap ~$2.83B, close $10.16, vol 14.27M | hugging 8EMA, above 200SMA ($7.72) | notion-live | OK |
+| AZTA | Azenta, Inc. | $37.14 | change +4.5%, mktcap ~$1.63B, close $37.14, vol 1.02M | 4 recovered-dips (within range), above 200SMA ($28.33) | notion-live | OK |
+| ALMR | Alamar Biosciences, Inc. | $30.22 | change +4.4%, mktcap ~$2.10B, close $30.22, vol 0.67M | hugging 8EMA, above 100SMA ($28.77) | notion-live | OK |
+| MXL | MaxLinear, Inc | $63.97 | change +4.3%, mktcap ~$5.82B, close $63.97, vol 2.34M | 3 recovered-dips (within range), above 200SMA ($60.39) | notion-live | OK |
+| IBRX | ImmunityBio, Inc. | $8.29 | change +4.3%, mktcap ~$8.79B, close $8.29, vol 6.16M | hugging 8EMA, above 200SMA ($7.94) | notion-live | OK |
+| QNST | QuinStreet, Inc. | $18.29 | change +4.2%, mktcap ~$1.05B, close $18.29, vol 0.91M | 3 recovered-dips (within range), above 200SMA ($14.51) | notion-live | OK |
+| OMDA | Omada Health, Inc. | $18.58 | change +4.1%, mktcap ~$1.14B, close $18.58, vol 0.87M | hugging 8EMA, above 200SMA ($17.71) | notion-live | OK |
+| CRL | Charles River Laboratories International, Inc. | $351.87 | change +3.9%, mktcap ~$16.80B, close $351.87, vol 1.51M | hugging 8EMA, above 200SMA ($223.02) | notion-live | OK |
+
+15 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 15 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-02 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
