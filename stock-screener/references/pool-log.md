@@ -20,6 +20,41 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-04 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| YOU | Clear Secure, Inc. | $59.08 | change +23.7%, mktcap ~$7.99B, close $59.08, vol 6.74M | 2 recovered-dips (within range), above 200SMA ($47.96) | notion-live | OK |
+| PCOR | Procore Technologies, Inc. | $75.60 | change +19.7%, mktcap ~$11.49B, close $75.60, vol 9.02M | 4 recovered-dips (within range), above 200SMA ($53.34) | notion-live | OK |
+| MDLN | Medline Inc. | $40.35 | change +18.4%, mktcap ~$53.05B, close $40.35, vol 25.42M | 4 recovered-dips (within range), above 200SMA ($39.53) | notion-live | OK |
+| OUST | Ouster, Inc. | $33.54 | change +15.7%, mktcap ~$2.42B, close $33.54, vol 6.17M | 4 recovered-dips (within range), above 200SMA ($32.48) | notion-live | OK |
+| PFGC | Performance Food Group Company | $109.57 | change +13.5%, mktcap ~$17.29B, close $109.57, vol 6.35M | 4 recovered-dips (within range), above 200SMA ($97.45) | notion-live | OK |
+| ACEL | Accel Entertainment, Inc. | $13.42 | change +13.2%, mktcap ~$1.09B, close $13.42, vol 1.89M | 3 recovered-dips (within range), above 200SMA ($11.72) | notion-live | OK |
+| MRNA | Moderna, Inc. | $258.38 | change +13.1%, mktcap ~$103.15B, close $258.38, vol 14.68M | 3 recovered-dips (within range), above 200SMA ($89.50) | notion-live | OK |
+| ATHM | Autohome Inc. | $22.49 | change +12.7%, mktcap ~$2.44B, close $22.49, vol 0.62M | 3 recovered-dips (within range), above 200SMA ($19.99) | notion-live | OK |
+| ASST | Strive, Inc. | $22.92 | change +10.9%, mktcap ~$2.92B, close $22.92, vol 8.57M | 3 recovered-dips (within range), above 200SMA ($16.48) | notion-live | OK |
+| JKHY | Jack Henry & Associates, Inc. | $179.16 | change +10.8%, mktcap ~$12.56B, close $179.16, vol 1.48M | 4 recovered-dips (within range), above 200SMA ($154.17) | notion-live | OK |
+| COCO | The Vita Coco Company, Inc. | $65.47 | change +9.7%, mktcap ~$3.74B, close $65.47, vol 2.05M | 4 recovered-dips (within range), above 200SMA ($61.86) | notion-live | OK |
+| CWK | Cushman & Wakefield Ltd. | $14.93 | change +9.6%, mktcap ~$3.50B, close $14.93, vol 6.20M | 3 recovered-dips (within range), above 200SMA ($13.35) | notion-live | OK |
+| ISRG | Intuitive Surgical, Inc. | $482.10 | change +9.4%, mktcap ~$167.12B, close $482.10, vol 4.79M | 4 recovered-dips (within range), above 200SMA ($431.84) | notion-live | OK |
+| PRG | PROG Holdings, Inc. | $39.89 | change +9.2%, mktcap ~$1.56B, close $39.89, vol 0.95M | 4 recovered-dips (within range), above 200SMA ($35.75) | notion-live | OK |
+| NAVN | Navan, Inc. | $27.06 | change +9.1%, mktcap ~$7.05B, close $27.06, vol 3.08M | 3 recovered-dips (within range), above 200SMA ($19.64) | notion-live | OK |
+| ARHS | Arhaus, Inc. | $13.15 | change +9.0%, mktcap ~$1.86B, close $13.15, vol 2.92M | 3 recovered-dips (within range), above 200SMA ($8.35) | notion-live | OK |
+| SLG | SL Green Realty Corp | $53.78 | change +8.9%, mktcap ~$4.11B, close $53.78, vol 1.37M | 4 recovered-dips (within range), above 200SMA ($46.83) | notion-live | OK |
+| OC | Owens Corning Inc | $127.80 | change +8.5%, mktcap ~$10.10B, close $127.80, vol 3.48M | 4 recovered-dips (within range), above 200SMA ($126.09) | notion-live | OK |
+| CON | Concentra Group Holdings Parent, Inc. | $43.56 | change +8.5%, mktcap ~$5.55B, close $43.56, vol 2.67M | 4 recovered-dips (within range), above 200SMA ($28.79) | notion-live | OK |
+| ATRC | AtriCure, Inc. | $65.53 | change +8.5%, mktcap ~$3.33B, close $65.53, vol 1.34M | 3 recovered-dips (within range), above 200SMA ($38.42) | notion-live | OK |
+| USFD | US Foods Holding Corp. | $109.93 | change +8.5%, mktcap ~$23.78B, close $109.93, vol 4.86M | 4 recovered-dips (within range), above 200SMA ($94.83) | notion-live | OK |
+| DASH | DoorDash, Inc. | $198.59 | change +8.3%, mktcap ~$86.59B, close $198.59, vol 7.68M | 4 recovered-dips (within range), above 200SMA ($182.45) | notion-live | OK |
+| TRUP | Trupanion, Inc. | $33.67 | change +8.2%, mktcap ~$1.48B, close $33.67, vol 0.66M | 2 recovered-dips (within range), above 200SMA ($26.58) | notion-live | OK |
+| CARG | CarGurus, Inc. | $36.52 | change +8.1%, mktcap ~$3.25B, close $36.52, vol 2.31M | 4 recovered-dips (within range), above 200SMA ($32.87) | notion-live | OK |
+| SIG | Signet Jewelers Limited | $128.40 | change +8.0%, mktcap ~$4.79B, close $128.40, vol 1.18M | 3 recovered-dips (within range), above 200SMA ($92.45) | notion-live | OK |
+| DXC | DXC Technology Company | $14.88 | change +8.0%, mktcap ~$2.31B, close $14.88, vol 4.80M | hugging 8EMA, above 200SMA ($11.55) | notion-live | OK |
+| EFOR | Everforth, Inc. | $36.98 | change +8.0%, mktcap ~$1.52B, close $36.98, vol 1.03M | hugging 8EMA, above 200SMA ($31.87) | notion-live | OK |
+
+27 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 27 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-03 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
