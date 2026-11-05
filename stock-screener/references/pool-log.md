@@ -20,6 +20,27 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-05 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| EPAM | EPAM Systems, Inc. | $165.70 | change +20.6%, mktcap ~$8.55B, close $165.70, vol 3.67M | 4 recovered-dips (within range), above 200SMA ($120.64) | notion-live | OK |
+| VERX | Vertex, Inc. | $17.59 | change +10.5%, mktcap ~$2.85B, close $17.59, vol 4.79M | 4 recovered-dips (within range), above 200SMA ($13.23) | notion-live | OK |
+| PRVA | Privia Health Group, Inc. | $23.94 | change +6.9%, mktcap ~$3.06B, close $23.94, vol 3.19M | 4 recovered-dips (within range), above 200SMA ($22.64) | notion-live | OK |
+| CF | CF Industries Holdings, Inc. | $118.57 | change +6.2%, mktcap ~$17.94B, close $118.57, vol 3.77M | hugging 8EMA, above 200SMA ($116.92) | notion-live | OK |
+| QNST | QuinStreet, Inc. | $20.32 | change +5.5%, mktcap ~$1.16B, close $20.32, vol 2.15M | 3 recovered-dips (within range), above 200SMA ($14.56) | notion-live | OK |
+| PRMB | Primo Brands Corporation | $22.15 | change +5.4%, mktcap ~$8.02B, close $22.15, vol 10.56M | 3 recovered-dips (within range), above 200SMA ($21.45) | notion-live | OK |
+| CDRE | Cadre Holdings, Inc. | $32.27 | change +4.6%, mktcap ~$1.38B, close $32.27, vol 0.59M | 2 recovered-dips (within range), above 200SMA ($31.98) | notion-live | OK |
+| MSI | Motorola Solutions, Inc. | $517.01 | change +4.0%, mktcap ~$85.56B, close $517.01, vol 3.38M | 4 recovered-dips (within range), above 200SMA ($441.64) | notion-live | OK |
+| WEN | Wendy's Company (The) | $7.94 | change +3.8%, mktcap ~$1.51B, close $7.94, vol 12.06M | 3 recovered-dips (within range), above 200SMA ($7.35) | notion-live | OK |
+| EWTX | Edgewise Therapeutics, Inc. | $38.87 | change +3.6%, mktcap ~$4.22B, close $38.87, vol 5.04M | hugging 8EMA, above 200SMA ($36.48) | notion-live | OK |
+| FTDR | Frontdoor, Inc. | $95.98 | change +3.4%, mktcap ~$6.61B, close $95.98, vol 1.47M | 4 recovered-dips (within range), above 200SMA ($70.03) | notion-live | OK |
+| TRUP | Trupanion, Inc. | $34.72 | change +3.1%, mktcap ~$1.52B, close $34.72, vol 0.73M | 2 recovered-dips (within range), above 200SMA ($26.60) | notion-live | OK |
+| UPBD | Upbound Group, Inc. | $24.88 | change +3.1%, mktcap ~$1.45B, close $24.88, vol 1.57M | 4 recovered-dips (within range), above 200SMA ($18.95) | notion-live | OK |
+
+13 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 13 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-04 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
