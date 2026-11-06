@@ -20,6 +20,32 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-06 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| NET | Cloudflare, Inc. | $269.84 | change +10.4%, mktcap ~$96.08B, close $269.84, vol 8.39M | 4 recovered-dips (within range), above 200SMA ($250.24) | notion-live | OK |
+| AMD | Advanced Micro Devices, Inc. | $445.84 | change +10.2%, mktcap ~$727.83B, close $445.84, vol 39.74M | 4 recovered-dips (within range), above 200SMA ($415.98) | notion-live | OK |
+| GEO | Geo Group Inc (The) REIT | $27.74 | change +10.2%, mktcap ~$3.65B, close $27.74, vol 2.92M | hugging 8EMA, above 200SMA ($24.50) | notion-live | OK |
+| JANX | Janux Therapeutics, Inc. | $17.70 | change +10.2%, mktcap ~$1.08B, close $17.70, vol 0.63M | hugging 8EMA, above 200SMA ($15.42) | notion-live | OK |
+| ELVN | Enliven Therapeutics, Inc. | $49.19 | change +9.8%, mktcap ~$3.60B, close $49.19, vol 0.71M | 4 recovered-dips (within range), above 200SMA ($43.22) | notion-live | OK |
+| ARHS | Arhaus, Inc. | $14.20 | change +9.7%, mktcap ~$2.01B, close $14.20, vol 4.22M | 3 recovered-dips (within range), above 200SMA ($8.38) | notion-live | OK |
+| DFTX | Definium Therapeutics, Inc. | $33.25 | change +9.5%, mktcap ~$4.47B, close $33.25, vol 0.96M | hugging 8EMA, above 200SMA ($30.01) | notion-live | OK |
+| ABSI | Absci Corporation | $10.15 | change +8.1%, mktcap ~$1.74B, close $10.15, vol 3.51M | hugging 8EMA, above 200SMA ($6.66) | notion-live | OK |
+| SARO | StandardAero, Inc. | $27.36 | change +8.1%, mktcap ~$9.05B, close $27.36, vol 5.42M | 2 recovered-dips (within range), above 200SMA ($26.46) | notion-live | OK |
+| RVMD | Revolution Medicines, Inc. | $192.07 | change +8.1%, mktcap ~$41.17B, close $192.07, vol 3.76M | hugging 8EMA, above 200SMA ($157.82) | notion-live | OK |
+| CRL | Charles River Laboratories International, Inc. | $337.46 | change +7.8%, mktcap ~$16.11B, close $337.46, vol 0.72M | hugging 8EMA, above 200SMA ($224.56) | notion-live | OK |
+| MRVI | Maravai LifeSciences Holdings, Inc. | $7.50 | change +7.5%, mktcap ~$1.95B, close $7.50, vol 1.39M | hugging 8EMA, above 200SMA ($5.32) | notion-live | OK |
+| RAL | Ralliant Corporation | $67.20 | change +7.0%, mktcap ~$7.44B, close $67.20, vol 1.57M | hugging 8EMA, above 200SMA ($58.91) | notion-live | OK |
+| ANET | Arista Networks, Inc. | $170.22 | change +6.9%, mktcap ~$214.69B, close $170.22, vol 9.62M | hugging 8EMA, above 200SMA ($166.11) | notion-live | OK |
+| FTRE | Fortrea Holdings Inc. | $21.87 | change +6.9%, mktcap ~$2.11B, close $21.87, vol 1.36M | hugging 8EMA, above 200SMA ($15.80) | notion-live | OK |
+| LIND | Lindblad Expeditions Holdings Inc. | $33.73 | change +6.8%, mktcap ~$2.21B, close $33.73, vol 0.61M | hugging 8EMA, above 200SMA ($24.86) | notion-live | OK |
+| ABCL | AbCellera Biologics Inc. | $11.85 | change +6.5%, mktcap ~$3.84B, close $11.85, vol 1.92M | hugging 8EMA, above 200SMA ($7.04) | notion-live | OK |
+| ELF | e.l.f. Beauty, Inc. | $116.83 | change +6.4%, mktcap ~$6.89B, close $116.83, vol 1.68M | 4 recovered-dips (within range), above 200SMA ($81.84) | notion-live | OK |
+
+18 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 18 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-05 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
