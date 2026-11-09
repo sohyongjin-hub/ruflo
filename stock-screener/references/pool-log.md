@@ -20,6 +20,24 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-09 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| REAL | The RealReal, Inc. | $14.65 | change +13.8%, mktcap ~$1.83B, close $14.65, vol 8.03M | 4 recovered-dips (within range), above 200SMA ($10.92) | notion-live | OK |
+| VIA | Via Transportation, Inc. | $42.55 | change +12.8%, mktcap ~$3.47B, close $42.55, vol 1.42M | 4 recovered-dips (within range), above 200SMA ($21.44) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $135.34 | change +12.0%, mktcap ~$8.91B, close $135.34, vol 1.67M | hugging 8EMA, above 200SMA ($91.68) | notion-live | OK |
+| SDGR | Schrodinger, Inc. | $33.39 | change +12.0%, mktcap ~$2.51B, close $33.39, vol 2.71M | 4 recovered-dips (within range), above 200SMA ($17.12) | notion-live | OK |
+| SRRK | Scholar Rock Holding Corporation | $51.55 | change +9.8%, mktcap ~$6.28B, close $51.55, vol 2.80M | 4 recovered-dips (within range), above 200SMA ($48.22) | notion-live | OK |
+| TXG | 10x Genomics, Inc. | $65.05 | change +9.7%, mktcap ~$8.48B, close $65.05, vol 2.77M | hugging 8EMA, above 200SMA ($41.80) | notion-live | OK |
+| ENTG | Entegris, Inc. | $140.06 | change +9.4%, mktcap ~$21.40B, close $140.06, vol 4.81M | hugging 8EMA, above 200SMA ($138.93) | notion-live | OK |
+| PENG | Penguin Solutions, Inc. | $45.70 | change +9.3%, mktcap ~$2.75B, close $45.70, vol 2.38M | 4 recovered-dips (within range), above 200SMA ($44.76) | notion-live | OK |
+| ADI | Analog Devices, Inc. | $394.66 | change +8.6%, mktcap ~$191.24B, close $394.66, vol 6.54M | hugging 8EMA, above 200SMA ($374.84) | notion-live | OK |
+| SHOO | Steven Madden, Ltd. | $42.84 | change +8.5%, mktcap ~$3.13B, close $42.84, vol 1.97M | hugging 8EMA, above 200SMA ($41.29) | notion-live | OK |
+
+10 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 10 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-06 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
