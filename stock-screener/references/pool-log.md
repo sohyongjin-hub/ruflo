@@ -20,6 +20,30 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-10 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| OUT | OUTFRONT Media Inc. | $32.87 | change +5.2%, mktcap ~$5.79B, close $32.87, vol 1.68M | 3 recovered-dips (within range), above 200SMA ($29.84) | notion-live | OK |
+| VIA | Via Transportation, Inc. | $44.65 | change +4.9%, mktcap ~$3.64B, close $44.65, vol 1.19M | 4 recovered-dips (within range), above 200SMA ($21.54) | notion-live | OK |
+| CLF | Cleveland-Cliffs Inc. | $12.86 | change +4.9%, mktcap ~$7.34B, close $12.86, vol 12.53M | hugging 8EMA, above 200SMA ($11.31) | notion-live | OK |
+| RRC | Range Resources Corporation | $51.20 | change +4.8%, mktcap ~$11.96B, close $51.20, vol 3.09M | hugging 8EMA, above 200SMA ($40.97) | notion-live | OK |
+| EPAM | EPAM Systems, Inc. | $164.14 | change +4.7%, mktcap ~$8.37B, close $164.14, vol 1.42M | 3 recovered-dips (within range), above 200SMA ($119.75) | notion-live | OK |
+| IRON | Disc Medicine, Inc. | $84.64 | change +4.2%, mktcap ~$3.85B, close $84.64, vol 1.92M | 3 recovered-dips (within range), above 200SMA ($70.90) | notion-live | OK |
+| BAND | Bandwidth Inc. | $43.57 | change +4.1%, mktcap ~$1.41B, close $43.57, vol 0.60M | hugging 8EMA, above 200SMA ($42.04) | notion-live | OK |
+| STLD | Steel Dynamics, Inc. | $236.12 | change +3.8%, mktcap ~$33.58B, close $236.12, vol 0.73M | hugging 8EMA, above 200SMA ($225.94) | notion-live | OK |
+| TWLO | Twilio Inc. | $214.21 | change +3.7%, mktcap ~$33.15B, close $214.21, vol 2.28M | hugging 8EMA, above 200SMA ($191.72) | notion-live | OK |
+| HAE | Haemonetics Corporation | $122.36 | change +3.5%, mktcap ~$5.57B, close $122.36, vol 0.78M | hugging 8EMA, above 200SMA ($80.43) | notion-live | OK |
+| AR | Antero Resources Corporation | $37.63 | change +3.5%, mktcap ~$11.56B, close $37.63, vol 3.97M | hugging 8EMA, above 200SMA ($36.96) | notion-live | OK |
+| KNTK | Kinetik Holdings Inc. | $52.08 | change +3.5%, mktcap ~$8.46B, close $52.08, vol 1.17M | hugging 8EMA, above 200SMA ($49.19) | notion-live | OK |
+| CBOE | Cboe Global Markets, Inc. | $364.81 | change +3.4%, mktcap ~$38.06B, close $364.81, vol 0.91M | 4 recovered-dips (within range), above 200SMA ($295.26) | notion-live | OK |
+| ASX | ASE Technology Holding Co., Ltd. | $35.48 | change +3.3%, mktcap ~$75.56B, close $35.48, vol 11.15M | hugging 8EMA, above 200SMA ($33.90) | notion-live | OK |
+| MAN | ManpowerGroup | $46.02 | change +3.3%, mktcap ~$2.14B, close $46.02, vol 0.54M | hugging 8EMA, above 200SMA ($40.40) | notion-live | OK |
+| VERX | Vertex, Inc. | $17.84 | change +3.1%, mktcap ~$2.89B, close $17.84, vol 1.68M | 3 recovered-dips (within range), above 200SMA ($13.20) | notion-live | OK |
+
+16 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 16 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-09 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
