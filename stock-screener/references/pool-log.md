@@ -20,6 +20,27 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-11 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| AXGN | Axogen, Inc. | $58.63 | change +15.2%, mktcap ~$3.50B, close $58.63, vol 4.41M | 4 recovered-dips (within range), above 200SMA ($40.31) | notion-live | OK |
+| DELL | Dell Technologies Inc. | $373.68 | change +11.8%, mktcap ~$237.59B, close $373.68, vol 9.13M | hugging 8EMA, above 200SMA ($341.00) | notion-live | OK |
+| ASST | Strive, Inc. | $23.20 | change +7.7%, mktcap ~$2.95B, close $23.20, vol 6.57M | 3 recovered-dips (within range), above 200SMA ($16.60) | notion-live | OK |
+| DK | Delek US Holdings, Inc. | $67.16 | change +7.2%, mktcap ~$4.07B, close $67.16, vol 1.28M | hugging 8EMA, above 200SMA ($54.52) | notion-live | OK |
+| PARR | Par Pacific Holdings, Inc. Common Stock | $71.18 | change +6.2%, mktcap ~$3.56B, close $71.18, vol 0.55M | hugging 8EMA, above 200SMA ($65.52) | notion-live | OK |
+| PBF | PBF Energy Inc. | $69.73 | change +5.8%, mktcap ~$8.46B, close $69.73, vol 2.05M | hugging 8EMA, above 200SMA ($55.19) | notion-live | OK |
+| SM | SM Energy Company | $31.16 | change +5.6%, mktcap ~$7.32B, close $31.16, vol 3.57M | 3 recovered-dips (within range), above 200SMA ($30.86) | notion-live | OK |
+| ECO | Okeanis Eco Tankers Corp. | $85.75 | change +5.0%, mktcap ~$3.29B, close $85.75, vol 0.82M | hugging 8EMA, above 200SMA ($60.88) | notion-live | OK |
+| CVI | CVR Energy Inc. | $40.61 | change +4.9%, mktcap ~$4.08B, close $40.61, vol 1.88M | 3 recovered-dips (within range), above 200SMA ($36.48) | notion-live | OK |
+| HPE | Hewlett Packard Enterprise Company | $50.25 | change +4.8%, mktcap ~$66.71B, close $50.25, vol 14.83M | hugging 8EMA, above 200SMA ($41.87) | notion-live | OK |
+| REGN | Regeneron Pharmaceuticals, Inc. | $959.41 | change +4.7%, mktcap ~$99.23B, close $959.41, vol 1.22M | 3 recovered-dips (within range), above 200SMA ($744.87) | notion-live | OK |
+| PURR | Hyperliquid Strategies Inc | $9.15 | change +4.6%, mktcap ~$2.53B, close $9.15, vol 10.06M | hugging 8EMA, above 200SMA ($7.88) | notion-live | OK |
+| LIFE | Ethos Technologies Inc. | $37.64 | change +4.5%, mktcap ~$2.45B, close $37.64, vol 0.81M | hugging 8EMA, above 100SMA ($31.77) | notion-live | OK |
+
+13 tickers caught. 2 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 13 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-10 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
