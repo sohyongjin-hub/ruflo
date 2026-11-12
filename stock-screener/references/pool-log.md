@@ -20,6 +20,21 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-12 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| SM | SM Energy Company | $32.77 | change +5.2%, mktcap ~$7.70B, close $32.77, vol 4.28M | 4 recovered-dips (within range), above 200SMA ($30.93) | notion-live | OK |
+| FRSH | Freshworks Inc. | $12.67 | change +4.9%, mktcap ~$3.32B, close $12.67, vol 4.14M | hugging 8EMA, above 200SMA ($10.48) | notion-live | OK |
+| TTEK | Tetra Tech, Inc. | $39.43 | change +4.8%, mktcap ~$10.10B, close $39.43, vol 6.75M | hugging 8EMA, above 200SMA ($33.21) | notion-live | OK |
+| VWDRY | Vestas Wind Systems A/S | $9.74 | change +3.5%, mktcap ~$28.12B, close $9.74, vol 0.66M | hugging 8EMA, above 200SMA ($9.47) | notion-live | OK |
+| EQNR | Equinor ASA | $42.76 | change +3.5%, mktcap ~$98.85B, close $42.76, vol 3.00M | hugging 8EMA, above 200SMA ($38.36) | notion-live | OK |
+| VLO | Valero Energy Corporation | $374.95 | change +3.1%, mktcap ~$104.57B, close $374.95, vol 2.38M | 4 recovered-dips (within range), above 200SMA ($293.78) | notion-live | OK |
+| PLGO | Pelagos Insurance Capital Limited | $28.83 | change +3.1%, mktcap ~$2.39B, close $28.83, vol 0.92M | 3 recovered-dips (within range), above 200SMA ($22.78) | notion-live | OK |
+
+7 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 7 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-11 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
