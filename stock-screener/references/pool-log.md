@@ -20,6 +20,27 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-13 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| HAWK | HawkEye 360, Inc. | $18.16 | change +23.8%, mktcap ~$1.78B, close $18.16, vol 7.00M | 3 recovered-dips (within range), above 100SMA ($17.74) | notion-live | OK |
+| WLTH | Wealthfront Corporation | $10.72 | change +5.1%, mktcap ~$1.67B, close $10.72, vol 1.55M | hugging 8EMA, above 200SMA ($9.76) | notion-live | OK |
+| UPBD | Upbound Group, Inc. | $25.09 | change +5.1%, mktcap ~$1.46B, close $25.09, vol 1.76M | 2 recovered-dips (within range), above 200SMA ($19.12) | notion-live | OK |
+| STE | STERIS plc (Ireland) | $264.32 | change +4.3%, mktcap ~$25.67B, close $264.32, vol 0.98M | 4 recovered-dips (within range), above 200SMA ($224.13) | notion-live | OK |
+| PRVA | Privia Health Group, Inc. | $24.55 | change +3.7%, mktcap ~$3.14B, close $24.55, vol 1.59M | 4 recovered-dips (within range), above 200SMA ($22.67) | notion-live | OK |
+| YUMC | Yum China Holdings, Inc. | $50.86 | change +3.4%, mktcap ~$17.13B, close $50.86, vol 1.69M | 2 recovered-dips (within range), above 200SMA ($46.85) | notion-live | OK |
+| VFC | V.F. Corporation | $20.68 | change +3.2%, mktcap ~$8.14B, close $20.68, vol 9.87M | 3 recovered-dips (within range), above 200SMA ($16.99) | notion-live | OK |
+| CBRL | Cracker Barrel Old Country Store, Inc. | $66.95 | change +3.2%, mktcap ~$1.50B, close $66.95, vol 0.55M | hugging 8EMA, above 200SMA ($44.50) | notion-live | OK |
+| ALC | Alcon Inc. | $74.12 | change +3.2%, mktcap ~$37.04B, close $74.12, vol 2.78M | hugging 8EMA, above 200SMA ($71.64) | notion-live | OK |
+| SHAK | Shake Shack, Inc. | $74.98 | change +3.2%, mktcap ~$3.21B, close $74.98, vol 1.20M | 4 recovered-dips (within range), above 200SMA ($74.05) | notion-live | OK |
+| CPB | The Campbell's Company | $22.77 | change +3.1%, mktcap ~$6.79B, close $22.77, vol 4.46M | hugging 8EMA, above 200SMA ($22.25) | notion-live | OK |
+| PTON | Peloton Interactive, Inc. | $5.70 | change +3.1%, mktcap ~$2.54B, close $5.70, vol 8.39M | hugging 8EMA, above 200SMA ($5.20) | notion-live | OK |
+| WDAY | Workday, Inc. | $196.45 | change +3.0%, mktcap ~$47.34B, close $196.45, vol 1.73M | hugging 8EMA, above 200SMA ($156.02) | notion-live | OK |
+
+13 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 13 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-12 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
