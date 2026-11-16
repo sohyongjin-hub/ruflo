@@ -20,6 +20,19 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-16 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| AAVVF | Advantage Energy Ltd. | $9.40 | change +23.2%, mktcap ~$1.52B, close $9.40, vol 0.83M | 4 recovered-dips (within range), above 200SMA ($7.59) | notion-live | OK |
+| HTHT | H World Group Limited | $54.88 | change +8.9%, mktcap ~$15.05B, close $54.88, vol 3.74M | 4 recovered-dips (within range), above 200SMA ($47.03) | notion-live | OK |
+| AMN | AMN Healthcare Services Inc | $39.64 | change +4.3%, mktcap ~$1.53B, close $39.64, vol 0.66M | hugging 8EMA, above 200SMA ($29.62) | notion-live | OK |
+| EPC | Edgewell Personal Care Company | $28.38 | change +4.0%, mktcap ~$1.31B, close $28.38, vol 0.62M | hugging 8EMA, above 200SMA ($24.44) | notion-live | OK |
+| PCTY | Paylocity Holding Corporation | $184.46 | change +3.5%, mktcap ~$9.59B, close $184.46, vol 0.99M | 4 recovered-dips (within range), above 200SMA ($128.28) | notion-live | OK |
+
+5 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 5 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-13 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
