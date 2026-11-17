@@ -20,6 +20,19 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-17 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| LUXE | LuxExperience B.V. | $11.95 | change +11.2%, mktcap ~$1.50B, close $11.95, vol 0.88M | 4 recovered-dips (within range), above 200SMA ($8.52) | notion-live | OK |
+| ACM | AECOM | $80.53 | change +11.1%, mktcap ~$10.36B, close $80.53, vol 4.15M | 3 recovered-dips (within range), above 200SMA ($74.49) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $112.00 | change +6.6%, mktcap ~$7.37B, close $112.00, vol 2.07M | 3 recovered-dips (within range), above 200SMA ($93.88) | notion-live | OK |
+| GFF | Griffon Corporation | $104.75 | change +4.8%, mktcap ~$4.74B, close $104.75, vol 0.74M | hugging 8EMA, above 200SMA ($90.60) | notion-live | OK |
+| RCRUY | Recruit Holdings Co., Ltd. | $22.73 | change +4.5%, mktcap ~$150.58B, close $22.73, vol 2.44M | hugging 8EMA, above 200SMA ($15.08) | notion-live | OK |
+
+5 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 5 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-16 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
