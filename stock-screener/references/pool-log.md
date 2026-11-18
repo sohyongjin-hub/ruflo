@@ -20,6 +20,57 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-18 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| OKTA | Okta, Inc. | $195.61 | change +12.1%, mktcap ~$34.20B, close $195.61, vol 5.26M | 4 recovered-dips (within range), above 200SMA ($130.52) | notion-live | OK |
+| ATEN | A10 Networks, Inc. | $32.36 | change +10.5%, mktcap ~$2.33B, close $32.36, vol 1.86M | 4 recovered-dips (within range), above 200SMA ($27.14) | notion-live | OK |
+| JJSF | J & J Snack Foods Corp. | $99.23 | change +9.5%, mktcap ~$1.85B, close $99.23, vol 0.59M | 4 recovered-dips (within range), above 200SMA ($81.19) | notion-live | OK |
+| RBRK | Rubrik, Inc. | $110.00 | change +9.3%, mktcap ~$22.80B, close $110.00, vol 2.93M | hugging 8EMA, above 200SMA ($79.72) | notion-live | OK |
+| SYRE | Spyre Therapeutics, Inc. | $101.46 | change +8.2%, mktcap ~$9.64B, close $101.46, vol 1.37M | hugging 8EMA, above 200SMA ($77.65) | notion-live | OK |
+| CBRL | Cracker Barrel Old Country Store, Inc. | $74.34 | change +6.9%, mktcap ~$1.66B, close $74.34, vol 1.07M | 3 recovered-dips (within range), above 200SMA ($45.09) | notion-live | OK |
+| ZS | Zscaler, Inc. | $197.83 | change +6.8%, mktcap ~$32.26B, close $197.83, vol 2.42M | hugging 8EMA, above 200SMA ($166.50) | notion-live | OK |
+| UPBD | Upbound Group, Inc. | $26.38 | change +6.7%, mktcap ~$1.54B, close $26.38, vol 1.35M | 2 recovered-dips (within range), above 200SMA ($19.20) | notion-live | OK |
+| VIA | Via Transportation, Inc. | $46.52 | change +6.5%, mktcap ~$3.83B, close $46.52, vol 1.11M | 4 recovered-dips (within range), above 200SMA ($22.14) | notion-live | OK |
+| SDGR | Schrodinger, Inc. | $27.20 | change +6.0%, mktcap ~$2.04B, close $27.20, vol 1.18M | 3 recovered-dips (within range), above 200SMA ($17.64) | notion-live | OK |
+| NET | Cloudflare, Inc. | $300.91 | change +5.7%, mktcap ~$107.10B, close $300.91, vol 3.95M | hugging 8EMA, above 200SMA ($255.02) | notion-live | OK |
+| COCO | The Vita Coco Company, Inc. | $67.61 | change +5.6%, mktcap ~$3.86B, close $67.61, vol 1.79M | 4 recovered-dips (within range), above 200SMA ($62.37) | notion-live | OK |
+| PRG | PROG Holdings, Inc. | $40.73 | change +5.4%, mktcap ~$1.59B, close $40.73, vol 0.76M | 4 recovered-dips (within range), above 200SMA ($36.05) | notion-live | OK |
+| ARHS | Arhaus, Inc. | $13.81 | change +5.2%, mktcap ~$1.96B, close $13.81, vol 1.97M | 4 recovered-dips (within range), above 200SMA ($8.53) | notion-live | OK |
+| DT | Dynatrace, Inc. | $45.35 | change +5.0%, mktcap ~$13.01B, close $45.35, vol 6.81M | hugging 8EMA, above 200SMA ($44.89) | notion-live | OK |
+| URBN | Urban Outfitters, Inc. | $86.64 | change +5.0%, mktcap ~$7.42B, close $86.64, vol 0.93M | hugging 8EMA, above 200SMA ($74.15) | notion-live | OK |
+| SIG | Signet Jewelers Limited | $109.12 | change +4.7%, mktcap ~$4.07B, close $109.12, vol 0.75M | 4 recovered-dips (within range), above 200SMA ($93.63) | notion-live | OK |
+| FTRE | Fortrea Holdings Inc. | $20.50 | change +4.6%, mktcap ~$1.98B, close $20.50, vol 1.59M | hugging 8EMA, above 200SMA ($15.95) | notion-live | OK |
+| GME | GameStop Corporation | $26.53 | change +4.6%, mktcap ~$13.38B, close $26.53, vol 7.69M | 4 recovered-dips (within range), above 200SMA ($22.83) | notion-live | OK |
+| ITRI | Itron, Inc. | $98.00 | change +4.4%, mktcap ~$4.30B, close $98.00, vol 0.62M | hugging 8EMA, above 200SMA ($90.82) | notion-live | OK |
+| OPK | Opko Health, Inc. | $1.69 | change +4.3%, mktcap ~$1.25B, close $1.69, vol 3.06M | hugging 8EMA, above 200SMA ($1.37) | notion-live | OK |
+| RCL | Royal Caribbean Cruises Ltd. | $320.65 | change +4.3%, mktcap ~$85.76B, close $320.65, vol 1.82M | hugging 8EMA, above 200SMA ($288.13) | notion-live | OK |
+| ALVO | Alvotech | $4.55 | change +4.1%, mktcap ~$1.62B, close $4.55, vol 1.56M | hugging 8EMA, above 200SMA ($4.17) | notion-live | OK |
+| KSS | Kohl's Corporation | $24.04 | change +4.1%, mktcap ~$2.73B, close $24.04, vol 2.93M | hugging 8EMA, above 200SMA ($17.37) | notion-live | OK |
+| SBH | Sally Beauty Holdings, Inc. (Name to be changed from Sally Holdings, Inc.) | $19.09 | change +4.0%, mktcap ~$1.73B, close $19.09, vol 1.69M | hugging 8EMA, above 200SMA ($15.26) | notion-live | OK |
+| TWST | Twist Bioscience Corporation | $116.35 | change +3.9%, mktcap ~$7.93B, close $116.35, vol 2.23M | hugging 8EMA, above 200SMA ($94.23) | notion-live | OK |
+| ATI | ATI Inc. | $180.87 | change +3.9%, mktcap ~$24.57B, close $180.87, vol 1.61M | hugging 8EMA, above 200SMA ($177.00) | notion-live | OK |
+| AVPT | AvePoint, Inc. | $16.39 | change +3.8%, mktcap ~$3.44B, close $16.39, vol 1.63M | hugging 8EMA, above 200SMA ($12.16) | notion-live | OK |
+| BIP | Brookfield Infrastructure Partners LP Limited Partnership | $41.71 | change +3.7%, mktcap ~$27.03B, close $41.71, vol 5.21M | 4 recovered-dips (within range), above 200SMA ($37.72) | notion-live | OK |
+| ILMN | Illumina, Inc. | $210.01 | change +3.7%, mktcap ~$31.75B, close $210.01, vol 1.63M | hugging 8EMA, above 200SMA ($180.46) | notion-live | OK |
+| CDW | CDW Corporation | $169.01 | change +3.6%, mktcap ~$21.09B, close $169.01, vol 1.32M | hugging 8EMA, above 200SMA ($135.54) | notion-live | OK |
+| WAT | Waters Corporation | $466.10 | change +3.6%, mktcap ~$45.81B, close $466.10, vol 0.73M | hugging 8EMA, above 200SMA ($374.40) | notion-live | OK |
+| MYE | Myers Industries, Inc. | $27.65 | change +3.6%, mktcap ~$1.04B, close $27.65, vol 0.65M | hugging 8EMA, above 200SMA ($27.03) | notion-live | OK |
+| NSIT | Insight Enterprises, Inc. | $161.81 | change +3.5%, mktcap ~$4.66B, close $161.81, vol 0.82M | hugging 8EMA, above 200SMA ($118.41) | notion-live | OK |
+| HAYW | Hayward Holdings, Inc. | $16.51 | change +3.5%, mktcap ~$3.44B, close $16.51, vol 2.54M | hugging 8EMA, above 200SMA ($14.56) | notion-live | OK |
+| GENI | Genius Sports Limited | $6.11 | change +3.4%, mktcap ~$1.70B, close $6.11, vol 7.37M | hugging 8EMA, above 200SMA ($6.04) | notion-live | OK |
+| VSTS | Vestis Corporation | $14.00 | change +3.3%, mktcap ~$1.85B, close $14.00, vol 1.38M | hugging 8EMA, above 200SMA ($11.93) | notion-live | OK |
+| HSIC | Henry Schein, Inc. | $85.69 | change +3.3%, mktcap ~$9.47B, close $85.69, vol 2.08M | hugging 8EMA, above 200SMA ($81.67) | notion-live | OK |
+| COMP | Compass, Inc. | $10.13 | change +3.3%, mktcap ~$7.78B, close $10.13, vol 8.65M | hugging 8EMA, above 200SMA ($9.72) | notion-live | OK |
+| ROST | Ross Stores, Inc. | $227.64 | change +3.3%, mktcap ~$72.72B, close $227.64, vol 2.92M | hugging 8EMA, above 200SMA ($225.27) | notion-live | OK |
+| HHH | Howard Hughes Holdings Inc. | $83.26 | change +3.2%, mktcap ~$4.97B, close $83.26, vol 0.58M | 4 recovered-dips (within range), above 200SMA ($68.65) | notion-live | OK |
+| COTY | Coty Inc. | $4.21 | change +3.2%, mktcap ~$3.71B, close $4.21, vol 7.89M | 4 recovered-dips (within range), above 200SMA ($2.58) | notion-live | OK |
+| RVTY | Revvity, Inc. | $152.43 | change +3.1%, mktcap ~$17.02B, close $152.43, vol 1.09M | hugging 8EMA, above 200SMA ($114.69) | notion-live | OK |
+
+43 tickers caught. 1 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 43 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-17 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
