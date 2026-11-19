@@ -20,6 +20,30 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-19 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| INSM | Insmed Incorporated | $144.46 | change +20.6%, mktcap ~$31.69B, close $144.46, vol 14.40M | 3 recovered-dips (within range), above 200SMA ($122.61) | notion-live | OK |
+| BRBR | BellRing Brands, Inc. | $15.11 | change +10.6%, mktcap ~$1.76B, close $15.11, vol 11.87M | 4 recovered-dips (within range), above 200SMA ($12.32) | notion-live | OK |
+| VVV | Valvoline Inc. | $36.84 | change +10.4%, mktcap ~$4.70B, close $36.84, vol 8.92M | 4 recovered-dips (within range), above 200SMA ($34.49) | notion-live | OK |
+| BHVN | Biohaven Ltd. | $13.65 | change +5.8%, mktcap ~$2.06B, close $13.65, vol 3.26M | hugging 8EMA, above 200SMA ($12.37) | notion-live | OK |
+| OKTA | Okta, Inc. | $206.85 | change +5.7%, mktcap ~$36.16B, close $206.85, vol 6.15M | 4 recovered-dips (within range), above 200SMA ($131.13) | notion-live | OK |
+| PURR | Hyperliquid Strategies Inc | $8.40 | change +5.7%, mktcap ~$2.33B, close $8.40, vol 19.61M | hugging 8EMA, above 200SMA ($7.98) | notion-live | OK |
+| CPA | Copa Holdings, S.A. | $140.69 | change +5.5%, mktcap ~$5.74B, close $140.69, vol 0.90M | hugging 8EMA, above 200SMA ($133.39) | notion-live | OK |
+| P | Everpure, Inc. | $105.50 | change +4.7%, mktcap ~$35.16B, close $105.50, vol 8.23M | hugging 8EMA, above 200SMA ($87.94) | notion-live | OK |
+| VRDN | Viridian Therapeutics, Inc. | $31.44 | change +4.4%, mktcap ~$3.57B, close $31.44, vol 4.02M | 4 recovered-dips (within range), above 200SMA ($21.52) | notion-live | OK |
+| RBRK | Rubrik, Inc. | $114.56 | change +4.1%, mktcap ~$23.75B, close $114.56, vol 4.50M | 4 recovered-dips (within range), above 200SMA ($80.04) | notion-live | OK |
+| ZS | Zscaler, Inc. | $205.71 | change +4.0%, mktcap ~$33.54B, close $205.71, vol 3.72M | 4 recovered-dips (within range), above 200SMA ($166.60) | notion-live | OK |
+| MAZE | Maze Therapeutics, Inc. | $32.43 | change +3.9%, mktcap ~$1.77B, close $32.43, vol 1.00M | 4 recovered-dips (within range), above 200SMA ($31.09) | notion-live | OK |
+| VOR | Vor Biopharma Inc. | $18.52 | change +3.9%, mktcap ~$1.14B, close $18.52, vol 0.83M | hugging 8EMA, above 200SMA ($17.64) | notion-live | OK |
+| DHT | DHT Holdings, Inc. | $21.51 | change +3.4%, mktcap ~$3.47B, close $21.51, vol 6.29M | hugging 8EMA, above 200SMA ($19.29) | notion-live | OK |
+| ELVN | Enliven Therapeutics, Inc. | $46.41 | change +3.4%, mktcap ~$3.42B, close $46.41, vol 0.99M | 4 recovered-dips (within range), above 200SMA ($44.21) | notion-live | OK |
+| ZYME | Zymeworks Inc. | $26.86 | change +3.1%, mktcap ~$1.87B, close $26.86, vol 1.01M | hugging 8EMA, above 200SMA ($25.59) | notion-live | OK |
+
+16 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 16 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-18 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
