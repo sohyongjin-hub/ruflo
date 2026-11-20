@@ -20,6 +20,20 @@ never hand-edit this file to reflect a status change made in Notion.
 
 ## Run log
 
+## 2026-11-20 batch
+
+| Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
+|---|---|---|---|---|---|---|
+| BIP | Brookfield Infrastructure Partners LP Limited Partnership | $42.94 | change +4.5%, mktcap ~$27.83B, close $42.94, vol 4.72M | 4 recovered-dips (within range), above 200SMA ($37.77) | notion-live | OK |
+| PLMR | Palomar Holdings, Inc. | $163.59 | change +4.4%, mktcap ~$4.30B, close $163.59, vol 0.52M | 4 recovered-dips (within range), above 200SMA ($128.54) | notion-live | OK |
+| GLOB | Globant S.A. | $41.63 | change +4.1%, mktcap ~$1.80B, close $41.63, vol 3.95M | 4 recovered-dips (within range), above 200SMA ($40.61) | notion-live | OK |
+| LFST | LifeStance Health Group, Inc. | $13.82 | change +3.6%, mktcap ~$5.25B, close $13.82, vol 5.62M | hugging 8EMA, above 200SMA ($9.85) | notion-live | OK |
+| EPC | Edgewell Personal Care Company | $28.47 | change +3.3%, mktcap ~$1.31B, close $28.47, vol 0.73M | hugging 8EMA, above 200SMA ($24.60) | notion-live | OK |
+| CTSH | Cognizant Technology Solutions Corporation | $58.06 | change +3.1%, mktcap ~$25.95B, close $58.06, vol 7.89M | 4 recovered-dips (within range), above 200SMA ($57.49) | notion-live | OK |
+
+6 tickers caught. 0 Stage-1 survivors skipped (insufficient history or fetch error) — see run log. Notion writes: 6 ok, 0 failed, 0 already logged today (skipped as duplicates).
+
+
 ## 2026-11-19 batch
 
 | Ticker | Company | Catch price | Fundamental filters passed | Technical qualification | Config snapshot | Notion sync |
